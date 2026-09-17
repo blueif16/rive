@@ -1,0 +1,10 @@
+{
+  "name": "rive-headless-render",
+  "private": true,
+  "type": "module",
+  "description": "Headless frame renderer for rive-export: one browser pass over @rive-app/canvas-advanced.",
+  "dependencies": {
+    "@rive-app/canvas-advanced": "2.42.2",
+    "puppeteer-core": "^25.11.0"
+  }
+}

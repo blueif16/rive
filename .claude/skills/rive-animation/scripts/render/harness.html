@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"/>
+<style>html,body{margin:0;background:#000}canvas{display:block}</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<script type="module">
+import RiveCanvas from "./canvas_advanced.mjs";
+
+// The Canvas2D renderer in @rive-app/canvas-advanced is DEFERRED: draw calls push
+// closures onto an internal queue, `flush()` is a no-op, and the queue is replayed
+// by Rive's OWN requestAnimationFrame driver after every scheduled callback has run.
+// A frame is therefore only on the canvas at the START of the following tick —
+// which is why each capture below is taken one tick late, not straight after draw.
+// Animation time is still advanced by a fixed dt, so what renders is deterministic;
+// only the wall-clock pacing is left to the browser.
+
+const canvas = document.getElementById("c");
+let rive, renderer, file, artboard, machine, animation, bg = null;
+
+window.boot = async ({ width, height, artboard: abName, stateMachine: smName, background }) => {
+  bg = background || null;
+  rive = await RiveCanvas({ locateFile: () => "/rive.wasm" });
+  const bytes = new Uint8Array(await (await fetch("/scene.riv")).arrayBuffer());
+  file = await rive.load(bytes);
+
+  artboard = abName ? file.artboardByName(abName) : file.defaultArtboard();
+  if (!artboard) throw new Error(`artboard ${abName ?? "(default)"} not found`);
+
+  // Draw at the artboard's own size unless told otherwise, so one rendered pixel
+  // is one artboard pixel.
+  canvas.width = width || artboard.bounds.maxX - artboard.bounds.minX;
+  canvas.height = height || artboard.bounds.maxY - artboard.bounds.minY;
+  renderer = rive.makeRenderer(canvas);
+
+  if (artboard.stateMachineCount() > 0) {
+    const sm = smName ? artboard.stateMachineByName(smName)
+                      : artboard.stateMachineByIndex(0);
+    machine = new rive.StateMachineInstance(sm, artboard);
+  } else if (artboard.animationCount() > 0) {
+    animation = new rive.LinearAnimationInstance(artboard.animationByIndex(0), artboard);
+  }
+  return { width: canvas.width, height: canvas.height,
+           driver: machine ? "state machine" : animation ? "animation" : "static" };
+};
+
+/** Pick a named animation instead of the state machine (files with neither wired up). */
+window.useAnimation = (name) => {
+  if (machine) { machine.delete(); machine = null; }
+  if (animation) { animation.delete(); animation = null; }
+  const la = name ? artboard.animationByName(name) : artboard.animationByIndex(0);
+  if (!la) return false;
+  animation = new rive.LinearAnimationInstance(la, artboard);
+  return true;
+};
+
+/** Everything the file declares, so a .riv can be read without the editor. */
+window.describe = async () => {
+  rive = rive || await RiveCanvas({ locateFile: () => "/rive.wasm" });
+  if (!file) {
+    const bytes = new Uint8Array(await (await fetch("/scene.riv")).arrayBuffer());
+    file = await rive.load(bytes);
+  }
+  const out = { artboardCount: file.artboardCount(), artboards: [] };
+  for (let i = 0; i < file.artboardCount(); i++) {
+    const ab = file.artboardByIndex(i);
+    const entry = {
+      index: i, name: ab.name,
+      width: ab.bounds.maxX - ab.bounds.minX,
+      height: ab.bounds.maxY - ab.bounds.minY,
+      animations: [], stateMachines: [],
+    };
+    for (let a = 0; a < ab.animationCount(); a++) entry.animations.push(ab.animationByIndex(a).name);
+    for (let s = 0; s < ab.stateMachineCount(); s++) {
+      const sm = ab.stateMachineByIndex(s);
+      const smi = new rive.StateMachineInstance(sm, ab);
+      const inputs = [];
+      for (let n = 0; n < smi.inputCount(); n++) {
+        const inp = smi.input(n);
+        const kind = inp.type === rive.SMIInput.bool ? "bool"
+                   : inp.type === rive.SMIInput.number ? "number"
+                   : inp.type === rive.SMIInput.trigger ? "trigger" : `type${inp.type}`;
+        inputs.push({ name: inp.name, kind, value: kind === "trigger" ? null : inp.value });
+      }
+      entry.stateMachines.push({ name: sm.name, inputs });
+      smi.delete();
+    }
+    out.artboards.push(entry);
+    ab.delete();
+  }
+  return out;
+};
+
+window.setInput = (name, value) => {
+  if (!machine) return false;
+  for (let n = 0; n < machine.inputCount(); n++) {
+    const inp = machine.input(n);
+    if (inp.name !== name) continue;
+    if (inp.type === rive.SMIInput.trigger) inp.fire(); else inp.value = value;
+    return true;
+  }
+  return false;
+};
+
+/** Advance animation time by exactly dt, then queue this tick's draw. */
+function step(dt) {
+  if (machine) {
+    if (typeof machine.advanceAndApply === "function") machine.advanceAndApply(dt);
+    else { machine.advance(dt); artboard.advance(dt); }
+  } else {
+    if (animation) { animation.advance(dt); animation.apply(1); }
+    artboard.advance(dt);
+  }
+  renderer.clear();
+  renderer.save();
+  renderer.align(rive.Fit.contain, rive.Alignment.center,
+    { minX: 0, minY: 0, maxX: canvas.width, maxY: canvas.height }, artboard.bounds);
+  artboard.draw(renderer);
+  renderer.restore();
+}
+
+/** Composite the frame onto an opaque backdrop, for artboards with no Fill. */
+function backdrop() {
+  if (!bg) return;
+  const ctx = canvas.getContext("2d");
+  ctx.save();
+  ctx.globalCompositeOperation = "destination-over";
+  ctx.fillStyle = bg;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.restore();
+}
+
+const raf = (fn) => rive.requestAnimationFrame(fn);
+
+/**
+ * Advance `count` frames of `dt` and return each as a PNG data URL.
+ * The caller batches so the page never holds a whole video in memory.
+ */
+window.renderBatch = (count, dt) => new Promise((resolve, reject) => {
+  const frames = [];
+  let armed = false;   // is a painted frame waiting to be read?
+  const tick = () => {
+    try {
+      if (armed) { backdrop(); frames.push(canvas.toDataURL("image/png")); armed = false; }
+      if (frames.length >= count) return resolve(frames);
+      step(dt);
+      armed = true;
+      raf(tick);
+    } catch (e) { reject(e); }
+  };
+  raf(tick);
+});
+
+window.__ready = true;
+</script>
+</body>
+</html>
