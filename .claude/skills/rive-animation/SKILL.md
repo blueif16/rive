@@ -251,3 +251,80 @@ Emit it as a **sibling** `<Artboard isComponent="true">` and reference it with
   runtime plays at the top; a nested one runs exactly what its `NestedAnimation`
   children name. It compiles, it inspects clean, and the rig renders unposed —
   the same signature as the two failures above.
+
+## 8. Where is it on screen? — measuring placement instead of eyeballing it
+
+"Does the character overlap the label" is not answerable by looking at a PNG, and
+a model's read of a render is not evidence. Two static sources look like they
+answer it and do not:
+
+| Source | What it actually returns |
+|---|---|
+| `rive inspect --json` → `computedWorldX/Y`, `computedWidth/Height` | **always `0`.** Derived properties, populated by the runtime; `inspect` is a static resolve. Verified empirically — do not build a checker on these. |
+| `rive <dir> --data-dump` | the bound view-model values, `globals`, and the nested artboards **by name only**. No coordinates until a script writes some. |
+
+**The only native world-space source is Luau, at runtime.** `rive docs
+luau/api/artboards`:
+
+```luau
+local n = self.instance:node('TeacherArt')   -- artboard:node(name) -> NodeData?
+local wt = n.worldTransform                  -- Mat2D: xx xy yx yy tx ty (read-only)
+local minPt, maxPt = self.instance:bounds()  -- artboard AABB
+```
+
+- `node.children` / `node.parent` walk the tree; `node:asPath()` returns
+  `PathData` (the commands) — transform those points by `worldTransform` for a
+  real per-node AABB. There is **no `bounds()` on a node and none on `Path`**;
+  the AABB is yours to compute.
+- `artboard:addToPath(path, transform)` pours a whole artboard's geometry into a
+  `Path` — the cheap route to one nested rig's outline.
+- Artboards also expose `advance`, so a script can step time and measure a
+  moving element at its extremes rather than at one arbitrary frame.
+
+Get the numbers out through data binding: have the script write each rect into
+view-model properties, then
+
+```bash
+rive . --data-dump=- --data-dump-every=1 --advance=52.5s   # JSON time series
+```
+
+### `--test` gates the math, not the scene
+
+`rive <dir> --test` runs Tests scripts and exits **6** on failure, but a Tests
+script has **no artboard handle** — it is for pure logic (the AABB/overlap
+helpers). Measure in a Node script, assert the geometry helpers in Tests.
+
+The shape is a **double wrapper**, and this is the trap:
+
+```luau
+return function(): Tests
+    return function(test: Tester)
+        test.group('overlap', function()
+            test.case('disjoint rects do not intersect', function(expect)
+                expect(rects.hit(a, b)).is(false)
+            end)
+        end)
+    end
+end
+```
+
+> **The published docs are wrong here.** rive.app (and therefore Context7's
+> mirror of `rive-docs`) shows a bare `function setup(test: Tester)`. That form
+> reports **"no Tests scripts found"** and the file is silently skipped — a green
+> run that tested nothing. `rive docs luau/protocols` states the double wrapper
+> explicitly. **The version-matched CLI docs beat the website every time.**
+
+### `rive-export` does not use the fast renderer
+
+SKILL.md §6 says GIF/MP4 go through `render.mjs`. **`scripts/rive-export` does
+not reference it at all** — `render_frames()` still shells one `rive
+--screenshot` per frame, rebuilding the `.riv` each time (~6 min for 52.5s, and
+it looks like a hang). Until that is fixed, drive the pipe yourself — note
+`-c:v png`, without which ffmpeg opens no encoder and writes a 0-byte file:
+
+```bash
+node render.mjs --riv=build/x.riv --fps=30 --duration=52.5 \
+  | ffmpeg -y -f image2pipe -c:v png -framerate 30 -i - \
+      -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" \
+      -c:v libx264 -pix_fmt yuv420p -crf 18 -movflags +faststart out.mp4
+```
