@@ -28,6 +28,7 @@ version-matched to the CLI.
 """
 
 import argparse
+import base64
 import json
 import os
 import struct
@@ -38,14 +39,24 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SCHEMA_CACHE = os.path.join(HERE, "rive-schema.json")
 
 UINT, STRING, DOUBLE, COLOR = 0, 1, 2, 3
+# Not a wire field type: `List<Id>` travels as field 1 (length-prefixed bytes)
+# whose payload is a run of varuints -- DataBindContext.sourcePathIds,
+# NestedArtboard.dataBindPathIds and friends. Reading it as one varuint eats
+# the length byte and the first id is then parsed as the next property key.
+ID_LIST = 4
+# Same wire encoding as String, but kept as raw bytes: FileAssetContents.bytes
+# is WebP/PNG/TTF/Luau bytecode, and a utf-8 decode with replacement changes
+# its length and content.
+BYTES = 5
 
 # schema type name -> how the byte stream encodes it
 FIELD_OF_TYPE = {
     "uint": UINT, "int": UINT, "int16": UINT, "uint8": UINT, "uint16": UINT,
-    "uint64": UINT, "bool": UINT, "Id": UINT, "List<Id>": UINT,
-    "String": STRING, "Bytes": STRING,
+    "uint64": UINT, "bool": UINT, "Id": UINT,
+    "String": STRING, "Bytes": BYTES,
     "double": DOUBLE,
     "Color": COLOR,
+    "List<Id>": ID_LIST,
 }
 
 
@@ -135,6 +146,19 @@ def read_value(r, field):
         return r.float32()
     if field == COLOR:
         return r.uint32()
+    if field == BYTES:
+        n = r.varuint()
+        v = r.d[r.i:r.i + n]
+        r.i += n
+        return v
+    if field == ID_LIST:
+        n = r.varuint()
+        sub = Reader(r.d[r.i:r.i + n])
+        r.i += n
+        out = []
+        while not sub.eof:
+            out.append(sub.varuint())
+        return out
     raise ValueError(f"unknown field type {field}")
 
 
@@ -156,11 +180,14 @@ def parse(path, schema):
         if k == 0:
             break
         toc.append(k)
-    # 2 bits per key, packed 16 to a 32-bit word
+    # 2 bits per key, but only FOUR keys per 32-bit word: the runtime's
+    # RuntimeHeader::read resets at `currentBit == 8`, so the top 24 bits of
+    # every word are padding. Packing 16 per word starts the object stream
+    # inside the bit table and the first "object" is garbage.
     toc_field = {}
-    word, bit = 0, 32
+    word, bit = 0, 8
     for k in toc:
-        if bit == 32:
+        if bit == 8:
             word, bit = r.uint32(), 0
         toc_field[k] = (word >> bit) & 3
         bit += 2
@@ -241,23 +268,12 @@ STACKED = {
     "LinearAnimation":          ("animation",           None),
     "KeyedObject":              ("keyedObject",         "animation"),
     "KeyedProperty":            ("keyedProperty",       "keyedObject"),
-    "KeyFrameDouble":           (None,                  "keyedProperty"),
-    "KeyFrameColor":            (None,                  "keyedProperty"),
-    "KeyFrameBool":             (None,                  "keyedProperty"),
-    "KeyFrameId":               (None,                  "keyedProperty"),
-    "KeyFrameUint":             (None,                  "keyedProperty"),
-    "KeyFrameString":           (None,                  "keyedProperty"),
-    "KeyFrameCallback":         (None,                  "keyedProperty"),
     "StateMachine":             ("stateMachine",        None),
     "StateMachineLayer":        ("layer",               "stateMachine"),
     "StateMachineBool":         (None,                  "stateMachine"),
     "StateMachineNumber":       (None,                  "stateMachine"),
     "StateMachineTrigger":      (None,                  "stateMachine"),
     "StateMachineListenerSingle": ("listener",          "stateMachine"),
-    "ListenerBoolChange":       (None,                  "listener"),
-    "ListenerNumberChange":     (None,                  "listener"),
-    "ListenerTriggerChange":    (None,                  "listener"),
-    "ListenerAlignTarget":      (None,                  "listener"),
     "AnimationState":           ("state",               "layer"),
     "AnyState":                 ("state",               "layer"),
     "EntryState":               ("state",               "layer"),
@@ -270,7 +286,69 @@ STACKED = {
     "TransitionBoolCondition":  (None,                  "transition"),
     "TransitionNumberCondition": (None,                 "transition"),
     "TransitionTriggerCondition": (None,                "transition"),
+    # data-bound conditions open a slot of their own: the runtime's
+    # TransitionComparator::import attaches every comparator to the latest
+    # TransitionViewModelConditionImporter, and the comparator's operand is a
+    # BindableProperty read just before it
+    "TransitionViewModelCondition": ("condition",       "transition"),
+    "TransitionArtboardCondition":  ("condition",       "transition"),
+    # a fire trigger belongs to whichever of state / transition was read last;
+    # opening a state pops the transition slot, so the order below is right
+    "StateMachineFireTrigger":  (None,                  ("transition", "state")),
+    "StateMachineFireEvent":    (None,                  ("transition", "state")),
 }
+
+# a newly opened container invalidates everything nested in the previous
+# one, or a stray keyframe lands in the wrong property
+DEEPER = {
+    "animation": ("keyedObject", "keyedProperty"),
+    "keyedObject": ("keyedProperty",),
+    "stateMachine": ("layer", "state", "transition", "condition", "listener"),
+    "layer": ("state", "transition", "condition", "listener"),
+    "state": ("transition", "condition"),
+    "transition": ("condition",),
+    "listener": ("condition",),
+}
+
+
+def stack_rule(type_name):
+    """(opens, attaches) for read-order types, by name or by family prefix."""
+    rule = STACKED.get(type_name)
+    if rule:
+        return rule
+    if type_name.startswith("KeyFrame"):
+        return (None, "keyedProperty")
+    if type_name.startswith("Listener"):
+        return (None, "listener")
+    if type_name.startswith("TransitionValue") or type_name.startswith("TransitionProperty"):
+        return (None, "condition")
+    if type_name.startswith("BindableProperty"):
+        return (None, ("condition", "listener"))
+    return None
+
+
+# DataBind and DataBindContext never enter the artboard's object list:
+# DataBind::import calls ArtboardImporter::addDataBind, and only addComponent
+# calls Artboard::addObject. So a bind consumes NO index -- every parentId,
+# interpolatorId and other Id after it is off by one per bind unless binds
+# are skipped when numbering. Nor does a bind store its target: it binds the
+# object read immediately before it (a DataBindContext with propertyKey 243
+# follows the ScriptInputNumber whose propertyValue it drives; 756 follows a
+# DataConverterInterpolator; 681 a DataConverterOperationValue).
+def is_databind(obj):
+    return obj["type"].startswith("DataBind")
+
+
+def runtime_index(objs):
+    """raw stream index -> index in the runtime object list, None for binds."""
+    out, n = [], 0
+    for o in objs:
+        if is_databind(o):
+            out.append(None)
+        else:
+            out.append(n)
+            n += 1
+    return out
 
 
 def build_tree(group, schema):
@@ -281,31 +359,34 @@ def build_tree(group, schema):
         o["_children"] = []
         o["_index"] = i
 
+    rt = runtime_index(objs)
+    by_rt = {r: o for o, r in zip(objs, rt) if r is not None}
     slots = {}
+    last_target = objs[0]
     for i, o in enumerate(objs):
         if i == 0:
             continue
-        rule = STACKED.get(o["type"])
+        if is_databind(o):
+            last_target["_children"].append(o)
+            continue
+        rule = stack_rule(o["type"])
         if rule:
             opens, attaches = rule
-            parent = slots.get(attaches) if attaches else objs[0]
-            if parent is None:          # stream out of order; keep it addressable
-                parent = objs[0]
+            candidates = attaches if isinstance(attaches, tuple) else (attaches,)
+            parent = objs[0]
+            if attaches:
+                parent = next((slots[c] for c in candidates if c in slots), objs[0])
             parent["_children"].append(o)
             if opens:
                 slots[opens] = o
-                # a newly opened container invalidates everything nested in the
-                # previous one, or a stray keyframe lands in the wrong property
-                for deeper in {"animation": ("keyedObject", "keyedProperty"),
-                               "keyedObject": ("keyedProperty",),
-                               "stateMachine": ("layer", "state", "transition", "listener"),
-                               "layer": ("state", "transition"),
-                               "state": ("transition",)}.get(opens, ()):
+                for deeper in DEEPER.get(opens, ()):
                     slots.pop(deeper, None)
+            last_target = o
             continue
         pid = o["_named"].get("parentId")
-        parent = objs[pid] if pid is not None and pid < len(objs) else objs[0]
+        parent = by_rt.get(pid, objs[0]) if pid is not None else objs[0]
         parent["_children"].append(o)
+        last_target = o
     return objs[0]
 
 
@@ -376,6 +457,10 @@ def to_rml(group, schema, artboard_name=None, indent="    ", prune=(), keep_anim
         elif not keep_animations and o["type"] in TIMELINE:
             mark(o)
 
+    # Id values are RUNTIME indices (binds excluded, see runtime_index); map
+    # them back to the raw stream index everything else here is keyed by.
+    rt2raw = {r: o["_index"] for o, r in zip(objs, runtime_index(objs)) if r is not None}
+
     # Anything still POINTING at a dropped object has to go too, or the compiler
     # rejects the dangling reference -- pruning a shape orphans the KeyedObject
     # that animates it. Repeat until it settles, since those cascade.
@@ -387,14 +472,17 @@ def to_rml(group, schema, artboard_name=None, indent="    ", prune=(), keep_anim
             td = types.get(str(o["typeKey"]), {})
             for key, val in o["props"].items():
                 spec = td.get("props", {}).get(str(key))
-                if not spec or spec["t"] not in ("Id", "List<Id>"):
+                # `List<Id>` is only ever a view-model PATH (sourcePathIds,
+                # dataBindPathIds, viewModelPathIds): file-level view model
+                # and property indices, never artboard objects.
+                if not spec or spec["t"] != "Id":
                     continue
                 # These three index sibling lists, not the object list -- a
                 # stateToId of 4 means "the layer's 5th state", and testing it
                 # against dropped OBJECT #4 deletes a live transition.
                 if spec["n"] in ("animationId", "stateToId", "inputId"):
                     continue
-                if int(val) in dropped:
+                if rt2raw.get(int(val)) in dropped:
                     mark(o)
                     grew = True
                     break
@@ -404,6 +492,7 @@ def to_rml(group, schema, artboard_name=None, indent="    ", prune=(), keep_anim
     # Only objects that actually hang off the artboard get an id; a stray
     # parentId would otherwise silently drop a whole subtree.
     ids = {i: f"1:{i + 1}" for i in range(len(objs))}
+    ref = {r: ids[raw] for r, raw in rt2raw.items()}     # Id value -> RML id
 
     # Not every Id indexes the object list. Three of them index a *sibling*
     # list instead, and resolving them against objects silently wires a state
@@ -456,9 +545,13 @@ def to_rml(group, schema, artboard_name=None, indent="    ", prune=(), keep_anim
                 target = sc["inputs"][n] if n < len(sc["inputs"]) else None
                 out.append(f'{name}="{ids[target["_index"]] if target else ""}"')
             elif t == "Id":
-                out.append(f'{name}="{ids.get(int(val), "")}"')
+                out.append(f'{name}="{ref.get(int(val), "")}"')
             elif t == "List<Id>":
-                out.append(f'{name}="{ids.get(int(val), "")}"')
+                # RML spells a path as dash-joined ids: sourcePathIds="0:40-0:45".
+                # The ids are the file-level ViewModel / ViewModelProperty
+                # elements, which a single-artboard extraction does not carry,
+                # so the raw indices are emitted for a human to rewire.
+                out.append(f'{name}="{"-".join(str(int(v)) for v in val)}"')
             elif "accepts" in spec:
                 opts = spec["accepts"]
                 out.append(f'{name}="{opts[int(val)] if int(val) < len(opts) else int(val)}"')
@@ -470,6 +563,9 @@ def to_rml(group, schema, artboard_name=None, indent="    ", prune=(), keep_anim
                 out.append(f'{name}="{fmt_num(val)}"')
             elif t == "String":
                 out.append(f'{name}="{esc(val)}"')
+            elif t == "Bytes":
+                # rive docs rigging: triangleIndexBytes="AAECAAID" -- base64
+                out.append(f'{name}="{base64.b64encode(val).decode("ascii")}"')
             else:
                 out.append(f'{name}="{int(val)}"')
         out.append(f'id="{ids[index]}"')
