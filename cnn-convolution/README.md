@@ -37,8 +37,13 @@ rive .                       # live preview window
 ```
 
 `generate.py` holds layout, colour and content; `timeline.py` holds the
-keyframes. The scene is ~720 objects with computed convolution values, so it is
-emitted rather than typed by hand.
+keyframes; `mascot.py` holds the teacher — the character docked at the bottom
+left, decoded out of a `.riv` into `teacher.rml` and recoloured for the dark
+stage on the way in. The scene is ~2700 objects with computed convolution
+values, so it is emitted rather than typed by hand.
+
+`teacher.rml` is `exclude`d in `rive.yaml`: it is an input to `mascot.py`, which
+splices a renumbered copy into `scene.rml`, not a second scene to compile.
 
 Change `IMG` or `FILTERS` at the top of `generate.py` and everything — cell
 colours, products, feature maps, the travelling values — recomputes.
