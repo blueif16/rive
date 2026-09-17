@@ -161,9 +161,15 @@ def compose(ids, L):
     # Back and forth: output -> patch, and input -> outputs.
     t = end_sweep + s(0.6)
     caption(5, t, t + s(4.4))
-    # forward: this output cell came from this patch
+    # forward: this output cell came from this patch.
+    # Swap the products to position 4 as the frame moves, or the column would
+    # still be showing position 8's arithmetic next to a highlighted cell (1,1).
     A.move(ids["kernelFrame"], t + s(0.4), t + s(1.0),
            L.kernel_xy(*L.POSITIONS[8]), L.kernel_xy(1, 1))
+    A.fade(ids["prodGroups"][8], t + s(0.4), t + s(0.7), 1, 0)
+    A.fade(ids["prodSums"][8], t + s(0.4), t + s(0.7), 1, 0)
+    A.fade(ids["prodGroups"][4], t + s(0.9), t + s(1.2), 0, 1)
+    A.fade(ids["prodSums"][4], t + s(0.9), t + s(1.2), 0, 1)
     A.show(ids["outRing"], t + s(0.9), t + s(4.2))
     A.key(ids["outRing"], A.X, t + s(0.9), L.out_xy(1, 1)[0])
     A.key(ids["outRing"], A.Y, t + s(0.9), L.out_xy(1, 1)[1])
@@ -173,6 +179,11 @@ def compose(ids, L):
     t2 = t + s(5.0)
     caption(6, t2, t2 + s(5.0))
     A.fade(ids["kernelFrame"], t2, t2 + s(0.3), 1, 0)
+    # no single kernel position applies here, so retire the arithmetic column
+    for oid in (ids["prodGroups"][4], ids["prodSums"][4],
+                ids["lblP"], ids["opEq"]):
+        A.fade(oid, t2, t2 + s(0.3), 1, 0)
+    A.show(ids["arrow"], t2 + s(0.4))      # takes over the vacated column
     A.show(ids["inputRing"], t2 + s(0.4), t2 + s(4.6))
     A.key(ids["inputRing"], A.X, t2 + s(0.4), L.in_xy(2, 2)[0])
     A.key(ids["inputRing"], A.Y, t2 + s(0.4), L.in_xy(2, 2)[1])
@@ -186,11 +197,8 @@ def compose(ids, L):
     # Change the nine numbers and it looks for something else.
     t3 = t2 + s(5.6)
     caption(7, t3, None)
-    A.fade(ids["prodGroups"][8], t3, t3 + s(0.4), 1, 0)
-    A.fade(ids["lblP"], t3, t3 + s(0.4), 1, 0)
-    A.fade(ids["opEq"], t3, t3 + s(0.4), 1, 0)
-    A.fade(ids["prodSums"][8], t3, t3 + s(0.4), 1, 0)
-    A.show(ids["arrow"], t3 + s(0.4))        # fills the products column's slot
+    # the products column and its arrow are already handled in S5 — re-fading
+    # them from 1 here would key them back ON at t3 before fading out again
 
     for fi in (1, 2):
         ft = t3 + s(0.8) + (fi - 1) * s(3.2)
