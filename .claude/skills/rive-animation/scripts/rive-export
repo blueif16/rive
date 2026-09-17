@@ -1,0 +1,325 @@
+#!/usr/bin/env python3
+"""Export a Rive CLI project to formats a human can open by double-clicking.
+
+The Rive CLI itself only emits .riv (needs a runtime), .rev (needs login + the
+Editor) and a single PNG. This wraps it into gif / mp4 / html / png.
+
+Everything is auto-detected from `rive inspect --json`: artboard size, the
+longest animation's duration and fps, and the state machine to play.
+
+Usage:
+    rive-export [PROJECT_DIR] [--format=all] [--fps=30] [--duration=1.5]
+                [--scale=1] [--out=DIR] [--artboard=NAME] [--keep-frames]
+
+Formats: gif, mp4, html, png, all (default: gif,html)
+"""
+
+import argparse
+import base64
+import json
+import os
+import shutil
+import subprocess
+import sys
+
+RUNTIME_VERSION = "2.42.2"  # @rive-app/webgl2, pinned for reproducibility
+
+
+def die(msg, code=1):
+    print(f"rive-export: {msg}", file=sys.stderr)
+    sys.exit(code)
+
+
+def run(cmd, **kw):
+    return subprocess.run(cmd, capture_output=True, text=True, **kw)
+
+
+def need(tool, hint):
+    if shutil.which(tool) is None:
+        die(f"{tool!r} not found on PATH. {hint}")
+
+
+def find_rive():
+    """The installer puts `rive` in ~/.rive/bin, which is often not yet on PATH."""
+    found = shutil.which("rive")
+    if found:
+        return found
+    fallback = os.path.expanduser("~/.rive/bin/rive")
+    if os.path.isfile(fallback) and os.access(fallback, os.X_OK):
+        return fallback
+    die("`rive` not found. Install it with:\n"
+        "    curl -fsSL https://releases.rive.app/cli/install.sh | sh\n"
+        '    echo \'export PATH="$HOME/.rive/bin:$PATH"\' >> ~/.zshrc')
+
+
+RIVE = None  # resolved in main()
+
+
+# --------------------------------------------------------------------------
+# scene interrogation
+# --------------------------------------------------------------------------
+
+def inspect(project, artboard=None):
+    """Return {width, height, state_machine, duration_frames, anim_fps}."""
+    cmd = [RIVE, "inspect", project, "--json"]
+    if artboard:
+        cmd.append(f"--artboard={artboard}")
+    r = run(cmd)
+    if r.returncode != 0:
+        die(f"`rive inspect` failed:\n{r.stderr.strip() or r.stdout.strip()}")
+    try:
+        doc = json.loads(r.stdout)
+    except json.JSONDecodeError:
+        die("`rive inspect --json` did not return JSON")
+
+    found = {"width": None, "height": None, "state_machine": None,
+             "duration_frames": None, "anim_fps": 60}
+
+    def walk(node):
+        if isinstance(node, dict):
+            t = node.get("type")
+            if t == "Artboard" and found["width"] is None:
+                found["width"] = node.get("width")
+                found["height"] = node.get("height")
+            elif t == "StateMachine" and found["state_machine"] is None:
+                found["state_machine"] = node.get("name")
+            elif t == "LinearAnimation":
+                dur = node.get("duration")
+                fps = node.get("fps", 60) or 60
+                if dur:
+                    secs = dur / fps
+                    best = found["duration_frames"]
+                    if best is None or secs > best[0]:
+                        found["duration_frames"] = (secs, dur, fps)
+            for v in node.values():
+                walk(v)
+        elif isinstance(node, list):
+            for v in node:
+                walk(v)
+
+    walk(doc)
+
+    problems = doc.get("problems", [])
+    errors = [p for p in problems if p.get("severity") == "error"]
+    if errors:
+        for p in errors:
+            print(f"  error {p.get('file')}:{p.get('line')} {p.get('message')}",
+                  file=sys.stderr)
+        die("scene has errors; fix them before exporting")
+
+    return {
+        "width": int(found["width"] or 500),
+        "height": int(found["height"] or 500),
+        "state_machine": found["state_machine"],
+        "seconds": found["duration_frames"][0] if found["duration_frames"] else None,
+    }
+
+
+# --------------------------------------------------------------------------
+# outputs
+# --------------------------------------------------------------------------
+
+def build_riv(project):
+    r = run([RIVE, project, "--once", "--format=json"])
+    try:
+        report = json.loads(r.stdout)
+    except json.JSONDecodeError:
+        die(f"build failed:\n{r.stderr.strip() or r.stdout.strip()}")
+    if not report.get("success"):
+        for e in report.get("errors", []):
+            print(f"  {e}", file=sys.stderr)
+        die("build failed")
+    return report["data"]["riv"]
+
+
+def render_frames(project, frames_dir, n_frames, out_fps, viewport, artboard):
+    """One CLI invocation per frame; each rebuilds and advances from t=0."""
+    os.makedirs(frames_dir, exist_ok=True)
+    for i in range(n_frames):
+        # --advance in bare frames == 60fps units. Always >=1: a capture with no
+        # advance is the authored rest pose, before the state machine has run.
+        advance = round(i * 60 / out_fps) + 1
+        cmd = [RIVE, project, f"--screenshot={frames_dir}/{i:05d}.png",
+               f"--advance={advance}", "--quiet"]
+        if viewport:
+            cmd.append(f"--viewport={viewport}")
+        if artboard:
+            cmd.append(f"--artboard={artboard}")
+        r = run(cmd)
+        if r.returncode != 0:
+            die(f"frame {i} failed:\n{r.stderr.strip() or r.stdout.strip()}")
+        sys.stdout.write(f"\r  rendering {i + 1}/{n_frames} frames")
+        sys.stdout.flush()
+    print()
+
+
+def write_gif(frames_dir, out, fps):
+    need("ffmpeg", "Install with `brew install ffmpeg`.")
+    vf = ("split[a][b];[a]palettegen=stats_mode=diff[p];"
+          "[b][p]paletteuse=dither=bayer:bayer_scale=3")
+    r = run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(fps),
+             "-i", f"{frames_dir}/%05d.png", "-vf", vf, "-loop", "0", out])
+    if r.returncode != 0:
+        die(f"ffmpeg (gif) failed:\n{r.stderr.strip()}")
+    return out
+
+
+def write_mp4(frames_dir, out, fps):
+    need("ffmpeg", "Install with `brew install ffmpeg`.")
+    r = run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(fps),
+             "-i", f"{frames_dir}/%05d.png",
+             "-vf", "scale=trunc(iw/2)*2:trunc(ih/2)*2",
+             "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18",
+             "-movflags", "+faststart", out])
+    if r.returncode != 0:
+        die(f"ffmpeg (mp4) failed:\n{r.stderr.strip()}")
+    return out
+
+
+HTML = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>{title}</title>
+<style>
+  html,body{{margin:0;height:100%;background:#0f1115;display:grid;place-items:center;}}
+  canvas{{max-width:100vw;max-height:100vh;}}
+  #err{{position:fixed;top:10px;left:10px;color:#ff6b6b;
+        font:13px ui-monospace,SFMono-Regular,Menlo,monospace;}}
+</style>
+</head>
+<body>
+<canvas id="c" width="{width}" height="{height}"></canvas>
+<div id="err"></div>
+<script src="https://unpkg.com/@rive-app/webgl2@{runtime}"></script>
+<script>
+// The .riv is inlined as base64 so this file opens straight from disk.
+// Fetching a sibling .riv over file:// is blocked by CORS; inlining avoids it.
+const b = atob("{b64}");
+const bytes = new Uint8Array(b.length);
+for (let i = 0; i < b.length; i++) bytes[i] = b.charCodeAt(i);
+
+const r = new rive.Rive({{
+  buffer: bytes.buffer,
+  canvas: document.getElementById("c"),
+  autoplay: true,
+  autoBind: true,{state_machine}
+  onLoad: () => r.resizeDrawingSurfaceToCanvas(),
+  onLoadError: (e) => {{
+    document.getElementById("err").textContent =
+      "Rive failed to load: " + e + " (this page needs internet on first open "
+      + "to fetch the runtime from unpkg)";
+  }}
+}});
+window.addEventListener("resize", () => r.resizeDrawingSurfaceToCanvas());
+</script>
+</body>
+</html>
+"""
+
+
+def write_html(riv_path, out, meta, title):
+    with open(riv_path, "rb") as f:
+        b64 = base64.b64encode(f.read()).decode("ascii")
+    sm = meta["state_machine"]
+    sm_line = f'\n  stateMachines: {json.dumps(sm)},' if sm else ""
+    with open(out, "w") as f:
+        f.write(HTML.format(title=title, width=meta["width"], height=meta["height"],
+                            runtime=RUNTIME_VERSION, b64=b64, state_machine=sm_line))
+    return out
+
+
+# --------------------------------------------------------------------------
+
+def main():
+    ap = argparse.ArgumentParser(add_help=True)
+    ap.add_argument("project", nargs="?", default=".")
+    ap.add_argument("--format", default="gif,html",
+                    help="gif, mp4, html, png, all (default: gif,html)")
+    ap.add_argument("--fps", type=int, default=30, help="output fps (default 30)")
+    ap.add_argument("--duration", type=float, default=None,
+                    help="seconds to capture (default: longest animation)")
+    ap.add_argument("--scale", type=float, default=1.0,
+                    help="multiply artboard size for the capture (default 1)")
+    ap.add_argument("--out", default=None, help="output dir (default <project>/build)")
+    ap.add_argument("--artboard", default=None)
+    ap.add_argument("--keep-frames", action="store_true")
+    args = ap.parse_args()
+
+    global RIVE
+    RIVE = find_rive()
+
+    project = os.path.abspath(args.project)
+    if not os.path.isfile(os.path.join(project, "rive.yaml")):
+        die(f"{project} is not a Rive project (no rive.yaml). "
+            f"Create one with `rive create <name>`.")
+
+    formats = {f.strip() for f in args.format.split(",") if f.strip()}
+    if "all" in formats:
+        formats = {"gif", "mp4", "html", "png"}
+    unknown = formats - {"gif", "mp4", "html", "png"}
+    if unknown:
+        die(f"unknown format(s): {', '.join(sorted(unknown))}")
+
+    name = os.path.basename(project)
+    out_dir = os.path.abspath(args.out) if args.out else os.path.join(project, "build")
+    os.makedirs(out_dir, exist_ok=True)
+
+    riv = build_riv(project)
+    riv = riv if os.path.isabs(riv) else os.path.join(project, riv)
+    meta = inspect(project, args.artboard)
+
+    seconds = args.duration or meta["seconds"] or 2.0
+    viewport = None
+    if args.scale != 1.0:
+        viewport = (f"{round(meta['width'] * args.scale)}"
+                    f"x{round(meta['height'] * args.scale)}")
+
+    print(f"  {name}: {meta['width']}x{meta['height']}, {seconds:.2f}s"
+          f"{', SM ' + meta['state_machine'] if meta['state_machine'] else ''}")
+
+    written = []
+
+    if "png" in formats:
+        out = os.path.join(out_dir, f"{name}.png")
+        cmd = [RIVE, project, f"--screenshot={out}", "--advance=1", "--quiet"]
+        if viewport:
+            cmd.append(f"--viewport={viewport}")
+        if args.artboard:
+            cmd.append(f"--artboard={args.artboard}")
+        r = run(cmd)
+        if r.returncode != 0:
+            die(f"screenshot failed:\n{r.stderr.strip()}")
+        written.append(out)
+
+    if formats & {"gif", "mp4"}:
+        frames_dir = os.path.join(out_dir, "frames")
+        shutil.rmtree(frames_dir, ignore_errors=True)
+        n = max(1, round(seconds * args.fps))
+        render_frames(project, frames_dir, n, args.fps, viewport, args.artboard)
+        if "gif" in formats:
+            written.append(write_gif(frames_dir,
+                                     os.path.join(out_dir, f"{name}.gif"), args.fps))
+        if "mp4" in formats:
+            written.append(write_mp4(frames_dir,
+                                     os.path.join(out_dir, f"{name}.mp4"), args.fps))
+        if not args.keep_frames:
+            shutil.rmtree(frames_dir, ignore_errors=True)
+
+    if "html" in formats:
+        written.append(write_html(riv, os.path.join(out_dir, f"{name}.html"),
+                                  meta, name))
+
+    print("\nwrote:")
+    for w in written:
+        size = os.path.getsize(w)
+        unit = f"{size / 1024:.0f} KB" if size >= 1024 else f"{size} B"
+        print(f"  {w}  ({unit})")
+    if any(w.endswith(".html") for w in written):
+        print("\n  the .html is self-contained — open it directly in a browser")
+        print("  (needs internet on first open to fetch the Rive runtime)")
+
+
+if __name__ == "__main__":
+    main()
