@@ -1,4 +1,10 @@
 name: cnn-convolution
+main: Artboard
+# teacher.rml is a source for mascot.py, not a second scene: generate.py splices
+# its artboard into scene.rml renumbered. Left in the scan it compiles twice and
+# every id collides.
+exclude:
+  - teacher.rml
 logs:
   file: build/rive.log
   problems: build/problems.log
