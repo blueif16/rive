@@ -234,3 +234,20 @@ signature of failure 1, not a geometry error.
 Bones (`RootBone`, `IKConstraint targetId`) and `Solo activeComponentId` survive
 extraction, so a rig stays drivable: move the IK target to aim a head, key the
 `Solo` to switch a variant.
+
+### Placing an extracted artboard inside another scene
+
+Emit it as a **sibling** `<Artboard isComponent="true">` and reference it with
+`<NestedArtboard artboardId="…">`. Three things to get right:
+
+- **Ids share one namespace across the whole document.** Renumber the extracted
+  artboard onto a different client (`1:N` → `2:N`) or it collides with the host
+  scene on every id it declares. Assert afterwards that no old prefix survives.
+- **Every `.rml` in the project directory compiles as one document.** A fragment
+  kept as an input file, not a scene, must be listed under `exclude:` in
+  `rive.yaml` — otherwise it is compiled twice and every id is a duplicate.
+- **A `<NestedArtboard>` with no `<NestedStateMachine>` child draws the rest
+  pose.** `defaultStateMachineId` only starts a machine on the artboard the
+  runtime plays at the top; a nested one runs exactly what its `NestedAnimation`
+  children name. It compiles, it inspects clean, and the rig renders unposed —
+  the same signature as the two failures above.
