@@ -314,6 +314,49 @@ end
 > run that tested nothing. `rive docs luau/protocols` states the double wrapper
 > explicitly. **The version-matched CLI docs beat the website every time.**
 
+### `place.mjs` — the placement tool
+
+`scripts/render/place.mjs` answers "where is everything" in numbers. It boots the
+same `harness.html` the renderer uses, so it measures exactly the pixels that
+would have been written.
+
+```bash
+node place.mjs --riv=build/x.riv --at=17.7                      # grid + components
+node place.mjs --riv=build/x.riv --at=2,17.7,43.3 --cols=80     # several moments, one pass
+node place.mjs --riv=build/x.riv --at=17.7 --nodes=Rig,Bubble   # name the blobs
+node place.mjs --riv=build/x.riv --at=17.7 --regions=r.json --json
+node place.mjs --riv=build/x.riv --sweep=0:52.5:0.25 --nodes=Rig,Bubble --rules=k.json
+```
+
+Three outputs, in the shape agent-layout tools have converged on (`spatial-tether`,
+`dom-density-map`, `playwright-spatial-layout-mcp`): a **density grid**, **exact
+boxes**, and an explicit **collision/rule verdict**.
+
+- **grid** — ink fraction per cell as ` .:+#@`. A whole 1200x675 frame reads in
+  ~20 lines; a still costs ~2000 tokens and tells you less.
+- **components** — 8-connected ink blobs with pixel-exact `x0,y0,x1,y1,w,h,px`.
+- **nodes** — `worldTransform()` gives a named node's world ORIGIN; the blob
+  containing that origin is what carries the name. **Extents never come from the
+  API** — `Node` has no width/height and `inspect`'s `computed*` are all 0.
+- **rules** — `not_overlapping · above · below · left_of · right_of · contains ·
+  disconnected`, each `{type,a,b,gap?,requirePresent?}`. **Exit 1 on any failure**,
+  so `--sweep` is a build gate over the whole timeline, not one sampled frame.
+
+`disconnected` is the sharpest of these and needs no threshold: if two names
+resolve to the **same connected component**, their ink is physically touching.
+That is how the lesson's three dock crossings were found — a 0.25s sweep of 52.5s
+takes ~60s and pinned them to 17.50–18.00, 37.50–38.00, 43.25–43.50.
+
+> **The trap this tool can fall into, already fixed once.** A rig's origin is
+> often a floor pivot a pixel or two off its own artwork, so an exact
+> point-in-box test misses and the name goes unassigned. The fallback — attach
+> the nearest blob — is correct at ~2px and **catastrophic at 60px**: an element
+> that is not painted at all (a bubble before it fades in) adopts whatever blob
+> is nearby and the gate reports a collision that does not exist. `--anchorReach`
+> defaults to **8px** for that reason. If a name is not painted, leave it
+> unassigned and let the rule skip via `requirePresent: false` — never guess
+> which blob it was.
+
 ### `rive-export` does not use the fast renderer
 
 SKILL.md §6 says GIF/MP4 go through `render.mjs`. **`scripts/rive-export` does

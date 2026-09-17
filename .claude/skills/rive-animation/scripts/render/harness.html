@@ -152,6 +152,144 @@ window.renderBatch = (count, dt) => new Promise((resolve, reject) => {
   raf(tick);
 });
 
+// ------------------------------------------------------------------ probe ---
+// Placement measurement. The runtime exposes worldTransform() on a named
+// TransformComponent but NO width/height, so a node's on-screen EXTENT is not
+// derivable from the API — the painted pixels are the only ground truth. Every
+// measurement below is therefore taken from the frame buffer, and the analysis
+// runs in-page so a probe returns a few hundred bytes instead of a 3 MB bitmap.
+
+/** Step exactly `n` frames and resolve once frame `n` is actually PAINTED. */
+window.advanceFrames = (n, dt) => new Promise((resolve, reject) => {
+  let i = 0;
+  const tick = () => {
+    try {
+      if (i >= n) return resolve(true);   // last step's paint landed this tick
+      step(dt); i++;
+      raf(tick);
+    } catch (e) { reject(e); }
+  };
+  raf(tick);
+});
+
+/** World-space origin of a named node, or null. Origin only — never extent. */
+window.probeNode = (name) => {
+  try {
+    const tc = artboard.transformComponent(name);
+    if (!tc) return null;
+    const m = tc.worldTransform();
+    return { name, tx: m.tx, ty: m.ty, xx: m.xx, xy: m.xy, yx: m.yx, yy: m.yy };
+  } catch (e) { return null; }
+};
+
+/**
+ * Measure the painted frame.
+ *  - background = modal colour, so this works on any palette without config
+ *  - ink        = pixels far enough from that background
+ *  - grid       = per-cell ink fraction (the "bitmask" an agent reads)
+ *  - components = 8-connected ink blobs with pixel-exact bounding boxes
+ *  - regions    = caller-named rects, with coverage and the ink bbox inside
+ */
+window.analyze = ({ cols = 60, rows = 0, threshold = 24, minPx = 120,
+                    regions = null, maxComponents = 40 } = {}) => {
+  const W = canvas.width, H = canvas.height;
+  const px = canvas.getContext("2d").getImageData(0, 0, W, H).data;
+
+  // Modal colour at 5-bit precision = the background, whatever the palette is.
+  const hist = new Map();
+  for (let i = 0; i < px.length; i += 4) {
+    const k = ((px[i] >> 3) << 10) | ((px[i + 1] >> 3) << 5) | (px[i + 2] >> 3);
+    hist.set(k, (hist.get(k) || 0) + 1);
+  }
+  let bgKey = 0, bgCount = -1;
+  for (const [k, c] of hist) if (c > bgCount) { bgCount = c; bgKey = k; }
+  const bg = [((bgKey >> 10) & 31) << 3, ((bgKey >> 5) & 31) << 3, (bgKey & 31) << 3];
+
+  const ink = new Uint8Array(W * H);
+  let inkTotal = 0;
+  for (let p = 0, i = 0; p < W * H; p++, i += 4) {
+    const dr = px[i] - bg[0], dg = px[i + 1] - bg[1], db = px[i + 2] - bg[2];
+    if (dr * dr + dg * dg + db * db > threshold * threshold && px[i + 3] > 8) {
+      ink[p] = 1; inkTotal++;
+    }
+  }
+
+  // Square-ish cells: derive rows from the aspect ratio unless pinned.
+  const cw = W / cols;
+  const r = rows || Math.max(1, Math.round(H / cw / 2));   // /2 = terminal char aspect
+  const ch = H / r;
+  const grid = [];
+  for (let gy = 0; gy < r; gy++) {
+    const row = [];
+    for (let gx = 0; gx < cols; gx++) {
+      const x0 = Math.floor(gx * cw), x1 = Math.min(W, Math.ceil((gx + 1) * cw));
+      const y0 = Math.floor(gy * ch), y1 = Math.min(H, Math.ceil((gy + 1) * ch));
+      let n = 0;
+      for (let y = y0; y < y1; y++) { const o = y * W; for (let x = x0; x < x1; x++) n += ink[o + x]; }
+      row.push((x1 - x0) * (y1 - y0) ? n / ((x1 - x0) * (y1 - y0)) : 0);
+    }
+    grid.push(row);
+  }
+
+  // 8-connected components, iterative so a full-width blob cannot blow the stack.
+  const lbl = new Int32Array(W * H).fill(-1);
+  const comps = [];
+  const stack = new Int32Array(W * H);
+  for (let s = 0; s < W * H; s++) {
+    if (!ink[s] || lbl[s] !== -1) continue;
+    const id = comps.length;
+    let sp = 0; stack[sp++] = s; lbl[s] = id;
+    let x0 = W, y0 = H, x1 = -1, y1 = -1, count = 0;
+    while (sp > 0) {
+      const p = stack[--sp], y = (p / W) | 0, x = p - y * W;
+      count++;
+      if (x < x0) x0 = x; if (x > x1) x1 = x;
+      if (y < y0) y0 = y; if (y > y1) y1 = y;
+      for (let dy = -1; dy <= 1; dy++) {
+        const ny = y + dy; if (ny < 0 || ny >= H) continue;
+        for (let dx = -1; dx <= 1; dx++) {
+          const nx = x + dx; if (nx < 0 || nx >= W) continue;
+          const q = ny * W + nx;
+          if (ink[q] && lbl[q] === -1) { lbl[q] = id; stack[sp++] = q; }
+        }
+      }
+    }
+    comps.push({ x0, y0, x1, y1, w: x1 - x0 + 1, h: y1 - y0 + 1, px: count });
+  }
+  comps.sort((a, b) => b.px - a.px);
+  const kept = comps.filter((c) => c.px >= minPx).slice(0, maxComponents)
+                    .map((c, i) => ({ id: i, ...c }));
+
+  // Named rects: how much ink is inside, and where inside it actually sits.
+  let regionOut = null;
+  if (regions) {
+    regionOut = {};
+    for (const [name, [rx0, ry0, rx1, ry1]] of Object.entries(regions)) {
+      const ax0 = Math.max(0, Math.floor(rx0)), ax1 = Math.min(W, Math.ceil(rx1));
+      const ay0 = Math.max(0, Math.floor(ry0)), ay1 = Math.min(H, Math.ceil(ry1));
+      let n = 0, bx0 = W, by0 = H, bx1 = -1, by1 = -1;
+      for (let y = ay0; y < ay1; y++) {
+        const o = y * W;
+        for (let x = ax0; x < ax1; x++) if (ink[o + x]) {
+          n++;
+          if (x < bx0) bx0 = x; if (x > bx1) bx1 = x;
+          if (y < by0) by0 = y; if (y > by1) by1 = y;
+        }
+      }
+      const area = Math.max(0, (ax1 - ax0)) * Math.max(0, (ay1 - ay0));
+      regionOut[name] = {
+        rect: [rx0, ry0, rx1, ry1], area, inkPx: n,
+        coverage: area ? n / area : 0,
+        inkBox: bx1 < 0 ? null : [bx0, by0, bx1, by1],
+      };
+    }
+  }
+
+  return { w: W, h: H, bg, inkTotal, inkFraction: inkTotal / (W * H),
+           cols, rows: r, cellW: cw, cellH: ch, grid,
+           components: kept, componentsTotal: comps.length, regions: regionOut };
+};
+
 window.__ready = true;
 </script>
 </body>
