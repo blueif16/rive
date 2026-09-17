@@ -218,6 +218,39 @@ resolving the three against objects wires transitions to arbitrary Shapes; on
 merely share an integer with something you removed. Both produce a file that
 builds with 0 errors and renders in the wrong pose.
 
+**3. Four wire-format traps that masquerade as "the file is newer than this CLI".**
+Learned from an Editor export (format 7.2, data binding + Luau); `rivdec.py`
+handles all four, and the row's *symptom* is how you recognise a fifth.
+
+| Trap | Symptom | Fact |
+|---|---|---|
+| ToC bit table | `property 6 is neither in the schema nor the ToC` on the **first** object | `RuntimeHeader::read` resets at `currentBit == 8`: **4 keys per uint32**, not 16; the top 24 bits are padding. Files with ≤4 ToC keys hide the bug. |
+| `List<Id>` | the same error deep in the file, right after a path-list property | encoded as **length-prefixed bytes holding varuints** (field 1), not one varuint. `sourcePathIds`, `dataBindPathIds`, `viewModelPathIds`. |
+| `Bytes` | asset sizes ~50% off, WebP/TTF/bytecode fail to decode | keep raw; utf-8-with-replacement rewrites the payload. RML wants `triangleIndexBytes` as base64. |
+| `DataBind*` | a `NestedStateMachine` parented to a `DataBindContext`; most `interpolatorId`s landing on non-interpolators | `DataBind::import` calls `addDataBind`, never `addObject`: a bind **consumes no index**. Number the object list without them. A bind stores no target either — it binds the **object read immediately before it**. |
+
+The gate that settles an index scheme: across every artboard, each
+`interpolatorId` must resolve to a `*Interpolator` and no `parentId` to a bind.
+Under raw numbering `Chicken` had 194 of 253 wrong; skipping binds, 0.
+
+Path lists are not object references. `sourcePathIds="1-0-3"` is *ViewModel 1 →
+its property 0 → that view model's property 3*, indexes into the file-level
+`ViewModel` / `ViewModelProperty*` objects that precede the first `Artboard`. A
+single-artboard `--rml` cannot carry them, so it emits the raw integers and the
+build fails loudly (`is not a reference`) instead of wiring binds to arbitrary
+shapes. Strip the binds, or emit the view models alongside.
+
+The state-machine section has more read-order rules than the table in (1), all
+in `stack_rule()`: `TransitionViewModelCondition` opens under the latest
+transition and owns a `BindableProperty*` (+ its bind) and one or two
+comparators; `StateMachineFireTrigger` belongs to whichever of state /
+transition was read last; a `StateMachineListenerSingle` owns its
+`BindableProperty*` and `ListenerViewModelChange`.
+
+Scripts come out as **Luau bytecode** (`00 07 03` + string table), not source:
+`--publish` compiles server-side and embeds bytecode plus a signature. The
+string table still lists every identifier, which is enough to read the logic.
+
 **Verifying an extraction takes more than a clean build.** Both failures above
 pass `--verify`. Render the source `.riv` and the extraction at the same size and
 timestamp and compare them side by side:
