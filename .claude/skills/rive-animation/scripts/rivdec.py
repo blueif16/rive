@@ -223,15 +223,85 @@ def artboards(doc, schema):
     return groups
 
 
+# The format nests two different ways, and using the wrong one silently
+# flattens a whole subtree:
+#
+#   drawables  carry `parentId`, an index into the artboard's object list
+#   timelines  carry NO parentId at all -- a KeyedObject belongs to the
+#   & state    LinearAnimation most recently seen in the stream, a
+#   machines   KeyedProperty to the last KeyedObject, a KeyFrame to the last
+#              KeyedProperty. Same for StateMachine > Layer > State >
+#              Transition > Condition.
+#
+# Attaching the second group by parentId puts 2400 keyframes directly under
+# the Artboard: it still compiles, but the runtime rejects the orphans
+# ("Failed to import object of type 26") and the animation never runs.
+STACKED = {
+    # type                       opens this slot        attaches to this slot
+    "LinearAnimation":          ("animation",           None),
+    "KeyedObject":              ("keyedObject",         "animation"),
+    "KeyedProperty":            ("keyedProperty",       "keyedObject"),
+    "KeyFrameDouble":           (None,                  "keyedProperty"),
+    "KeyFrameColor":            (None,                  "keyedProperty"),
+    "KeyFrameBool":             (None,                  "keyedProperty"),
+    "KeyFrameId":               (None,                  "keyedProperty"),
+    "KeyFrameUint":             (None,                  "keyedProperty"),
+    "KeyFrameString":           (None,                  "keyedProperty"),
+    "KeyFrameCallback":         (None,                  "keyedProperty"),
+    "StateMachine":             ("stateMachine",        None),
+    "StateMachineLayer":        ("layer",               "stateMachine"),
+    "StateMachineBool":         (None,                  "stateMachine"),
+    "StateMachineNumber":       (None,                  "stateMachine"),
+    "StateMachineTrigger":      (None,                  "stateMachine"),
+    "StateMachineListenerSingle": ("listener",          "stateMachine"),
+    "ListenerBoolChange":       (None,                  "listener"),
+    "ListenerNumberChange":     (None,                  "listener"),
+    "ListenerTriggerChange":    (None,                  "listener"),
+    "ListenerAlignTarget":      (None,                  "listener"),
+    "AnimationState":           ("state",               "layer"),
+    "AnyState":                 ("state",               "layer"),
+    "EntryState":               ("state",               "layer"),
+    "ExitState":                ("state",               "layer"),
+    "BlendState1D":             ("state",               "layer"),
+    "BlendStateDirect":         ("state",               "layer"),
+    "BlendAnimation1D":         (None,                  "state"),
+    "BlendAnimationDirect":     (None,                  "state"),
+    "StateTransition":          ("transition",          "state"),
+    "TransitionBoolCondition":  (None,                  "transition"),
+    "TransitionNumberCondition": (None,                 "transition"),
+    "TransitionTriggerCondition": (None,                "transition"),
+}
+
+
 def build_tree(group, schema):
-    """Attach each object to its parent, returning the artboard's children."""
+    """Attach each object to its parent, returning the artboard node."""
     objs = group["objects"]
     for i, o in enumerate(objs):
         o["_named"] = named(o, schema)
         o["_children"] = []
         o["_index"] = i
+
+    slots = {}
     for i, o in enumerate(objs):
         if i == 0:
+            continue
+        rule = STACKED.get(o["type"])
+        if rule:
+            opens, attaches = rule
+            parent = slots.get(attaches) if attaches else objs[0]
+            if parent is None:          # stream out of order; keep it addressable
+                parent = objs[0]
+            parent["_children"].append(o)
+            if opens:
+                slots[opens] = o
+                # a newly opened container invalidates everything nested in the
+                # previous one, or a stray keyframe lands in the wrong property
+                for deeper in {"animation": ("keyedObject", "keyedProperty"),
+                               "keyedObject": ("keyedProperty",),
+                               "stateMachine": ("layer", "state", "transition", "listener"),
+                               "layer": ("state", "transition"),
+                               "state": ("transition",)}.get(opens, ()):
+                    slots.pop(deeper, None)
             continue
         pid = o["_named"].get("parentId")
         parent = objs[pid] if pid is not None and pid < len(objs) else objs[0]
@@ -288,16 +358,6 @@ def to_rml(group, schema, artboard_name=None, indent="    ", prune=(), keep_anim
     objs = group["objects"]
     types = schema["types"]
 
-    # A state machine's states are grouped by stream order, not parentId, so
-    # nesting them by parent produces objects the importer rejects. Animations
-    # are safe; the consumer re-authors the state machine anyway.
-    ANIM_ONLY = {"StateMachine", "StateMachineLayer", "AnimationState", "AnyState",
-                 "EntryState", "ExitState", "StateTransition", "BlendState1D",
-                 "BlendStateDirect", "StateMachineListenerSingle", "ListenerBoolChange",
-                 "ListenerAlignTarget", "ListenerNumberChange", "ListenerTriggerChange",
-                 "StateMachineBool", "StateMachineNumber", "StateMachineTrigger",
-                 "StateMachineListener", "TransitionBoolCondition",
-                 "TransitionNumberCondition", "TransitionTriggerCondition"}
     TIMELINE = {"LinearAnimation", "KeyedObject", "KeyedProperty", "KeyFrameDouble",
                 "KeyFrameColor", "KeyFrameId", "KeyFrameBool", "KeyFrameString",
                 "KeyFrameUint", "CubicValueInterpolator", "CubicEaseInterpolator",
@@ -311,7 +371,7 @@ def to_rml(group, schema, artboard_name=None, indent="    ", prune=(), keep_anim
             mark(c)
 
     for o in objs:
-        if o["_index"] in prune or o["type"] in ANIM_ONLY:
+        if o["_index"] in prune:
             mark(o)
         elif not keep_animations and o["type"] in TIMELINE:
             mark(o)
@@ -338,9 +398,35 @@ def to_rml(group, schema, artboard_name=None, indent="    ", prune=(), keep_anim
     # parentId would otherwise silently drop a whole subtree.
     ids = {i: f"1:{i + 1}" for i in range(len(objs))}
 
+    # Not every Id indexes the object list. Three of them index a *sibling*
+    # list instead, and resolving them against objects silently wires a state
+    # transition to a random Shape:
+    #   animationId -> the artboard's Nth LinearAnimation
+    #   stateToId   -> the Nth state of the layer the transition lives in
+    #   inputId     -> the Nth input of the state machine it belongs to
+    STATE_TYPES = {"AnimationState", "AnyState", "EntryState", "ExitState",
+                   "BlendState1D", "BlendStateDirect"}
+    INPUT_TYPES = {"StateMachineBool", "StateMachineNumber", "StateMachineTrigger"}
+
+    animations = [o for o in objs if o["type"] == "LinearAnimation"]
+
+    scoped = {}      # object index -> {"states": [...], "inputs": [...]}
+
+    def scope(node, states=None, inputs=None):
+        if node["type"] == "StateMachine":
+            inputs = [c for c in node["_children"] if c["type"] in INPUT_TYPES]
+        if node["type"] == "StateMachineLayer":
+            states = [c for c in node["_children"] if c["type"] in STATE_TYPES]
+        scoped[node["_index"]] = {"states": states or [], "inputs": inputs or []}
+        for c in node["_children"]:
+            scope(c, states, inputs)
+
+    scope(objs[0])
+
     def attrs(obj, index):
         td = types.get(str(obj["typeKey"]), {})
         props = td.get("props", {})
+        sc = scoped.get(index, {"states": [], "inputs": []})
         out = []
         for key, val in obj["props"].items():
             spec = props.get(str(key))
@@ -350,7 +436,19 @@ def to_rml(group, schema, artboard_name=None, indent="    ", prune=(), keep_anim
             if name in SKIP_PROPS or spec.get("derived"):
                 continue
             t = spec["t"]
-            if t == "Id":
+            if name == "animationId":
+                n = int(val)
+                target = animations[n] if n < len(animations) else None
+                out.append(f'{name}="{ids[target["_index"]] if target else ""}"')
+            elif name == "stateToId":
+                n = int(val)
+                target = sc["states"][n] if n < len(sc["states"]) else None
+                out.append(f'{name}="{ids[target["_index"]] if target else ""}"')
+            elif name == "inputId":
+                n = int(val)
+                target = sc["inputs"][n] if n < len(sc["inputs"]) else None
+                out.append(f'{name}="{ids[target["_index"]] if target else ""}"')
+            elif t == "Id":
                 out.append(f'{name}="{ids.get(int(val), "")}"')
             elif t == "List<Id>":
                 out.append(f'{name}="{ids.get(int(val), "")}"')
@@ -388,12 +486,21 @@ def to_rml(group, schema, artboard_name=None, indent="    ", prune=(), keep_anim
         else:
             lines.append(f"{pad}<{tag} {a}/>")
 
-    root = objs[0]
     name = artboard_name or group["name"]
     p = group["props"]
-    head = (f'{indent}<Artboard name="{esc(name)}" '
-            f'width="{fmt_num(p.get("width", 0))}" '
-            f'height="{fmt_num(p.get("height", 0))}" id="{ids[0]}">')
+    root = objs[0]
+    # The artboard's own defaultStateMachineId indexes the state machine list,
+    # so point it at the first one that survived the prune.
+    sm = next((o for o in objs
+               if o["type"] == "StateMachine" and o["_index"] not in dropped), None)
+    style = next((c for c in root["_children"]
+                  if c["type"] == "LayoutComponentStyle"), None)
+    head = (f'{indent}<Artboard'
+            + (f' defaultStateMachineId="{ids[sm["_index"]]}"' if sm else "")
+            + (f' styleId="{ids[style["_index"]]}"' if style else "")
+            + f' name="{esc(name)}"'
+            f' width="{fmt_num(p.get("width", 0))}"'
+            f' height="{fmt_num(p.get("height", 0))}" id="{ids[0]}">')
     lines.append(head)
     for c in root["_children"]:
         emit(c, 2)
