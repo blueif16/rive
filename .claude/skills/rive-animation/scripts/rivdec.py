@@ -226,9 +226,10 @@ def artboards(doc, schema):
 def build_tree(group, schema):
     """Attach each object to its parent, returning the artboard's children."""
     objs = group["objects"]
-    for o in objs:
+    for i, o in enumerate(objs):
         o["_named"] = named(o, schema)
         o["_children"] = []
+        o["_index"] = i
     for i, o in enumerate(objs):
         if i == 0:
             continue
@@ -240,7 +241,7 @@ def build_tree(group, schema):
 
 def print_tree(node, schema, depth=0, out=sys.stdout):
     n = node["_named"]
-    bits = []
+    bits = [f"#{node['_index']}"]
     for k in ("name", "width", "height", "x", "y", "colorValue", "thickness",
               "radius", "rotation", "opacity", "text"):
         if k in n:
@@ -278,10 +279,60 @@ def esc(s):
             .replace(">", "&gt;").replace('"', "&quot;"))
 
 
-def to_rml(group, schema, artboard_name=None, indent="    "):
-    """Emit one decoded artboard as RML, ids renumbered, parents implied."""
+def to_rml(group, schema, artboard_name=None, indent="    ", prune=(), keep_animations=True):
+    """Emit one decoded artboard as RML, ids renumbered, parents implied.
+
+    `prune` drops objects by index along with their descendants -- how a part
+    of the source graphic (a pair of glasses, say) gets left behind.
+    """
     objs = group["objects"]
     types = schema["types"]
+
+    # A state machine's states are grouped by stream order, not parentId, so
+    # nesting them by parent produces objects the importer rejects. Animations
+    # are safe; the consumer re-authors the state machine anyway.
+    ANIM_ONLY = {"StateMachine", "StateMachineLayer", "AnimationState", "AnyState",
+                 "EntryState", "ExitState", "StateTransition", "BlendState1D",
+                 "BlendStateDirect", "StateMachineListenerSingle", "ListenerBoolChange",
+                 "ListenerAlignTarget", "ListenerNumberChange", "ListenerTriggerChange",
+                 "StateMachineBool", "StateMachineNumber", "StateMachineTrigger",
+                 "StateMachineListener", "TransitionBoolCondition",
+                 "TransitionNumberCondition", "TransitionTriggerCondition"}
+    TIMELINE = {"LinearAnimation", "KeyedObject", "KeyedProperty", "KeyFrameDouble",
+                "KeyFrameColor", "KeyFrameId", "KeyFrameBool", "KeyFrameString",
+                "KeyFrameUint", "CubicValueInterpolator", "CubicEaseInterpolator",
+                "CubicInterpolator", "ElasticInterpolator"}
+
+    dropped = set()
+
+    def mark(o):
+        dropped.add(o["_index"])
+        for c in o["_children"]:
+            mark(c)
+
+    for o in objs:
+        if o["_index"] in prune or o["type"] in ANIM_ONLY:
+            mark(o)
+        elif not keep_animations and o["type"] in TIMELINE:
+            mark(o)
+
+    # Anything still POINTING at a dropped object has to go too, or the compiler
+    # rejects the dangling reference -- pruning a shape orphans the KeyedObject
+    # that animates it. Repeat until it settles, since those cascade.
+    while True:
+        grew = False
+        for o in objs:
+            if o["_index"] in dropped:
+                continue
+            td = types.get(str(o["typeKey"]), {})
+            for key, val in o["props"].items():
+                spec = td.get("props", {}).get(str(key))
+                if spec and spec["t"] in ("Id", "List<Id>") and int(val) in dropped:
+                    mark(o)
+                    grew = True
+                    break
+        if not grew:
+            break
 
     # Only objects that actually hang off the artboard get an id; a stray
     # parentId would otherwise silently drop a whole subtree.
@@ -319,12 +370,12 @@ def to_rml(group, schema, artboard_name=None, indent="    "):
         out.append(f'id="{ids[index]}"')
         return " ".join(out)
 
-    index_of = {id(o): i for i, o in enumerate(objs)}
-
     lines = []
 
     def emit(obj, depth):
-        i = index_of[id(obj)]
+        i = obj["_index"]
+        if i in dropped:
+            return
         tag = obj["type"]
         a = attrs(obj, i)
         pad = indent * depth
@@ -359,6 +410,11 @@ def main():
     ap.add_argument("--json", action="store_true")
     ap.add_argument("--rml", action="store_true",
                     help="emit the artboard as RML on stdout")
+    ap.add_argument("--prune", default="",
+                    help="comma separated object indices to drop, with their children")
+    ap.add_argument("--no-animations", action="store_true",
+                    help="artwork only: leave the source timelines behind")
+    ap.add_argument("--name", default=None, help="rename the emitted artboard")
     ap.add_argument("--rive", default=os.path.expanduser("~/.rive/bin/rive"))
     args = ap.parse_args()
 
@@ -396,8 +452,10 @@ def main():
                         "children": [strip(c) for c in n["_children"]]}
             print(json.dumps(strip(root), indent=1))
         if args.rml:
+            prune = {int(x) for x in args.prune.split(",") if x.strip()}
             print('<Rive version="1" kind="fragment">')
-            print(to_rml(g, schema))
+            print(to_rml(g, schema, artboard_name=args.name, prune=prune,
+                         keep_animations=not args.no_animations))
             print("</Rive>")
 
 
