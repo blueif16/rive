@@ -387,7 +387,14 @@ def to_rml(group, schema, artboard_name=None, indent="    ", prune=(), keep_anim
             td = types.get(str(o["typeKey"]), {})
             for key, val in o["props"].items():
                 spec = td.get("props", {}).get(str(key))
-                if spec and spec["t"] in ("Id", "List<Id>") and int(val) in dropped:
+                if not spec or spec["t"] not in ("Id", "List<Id>"):
+                    continue
+                # These three index sibling lists, not the object list -- a
+                # stateToId of 4 means "the layer's 5th state", and testing it
+                # against dropped OBJECT #4 deletes a live transition.
+                if spec["n"] in ("animationId", "stateToId", "inputId"):
+                    continue
+                if int(val) in dropped:
                     mark(o)
                     grew = True
                     break
