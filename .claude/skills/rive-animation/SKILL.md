@@ -176,7 +176,9 @@ python3 scripts/rivdec.py char.riv --artboard=A --rml --prune=56 > scene.rml
 
 `--prune=<#index>` drops an object with its descendants — how you leave part of a
 graphic behind. Pruning is transitive over `Id`-typed properties, because dropping
-a Shape orphans the `KeyedObject` animating it and the build then fails.
+a Shape orphans the `KeyedObject` animating it and the build then fails — but it
+**must skip the three sibling-list Ids below**, or a `stateToId` of 4 gets read as
+"object 4" and pruning an unrelated object silently deletes a live transition.
 
 Property types come from `rive schema --json` (cached in `rive-schema.json`), so
 keys are typed by the version-matched CLI rather than guessed. Rebuild that cache
@@ -209,8 +211,12 @@ renders in its unposed rest pose.
 
 Everything else — `objectId`, `sourceId`, `targetId`, `activeComponentId`,
 `interpolatorId`, `styleId` — goes through `context->resolve()`, the object list.
-Resolve the three above against objects and transitions silently wire to arbitrary
-Shapes.
+
+This distinction bites **twice**, and the second one is easy to miss: on *emit*,
+resolving the three against objects wires transitions to arbitrary Shapes; on
+*prune*, testing them against the dropped-object set deletes live objects that
+merely share an integer with something you removed. Both produce a file that
+builds with 0 errors and renders in the wrong pose.
 
 **Verifying an extraction takes more than a clean build.** Both failures above
 pass `--verify`. Render the source `.riv` and the extraction at the same size and
