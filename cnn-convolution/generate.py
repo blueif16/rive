@@ -20,6 +20,7 @@ import os
 import pathlib
 import sys
 
+import mascot
 import timeline
 
 SHOW_ALL = os.environ.get("SHOW_ALL") == "1"
@@ -89,26 +90,36 @@ def readable_on(c):
 
 
 # ----------------------------------------------------------------- layout ---
+# The diagram is lifted and tightened so every part of it clears y=500; the
+# 175px that frees up at the bottom is the mascot band, where the teacher
+# stands at the left dock and the caption reads out beside it.
 W, H = 1200, 675
 
-IN_CELL, IN_GAP = 68, 6
+IN_CELL, IN_GAP = 62, 5
 IN_PITCH = IN_CELL + IN_GAP
-IN_X, IN_Y = 64, 200
-IN_W = N_IN * IN_CELL + (N_IN - 1) * IN_GAP          # 364
+IN_X, IN_Y = 64, 148
+IN_W = N_IN * IN_CELL + (N_IN - 1) * IN_GAP          # 330 -> 64..394
 
-SM_CELL, SM_GAP = 50, 5
+SM_CELL, SM_GAP = 46, 5
 SM_PITCH = SM_CELL + SM_GAP
-SM_W = N_K * SM_CELL + (N_K - 1) * SM_GAP            # 160
+SM_W = N_K * SM_CELL + (N_K - 1) * SM_GAP            # 148
 
-K_X, K_Y = 496, 302
-P_X, P_Y = 704, 302
+K_X, K_Y = 486, 239                                  # 486..634
+P_X, P_Y = 700, 239                                  # 700..848
 
-OUT_CELL, OUT_GAP = 68, 6
+OUT_CELL, OUT_GAP = 62, 5
 OUT_PITCH = OUT_CELL + OUT_GAP
-OUT_W = N_OUT * OUT_CELL + (N_OUT - 1) * OUT_GAP     # 216
-OUT_X, OUT_Y = 928, 274
+OUT_W = N_OUT * OUT_CELL + (N_OUT - 1) * OUT_GAP     # 196 -> 930..1126
+OUT_X, OUT_Y = 930, 215
 
-KERNEL_W = N_K * IN_CELL + (N_K - 1) * IN_GAP        # 216
+KERNEL_W = N_K * IN_CELL + (N_K - 1) * IN_GAP        # 196
+
+LABEL_RISE = 34                                      # section label above block
+
+BAND_Y, BAND_H = 500, H - 500                        # the mascot band
+CAP_X, CAP_W = 235, 925                              # caption, right of the dock
+CAP_H = 60
+CAP_Y = BAND_Y + (BAND_H - CAP_H) / 2                # vertically centred
 
 FONT_UI, FONT_MONO = "1:1", "1:2"
 
@@ -207,13 +218,18 @@ CAPTIONS = [
 def build():
     body, overlay, ids = [], [], {}
 
-    _, t = text(64, 38, 900, 40, "How a filter turns an image into a feature map",
+    _, t = text(64, 34, 900, 40, "How a filter turns an image into a feature map",
                 27, INK, FONT_UI, align="left", name="Title")
     body.append(t)
 
+    # the teacher, docked at the left of the band (renumbered + recoloured in
+    # mascot.py; its artboard is emitted as a sibling of this one)
+    body.append(mascot.nested_rml(nid(), mascot.state_machine_id()))
+
+    # the captions read out beside the teacher, in the band it stands in
     ids["caption"] = []
     for n, cap in enumerate(CAPTIONS):
-        i, t = text(64, 84, 1080, 30, cap, 17, INK_MUTED, FONT_UI,
+        i, t = text(CAP_X, CAP_Y, CAP_W, CAP_H, cap, 17, INK_MUTED, FONT_UI,
                     align="left", name=f"Cap{n}", opacity=0)
         ids["caption"].append(i)
         body.append(t)
@@ -223,8 +239,8 @@ def build():
             ("lblK",   K_X,   SM_W,  K_Y,   "FILTER   3 x 3"),
             ("lblP",   P_X,   SM_W,  P_Y,   "MULTIPLY"),
             ("lblOut", OUT_X, OUT_W, OUT_Y, "FEATURE MAP   3 x 3")):
-        i, t = text(x - 50, y - 36, w + 100, 22, label, 12, INK_DIM, FONT_UI,
-                    name=key, opacity=0)
+        i, t = text(x - 50, y - LABEL_RISE, w + 100, 22, label, 12, INK_DIM,
+                    FONT_UI, name=key, opacity=0)
         ids[key] = i
         body.append(t)
 
@@ -397,10 +413,17 @@ if __name__ == "__main__":
         '            </StateMachineLayer>\n'
         '        </StateMachine>\n'
         '    </Artboard>\n'
+        # the teacher artboard is a SIBLING of the lesson, not a child of it;
+        # the lesson reaches it through the NestedArtboard emitted in build()
+        '    ' + mascot.artboard_rml() + '\n'
+        '    ' + mascot.component_asset_rml("1:60") + '\n'
         f'    <FontAsset file="Inter.ttf" name="Inter" id="{FONT_UI}"/>\n'
         f'    <FontAsset file="JetBrainsMono-Regular.ttf" name="Mono" '
         f'id="{FONT_MONO}"/>\n'
         '</Rive>\n')
     pathlib.Path("scene.rml").write_text(doc)
+    mx0, mx1, my0, my1 = mascot.bounds()
     print(f"scene.rml  {len(doc):,} bytes | {_id[0] - 100} ids | "
           f"{duration} frames ({duration / 60:.1f}s)")
+    print(f"           teacher {mascot.artboard_id()} at {mascot.scale():.4f} "
+          f"-> x {mx0:.0f}..{mx1:.0f}  y {my0:.0f}..{my1:.0f}")
