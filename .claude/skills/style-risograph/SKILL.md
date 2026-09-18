@@ -84,6 +84,17 @@ plan with knockouts, its tone plan, its motif rhyme and its one live element. Pi
 subjects with `references/subjects-and-composition.md`; pick moves with
 `references/motion-vocabulary.md`.
 
+Two entry sizes, chosen by how long the scene is on screen, so the spec's length
+tracks what the builder can use:
+- **Full entry** (the fixed shape, 150–300 words) for any scene held ≥ 0.5 s, for
+  every scene the camera moves through, and for the first and last scene of the piece.
+- **Compact entry** (five lines, ≤ 80 words: silhouette · anchor landing · inks with
+  roles and misregistration · knockouts · live element) for montage scenes on screen
+  < 0.5 s. A montage scene never needs pixel coordinates; it needs a readable
+  silhouette and a plate plan.
+Coordinates in any entry are given only where the anchor rule or a knockout depends on
+them.
+
 ## Output shape
 
 One Markdown document with exactly these sections, in this order. Use the templates in
@@ -120,7 +131,8 @@ Required. If any Required item fails, revise before returning.
   and the coverage cap for large solids.
 - Section 10 has at least six checks, each answerable by a measurement or a still, and
   one of them measures the anchor position at every act boundary.
-- Scene count meets the enumeration from Step 2 plus surplus; no scene is a name only.
+- Scene count meets the enumeration from Step 2 plus surplus; no scene is a name only,
+  and every scene uses the entry size its hold time calls for.
 
 Must not: gradients without a screen; black ink; crossfades other than a single-ink
 drain; text beyond a title or signature; facial acting; per-frame random values; subjects
