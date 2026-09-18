@@ -1,0 +1,5 @@
+runs/*/node_modules/
+runs/*/.venv/
+env-*/node_modules/
+env-*/.venv/
+**/__pycache__/

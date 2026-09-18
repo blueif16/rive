@@ -1,0 +1,67 @@
+<Rive version="1" kind="fragment">
+  <Artboard name="Main" id="1:8" x="0" y="0" width="1200" height="600" defaultStateMachineId="1:10" styleId="1:6" clip="true">
+    <LayoutComponentStyle name="Main Style" id="1:6"/>
+    <Fill name="Background">
+      <SolidColor colorValue="FFF7F7FA" name="C"/>
+    </Fill>
+    <Node x="140" y="250" name="Stage">
+      <Node x="0" y="0" name="Box" id="1:21">
+        <Text x="0" y="24" width="70.4648" height="48" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+          <TextStylePaint fontSize="20" fontAssetId="1:4" name="st0" id="1:22">
+            <Fill name="F">
+              <SolidColor colorValue="FF3B3730" name="C"/>
+            </Fill>
+          </TextStylePaint>
+          <TextValueRun styleId="1:22" text="hello" name="run"/>
+        </Text>
+        <Shape x="0" y="0" name="R">
+          <Rectangle originX="0" originY="0" width="160" height="96" cornerRadiusTL="14" name="P"/>
+          <Fill name="F">
+            <SolidColor colorValue="FFEDECE1" name="C"/>
+          </Fill>
+          <Stroke thickness="1.5" cap="butt" join="miter" name="S">
+            <SolidColor colorValue="FFD9D3C6" name="C"/>
+          </Stroke>
+        </Shape>
+      </Node>
+    </Node>
+    <StateMachine name="Main" id="1:10">
+      <StateMachineLayer name="Layer 1" id="1:23">
+        <AnyState x="400" y="0"/>
+        <ExitState x="560" y="0"/>
+        <EntryState x="0" y="16">
+          <StateTransition stateToId="1:24"/>
+        </EntryState>
+        <AnimationState x="200" y="0" animationId="1:9" id="1:24"/>
+      </StateMachineLayer>
+    </StateMachine>
+    <LinearAnimation loopValue="loop" duration="720" fps="60" name="Loop" id="1:9">
+      <KeyedObject objectId="1:21">
+        <KeyedProperty propertyKey="13">
+          <KeyFrameDouble value="0" frame="0" interpolationType="linear"/>
+          <KeyFrameDouble value="760" frame="360" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.65" y1="0" x2="0.35" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0" frame="720" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.65" y1="0" x2="0.35" y2="1"/>
+          </KeyFrameDouble>
+        </KeyedProperty>
+        <KeyedProperty propertyKey="18">
+          <KeyFrameDouble value="1" frame="0" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0.35" frame="360" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="1" frame="720" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+        </KeyedProperty>
+      </KeyedObject>
+    </LinearAnimation>
+  </Artboard>
+  <FontAsset file="fonts/sans-medium.ttf" name="sansMedium" id="1:5"/>
+  <FontAsset file="fonts/sans.ttf" name="sans" id="1:4"/>
+  <FontAsset file="fonts/serif-italic.ttf" name="serifItalic" id="1:3"/>
+  <FontAsset file="fonts/serif.ttf" name="serif" id="1:2"/>
+</Rive>
