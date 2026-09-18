@@ -62,6 +62,7 @@ ACCENT    = "FF22D3EE"          # cyan — the live edge: kernel, travelling val
 POS_COLOR = (245, 158, 11)      # amber  — positive response
 NEG_COLOR = (99, 102, 241)      # indigo — negative response
 ZERO_COLOR = (25, 31, 43)
+BUBBLE    = "FF141C2A"          # the speech bubble, one notch off the stage
 IMG_DARK, IMG_LIGHT = (18, 24, 34), (238, 243, 249)
 
 
@@ -117,9 +118,22 @@ KERNEL_W = N_K * IN_CELL + (N_K - 1) * IN_GAP        # 196
 LABEL_RISE = 34                                      # section label above block
 
 BAND_Y, BAND_H = 500, H - 500                        # the mascot band
-CAP_X, CAP_W = 235, 925                              # caption, right of the dock
-CAP_H = 60
-CAP_Y = BAND_Y + (BAND_H - CAP_H) / 2                # vertically centred
+
+# The speech bubble. One fixed box for all nine lines, so it never breathes from
+# caption to caption and the tail keeps its relationship to the head.
+#
+# Measured in the real Inter at 17px, the longest of the nine captions is 595px,
+# so a 604px text column puts every line on ONE line — which is what lets the
+# box be short enough to sit level with the head rather than across the face.
+# Re-measure if the captions change: scripts/render, a canvas measureText pass.
+BUB_TEXT_W = 604
+BUB_PAD, BUB_PADY = 26, 19
+BUB_W, BUB_H = BUB_TEXT_W + 2 * BUB_PAD, 56          # 656 x 56
+BUB_Y = 506                                          # 506..562, level with the head
+BUB_GAP = 26                                         # air between head and box
+BUB_X_L = mascot.dock("L") + mascot.width() / 2 + BUB_GAP            # 198.5
+BUB_X_R = mascot.dock("R") - mascot.width() / 2 - BUB_GAP - BUB_W    # 345.5
+BUB_TAIL_Y = BUB_H / 2                               # local y, level with the head
 
 FONT_UI, FONT_MONO = "1:1", "1:2"
 
@@ -222,17 +236,44 @@ def build():
                 27, INK, FONT_UI, align="left", name="Title")
     body.append(t)
 
-    # the teacher, docked at the left of the band (renumbered + recoloured in
-    # mascot.py; its artboard is emitted as a sibling of this one)
-    body.append(mascot.nested_rml(nid(), mascot.state_machine_id()))
+    # the teacher, on a rig node the timeline drives (renumbered + recoloured in
+    # mascot.py; its artboard is emitted as a sibling of this one). Declared
+    # BEFORE the bubble: first declared paints on top, so when the character
+    # crosses the band it passes in front of the box rather than behind it,
+    # keeping its face visible. It only ever crosses while the bubble is empty.
+    ids["rig"], ids["rigArt"] = nid(), nid()
+    body.append(mascot.rig_rml(ids["rig"], ids["rigArt"],
+                               mascot.state_machine_id()))
 
-    # the captions read out beside the teacher, in the band it stands in
-    ids["caption"] = []
+    # ---- the speech bubble ------------------------------------------------
+    # One box for all nine lines. The text wraps inside a fixed width and sits
+    # vertically centred, so a 60-character line and a 76-character one both
+    # look deliberate and the tail never moves relative to the bubble. Sizing
+    # the box per line instead would make it breathe on every caption.
+    kids, ids["caption"] = [], []
     for n, cap in enumerate(CAPTIONS):
-        i, t = text(CAP_X, CAP_Y, CAP_W, CAP_H, cap, 17, INK_MUTED, FONT_UI,
-                    align="left", name=f"Cap{n}", opacity=0)
+        i, t = text(BUB_PAD, BUB_PADY, BUB_TEXT_W, BUB_H - 2 * BUB_PADY,
+                    cap, 17, INK_MUTED, FONT_UI, align="left", name=f"Cap{n}",
+                    opacity=0)
         ids["caption"].append(i)
-        body.append(t)
+        kids.append(t)
+
+    # tails: one per dock, crossfaded as the teacher crosses the frame. A
+    # Triangle points up by default, so -90 deg aims it left and +90 right.
+    for key, x, rot in (("tailL", 2.0, -1.5707963),
+                        ("tailR", BUB_W - 2.0, 1.5707963)):
+        i = nid()
+        ids[key] = i
+        kids.append(f'<Shape x="{x}" y="{BUB_TAIL_Y}" rotation="{rot}" '
+                    f'name="{key}" id="{i}" opacity="0">'
+                    f'<Triangle originX="0.5" originY="0.5" width="22" '
+                    f'height="15" name="P"/><Fill name="F">'
+                    f'<SolidColor colorValue="{BUBBLE}" name="C"/></Fill></Shape>')
+
+    _, bg = rect(0, 0, BUB_W, BUB_H, BUBBLE, 16, "BubbleBg")
+    kids.append(bg)                       # declared last, so it paints behind
+    ids["bubble"], g = group(BUB_X_L, BUB_Y, "Bubble", kids, opacity=0)
+    body.append(g)
 
     for key, x, w, y, label in (
             ("lblIn",  IN_X,  IN_W,  IN_Y,  "INPUT   5 x 5"),

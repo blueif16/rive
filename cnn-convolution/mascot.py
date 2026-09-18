@@ -48,8 +48,9 @@ SRC_W, SRC_H = SRC_X1 - SRC_X0, SRC_Y1 - SRC_Y0
 
 # ------------------------------------------------------------- placement ---
 TARGET_H = 165.0      # how tall the character stands in the lesson
-DOCK_X   = 56.0       # its left edge
-FEET_Y   = 672.0      # where it stands — 3px of air under it, band ends at 675
+MARGIN   = 56.0       # air between the character and the frame edge
+FEET_Y   = 664.0      # where it stands — 11px under it, band ends at 675
+HOP      = 44.0       # how high the arc lifts it when crossing between docks
 
 # where the teacher artboard sits on the editor's stage, clear of the lesson's
 STAGE_X, STAGE_Y = 1300, 0
@@ -59,15 +60,39 @@ def scale():
     return TARGET_H / SRC_H
 
 
-def origin():
-    """NestedArtboard x/y: the nested artboard's 0,0 in lesson coordinates."""
+def width():
+    return SRC_W * scale()
+
+
+# The rig Node's origin is the character's FEET CENTRE, not its top-left, so
+# that moving it is one x, leaning it is one rotation, and mirroring it is
+# scaleX=-1 without the character sliding sideways as it flips.
+def nested_origin():
+    """NestedArtboard x/y inside the rig node."""
     s = scale()
-    return (DOCK_X - SRC_X0 * s, FEET_Y - SRC_Y1 * s)
+    return (-(SRC_X0 + SRC_X1) / 2 * s, -SRC_Y1 * s)
 
 
-def bounds():
-    """Where the character actually lands in the lesson, for a layout check."""
-    return (DOCK_X, DOCK_X + SRC_W * scale(), FEET_Y - TARGET_H, FEET_Y)
+def dock(side, frame_w=1200.0):
+    """Feet-centre of the left or right dock, in lesson coordinates."""
+    half = width() / 2
+    return (MARGIN + half) if side == "L" else (frame_w - MARGIN - half)
+
+
+def bounds(side="L"):
+    """Where the character lands, for a layout check."""
+    cx, half = dock(side), width() / 2
+    return (cx - half, cx + half, FEET_Y - TARGET_H, FEET_Y)
+
+
+def apex_top():
+    """Highest the head reaches, at the top of a dock-to-dock arc.
+
+    The crossing is the only time the character leaves its band, so this is the
+    number that has to be checked against the diagram — and the one thing no
+    layout box can constrain, since a transform is by definition an excursion
+    out of the flow."""
+    return FEET_Y - HOP - TARGET_H
 
 
 # ---------------------------------------------------------------- colour ---
@@ -174,8 +199,13 @@ def component_asset_rml(asset_id, name="Teacher"):
             f'name="{name}" id="{asset_id}"/>')
 
 
-def nested_rml(node_id, sm_id, name="Teacher"):
-    """The <NestedArtboard> that drops the character into the lesson band.
+def rig_rml(rig_id, nested_id, sm_id, name="Teacher"):
+    """The character, wrapped in a rig Node the timeline can drive.
+
+    Returns (rig_node_id, xml). Animate the RIG, never the NestedArtboard: the
+    nested one carries the scale that fits the character to the band, and keying
+    scaleX on it would fight that. The rig's own scaleX is free to run 1 -> -1,
+    which is how the character turns to face the other dock.
 
     The <NestedStateMachine> child is not optional dressing. `defaultStateMachineId`
     only starts a machine on the artboard the runtime plays at the top; a nested
@@ -183,19 +213,24 @@ def nested_rml(node_id, sm_id, name="Teacher"):
     compiles, inspects and draws — in its UNPOSED rest pose, which for this rig
     puts an ear across the cheek and loses an eye.
     """
-    x, y = origin()
+    x, y = nested_origin()
     s = scale()
-    return (f'<NestedArtboard artboardId="{artboard_id()}" x="{x:.2f}" '
-            f'y="{y:.2f}" scaleX="{s:.4f}" scaleY="{s:.4f}" '
-            f'name="{name}" id="{node_id}">'
-            f'<NestedStateMachine animationId="{sm_id}" name="Idle"/>'
-            f'</NestedArtboard>')
+    inner = (f'<NestedArtboard artboardId="{artboard_id()}" x="{x:.2f}" '
+             f'y="{y:.2f}" scaleX="{s:.4f}" scaleY="{s:.4f}" '
+             f'name="{name}Art" id="{nested_id}">'
+             f'<NestedStateMachine animationId="{sm_id}" name="Idle"/>'
+             f'</NestedArtboard>')
+    return (f'<Node x="{dock("L"):.2f}" y="{FEET_Y:.2f}" name="{name}Rig" '
+            f'id="{rig_id}">{inner}</Node>')
 
 
 if __name__ == "__main__":
     cmap, eyes = colour_map()
-    x0, x1, y0, y1 = bounds()
     print(f"teacher artboard {artboard_id()}  scale {scale():.4f}  "
-          f"origin {origin()[0]:.2f},{origin()[1]:.2f}")
-    print(f"lands at x {x0:.0f}..{x1:.0f}  y {y0:.0f}..{y1:.0f}")
+          f"width {width():.1f}  nested origin "
+          f"{nested_origin()[0]:.2f},{nested_origin()[1]:.2f}")
+    for side in ("L", "R"):
+        x0, x1, y0, y1 = bounds(side)
+        print(f"  dock {side}: centre {dock(side):7.1f}  "
+              f"x {x0:.0f}..{x1:.0f}  y {y0:.0f}..{y1:.0f}")
     print(f"{len(cmap)} SolidColors recoloured, eyes {eyes}")
