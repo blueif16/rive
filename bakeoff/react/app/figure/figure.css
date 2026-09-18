@@ -1,0 +1,744 @@
+/* =========================================================================
+   A taxonomy of world models — animated essay figure.
+   DOM + SVG + CSS only. Every continuous motion is a CSS animation on an
+   element that is never unmounted, so fading a lane out and back in cannot
+   restart it. Beats only change opacity.
+   ========================================================================= */
+
+.wmf {
+  /* house palette */
+  --page: #f7f7fa;
+  --cream: #edece1;
+  --ink: #3b3730;
+  --muted: #a3a09d;
+  --warm-dk: #746e63;
+  --warm-lt: #948778;
+  --accent: #c5683c;
+  --indigo: #4b4fdd;
+  --lavender: #7c71b5;
+  --edge: #d9d3c6;
+  --lav-wash: #e9e6f5;
+
+  --serif: ui-serif, "Iowan Old Style", "Hoefler Text", "Palatino Linotype",
+    Palatino, Georgia, serif;
+  --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Helvetica Neue", Arial, sans-serif;
+
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --xfade: 520ms;
+
+  container-type: inline-size;
+  display: block;
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wmf *,
+.wmf *::before,
+.wmf *::after {
+  box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------- sizing scale */
+/* Narrow is the default; container queries step it up. The figure queries
+   itself, so it behaves identically at 390px of viewport or 390px of column. */
+
+.wmf-plate {
+  --lane-h: 148px;
+  --lane-gap: 30px;
+  --card-h: 30px;
+  --card-gap: 8px;
+  --card-w: 100%;
+
+  --frame-h: 84px;
+  --frame-gap: 12px;
+  --frame-w: calc(var(--frame-h) * 7 / 6);
+  --frame-pitch: calc(var(--frame-w) + var(--frame-gap));
+
+  --chip-h: 66px;
+  --chip-gap: 12px;
+  --chip-pitch: 106px;
+
+  --pend-w: 66px;
+  --plot-h: 92px;
+  --sim-gap: 0px;
+  --pend-plot-gap: 16px;
+  --wmf-amp: calc(var(--plot-h) * 0.3);
+  --wmf-swing: 24deg;
+
+  --fade: 28px;
+  --fade-l: 22px;
+
+  --verb-size: 19px;
+  --label-size: 9px;
+  --chip-size: 13px;
+  --micro-size: 8.5px;
+  --plot-label: 9px;
+  --title-size: 27px;
+  --title-sub-size: 10px;
+
+  /* timing */
+  --sim-cycle: 5s;
+  --film-cycle: 12.6s;
+  --chip-step: 0.92s;
+  --chip-cycle: calc(var(--chip-step) * 6);
+
+  background: var(--page);
+  border-radius: 10px;
+  padding: 16px 14px 18px;
+}
+
+@container (min-width: 560px) {
+  .wmf-plate {
+    --lane-h: 112px;
+    --lane-gap: 32px;
+    --card-w: 150px;
+
+    --frame-h: 90px;
+    --frame-gap: 14px;
+
+    --chip-h: 76px;
+    --chip-gap: 14px;
+    --chip-pitch: 128px;
+
+    --pend-w: 80px;
+    --plot-h: 98px;
+    --sim-gap: 40px;
+    --pend-plot-gap: 30px;
+
+    --fade: 44px;
+    --fade-l: 0px;
+
+    --verb-size: 22px;
+    --label-size: 9.5px;
+    --chip-size: 14px;
+    --micro-size: 9px;
+    --plot-label: 9.5px;
+    --title-size: 32px;
+    --title-sub-size: 11px;
+
+    padding: 22px 20px 24px;
+  }
+}
+
+@container (min-width: 860px) {
+  .wmf-plate {
+    --lane-h: 128px;
+    --lane-gap: 40px;
+    --card-w: 176px;
+
+    --frame-h: 106px;
+    --frame-gap: 17px;
+
+    --chip-h: 88px;
+    --chip-gap: 16px;
+    --chip-pitch: 152px;
+
+    --pend-w: 92px;
+    --plot-h: 112px;
+    --sim-gap: 62px;
+    --pend-plot-gap: 42px;
+
+    --fade: 54px;
+
+    --verb-size: 26px;
+    --label-size: 10.5px;
+    --chip-size: 15.5px;
+    --micro-size: 9.5px;
+    --plot-label: 10px;
+    --title-size: 38px;
+    --title-sub-size: 12px;
+
+    padding: 28px 26px 30px;
+  }
+}
+
+/* --------------------------------------------------------------- shell */
+
+.wmf-stage {
+  position: relative;
+}
+
+.wmf-lanes {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--lane-gap);
+}
+
+.wmf-lane {
+  position: relative;
+  height: var(--lane-h);
+  display: flex;
+  flex-direction: column;
+  gap: var(--card-gap);
+  transition: opacity var(--xfade) var(--ease);
+}
+
+.wmf-lane[data-dim="true"] {
+  opacity: 0;
+}
+
+/* --------------------------------------------------------- label card */
+
+.wmf-card {
+  /* the card is second in the DOM so it paints over the stream at wide widths;
+     stacked layouts pull it back to the top of the lane */
+  order: -1;
+  flex: none;
+  height: var(--card-h);
+  width: 100%;
+  background: var(--cream);
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 10px;
+  padding: 0 12px;
+  z-index: 2;
+}
+
+.wmf-card-verb {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: var(--verb-size);
+  line-height: 1.05;
+  color: var(--ink);
+}
+
+.wmf-card-out {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  font-size: var(--label-size);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.wmf-card-arrow {
+  font-style: normal;
+  font-size: 1.15em;
+  line-height: 1;
+  opacity: 0.85;
+}
+
+.wmf-lane[data-lane="renderer"] .wmf-card-out {
+  color: var(--warm-dk);
+}
+.wmf-lane[data-lane="simulator"] .wmf-card-out {
+  color: var(--indigo);
+}
+.wmf-lane[data-lane="planner"] .wmf-card-out {
+  color: var(--lavender);
+}
+
+/* ------------------------------------------------------------- media */
+
+.wmf-media {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 var(--fade-l),
+    #000 calc(100% - var(--fade)),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 var(--fade-l),
+    #000 calc(100% - var(--fade)),
+    transparent 100%
+  );
+}
+
+.wmf-lane[data-lane="simulator"] .wmf-media {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+@container (min-width: 560px) {
+  .wmf-lane {
+    display: block;
+  }
+  .wmf-card {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--card-w);
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 0 10px;
+  }
+  .wmf-card-verb {
+    font-size: var(--verb-size);
+  }
+  .wmf-media {
+    position: absolute;
+    inset: 0 0 0 var(--media-left, 0px);
+  }
+  .wmf-lane[data-lane="simulator"] .wmf-media {
+    --media-left: calc(var(--card-w) + var(--sim-gap));
+  }
+}
+
+/* ============================== RENDERER — a strip of pictures ========= */
+
+.wmf-film {
+  position: absolute;
+  inset: 0;
+}
+
+.wmf-film-track {
+  position: absolute;
+  top: 0;
+  right: calc(var(--frame-pitch) * -12);
+  height: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  will-change: transform;
+  animation: wmf-film var(--film-cycle) linear infinite;
+}
+
+@keyframes wmf-film {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(calc(var(--frame-pitch) * -12), 0, 0);
+  }
+}
+
+.wmf-cell {
+  flex: none;
+  width: var(--frame-w);
+  height: var(--frame-h);
+  margin-left: var(--frame-gap);
+}
+
+.wmf-cell-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.wmf-cell-base {
+  fill: var(--cream);
+  stroke: var(--ink);
+  stroke-width: 0.9;
+  stroke-opacity: 0.5;
+}
+.wmf-cell-perf {
+  fill: #fdfdfb;
+}
+.wmf-cell-far {
+  fill: var(--warm-lt);
+  opacity: 0.5;
+}
+.wmf-cell-near {
+  fill: var(--warm-dk);
+}
+.wmf-cell-sun {
+  fill: var(--accent);
+}
+.wmf-cell-ground {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 0.8;
+  stroke-opacity: 0.4;
+}
+
+/* ============================ SIMULATOR — one continuous signal ======== */
+
+.wmf-sim {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--pend-plot-gap);
+}
+
+.wmf-system {
+  flex: none;
+  width: var(--pend-w);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.wmf-micro {
+  font-size: var(--micro-size);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.wmf-pendulum {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.wmf-pend-arc {
+  fill: none;
+  stroke: var(--muted);
+  stroke-width: 0.8;
+  opacity: 0.38;
+}
+.wmf-pend-plumb {
+  fill: none;
+  stroke: var(--muted);
+  stroke-width: 0.9;
+  stroke-dasharray: 2.5 3.5;
+  opacity: 0.5;
+}
+.wmf-pend-rod {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+.wmf-pend-halo {
+  fill: none;
+  stroke: var(--indigo);
+  stroke-width: 0.9;
+  opacity: 0.4;
+}
+.wmf-pend-bob {
+  fill: var(--indigo);
+}
+.wmf-pend-pivot {
+  fill: var(--ink);
+}
+
+.wmf-pendulum-arm {
+  transform-box: view-box;
+  transform-origin: 46px 16px;
+  will-change: transform;
+  animation: wmf-pend var(--sim-cycle) linear infinite;
+}
+
+.wmf-plot {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  height: var(--plot-h);
+}
+
+.wmf-plot-axis {
+  position: absolute;
+  left: 0;
+  top: 6%;
+  bottom: 6%;
+  width: 1px;
+  background: var(--edge);
+}
+.wmf-plot-axis span {
+  position: absolute;
+  left: 4px;
+  width: 8px;
+  height: 1px;
+  background: var(--edge);
+}
+.wmf-plot-axis span:nth-child(1) {
+  top: 20%;
+}
+.wmf-plot-axis span:nth-child(2) {
+  top: 50%;
+}
+.wmf-plot-axis span:nth-child(3) {
+  top: 80%;
+}
+
+.wmf-plot-body {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 16%, #000 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 16%, #000 100%);
+}
+
+.wmf-plot-static,
+.wmf-plot-live {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.wmf-plot-grid {
+  fill: none;
+  stroke: var(--edge);
+  stroke-width: 1;
+}
+.wmf-plot-zero {
+  fill: none;
+  stroke: var(--muted);
+  stroke-width: 1;
+  stroke-dasharray: 3 5;
+  opacity: 0.6;
+}
+.wmf-plot-trace {
+  fill: none;
+  stroke: var(--indigo);
+  stroke-width: 2.4;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.wmf-trace {
+  will-change: transform;
+  animation: wmf-trace var(--sim-cycle) linear infinite;
+}
+
+/* -50px == one signal period in plot viewBox units, so the scroll tiles. */
+@keyframes wmf-trace {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50px, 0, 0);
+  }
+}
+
+.wmf-plot-y,
+.wmf-plot-x {
+  position: absolute;
+  font-size: var(--plot-label);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.wmf-plot-y {
+  left: 18px;
+  top: -1px;
+}
+.wmf-plot-x {
+  right: 4px;
+  bottom: -2px;
+}
+
+.wmf-dot {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  will-change: transform;
+  animation: wmf-dot var(--sim-cycle) linear infinite;
+}
+.wmf-dot-core,
+.wmf-dot-halo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.wmf-dot-core {
+  width: 15px;
+  height: 15px;
+  background: var(--indigo);
+}
+.wmf-dot-halo {
+  width: 25px;
+  height: 25px;
+  border: 1px solid var(--indigo);
+  opacity: 0.35;
+}
+
+@container (min-width: 860px) {
+  .wmf-dot-core {
+    width: 17px;
+    height: 17px;
+  }
+  .wmf-dot-halo {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* ============================== PLANNER — discrete choices ============= */
+
+.wmf-chips {
+  position: absolute;
+  inset: 0;
+}
+
+.wmf-chip-track {
+  position: absolute;
+  top: 0;
+  right: calc(var(--chip-pitch) * -6);
+  height: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  will-change: transform;
+  animation: wmf-march var(--chip-cycle) cubic-bezier(0.62, 0, 0.24, 1) infinite;
+}
+
+.wmf-chip {
+  flex: none;
+  width: calc(var(--chip-pitch) - var(--chip-gap));
+  height: var(--chip-h);
+  margin-left: var(--chip-gap);
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--edge);
+  border-radius: 10px;
+  background: var(--cream);
+  color: var(--warm-dk);
+  font-size: var(--chip-size);
+  letter-spacing: 0.005em;
+}
+
+/* Only chips that pass through the decision slot carry the highlight; the
+   delay that lands each one there is injected by motion.ts. */
+.wmf-chip[data-pick="true"] {
+  animation: wmf-pick var(--chip-cycle) linear 0s infinite;
+}
+
+/* ---------------------------------------------------------- title cards */
+
+.wmf-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(var(--slot) * (var(--lane-h) + var(--lane-gap)));
+  height: var(--lane-h);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--xfade) var(--ease);
+}
+
+.wmf-title[data-on="true"] {
+  opacity: 1;
+}
+
+.wmf-title-name {
+  font-family: var(--serif);
+  font-size: var(--title-size);
+  line-height: 1;
+  color: var(--ink);
+}
+
+.wmf-title-sub {
+  font-size: var(--title-sub-size);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.wmf-title[data-lane="renderer"] .wmf-title-sub {
+  color: var(--warm-dk);
+}
+.wmf-title[data-lane="simulator"] .wmf-title-sub {
+  color: var(--indigo);
+}
+.wmf-title[data-lane="planner"] .wmf-title-sub {
+  color: var(--lavender);
+}
+
+/* ------------------------------------------------------------- controls */
+
+.wmf-toggle {
+  flex: none;
+  margin-top: 1px;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--edge);
+  background: transparent;
+  color: var(--warm-dk);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+.wmf-toggle:hover {
+  background: var(--cream);
+  color: var(--ink);
+}
+.wmf-toggle:focus-visible {
+  outline: 2px solid var(--indigo);
+  outline-offset: 2px;
+}
+.wmf-toggle svg {
+  width: 11px;
+  height: 11px;
+  fill: currentColor;
+}
+
+/* -------------------------------------------------------------- caption */
+
+.wmf-caption {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 16px 2px 0;
+  padding-top: 13px;
+  border-top: 1px solid var(--edge);
+}
+.wmf-caption-text {
+  margin: 0;
+  max-width: 68ch;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--warm-dk);
+}
+.wmf-caption b {
+  font-weight: 600;
+  color: var(--ink);
+}
+.wmf-caption i {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.08em;
+  color: var(--ink);
+}
+
+.wmf-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ------------------------------------------------- playback / stillness */
+
+.wmf[data-mode="paused"] .wmf-anim {
+  animation-play-state: paused;
+}
+
+.wmf[data-mode="static"] .wmf-lane,
+.wmf[data-mode="static"] .wmf-title {
+  transition: none;
+}

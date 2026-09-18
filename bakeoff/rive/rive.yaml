@@ -1,0 +1,5 @@
+name: world-model-taxonomy
+main: Desktop
+logs:
+  file: build/rive.log
+  problems: build/problems.log

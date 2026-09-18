@@ -1,0 +1,72 @@
+{
+ "desktop": {
+  "artboard": "Desktop",
+  "wire": [
+   {
+    "url": "/",
+    "status": 200,
+    "encoding": "br",
+    "sent": 2361
+   },
+   {
+    "url": "/figure/wm-figure.js",
+    "status": 200,
+    "encoding": "br",
+    "sent": 3399
+   },
+   {
+    "url": "/figure/rive-runtime.js",
+    "status": 200,
+    "encoding": "br",
+    "sent": 83742
+   },
+   {
+    "url": "/figure/world-models.riv",
+    "status": 200,
+    "encoding": "br",
+    "sent": 26700
+   },
+   {
+    "url": "/figure/rive.wasm",
+    "status": 200,
+    "encoding": "br",
+    "sent": 620979
+   }
+  ]
+ },
+ "mobile": {
+  "artboard": "Mobile",
+  "wire": [
+   {
+    "url": "/",
+    "status": 200,
+    "encoding": "br",
+    "sent": 2361
+   },
+   {
+    "url": "/figure/wm-figure.js",
+    "status": 200,
+    "encoding": "br",
+    "sent": 3399
+   },
+   {
+    "url": "/figure/rive-runtime.js",
+    "status": 200,
+    "encoding": "br",
+    "sent": 83742
+   },
+   {
+    "url": "/figure/world-models.riv",
+    "status": 200,
+    "encoding": "br",
+    "sent": 26700
+   },
+   {
+    "url": "/figure/rive.wasm",
+    "status": 200,
+    "encoding": "br",
+    "sent": 620979
+   }
+  ]
+ }
+}

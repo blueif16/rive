@@ -1,0 +1,1214 @@
+[
+ {
+  "url": "/",
+  "raw": 6082,
+  "sent": 6082,
+  "encoding": "identity"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10288,
+  "sent": 10288,
+  "encoding": "identity"
+ },
+ {
+  "url": "/",
+  "raw": 6082,
+  "sent": 2220,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10288,
+  "sent": 3266,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 124008,
+  "sent": 26700,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6082,
+  "sent": 2220,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10236,
+  "sent": 3246,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 124008,
+  "sent": 26700,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6082,
+  "sent": 2220,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10236,
+  "sent": 3246,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 124008,
+  "sent": 26700,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6082,
+  "sent": 2220,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10236,
+  "sent": 3246,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 124008,
+  "sent": 26700,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6082,
+  "sent": 2220,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10536,
+  "sent": 3348,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 124008,
+  "sent": 26700,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6082,
+  "sent": 2220,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10536,
+  "sent": 3348,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 124008,
+  "sent": 26700,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6082,
+  "sent": 2220,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10536,
+  "sent": 3348,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 124008,
+  "sent": 26700,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6082,
+  "sent": 2220,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10536,
+  "sent": 3348,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 124008,
+  "sent": 26700,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6082,
+  "sent": 2220,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10536,
+  "sent": 3348,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 124008,
+  "sent": 26700,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6082,
+  "sent": 2220,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10536,
+  "sent": 3348,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 124008,
+  "sent": 26700,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6082,
+  "sent": 2220,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10536,
+  "sent": 3348,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 124008,
+  "sent": 26700,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6082,
+  "sent": 2220,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10536,
+  "sent": 3348,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 124008,
+  "sent": 26700,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6082,
+  "sent": 2220,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10536,
+  "sent": 3348,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 124008,
+  "sent": 26700,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6082,
+  "sent": 2220,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10536,
+  "sent": 3348,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 124008,
+  "sent": 26700,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6440,
+  "sent": 2361,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10706,
+  "sent": 3399,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 124008,
+  "sent": 26700,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6440,
+  "sent": 2361,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10706,
+  "sent": 3399,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 124008,
+  "sent": 26700,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6440,
+  "sent": 2361,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10706,
+  "sent": 3399,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 124008,
+  "sent": 26700,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6440,
+  "sent": 2361,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10706,
+  "sent": 3399,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 124008,
+  "sent": 26700,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6440,
+  "sent": 2361,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10706,
+  "sent": 3399,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 124008,
+  "sent": 26700,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6440,
+  "sent": 2361,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10706,
+  "sent": 3399,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 124008,
+  "sent": 26700,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6440,
+  "sent": 2361,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10706,
+  "sent": 3399,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 124008,
+  "sent": 26700,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6440,
+  "sent": 2361,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10706,
+  "sent": 3399,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 124008,
+  "sent": 26700,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6440,
+  "sent": 2361,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10706,
+  "sent": 3399,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 124008,
+  "sent": 26700,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6440,
+  "sent": 2361,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10706,
+  "sent": 3399,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 124008,
+  "sent": 26700,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6440,
+  "sent": 2361,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10706,
+  "sent": 3399,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 123983,
+  "sent": 26792,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6440,
+  "sent": 2361,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10706,
+  "sent": 3399,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 123983,
+  "sent": 26792,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6440,
+  "sent": 2361,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10706,
+  "sent": 3399,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 123983,
+  "sent": 26792,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6440,
+  "sent": 2361,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10706,
+  "sent": 3399,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 123983,
+  "sent": 26792,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6440,
+  "sent": 2361,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10706,
+  "sent": 3399,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 123983,
+  "sent": 26792,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6440,
+  "sent": 2361,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10706,
+  "sent": 3399,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 123983,
+  "sent": 26792,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6440,
+  "sent": 2361,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10706,
+  "sent": 3399,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 123983,
+  "sent": 26792,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6440,
+  "sent": 2361,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10706,
+  "sent": 3399,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 123983,
+  "sent": 26792,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6440,
+  "sent": 2361,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10706,
+  "sent": 3399,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 123983,
+  "sent": 26792,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6440,
+  "sent": 2361,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10706,
+  "sent": 3399,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 123983,
+  "sent": 26792,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6440,
+  "sent": 2361,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10706,
+  "sent": 3399,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 123983,
+  "sent": 26792,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6440,
+  "sent": 2361,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10706,
+  "sent": 3399,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 123983,
+  "sent": 26792,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6440,
+  "sent": 2361,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10706,
+  "sent": 3399,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 123983,
+  "sent": 26792,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6440,
+  "sent": 2361,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10706,
+  "sent": 3399,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 123983,
+  "sent": 26792,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6440,
+  "sent": 2361,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10706,
+  "sent": 3399,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 123983,
+  "sent": 26792,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ },
+ {
+  "url": "/",
+  "raw": 6440,
+  "sent": 2361,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/wm-figure.js",
+  "raw": 10706,
+  "sent": 3399,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive-runtime.js",
+  "raw": 450539,
+  "sent": 83742,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/world-models.riv",
+  "raw": 123983,
+  "sent": 26792,
+  "encoding": "br"
+ },
+ {
+  "url": "/figure/rive.wasm",
+  "raw": 1935229,
+  "sent": 620979,
+  "encoding": "br"
+ }
+]

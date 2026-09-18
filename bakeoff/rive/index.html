@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What a world model is for — demo page</title>
+<style>
+  :root{
+    --page:#F7F7FA; --cream:#EDECE1; --ink:#3B3730; --muted:#A3A09D;
+    --warm-dk:#746E63; --accent:#C5683C; --indigo:#4B4FDD; --edge:#D9D3C6;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--page); color:var(--ink);
+    /* System stacks only: the demo page must not add font bytes to the
+       figure's measured weight. The figure's own faces live in the .riv. */
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    font-size:18px; line-height:1.62;
+  }
+  article{
+    display:grid; padding:4.5rem 0 7rem;
+    /* `100% - 2rem` rather than `100%`: the gutters are minmax(1rem,…), so a
+       bare 100% makes the text column alone as wide as the whole grid and the
+       page overflows horizontally at every width below ~672px. */
+    grid-template-columns:
+      [full-start] minmax(1rem,1fr)
+      [wide-start] minmax(0,264px)
+      [text-start] min(40rem,100% - 2rem) [text-end]
+      minmax(0,264px) [wide-end]
+      minmax(1rem,1fr) [full-end];
+  }
+  article > *{grid-column:text}
+  article > .wide{grid-column:wide}
+  .kicker{
+    font-family:ui-sans-serif,-apple-system,"Segoe UI",Roboto,sans-serif;
+    font-size:.6875rem; letter-spacing:.15em; text-transform:uppercase;
+    color:var(--muted); margin:0 0 1.1rem;
+  }
+  h1{font-size:2.35rem; line-height:1.16; font-weight:400; margin:0 0 1.6rem; letter-spacing:-.01em}
+  p{margin:0 0 1.35rem}
+  p.lede{font-size:1.2rem; color:#4a453e}
+  em{font-style:italic}
+  hr{border:0; border-top:1px solid var(--edge); margin:3rem 0}
+  .foot{
+    font-family:ui-sans-serif,-apple-system,"Segoe UI",Roboto,sans-serif;
+    font-size:.75rem; color:var(--muted);
+  }
+  @media (max-width:640px){
+    body{font-size:17px}
+    h1{font-size:1.9rem}
+    article{padding:2.75rem 0 4rem}
+    /* Narrow: prose keeps its gutters, the figure goes full bleed and relies
+       on the artboard's own 20px inset for its margin. */
+    article{grid-template-columns:
+      [full-start wide-start] 1rem
+      [text-start] 1fr [text-end]
+      1rem [wide-end full-end];}
+  }
+</style>
+</head>
+<body>
+<article>
+
+  <p class="kicker">Research note · draft</p>
+  <h1>What a world model is actually <em>for</em></h1>
+
+  <p class="lede">“World model” is used to mean at least three different things,
+  and the disagreements that follow are usually not about the model at all —
+  they are about which of the three someone has in mind.</p>
+
+  <p>The confusion is worth taking seriously because the three uses put
+  genuinely different demands on the same machinery. A model asked to produce
+  what a scene <em>looks like</em> is being graded on pixels; one asked to
+  produce how a quantity <em>evolves</em> is being graded on a trajectory; one
+  asked to produce what to <em>do next</em> is being graded on a choice out of
+  a finite menu. Same world underneath, three incompatible notions of a good
+  answer. It is tempting to treat these as three points on one spectrum of
+  fidelity. They are not: they differ in the <em>kind</em> of object they emit,
+  and that difference survives every amount of scaling.</p>
+
+  <div class="wide"
+       data-wm-figure
+       data-src="figure/world-models.riv"
+       data-alt="Animated figure. Three horizontal lanes, one per function of a world model. The renderer lane shows a filmstrip of small landscape pictures scrolling past, each frame a snapshot of the same scene with the sun a little further along. The simulator lane shows a swinging pendulum beside a live plot of x of t, an unbroken curve scrolling left with a dot riding its right edge. The planner lane shows a row of action chips — scan, grasp, lift, rotate, move, place — stepping one slot at a time through a fixed selection ring. The figure loops: all three lanes together, then each alone with its name."
+       data-describe="A taxonomy of world models, as three rows. Row one: a renderer, which renders observations; its output is pictorial — a stream of images, each one a snapshot of what the world looks like at an instant. Row two: a simulator, which simulates state; its output is a continuous signal — an unbroken curve showing how one quantity evolves over time. Row three: a planner, which plans actions; its output is discrete — a sequence of choices drawn one at a time from a finite set of available actions. The animation cycles through four beats: all three rows together, then the renderer alone, the simulator alone, and the planner alone."
+       data-caption="<b>Three functions, three kinds of output.</b> The same world, read three ways. Watch the motion rather than the labels: the renderer’s output is <em>sampled</em> into whole pictures, the simulator’s is <em>continuous</em> and never breaks, and the planner’s only ever <em>steps</em> — one discrete choice at a time out of a fixed menu."></div>
+
+  <p>Set out this way, the failure modes separate too. A renderer that is
+  temporally inconsistent produces a strip of plausible frames that do not
+  belong to the same shot. A simulator that is inconsistent produces a
+  trajectory with a discontinuity in it — visible immediately, because a
+  continuous signal has nowhere to hide a jump. A planner that is inconsistent
+  produces an action sequence that is individually reasonable and jointly
+  incoherent: grasp, grasp, place. Each pathology is legible only against the
+  grammar of its own output type, which is a good argument for keeping the
+  three apart in evaluation even when one network serves all three.</p>
+
+  <p>None of this settles which function matters most, and the honest answer
+  is probably that it depends on what sits downstream. What it does settle is
+  that “does the model understand the world?” is underspecified until you say
+  which of the three you are asking it to do — and that benchmarks inherited
+  from one of them transfer to the others less often than their names suggest.</p>
+
+  <hr>
+  <p class="foot">Demo page. Prose is placeholder; the figure is real —
+  authored as RML, compiled to a <code>.riv</code> with the Rive CLI, and
+  played by the Rive web runtime.</p>
+
+</article>
+<script src="figure/wm-figure.js" defer></script>
+</body>
+</html>

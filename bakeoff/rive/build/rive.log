@@ -1,0 +1,1752 @@
+[22:09:49.443] rive  verified (0 bytes, 301ms, 0 errors, 0 warnings)
+[22:10:42.542] rive  built build/world-model-taxonomy.riv (118794 bytes, 315ms, 0 errors, 0 warnings)
+[22:11:17.734] rive  built build/world-model-taxonomy.riv (118794 bytes, 313ms, 0 errors, 0 warnings)
+[22:11:17.739] rive  showing Desktop [1/2]
+[22:11:17.744] rive  viewport 1200x600 @1x
+[22:11:17.784] rive  wrote build/d-t1.png
+[22:11:18.138] rive  built build/world-model-taxonomy.riv (118794 bytes, 290ms, 0 errors, 0 warnings)
+[22:11:18.141] rive  showing Desktop [1/2]
+[22:11:18.156] rive  viewport 1200x600 @1x
+[22:11:18.186] rive  wrote build/d-t2.png
+[22:11:18.547] rive  built build/world-model-taxonomy.riv (118794 bytes, 296ms, 0 errors, 0 warnings)
+[22:11:18.550] rive  showing Desktop [1/2]
+[22:11:18.574] rive  viewport 1200x600 @1x
+[22:11:18.602] rive  wrote build/d-t3.png
+[22:11:18.954] rive  built build/world-model-taxonomy.riv (118794 bytes, 285ms, 0 errors, 0 warnings)
+[22:11:18.957] rive  showing Desktop [1/2]
+[22:11:18.989] rive  viewport 1200x600 @1x
+[22:11:19.016] rive  wrote build/d-t4.png
+[22:18:57.259] rive  built build/world-model-taxonomy.riv (88237 bytes, 216ms, 0 errors, 0 warnings)
+[22:18:57.530] rive  built build/world-model-taxonomy.riv (88237 bytes, 203ms, 0 errors, 0 warnings)
+[22:18:57.533] rive  showing Desktop [1/2]
+[22:18:57.537] rive  viewport 1200x600 @1x
+[22:18:57.569] rive  wrote build/d-t1.png
+[22:18:57.840] rive  built build/world-model-taxonomy.riv (88237 bytes, 205ms, 0 errors, 0 warnings)
+[22:18:57.843] rive  showing Desktop [1/2]
+[22:18:57.853] rive  viewport 1200x600 @1x
+[22:18:57.879] rive  wrote build/d-t2.png
+[22:22:30.944] rive  built build/world-model-taxonomy.riv (88237 bytes, 215ms, 0 errors, 0 warnings)
+[22:22:31.206] rive  built build/world-model-taxonomy.riv (88237 bytes, 200ms, 0 errors, 0 warnings)
+[22:22:31.209] rive  showing Desktop [1/2]
+[22:22:31.220] rive  viewport 1200x600 @1x
+[22:22:31.247] rive  wrote build/d-t2.png
+[22:25:20.412] rive  built build/world-model-taxonomy.riv (88237 bytes, 214ms, 0 errors, 0 warnings)
+[22:25:20.671] rive  built build/world-model-taxonomy.riv (88237 bytes, 197ms, 0 errors, 0 warnings)
+[22:25:20.674] rive  showing Desktop [1/2]
+[22:25:20.683] rive  viewport 1200x600 @1x
+[22:25:20.710] rive  wrote build/s260.png
+[22:25:21.010] rive  built build/world-model-taxonomy.riv (88237 bytes, 198ms, 0 errors, 0 warnings)
+[22:25:21.012] rive  showing Desktop [1/2]
+[22:25:21.024] rive  viewport 1200x600 @1x
+[22:25:21.048] rive  wrote build/s340.png
+[22:25:21.338] rive  built build/world-model-taxonomy.riv (88237 bytes, 199ms, 0 errors, 0 warnings)
+[22:25:21.340] rive  showing Desktop [1/2]
+[22:25:21.355] rive  viewport 1200x600 @1x
+[22:25:21.381] rive  wrote build/s420.png
+[22:28:27.673] rive  built build/world-model-taxonomy.riv (88237 bytes, 225ms, 0 errors, 0 warnings)
+[22:28:27.677] rive  showing Desktop [1/2]
+[22:28:27.700] rive  viewport 1200x600 @1x
+[22:28:27.734] rive  wrote build/p652.png
+[22:28:28.043] rive  built build/world-model-taxonomy.riv (88237 bytes, 198ms, 0 errors, 0 warnings)
+[22:28:28.045] rive  showing Desktop [1/2]
+[22:28:28.068] rive  viewport 1200x600 @1x
+[22:28:28.096] rive  wrote build/p662.png
+[22:28:28.389] rive  built build/world-model-taxonomy.riv (88237 bytes, 200ms, 0 errors, 0 warnings)
+[22:28:28.392] rive  showing Desktop [1/2]
+[22:28:28.415] rive  viewport 1200x600 @1x
+[22:28:28.444] rive  wrote build/p668.png
+[22:28:28.736] rive  built build/world-model-taxonomy.riv (88237 bytes, 198ms, 0 errors, 0 warnings)
+[22:28:28.738] rive  showing Desktop [1/2]
+[22:28:28.762] rive  viewport 1200x600 @1x
+[22:28:28.788] rive  wrote build/p680.png
+[22:28:29.155] rive  built build/world-model-taxonomy.riv (88237 bytes, 202ms, 0 errors, 0 warnings)
+[22:28:29.157] rive  showing Mobile [2/2]
+[22:28:29.159] rive  viewport 360x560 @1x
+[22:28:29.172] rive  wrote build/m-t1.png
+[22:28:29.434] rive  built build/world-model-taxonomy.riv (88237 bytes, 197ms, 0 errors, 0 warnings)
+[22:28:29.436] rive  showing Mobile [2/2]
+[22:28:29.451] rive  viewport 360x560 @1x
+[22:28:29.463] rive  wrote build/m-t3.png
+[22:32:59.550] rive  built build/world-model-taxonomy.riv (88878 bytes, 222ms, 0 errors, 0 warnings)
+[22:32:59.824] rive  built build/world-model-taxonomy.riv (88878 bytes, 204ms, 0 errors, 0 warnings)
+[22:32:59.827] rive  showing Mobile [2/2]
+[22:32:59.832] rive  viewport 360x560 @1x
+[22:32:59.847] rive  wrote build/m-t1.png
+[22:33:00.102] rive  built build/world-model-taxonomy.riv (88878 bytes, 203ms, 0 errors, 0 warnings)
+[22:33:00.104] rive  showing Mobile [2/2]
+[22:33:00.125] rive  viewport 360x560 @1x
+[22:33:00.137] rive  wrote build/m-t4.png
+[22:34:02.372] rive  built build/world-model-taxonomy.riv (88878 bytes, 228ms, 0 errors, 0 warnings)
+[22:34:02.635] rive  built build/world-model-taxonomy.riv (88878 bytes, 204ms, 0 errors, 0 warnings)
+[22:34:02.641] rive  showing Desktop [1/2]
+[22:34:02.641] rive  viewport 1200x600 @1x
+[22:34:02.672] rive  wrote build/seam-a.png
+[22:34:02.934] rive  built build/world-model-taxonomy.riv (88878 bytes, 201ms, 0 errors, 0 warnings)
+[22:34:02.936] rive  showing Desktop [1/2]
+[22:34:02.965] rive  viewport 1200x600 @1x
+[22:34:02.998] rive  wrote build/seam-b.png
+[22:34:03.469] rive  built build/world-model-taxonomy.riv (88878 bytes, 251ms, 0 errors, 0 warnings)
+[22:34:03.472] rive  showing Desktop [1/2]
+[22:34:03.486] rive  viewport 1200x600 @1x
+[22:34:03.512] rive  wrote build/xfade.png
+[22:34:03.771] rive  built build/world-model-taxonomy.riv (88878 bytes, 203ms, 0 errors, 0 warnings)
+[22:34:03.773] rive  showing Mobile [2/2]
+[22:34:03.794] rive  viewport 360x560 @1x
+[22:34:03.803] rive  wrote build/m-t4.png
+[22:37:55.111] rive  built build/world-model-taxonomy.riv (88878 bytes, 229ms, 0 errors, 0 warnings)
+[22:37:55.116] rive  showing Desktop [1/2]
+[22:37:55.116] rive  viewport 1200x600 @1x
+[22:37:55.148] rive  wrote build/seam-c.png
+[22:43:50.396] rive  built build/world-model-taxonomy.riv (89751 bytes, 228ms, 0 errors, 0 warnings)
+[22:43:50.753] rive  built build/world-model-taxonomy.riv (89751 bytes, 205ms, 0 errors, 0 warnings)
+[22:43:50.756] rive  showing Desktop [1/2]
+[22:43:50.770] rive  viewport 1200x600 @1x
+[22:43:50.799] rive  wrote build/xfade.png
+[22:43:51.075] rive  built build/world-model-taxonomy.riv (89751 bytes, 213ms, 0 errors, 0 warnings)
+[22:43:51.077] rive  showing Desktop [1/2]
+[22:43:51.084] rive  viewport 1200x600 @1x
+[22:43:51.110] rive  wrote build/xfade2.png
+[23:03:09.882] rive  built build/world-model-taxonomy.riv (124008 bytes, 340ms, 0 errors, 0 warnings)
+[23:03:10.268] rive  built build/world-model-taxonomy.riv (124008 bytes, 317ms, 0 errors, 0 warnings)
+[23:03:10.274] rive  showing Medium [2/3]
+[23:03:10.279] rive  viewport 700x440 @1x
+[23:03:10.295] rive  wrote build/md-t1.png
+[23:03:10.671] rive  built build/world-model-taxonomy.riv (124008 bytes, 312ms, 0 errors, 0 warnings)
+[23:03:10.674] rive  showing Medium [2/3]
+[23:03:10.691] rive  viewport 700x440 @1x
+[23:03:10.703] rive  wrote build/md-t3.png
+[23:13:30.493] rive  built build/world-model-taxonomy.riv (124008 bytes, 320ms, 0 errors, 0 warnings)
+[23:20:36.504] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 376ms, 0 errors, 0 warnings)
+[23:20:37.408] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 341ms, 0 errors, 0 warnings)
+[23:20:37.413] rive  showing Desktop [1/3]
+[23:20:37.415] rive  viewport 1200x600 @1x
+[23:20:37.442] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00000.png
+[23:20:37.864] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 344ms, 0 errors, 0 warnings)
+[23:20:37.867] rive  showing Desktop [1/3]
+[23:20:37.867] rive  viewport 1200x600 @1x
+[23:20:37.894] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00001.png
+[23:20:38.295] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 336ms, 0 errors, 0 warnings)
+[23:20:38.297] rive  showing Desktop [1/3]
+[23:20:38.297] rive  viewport 1200x600 @1x
+[23:20:38.323] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00002.png
+[23:20:38.719] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 332ms, 0 errors, 0 warnings)
+[23:20:38.721] rive  showing Desktop [1/3]
+[23:20:38.722] rive  viewport 1200x600 @1x
+[23:20:38.747] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00003.png
+[23:20:39.141] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 329ms, 0 errors, 0 warnings)
+[23:20:39.144] rive  showing Desktop [1/3]
+[23:20:39.144] rive  viewport 1200x600 @1x
+[23:20:39.171] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00004.png
+[23:20:39.570] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 334ms, 0 errors, 0 warnings)
+[23:20:39.573] rive  showing Desktop [1/3]
+[23:20:39.574] rive  viewport 1200x600 @1x
+[23:20:39.600] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00005.png
+[23:20:39.999] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 331ms, 0 errors, 0 warnings)
+[23:20:40.002] rive  showing Desktop [1/3]
+[23:20:40.002] rive  viewport 1200x600 @1x
+[23:20:40.029] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00006.png
+[23:20:40.432] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 339ms, 0 errors, 0 warnings)
+[23:20:40.435] rive  showing Desktop [1/3]
+[23:20:40.436] rive  viewport 1200x600 @1x
+[23:20:40.462] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00007.png
+[23:20:40.855] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 329ms, 0 errors, 0 warnings)
+[23:20:40.858] rive  showing Desktop [1/3]
+[23:20:40.859] rive  viewport 1200x600 @1x
+[23:20:40.885] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00008.png
+[23:20:41.287] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 334ms, 0 errors, 0 warnings)
+[23:20:41.290] rive  showing Desktop [1/3]
+[23:20:41.291] rive  viewport 1200x600 @1x
+[23:20:41.321] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00009.png
+[23:20:41.713] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 328ms, 0 errors, 0 warnings)
+[23:20:41.716] rive  showing Desktop [1/3]
+[23:20:41.717] rive  viewport 1200x600 @1x
+[23:20:41.743] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00010.png
+[23:20:42.138] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 330ms, 0 errors, 0 warnings)
+[23:20:42.140] rive  showing Desktop [1/3]
+[23:20:42.141] rive  viewport 1200x600 @1x
+[23:20:42.167] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00011.png
+[23:20:42.563] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 332ms, 0 errors, 0 warnings)
+[23:20:42.566] rive  showing Desktop [1/3]
+[23:20:42.567] rive  viewport 1200x600 @1x
+[23:20:42.593] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00012.png
+[23:20:42.984] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 326ms, 0 errors, 0 warnings)
+[23:20:42.986] rive  showing Desktop [1/3]
+[23:20:42.987] rive  viewport 1200x600 @1x
+[23:20:43.015] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00013.png
+[23:20:43.409] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 327ms, 0 errors, 0 warnings)
+[23:20:43.411] rive  showing Desktop [1/3]
+[23:20:43.412] rive  viewport 1200x600 @1x
+[23:20:43.438] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00014.png
+[23:20:43.835] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 332ms, 0 errors, 0 warnings)
+[23:20:43.838] rive  showing Desktop [1/3]
+[23:20:43.839] rive  viewport 1200x600 @1x
+[23:20:43.865] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00015.png
+[23:20:44.257] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 325ms, 0 errors, 0 warnings)
+[23:20:44.260] rive  showing Desktop [1/3]
+[23:20:44.261] rive  viewport 1200x600 @1x
+[23:20:44.288] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00016.png
+[23:20:44.677] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 325ms, 0 errors, 0 warnings)
+[23:20:44.680] rive  showing Desktop [1/3]
+[23:20:44.681] rive  viewport 1200x600 @1x
+[23:20:44.707] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00017.png
+[23:20:45.099] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 328ms, 0 errors, 0 warnings)
+[23:20:45.101] rive  showing Desktop [1/3]
+[23:20:45.102] rive  viewport 1200x600 @1x
+[23:20:45.128] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00018.png
+[23:20:45.532] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 341ms, 0 errors, 0 warnings)
+[23:20:45.535] rive  showing Desktop [1/3]
+[23:20:45.536] rive  viewport 1200x600 @1x
+[23:20:45.562] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00019.png
+[23:20:45.959] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 327ms, 0 errors, 0 warnings)
+[23:20:45.962] rive  showing Desktop [1/3]
+[23:20:45.963] rive  viewport 1200x600 @1x
+[23:20:45.990] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00020.png
+[23:20:46.378] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 327ms, 0 errors, 0 warnings)
+[23:20:46.381] rive  showing Desktop [1/3]
+[23:20:46.382] rive  viewport 1200x600 @1x
+[23:20:46.410] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00021.png
+[23:20:46.811] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 335ms, 0 errors, 0 warnings)
+[23:20:46.814] rive  showing Desktop [1/3]
+[23:20:46.815] rive  viewport 1200x600 @1x
+[23:20:46.842] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00022.png
+[23:20:47.239] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 332ms, 0 errors, 0 warnings)
+[23:20:47.242] rive  showing Desktop [1/3]
+[23:20:47.243] rive  viewport 1200x600 @1x
+[23:20:47.270] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00023.png
+[23:20:47.663] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 328ms, 0 errors, 0 warnings)
+[23:20:47.666] rive  showing Desktop [1/3]
+[23:20:47.667] rive  viewport 1200x600 @1x
+[23:20:47.694] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00024.png
+[23:20:48.091] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 332ms, 0 errors, 0 warnings)
+[23:20:48.094] rive  showing Desktop [1/3]
+[23:20:48.095] rive  viewport 1200x600 @1x
+[23:20:48.121] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00025.png
+[23:20:48.516] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 330ms, 0 errors, 0 warnings)
+[23:20:48.518] rive  showing Desktop [1/3]
+[23:20:48.520] rive  viewport 1200x600 @1x
+[23:20:48.546] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00026.png
+[23:20:48.941] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 327ms, 0 errors, 0 warnings)
+[23:20:48.944] rive  showing Desktop [1/3]
+[23:20:48.945] rive  viewport 1200x600 @1x
+[23:20:48.971] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00027.png
+[23:20:49.363] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 328ms, 0 errors, 0 warnings)
+[23:20:49.366] rive  showing Desktop [1/3]
+[23:20:49.368] rive  viewport 1200x600 @1x
+[23:20:49.393] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00028.png
+[23:20:49.782] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 327ms, 0 errors, 0 warnings)
+[23:20:49.785] rive  showing Desktop [1/3]
+[23:20:49.787] rive  viewport 1200x600 @1x
+[23:20:49.813] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00029.png
+[23:20:50.208] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 333ms, 0 errors, 0 warnings)
+[23:20:50.210] rive  showing Desktop [1/3]
+[23:20:50.213] rive  viewport 1200x600 @1x
+[23:20:50.239] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00030.png
+[23:20:50.679] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 372ms, 0 errors, 0 warnings)
+[23:20:50.682] rive  showing Desktop [1/3]
+[23:20:50.684] rive  viewport 1200x600 @1x
+[23:20:50.712] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00031.png
+[23:20:51.134] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 341ms, 0 errors, 0 warnings)
+[23:20:51.137] rive  showing Desktop [1/3]
+[23:20:51.140] rive  viewport 1200x600 @1x
+[23:20:51.168] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00032.png
+[23:20:51.568] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 336ms, 0 errors, 0 warnings)
+[23:20:51.571] rive  showing Desktop [1/3]
+[23:20:51.573] rive  viewport 1200x600 @1x
+[23:20:51.599] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00033.png
+[23:20:52.012] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 346ms, 0 errors, 0 warnings)
+[23:20:52.015] rive  showing Desktop [1/3]
+[23:20:52.017] rive  viewport 1200x600 @1x
+[23:20:52.043] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00034.png
+[23:20:52.443] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 335ms, 0 errors, 0 warnings)
+[23:20:52.445] rive  showing Desktop [1/3]
+[23:20:52.448] rive  viewport 1200x600 @1x
+[23:20:52.475] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00035.png
+[23:20:52.874] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 331ms, 0 errors, 0 warnings)
+[23:20:52.877] rive  showing Desktop [1/3]
+[23:20:52.879] rive  viewport 1200x600 @1x
+[23:20:52.906] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00036.png
+[23:20:53.317] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 341ms, 0 errors, 0 warnings)
+[23:20:53.320] rive  showing Desktop [1/3]
+[23:20:53.322] rive  viewport 1200x600 @1x
+[23:20:53.348] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00037.png
+[23:20:53.751] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 335ms, 0 errors, 0 warnings)
+[23:20:53.754] rive  showing Desktop [1/3]
+[23:20:53.757] rive  viewport 1200x600 @1x
+[23:20:53.783] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00038.png
+[23:20:54.200] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 340ms, 0 errors, 0 warnings)
+[23:20:54.203] rive  showing Desktop [1/3]
+[23:20:54.205] rive  viewport 1200x600 @1x
+[23:20:54.231] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00039.png
+[23:20:54.642] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 339ms, 0 errors, 0 warnings)
+[23:20:54.645] rive  showing Desktop [1/3]
+[23:20:54.648] rive  viewport 1200x600 @1x
+[23:20:54.675] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00040.png
+[23:20:55.077] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 336ms, 0 errors, 0 warnings)
+[23:20:55.080] rive  showing Desktop [1/3]
+[23:20:55.083] rive  viewport 1200x600 @1x
+[23:20:55.109] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00041.png
+[23:20:55.515] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 335ms, 0 errors, 0 warnings)
+[23:20:55.517] rive  showing Desktop [1/3]
+[23:20:55.520] rive  viewport 1200x600 @1x
+[23:20:55.546] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00042.png
+[23:20:55.949] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 332ms, 0 errors, 0 warnings)
+[23:20:55.951] rive  showing Desktop [1/3]
+[23:20:55.954] rive  viewport 1200x600 @1x
+[23:20:55.981] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00043.png
+[23:20:56.385] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 338ms, 0 errors, 0 warnings)
+[23:20:56.388] rive  showing Desktop [1/3]
+[23:20:56.391] rive  viewport 1200x600 @1x
+[23:20:56.417] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00044.png
+[23:20:56.818] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 333ms, 0 errors, 0 warnings)
+[23:20:56.821] rive  showing Desktop [1/3]
+[23:20:56.824] rive  viewport 1200x600 @1x
+[23:20:56.851] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00045.png
+[23:20:57.245] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 333ms, 0 errors, 0 warnings)
+[23:20:57.248] rive  showing Desktop [1/3]
+[23:20:57.251] rive  viewport 1200x600 @1x
+[23:20:57.277] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00046.png
+[23:20:57.679] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 337ms, 0 errors, 0 warnings)
+[23:20:57.682] rive  showing Desktop [1/3]
+[23:20:57.686] rive  viewport 1200x600 @1x
+[23:20:57.711] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00047.png
+[23:20:58.119] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 336ms, 0 errors, 0 warnings)
+[23:20:58.121] rive  showing Desktop [1/3]
+[23:20:58.125] rive  viewport 1200x600 @1x
+[23:20:58.151] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00048.png
+[23:20:58.563] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 344ms, 0 errors, 0 warnings)
+[23:20:58.566] rive  showing Desktop [1/3]
+[23:20:58.569] rive  viewport 1200x600 @1x
+[23:20:58.596] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00049.png
+[23:20:58.993] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 335ms, 0 errors, 0 warnings)
+[23:20:58.996] rive  showing Desktop [1/3]
+[23:20:58.999] rive  viewport 1200x600 @1x
+[23:20:59.026] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00050.png
+[23:20:59.433] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 338ms, 0 errors, 0 warnings)
+[23:20:59.436] rive  showing Desktop [1/3]
+[23:20:59.440] rive  viewport 1200x600 @1x
+[23:20:59.467] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00051.png
+[23:20:59.871] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 341ms, 0 errors, 0 warnings)
+[23:20:59.874] rive  showing Desktop [1/3]
+[23:20:59.878] rive  viewport 1200x600 @1x
+[23:20:59.904] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00052.png
+[23:21:00.305] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 338ms, 0 errors, 0 warnings)
+[23:21:00.308] rive  showing Desktop [1/3]
+[23:21:00.312] rive  viewport 1200x600 @1x
+[23:21:00.337] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00053.png
+[23:21:00.744] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 346ms, 0 errors, 0 warnings)
+[23:21:00.747] rive  showing Desktop [1/3]
+[23:21:00.752] rive  viewport 1200x600 @1x
+[23:21:00.779] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00054.png
+[23:21:01.183] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 336ms, 0 errors, 0 warnings)
+[23:21:01.186] rive  showing Desktop [1/3]
+[23:21:01.189] rive  viewport 1200x600 @1x
+[23:21:01.216] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00055.png
+[23:21:01.629] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 339ms, 0 errors, 0 warnings)
+[23:21:01.632] rive  showing Desktop [1/3]
+[23:21:01.636] rive  viewport 1200x600 @1x
+[23:21:01.662] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00056.png
+[23:21:02.062] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 337ms, 0 errors, 0 warnings)
+[23:21:02.065] rive  showing Desktop [1/3]
+[23:21:02.069] rive  viewport 1200x600 @1x
+[23:21:02.095] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00057.png
+[23:21:02.495] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 336ms, 0 errors, 0 warnings)
+[23:21:02.498] rive  showing Desktop [1/3]
+[23:21:02.502] rive  viewport 1200x600 @1x
+[23:21:02.528] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00058.png
+[23:21:02.927] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 332ms, 0 errors, 0 warnings)
+[23:21:02.929] rive  showing Desktop [1/3]
+[23:21:02.934] rive  viewport 1200x600 @1x
+[23:21:02.960] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00059.png
+[23:21:03.367] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 338ms, 0 errors, 0 warnings)
+[23:21:03.370] rive  showing Desktop [1/3]
+[23:21:03.375] rive  viewport 1200x600 @1x
+[23:21:03.401] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00060.png
+[23:21:03.798] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 330ms, 0 errors, 0 warnings)
+[23:21:03.801] rive  showing Desktop [1/3]
+[23:21:03.805] rive  viewport 1200x600 @1x
+[23:21:03.831] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00061.png
+[23:21:04.249] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 358ms, 0 errors, 0 warnings)
+[23:21:04.252] rive  showing Desktop [1/3]
+[23:21:04.256] rive  viewport 1200x600 @1x
+[23:21:04.284] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00062.png
+[23:21:04.687] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 333ms, 0 errors, 0 warnings)
+[23:21:04.690] rive  showing Desktop [1/3]
+[23:21:04.695] rive  viewport 1200x600 @1x
+[23:21:04.722] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00063.png
+[23:21:05.130] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 339ms, 0 errors, 0 warnings)
+[23:21:05.133] rive  showing Desktop [1/3]
+[23:21:05.138] rive  viewport 1200x600 @1x
+[23:21:05.163] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00064.png
+[23:21:05.571] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 341ms, 0 errors, 0 warnings)
+[23:21:05.574] rive  showing Desktop [1/3]
+[23:21:05.578] rive  viewport 1200x600 @1x
+[23:21:05.605] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00065.png
+[23:21:06.001] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 333ms, 0 errors, 0 warnings)
+[23:21:06.004] rive  showing Desktop [1/3]
+[23:21:06.009] rive  viewport 1200x600 @1x
+[23:21:06.035] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00066.png
+[23:21:06.441] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 332ms, 0 errors, 0 warnings)
+[23:21:06.444] rive  showing Desktop [1/3]
+[23:21:06.448] rive  viewport 1200x600 @1x
+[23:21:06.474] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00067.png
+[23:21:06.875] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 335ms, 0 errors, 0 warnings)
+[23:21:06.877] rive  showing Desktop [1/3]
+[23:21:06.882] rive  viewport 1200x600 @1x
+[23:21:06.909] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00068.png
+[23:21:07.303] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 331ms, 0 errors, 0 warnings)
+[23:21:07.306] rive  showing Desktop [1/3]
+[23:21:07.311] rive  viewport 1200x600 @1x
+[23:21:07.336] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00069.png
+[23:21:07.736] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 338ms, 0 errors, 0 warnings)
+[23:21:07.738] rive  showing Desktop [1/3]
+[23:21:07.743] rive  viewport 1200x600 @1x
+[23:21:07.769] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00070.png
+[23:21:08.170] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 334ms, 0 errors, 0 warnings)
+[23:21:08.172] rive  showing Desktop [1/3]
+[23:21:08.178] rive  viewport 1200x600 @1x
+[23:21:08.204] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00071.png
+[23:21:08.608] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 338ms, 0 errors, 0 warnings)
+[23:21:08.611] rive  showing Desktop [1/3]
+[23:21:08.616] rive  viewport 1200x600 @1x
+[23:21:08.642] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00072.png
+[23:21:09.038] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 331ms, 0 errors, 0 warnings)
+[23:21:09.041] rive  showing Desktop [1/3]
+[23:21:09.046] rive  viewport 1200x600 @1x
+[23:21:09.072] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00073.png
+[23:21:09.473] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 332ms, 0 errors, 0 warnings)
+[23:21:09.475] rive  showing Desktop [1/3]
+[23:21:09.481] rive  viewport 1200x600 @1x
+[23:21:09.507] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00074.png
+[23:21:09.909] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 334ms, 0 errors, 0 warnings)
+[23:21:09.912] rive  showing Desktop [1/3]
+[23:21:09.917] rive  viewport 1200x600 @1x
+[23:21:09.943] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00075.png
+[23:21:10.348] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 335ms, 0 errors, 0 warnings)
+[23:21:10.351] rive  showing Desktop [1/3]
+[23:21:10.356] rive  viewport 1200x600 @1x
+[23:21:10.382] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00076.png
+[23:21:10.780] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 336ms, 0 errors, 0 warnings)
+[23:21:10.782] rive  showing Desktop [1/3]
+[23:21:10.788] rive  viewport 1200x600 @1x
+[23:21:10.814] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00077.png
+[23:21:11.208] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 336ms, 0 errors, 0 warnings)
+[23:21:11.210] rive  showing Desktop [1/3]
+[23:21:11.216] rive  viewport 1200x600 @1x
+[23:21:11.241] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00078.png
+[23:21:11.645] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 335ms, 0 errors, 0 warnings)
+[23:21:11.648] rive  showing Desktop [1/3]
+[23:21:11.654] rive  viewport 1200x600 @1x
+[23:21:11.680] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00079.png
+[23:21:12.085] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 339ms, 0 errors, 0 warnings)
+[23:21:12.087] rive  showing Desktop [1/3]
+[23:21:12.093] rive  viewport 1200x600 @1x
+[23:21:12.138] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00080.png
+[23:21:12.661] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 403ms, 0 errors, 0 warnings)
+[23:21:12.666] rive  showing Desktop [1/3]
+[23:21:12.672] rive  viewport 1200x600 @1x
+[23:21:12.706] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00081.png
+[23:21:13.137] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 357ms, 0 errors, 0 warnings)
+[23:21:13.140] rive  showing Desktop [1/3]
+[23:21:13.146] rive  viewport 1200x600 @1x
+[23:21:13.177] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00082.png
+[23:21:13.584] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 336ms, 0 errors, 0 warnings)
+[23:21:13.586] rive  showing Desktop [1/3]
+[23:21:13.592] rive  viewport 1200x600 @1x
+[23:21:13.618] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00083.png
+[23:21:14.019] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 335ms, 0 errors, 0 warnings)
+[23:21:14.021] rive  showing Desktop [1/3]
+[23:21:14.027] rive  viewport 1200x600 @1x
+[23:21:14.059] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00084.png
+[23:21:14.460] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 331ms, 0 errors, 0 warnings)
+[23:21:14.462] rive  showing Desktop [1/3]
+[23:21:14.469] rive  viewport 1200x600 @1x
+[23:21:14.495] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00085.png
+[23:21:14.898] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 340ms, 0 errors, 0 warnings)
+[23:21:14.901] rive  showing Desktop [1/3]
+[23:21:14.907] rive  viewport 1200x600 @1x
+[23:21:14.933] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00086.png
+[23:21:15.344] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 344ms, 0 errors, 0 warnings)
+[23:21:15.348] rive  showing Desktop [1/3]
+[23:21:15.354] rive  viewport 1200x600 @1x
+[23:21:15.380] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00087.png
+[23:21:15.789] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 332ms, 0 errors, 0 warnings)
+[23:21:15.791] rive  showing Desktop [1/3]
+[23:21:15.797] rive  viewport 1200x600 @1x
+[23:21:15.823] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00088.png
+[23:21:16.227] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 336ms, 0 errors, 0 warnings)
+[23:21:16.230] rive  showing Desktop [1/3]
+[23:21:16.236] rive  viewport 1200x600 @1x
+[23:21:16.263] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00089.png
+[23:21:16.668] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 338ms, 0 errors, 0 warnings)
+[23:21:16.671] rive  showing Desktop [1/3]
+[23:21:16.678] rive  viewport 1200x600 @1x
+[23:21:16.704] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00090.png
+[23:21:17.113] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 337ms, 0 errors, 0 warnings)
+[23:21:17.115] rive  showing Desktop [1/3]
+[23:21:17.122] rive  viewport 1200x600 @1x
+[23:21:17.148] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00091.png
+[23:21:17.550] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 336ms, 0 errors, 0 warnings)
+[23:21:17.553] rive  showing Desktop [1/3]
+[23:21:17.560] rive  viewport 1200x600 @1x
+[23:21:17.586] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00092.png
+[23:21:17.985] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 334ms, 0 errors, 0 warnings)
+[23:21:17.988] rive  showing Desktop [1/3]
+[23:21:17.995] rive  viewport 1200x600 @1x
+[23:21:18.021] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00093.png
+[23:21:18.425] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 337ms, 0 errors, 0 warnings)
+[23:21:18.428] rive  showing Desktop [1/3]
+[23:21:18.435] rive  viewport 1200x600 @1x
+[23:21:18.461] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00094.png
+[23:21:18.865] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 336ms, 0 errors, 0 warnings)
+[23:21:18.868] rive  showing Desktop [1/3]
+[23:21:18.875] rive  viewport 1200x600 @1x
+[23:21:18.901] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00095.png
+[23:21:19.309] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 337ms, 0 errors, 0 warnings)
+[23:21:19.312] rive  showing Desktop [1/3]
+[23:21:19.319] rive  viewport 1200x600 @1x
+[23:21:19.345] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00096.png
+[23:21:19.750] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 334ms, 0 errors, 0 warnings)
+[23:21:19.752] rive  showing Desktop [1/3]
+[23:21:19.759] rive  viewport 1200x600 @1x
+[23:21:19.785] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00097.png
+[23:21:20.190] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 334ms, 0 errors, 0 warnings)
+[23:21:20.193] rive  showing Desktop [1/3]
+[23:21:20.200] rive  viewport 1200x600 @1x
+[23:21:20.226] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00098.png
+[23:21:20.631] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 333ms, 0 errors, 0 warnings)
+[23:21:20.634] rive  showing Desktop [1/3]
+[23:21:20.641] rive  viewport 1200x600 @1x
+[23:21:20.667] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00099.png
+[23:21:21.080] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 339ms, 0 errors, 0 warnings)
+[23:21:21.083] rive  showing Desktop [1/3]
+[23:21:21.090] rive  viewport 1200x600 @1x
+[23:21:21.117] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00100.png
+[23:21:21.524] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 335ms, 0 errors, 0 warnings)
+[23:21:21.527] rive  showing Desktop [1/3]
+[23:21:21.534] rive  viewport 1200x600 @1x
+[23:21:21.558] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00101.png
+[23:21:21.969] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 336ms, 0 errors, 0 warnings)
+[23:21:21.971] rive  showing Desktop [1/3]
+[23:21:21.979] rive  viewport 1200x600 @1x
+[23:21:22.002] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00102.png
+[23:21:22.405] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 337ms, 0 errors, 0 warnings)
+[23:21:22.408] rive  showing Desktop [1/3]
+[23:21:22.415] rive  viewport 1200x600 @1x
+[23:21:22.439] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00103.png
+[23:21:22.839] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 331ms, 0 errors, 0 warnings)
+[23:21:22.842] rive  showing Desktop [1/3]
+[23:21:22.850] rive  viewport 1200x600 @1x
+[23:21:22.872] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00104.png
+[23:21:23.278] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 338ms, 0 errors, 0 warnings)
+[23:21:23.281] rive  showing Desktop [1/3]
+[23:21:23.289] rive  viewport 1200x600 @1x
+[23:21:23.312] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00105.png
+[23:21:23.704] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 332ms, 0 errors, 0 warnings)
+[23:21:23.706] rive  showing Desktop [1/3]
+[23:21:23.714] rive  viewport 1200x600 @1x
+[23:21:23.737] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00106.png
+[23:21:24.141] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 337ms, 0 errors, 0 warnings)
+[23:21:24.144] rive  showing Desktop [1/3]
+[23:21:24.152] rive  viewport 1200x600 @1x
+[23:21:24.175] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00107.png
+[23:21:24.569] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 328ms, 0 errors, 0 warnings)
+[23:21:24.571] rive  showing Desktop [1/3]
+[23:21:24.579] rive  viewport 1200x600 @1x
+[23:21:24.602] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00108.png
+[23:21:25.002] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 328ms, 0 errors, 0 warnings)
+[23:21:25.005] rive  showing Desktop [1/3]
+[23:21:25.013] rive  viewport 1200x600 @1x
+[23:21:25.036] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00109.png
+[23:21:25.440] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 334ms, 0 errors, 0 warnings)
+[23:21:25.443] rive  showing Desktop [1/3]
+[23:21:25.450] rive  viewport 1200x600 @1x
+[23:21:25.473] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00110.png
+[23:21:25.865] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 328ms, 0 errors, 0 warnings)
+[23:21:25.867] rive  showing Desktop [1/3]
+[23:21:25.875] rive  viewport 1200x600 @1x
+[23:21:25.898] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00111.png
+[23:21:26.295] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 329ms, 0 errors, 0 warnings)
+[23:21:26.297] rive  showing Desktop [1/3]
+[23:21:26.305] rive  viewport 1200x600 @1x
+[23:21:26.328] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00112.png
+[23:21:26.728] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 332ms, 0 errors, 0 warnings)
+[23:21:26.730] rive  showing Desktop [1/3]
+[23:21:26.739] rive  viewport 1200x600 @1x
+[23:21:26.762] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00113.png
+[23:21:27.176] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 346ms, 0 errors, 0 warnings)
+[23:21:27.179] rive  showing Desktop [1/3]
+[23:21:27.188] rive  viewport 1200x600 @1x
+[23:21:27.212] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00114.png
+[23:21:27.612] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 338ms, 0 errors, 0 warnings)
+[23:21:27.615] rive  showing Desktop [1/3]
+[23:21:27.623] rive  viewport 1200x600 @1x
+[23:21:27.649] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00115.png
+[23:21:28.062] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 338ms, 0 errors, 0 warnings)
+[23:21:28.064] rive  showing Desktop [1/3]
+[23:21:28.073] rive  viewport 1200x600 @1x
+[23:21:28.096] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00116.png
+[23:21:28.500] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 338ms, 0 errors, 0 warnings)
+[23:21:28.502] rive  showing Desktop [1/3]
+[23:21:28.511] rive  viewport 1200x600 @1x
+[23:21:28.538] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00117.png
+[23:21:28.936] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 333ms, 0 errors, 0 warnings)
+[23:21:28.939] rive  showing Desktop [1/3]
+[23:21:28.947] rive  viewport 1200x600 @1x
+[23:21:28.976] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00118.png
+[23:21:29.374] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 332ms, 0 errors, 0 warnings)
+[23:21:29.376] rive  showing Desktop [1/3]
+[23:21:29.385] rive  viewport 1200x600 @1x
+[23:21:29.407] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00119.png
+[23:21:29.802] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 331ms, 0 errors, 0 warnings)
+[23:21:29.804] rive  showing Desktop [1/3]
+[23:21:29.813] rive  viewport 1200x600 @1x
+[23:21:29.835] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00120.png
+[23:21:30.230] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 331ms, 0 errors, 0 warnings)
+[23:21:30.232] rive  showing Desktop [1/3]
+[23:21:30.241] rive  viewport 1200x600 @1x
+[23:21:30.264] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00121.png
+[23:21:30.666] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 337ms, 0 errors, 0 warnings)
+[23:21:30.668] rive  showing Desktop [1/3]
+[23:21:30.677] rive  viewport 1200x600 @1x
+[23:21:30.699] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00122.png
+[23:21:31.097] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 330ms, 0 errors, 0 warnings)
+[23:21:31.100] rive  showing Desktop [1/3]
+[23:21:31.108] rive  viewport 1200x600 @1x
+[23:21:31.132] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00123.png
+[23:21:31.523] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 329ms, 0 errors, 0 warnings)
+[23:21:31.526] rive  showing Desktop [1/3]
+[23:21:31.535] rive  viewport 1200x600 @1x
+[23:21:31.558] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00124.png
+[23:21:31.953] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 331ms, 0 errors, 0 warnings)
+[23:21:31.956] rive  showing Desktop [1/3]
+[23:21:31.965] rive  viewport 1200x600 @1x
+[23:21:31.987] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00125.png
+[23:21:32.385] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 331ms, 0 errors, 0 warnings)
+[23:21:32.387] rive  showing Desktop [1/3]
+[23:21:32.397] rive  viewport 1200x600 @1x
+[23:21:32.420] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00126.png
+[23:21:32.809] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 328ms, 0 errors, 0 warnings)
+[23:21:32.812] rive  showing Desktop [1/3]
+[23:21:32.821] rive  viewport 1200x600 @1x
+[23:21:32.844] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00127.png
+[23:21:33.240] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 332ms, 0 errors, 0 warnings)
+[23:21:33.243] rive  showing Desktop [1/3]
+[23:21:33.252] rive  viewport 1200x600 @1x
+[23:21:33.274] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00128.png
+[23:21:33.670] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 335ms, 0 errors, 0 warnings)
+[23:21:33.673] rive  showing Desktop [1/3]
+[23:21:33.682] rive  viewport 1200x600 @1x
+[23:21:33.705] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00129.png
+[23:21:34.099] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 329ms, 0 errors, 0 warnings)
+[23:21:34.102] rive  showing Desktop [1/3]
+[23:21:34.111] rive  viewport 1200x600 @1x
+[23:21:34.135] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00130.png
+[23:21:34.528] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 331ms, 0 errors, 0 warnings)
+[23:21:34.531] rive  showing Desktop [1/3]
+[23:21:34.540] rive  viewport 1200x600 @1x
+[23:21:34.564] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00131.png
+[23:21:34.953] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 328ms, 0 errors, 0 warnings)
+[23:21:34.955] rive  showing Desktop [1/3]
+[23:21:34.965] rive  viewport 1200x600 @1x
+[23:21:34.988] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00132.png
+[23:21:35.384] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 331ms, 0 errors, 0 warnings)
+[23:21:35.387] rive  showing Desktop [1/3]
+[23:21:35.397] rive  viewport 1200x600 @1x
+[23:21:35.420] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00133.png
+[23:21:35.812] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 326ms, 0 errors, 0 warnings)
+[23:21:35.815] rive  showing Desktop [1/3]
+[23:21:35.825] rive  viewport 1200x600 @1x
+[23:21:35.848] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00134.png
+[23:21:36.242] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 330ms, 0 errors, 0 warnings)
+[23:21:36.245] rive  showing Desktop [1/3]
+[23:21:36.255] rive  viewport 1200x600 @1x
+[23:21:36.277] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00135.png
+[23:21:36.675] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 331ms, 0 errors, 0 warnings)
+[23:21:36.677] rive  showing Desktop [1/3]
+[23:21:36.687] rive  viewport 1200x600 @1x
+[23:21:36.711] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00136.png
+[23:21:37.112] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 334ms, 0 errors, 0 warnings)
+[23:21:37.115] rive  showing Desktop [1/3]
+[23:21:37.125] rive  viewport 1200x600 @1x
+[23:21:37.147] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00137.png
+[23:21:37.539] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 327ms, 0 errors, 0 warnings)
+[23:21:37.541] rive  showing Desktop [1/3]
+[23:21:37.551] rive  viewport 1200x600 @1x
+[23:21:37.574] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00138.png
+[23:21:37.973] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 332ms, 0 errors, 0 warnings)
+[23:21:37.975] rive  showing Desktop [1/3]
+[23:21:37.985] rive  viewport 1200x600 @1x
+[23:21:38.008] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00139.png
+[23:21:38.402] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 330ms, 0 errors, 0 warnings)
+[23:21:38.404] rive  showing Desktop [1/3]
+[23:21:38.414] rive  viewport 1200x600 @1x
+[23:21:38.437] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00140.png
+[23:21:38.829] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 329ms, 0 errors, 0 warnings)
+[23:21:38.832] rive  showing Desktop [1/3]
+[23:21:38.842] rive  viewport 1200x600 @1x
+[23:21:38.869] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00141.png
+[23:21:39.266] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 329ms, 0 errors, 0 warnings)
+[23:21:39.269] rive  showing Desktop [1/3]
+[23:21:39.279] rive  viewport 1200x600 @1x
+[23:21:39.302] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00142.png
+[23:21:39.694] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 328ms, 0 errors, 0 warnings)
+[23:21:39.696] rive  showing Desktop [1/3]
+[23:21:39.707] rive  viewport 1200x600 @1x
+[23:21:39.730] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00143.png
+[23:21:40.129] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 333ms, 0 errors, 0 warnings)
+[23:21:40.132] rive  showing Desktop [1/3]
+[23:21:40.143] rive  viewport 1200x600 @1x
+[23:21:40.166] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00144.png
+[23:21:40.554] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 330ms, 0 errors, 0 warnings)
+[23:21:40.556] rive  showing Desktop [1/3]
+[23:21:40.566] rive  viewport 1200x600 @1x
+[23:21:40.589] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00145.png
+[23:21:40.987] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 331ms, 0 errors, 0 warnings)
+[23:21:40.990] rive  showing Desktop [1/3]
+[23:21:41.001] rive  viewport 1200x600 @1x
+[23:21:41.024] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00146.png
+[23:21:41.420] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 331ms, 0 errors, 0 warnings)
+[23:21:41.423] rive  showing Desktop [1/3]
+[23:21:41.433] rive  viewport 1200x600 @1x
+[23:21:41.455] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00147.png
+[23:21:41.857] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 336ms, 0 errors, 0 warnings)
+[23:21:41.859] rive  showing Desktop [1/3]
+[23:21:41.870] rive  viewport 1200x600 @1x
+[23:21:41.893] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00148.png
+[23:21:42.293] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 340ms, 0 errors, 0 warnings)
+[23:21:42.295] rive  showing Desktop [1/3]
+[23:21:42.306] rive  viewport 1200x600 @1x
+[23:21:42.329] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00149.png
+[23:21:42.720] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 329ms, 0 errors, 0 warnings)
+[23:21:42.723] rive  showing Desktop [1/3]
+[23:21:42.733] rive  viewport 1200x600 @1x
+[23:21:42.756] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00150.png
+[23:21:43.146] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 330ms, 0 errors, 0 warnings)
+[23:21:43.149] rive  showing Desktop [1/3]
+[23:21:43.159] rive  viewport 1200x600 @1x
+[23:21:43.182] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00151.png
+[23:21:43.571] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 328ms, 0 errors, 0 warnings)
+[23:21:43.574] rive  showing Desktop [1/3]
+[23:21:43.584] rive  viewport 1200x600 @1x
+[23:21:43.607] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00152.png
+[23:21:43.996] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 329ms, 0 errors, 0 warnings)
+[23:21:43.998] rive  showing Desktop [1/3]
+[23:21:44.009] rive  viewport 1200x600 @1x
+[23:21:44.032] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00153.png
+[23:21:44.424] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 328ms, 0 errors, 0 warnings)
+[23:21:44.426] rive  showing Desktop [1/3]
+[23:21:44.437] rive  viewport 1200x600 @1x
+[23:21:44.461] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00154.png
+[23:21:44.854] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 331ms, 0 errors, 0 warnings)
+[23:21:44.856] rive  showing Desktop [1/3]
+[23:21:44.867] rive  viewport 1200x600 @1x
+[23:21:44.890] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00155.png
+[23:21:45.284] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 333ms, 0 errors, 0 warnings)
+[23:21:45.286] rive  showing Desktop [1/3]
+[23:21:45.298] rive  viewport 1200x600 @1x
+[23:21:45.321] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00156.png
+[23:21:45.709] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 328ms, 0 errors, 0 warnings)
+[23:21:45.711] rive  showing Desktop [1/3]
+[23:21:45.723] rive  viewport 1200x600 @1x
+[23:21:45.746] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00157.png
+[23:21:46.139] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 329ms, 0 errors, 0 warnings)
+[23:21:46.141] rive  showing Desktop [1/3]
+[23:21:46.153] rive  viewport 1200x600 @1x
+[23:21:46.176] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00158.png
+[23:21:46.569] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 333ms, 0 errors, 0 warnings)
+[23:21:46.572] rive  showing Desktop [1/3]
+[23:21:46.583] rive  viewport 1200x600 @1x
+[23:21:46.606] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00159.png
+[23:21:47.000] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 329ms, 0 errors, 0 warnings)
+[23:21:47.003] rive  showing Desktop [1/3]
+[23:21:47.014] rive  viewport 1200x600 @1x
+[23:21:47.037] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00160.png
+[23:21:47.438] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 338ms, 0 errors, 0 warnings)
+[23:21:47.441] rive  showing Desktop [1/3]
+[23:21:47.452] rive  viewport 1200x600 @1x
+[23:21:47.476] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00161.png
+[23:21:47.866] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 326ms, 0 errors, 0 warnings)
+[23:21:47.868] rive  showing Desktop [1/3]
+[23:21:47.880] rive  viewport 1200x600 @1x
+[23:21:47.903] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00162.png
+[23:21:48.297] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 331ms, 0 errors, 0 warnings)
+[23:21:48.300] rive  showing Desktop [1/3]
+[23:21:48.311] rive  viewport 1200x600 @1x
+[23:21:48.335] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00163.png
+[23:21:48.720] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 327ms, 0 errors, 0 warnings)
+[23:21:48.723] rive  showing Desktop [1/3]
+[23:21:48.734] rive  viewport 1200x600 @1x
+[23:21:48.757] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00164.png
+[23:21:49.151] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 331ms, 0 errors, 0 warnings)
+[23:21:49.153] rive  showing Desktop [1/3]
+[23:21:49.165] rive  viewport 1200x600 @1x
+[23:21:49.189] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00165.png
+[23:21:49.576] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 328ms, 0 errors, 0 warnings)
+[23:21:49.578] rive  showing Desktop [1/3]
+[23:21:49.590] rive  viewport 1200x600 @1x
+[23:21:49.614] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00166.png
+[23:21:50.004] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 330ms, 0 errors, 0 warnings)
+[23:21:50.007] rive  showing Desktop [1/3]
+[23:21:50.019] rive  viewport 1200x600 @1x
+[23:21:50.042] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00167.png
+[23:21:50.435] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 327ms, 0 errors, 0 warnings)
+[23:21:50.437] rive  showing Desktop [1/3]
+[23:21:50.449] rive  viewport 1200x600 @1x
+[23:21:50.473] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00168.png
+[23:21:50.911] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 371ms, 0 errors, 0 warnings)
+[23:21:50.915] rive  showing Desktop [1/3]
+[23:21:50.927] rive  viewport 1200x600 @1x
+[23:21:50.952] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00169.png
+[23:21:51.361] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 339ms, 0 errors, 0 warnings)
+[23:21:51.364] rive  showing Desktop [1/3]
+[23:21:51.376] rive  viewport 1200x600 @1x
+[23:21:51.400] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00170.png
+[23:21:51.936] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 468ms, 0 errors, 0 warnings)
+[23:21:51.939] rive  showing Desktop [1/3]
+[23:21:51.952] rive  viewport 1200x600 @1x
+[23:21:51.978] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00171.png
+[23:21:52.398] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 349ms, 0 errors, 0 warnings)
+[23:21:52.400] rive  showing Desktop [1/3]
+[23:21:52.413] rive  viewport 1200x600 @1x
+[23:21:52.438] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00172.png
+[23:21:52.877] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 373ms, 0 errors, 0 warnings)
+[23:21:52.880] rive  showing Desktop [1/3]
+[23:21:52.894] rive  viewport 1200x600 @1x
+[23:21:52.921] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00173.png
+[23:21:53.318] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 336ms, 0 errors, 0 warnings)
+[23:21:53.321] rive  showing Desktop [1/3]
+[23:21:53.334] rive  viewport 1200x600 @1x
+[23:21:53.358] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00174.png
+[23:21:53.765] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 345ms, 0 errors, 0 warnings)
+[23:21:53.768] rive  showing Desktop [1/3]
+[23:21:53.781] rive  viewport 1200x600 @1x
+[23:21:53.804] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00175.png
+[23:21:54.219] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 347ms, 0 errors, 0 warnings)
+[23:21:54.222] rive  showing Desktop [1/3]
+[23:21:54.235] rive  viewport 1200x600 @1x
+[23:21:54.260] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00176.png
+[23:21:54.686] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 358ms, 0 errors, 0 warnings)
+[23:21:54.691] rive  showing Desktop [1/3]
+[23:21:54.704] rive  viewport 1200x600 @1x
+[23:21:54.728] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00177.png
+[23:21:55.138] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 345ms, 0 errors, 0 warnings)
+[23:21:55.141] rive  showing Desktop [1/3]
+[23:21:55.154] rive  viewport 1200x600 @1x
+[23:21:55.177] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00178.png
+[23:21:55.615] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 367ms, 0 errors, 0 warnings)
+[23:21:55.618] rive  showing Desktop [1/3]
+[23:21:55.631] rive  viewport 1200x600 @1x
+[23:21:55.655] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00179.png
+[23:21:56.079] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 360ms, 0 errors, 0 warnings)
+[23:21:56.082] rive  showing Desktop [1/3]
+[23:21:56.095] rive  viewport 1200x600 @1x
+[23:21:56.117] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00180.png
+[23:21:56.527] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 343ms, 0 errors, 0 warnings)
+[23:21:56.530] rive  showing Desktop [1/3]
+[23:21:56.543] rive  viewport 1200x600 @1x
+[23:21:56.568] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00181.png
+[23:21:56.987] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 349ms, 0 errors, 0 warnings)
+[23:21:56.990] rive  showing Desktop [1/3]
+[23:21:57.003] rive  viewport 1200x600 @1x
+[23:21:57.026] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00182.png
+[23:21:57.440] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 348ms, 0 errors, 0 warnings)
+[23:21:57.443] rive  showing Desktop [1/3]
+[23:21:57.456] rive  viewport 1200x600 @1x
+[23:21:57.480] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00183.png
+[23:21:57.888] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 341ms, 0 errors, 0 warnings)
+[23:21:57.891] rive  showing Desktop [1/3]
+[23:21:57.904] rive  viewport 1200x600 @1x
+[23:21:57.928] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00184.png
+[23:21:58.328] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 341ms, 0 errors, 0 warnings)
+[23:21:58.331] rive  showing Desktop [1/3]
+[23:21:58.344] rive  viewport 1200x600 @1x
+[23:21:58.370] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00185.png
+[23:21:58.773] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 340ms, 0 errors, 0 warnings)
+[23:21:58.775] rive  showing Desktop [1/3]
+[23:21:58.789] rive  viewport 1200x600 @1x
+[23:21:58.813] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00186.png
+[23:21:59.212] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 343ms, 0 errors, 0 warnings)
+[23:21:59.215] rive  showing Desktop [1/3]
+[23:21:59.229] rive  viewport 1200x600 @1x
+[23:21:59.252] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00187.png
+[23:21:59.658] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 338ms, 0 errors, 0 warnings)
+[23:21:59.660] rive  showing Desktop [1/3]
+[23:21:59.674] rive  viewport 1200x600 @1x
+[23:21:59.699] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00188.png
+[23:22:00.121] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 363ms, 0 errors, 0 warnings)
+[23:22:00.124] rive  showing Desktop [1/3]
+[23:22:00.137] rive  viewport 1200x600 @1x
+[23:22:00.161] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00189.png
+[23:22:00.566] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 340ms, 0 errors, 0 warnings)
+[23:22:00.569] rive  showing Desktop [1/3]
+[23:22:00.583] rive  viewport 1200x600 @1x
+[23:22:00.613] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00190.png
+[23:22:01.046] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 346ms, 0 errors, 0 warnings)
+[23:22:01.049] rive  showing Desktop [1/3]
+[23:22:01.063] rive  viewport 1200x600 @1x
+[23:22:01.089] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00191.png
+[23:22:01.498] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 342ms, 0 errors, 0 warnings)
+[23:22:01.501] rive  showing Desktop [1/3]
+[23:22:01.515] rive  viewport 1200x600 @1x
+[23:22:01.544] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00192.png
+[23:22:01.956] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 345ms, 0 errors, 0 warnings)
+[23:22:01.958] rive  showing Desktop [1/3]
+[23:22:01.972] rive  viewport 1200x600 @1x
+[23:22:01.997] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00193.png
+[23:22:02.397] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 338ms, 0 errors, 0 warnings)
+[23:22:02.400] rive  showing Desktop [1/3]
+[23:22:02.414] rive  viewport 1200x600 @1x
+[23:22:02.440] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00194.png
+[23:22:02.845] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 342ms, 0 errors, 0 warnings)
+[23:22:02.848] rive  showing Desktop [1/3]
+[23:22:02.862] rive  viewport 1200x600 @1x
+[23:22:02.889] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00195.png
+[23:22:03.298] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 345ms, 0 errors, 0 warnings)
+[23:22:03.300] rive  showing Desktop [1/3]
+[23:22:03.315] rive  viewport 1200x600 @1x
+[23:22:03.342] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00196.png
+[23:22:03.741] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 339ms, 0 errors, 0 warnings)
+[23:22:03.743] rive  showing Desktop [1/3]
+[23:22:03.758] rive  viewport 1200x600 @1x
+[23:22:03.785] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00197.png
+[23:22:04.207] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 358ms, 0 errors, 0 warnings)
+[23:22:04.210] rive  showing Desktop [1/3]
+[23:22:04.225] rive  viewport 1200x600 @1x
+[23:22:04.251] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00198.png
+[23:22:04.650] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 336ms, 0 errors, 0 warnings)
+[23:22:04.653] rive  showing Desktop [1/3]
+[23:22:04.668] rive  viewport 1200x600 @1x
+[23:22:04.694] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00199.png
+[23:22:05.105] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 352ms, 0 errors, 0 warnings)
+[23:22:05.108] rive  showing Desktop [1/3]
+[23:22:05.123] rive  viewport 1200x600 @1x
+[23:22:05.149] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00200.png
+[23:22:05.558] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 344ms, 0 errors, 0 warnings)
+[23:22:05.561] rive  showing Desktop [1/3]
+[23:22:05.575] rive  viewport 1200x600 @1x
+[23:22:05.602] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00201.png
+[23:22:06.008] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 344ms, 0 errors, 0 warnings)
+[23:22:06.011] rive  showing Desktop [1/3]
+[23:22:06.026] rive  viewport 1200x600 @1x
+[23:22:06.056] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00202.png
+[23:22:06.482] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 355ms, 0 errors, 0 warnings)
+[23:22:06.484] rive  showing Desktop [1/3]
+[23:22:06.499] rive  viewport 1200x600 @1x
+[23:22:06.524] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00203.png
+[23:22:06.939] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 356ms, 0 errors, 0 warnings)
+[23:22:06.942] rive  showing Desktop [1/3]
+[23:22:06.958] rive  viewport 1200x600 @1x
+[23:22:06.981] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00204.png
+[23:22:07.398] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 353ms, 0 errors, 0 warnings)
+[23:22:07.401] rive  showing Desktop [1/3]
+[23:22:07.416] rive  viewport 1200x600 @1x
+[23:22:07.442] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00205.png
+[23:22:07.848] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 346ms, 0 errors, 0 warnings)
+[23:22:07.851] rive  showing Desktop [1/3]
+[23:22:07.867] rive  viewport 1200x600 @1x
+[23:22:07.894] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00206.png
+[23:22:08.331] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 354ms, 0 errors, 0 warnings)
+[23:22:08.334] rive  showing Desktop [1/3]
+[23:22:08.349] rive  viewport 1200x600 @1x
+[23:22:08.376] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00207.png
+[23:22:08.793] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 356ms, 0 errors, 0 warnings)
+[23:22:08.795] rive  showing Desktop [1/3]
+[23:22:08.814] rive  viewport 1200x600 @1x
+[23:22:08.868] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00208.png
+[23:22:09.316] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 365ms, 0 errors, 0 warnings)
+[23:22:09.319] rive  showing Desktop [1/3]
+[23:22:09.335] rive  viewport 1200x600 @1x
+[23:22:09.364] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00209.png
+[23:22:09.784] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 350ms, 0 errors, 0 warnings)
+[23:22:09.787] rive  showing Desktop [1/3]
+[23:22:09.803] rive  viewport 1200x600 @1x
+[23:22:09.827] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00210.png
+[23:22:10.233] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 335ms, 0 errors, 0 warnings)
+[23:22:10.236] rive  showing Desktop [1/3]
+[23:22:10.252] rive  viewport 1200x600 @1x
+[23:22:10.276] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00211.png
+[23:22:10.687] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 346ms, 0 errors, 0 warnings)
+[23:22:10.690] rive  showing Desktop [1/3]
+[23:22:10.706] rive  viewport 1200x600 @1x
+[23:22:10.731] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00212.png
+[23:22:11.130] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 338ms, 0 errors, 0 warnings)
+[23:22:11.133] rive  showing Desktop [1/3]
+[23:22:11.148] rive  viewport 1200x600 @1x
+[23:22:11.172] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00213.png
+[23:22:11.563] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 334ms, 0 errors, 0 warnings)
+[23:22:11.565] rive  showing Desktop [1/3]
+[23:22:11.581] rive  viewport 1200x600 @1x
+[23:22:11.605] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00214.png
+[23:22:12.002] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 336ms, 0 errors, 0 warnings)
+[23:22:12.005] rive  showing Desktop [1/3]
+[23:22:12.020] rive  viewport 1200x600 @1x
+[23:22:12.045] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00215.png
+[23:22:12.448] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 346ms, 0 errors, 0 warnings)
+[23:22:12.451] rive  showing Desktop [1/3]
+[23:22:12.466] rive  viewport 1200x600 @1x
+[23:22:12.490] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00216.png
+[23:22:12.886] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 332ms, 0 errors, 0 warnings)
+[23:22:12.888] rive  showing Desktop [1/3]
+[23:22:12.904] rive  viewport 1200x600 @1x
+[23:22:12.927] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00217.png
+[23:22:13.323] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 330ms, 0 errors, 0 warnings)
+[23:22:13.325] rive  showing Desktop [1/3]
+[23:22:13.341] rive  viewport 1200x600 @1x
+[23:22:13.364] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00218.png
+[23:22:13.759] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 335ms, 0 errors, 0 warnings)
+[23:22:13.762] rive  showing Desktop [1/3]
+[23:22:13.778] rive  viewport 1200x600 @1x
+[23:22:13.802] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00219.png
+[23:22:14.201] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 339ms, 0 errors, 0 warnings)
+[23:22:14.203] rive  showing Desktop [1/3]
+[23:22:14.219] rive  viewport 1200x600 @1x
+[23:22:14.243] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00220.png
+[23:22:14.645] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 341ms, 0 errors, 0 warnings)
+[23:22:14.648] rive  showing Desktop [1/3]
+[23:22:14.664] rive  viewport 1200x600 @1x
+[23:22:14.688] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00221.png
+[23:22:15.081] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 328ms, 0 errors, 0 warnings)
+[23:22:15.084] rive  showing Desktop [1/3]
+[23:22:15.100] rive  viewport 1200x600 @1x
+[23:22:15.122] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00222.png
+[23:22:15.512] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 328ms, 0 errors, 0 warnings)
+[23:22:15.515] rive  showing Desktop [1/3]
+[23:22:15.531] rive  viewport 1200x600 @1x
+[23:22:15.553] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00223.png
+[23:22:15.956] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 337ms, 0 errors, 0 warnings)
+[23:22:15.959] rive  showing Desktop [1/3]
+[23:22:15.975] rive  viewport 1200x600 @1x
+[23:22:15.998] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00224.png
+[23:22:16.400] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 342ms, 0 errors, 0 warnings)
+[23:22:16.403] rive  showing Desktop [1/3]
+[23:22:16.419] rive  viewport 1200x600 @1x
+[23:22:16.442] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00225.png
+[23:22:16.841] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 340ms, 0 errors, 0 warnings)
+[23:22:16.844] rive  showing Desktop [1/3]
+[23:22:16.860] rive  viewport 1200x600 @1x
+[23:22:16.883] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00226.png
+[23:22:17.280] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 337ms, 0 errors, 0 warnings)
+[23:22:17.283] rive  showing Desktop [1/3]
+[23:22:17.300] rive  viewport 1200x600 @1x
+[23:22:17.323] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00227.png
+[23:22:17.722] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 335ms, 0 errors, 0 warnings)
+[23:22:17.724] rive  showing Desktop [1/3]
+[23:22:17.741] rive  viewport 1200x600 @1x
+[23:22:17.764] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00228.png
+[23:22:18.172] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 342ms, 0 errors, 0 warnings)
+[23:22:18.175] rive  showing Desktop [1/3]
+[23:22:18.192] rive  viewport 1200x600 @1x
+[23:22:18.217] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00229.png
+[23:22:18.629] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 341ms, 0 errors, 0 warnings)
+[23:22:18.632] rive  showing Desktop [1/3]
+[23:22:18.649] rive  viewport 1200x600 @1x
+[23:22:18.674] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00230.png
+[23:22:19.072] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 337ms, 0 errors, 0 warnings)
+[23:22:19.075] rive  showing Desktop [1/3]
+[23:22:19.091] rive  viewport 1200x600 @1x
+[23:22:19.114] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00231.png
+[23:22:19.511] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 331ms, 0 errors, 0 warnings)
+[23:22:19.513] rive  showing Desktop [1/3]
+[23:22:19.531] rive  viewport 1200x600 @1x
+[23:22:19.554] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00232.png
+[23:22:19.941] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 324ms, 0 errors, 0 warnings)
+[23:22:19.943] rive  showing Desktop [1/3]
+[23:22:19.960] rive  viewport 1200x600 @1x
+[23:22:19.982] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00233.png
+[23:22:20.369] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 326ms, 0 errors, 0 warnings)
+[23:22:20.372] rive  showing Desktop [1/3]
+[23:22:20.389] rive  viewport 1200x600 @1x
+[23:22:20.411] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00234.png
+[23:22:20.805] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 327ms, 0 errors, 0 warnings)
+[23:22:20.807] rive  showing Desktop [1/3]
+[23:22:20.824] rive  viewport 1200x600 @1x
+[23:22:20.847] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00235.png
+[23:22:21.244] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 328ms, 0 errors, 0 warnings)
+[23:22:21.247] rive  showing Desktop [1/3]
+[23:22:21.264] rive  viewport 1200x600 @1x
+[23:22:21.287] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00236.png
+[23:22:21.681] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 333ms, 0 errors, 0 warnings)
+[23:22:21.684] rive  showing Desktop [1/3]
+[23:22:21.701] rive  viewport 1200x600 @1x
+[23:22:21.723] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00237.png
+[23:22:22.119] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 330ms, 0 errors, 0 warnings)
+[23:22:22.122] rive  showing Desktop [1/3]
+[23:22:22.139] rive  viewport 1200x600 @1x
+[23:22:22.162] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00238.png
+[23:22:22.551] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 325ms, 0 errors, 0 warnings)
+[23:22:22.554] rive  showing Desktop [1/3]
+[23:22:22.571] rive  viewport 1200x600 @1x
+[23:22:22.594] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00239.png
+[23:22:23.000] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 327ms, 0 errors, 0 warnings)
+[23:22:23.002] rive  showing Desktop [1/3]
+[23:22:23.019] rive  viewport 1200x600 @1x
+[23:22:23.042] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00240.png
+[23:22:23.446] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 329ms, 0 errors, 0 warnings)
+[23:22:23.449] rive  showing Desktop [1/3]
+[23:22:23.467] rive  viewport 1200x600 @1x
+[23:22:23.490] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00241.png
+[23:22:23.889] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 334ms, 0 errors, 0 warnings)
+[23:22:23.892] rive  showing Desktop [1/3]
+[23:22:23.909] rive  viewport 1200x600 @1x
+[23:22:23.932] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00242.png
+[23:22:24.329] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 329ms, 0 errors, 0 warnings)
+[23:22:24.331] rive  showing Desktop [1/3]
+[23:22:24.349] rive  viewport 1200x600 @1x
+[23:22:24.372] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00243.png
+[23:22:24.781] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 335ms, 0 errors, 0 warnings)
+[23:22:24.784] rive  showing Desktop [1/3]
+[23:22:24.801] rive  viewport 1200x600 @1x
+[23:22:24.830] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00244.png
+[23:22:25.227] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 330ms, 0 errors, 0 warnings)
+[23:22:25.229] rive  showing Desktop [1/3]
+[23:22:25.246] rive  viewport 1200x600 @1x
+[23:22:25.269] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00245.png
+[23:22:25.666] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 332ms, 0 errors, 0 warnings)
+[23:22:25.668] rive  showing Desktop [1/3]
+[23:22:25.686] rive  viewport 1200x600 @1x
+[23:22:25.711] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00246.png
+[23:22:26.104] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 326ms, 0 errors, 0 warnings)
+[23:22:26.107] rive  showing Desktop [1/3]
+[23:22:26.124] rive  viewport 1200x600 @1x
+[23:22:26.148] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00247.png
+[23:22:26.529] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:22:26.531] rive  showing Desktop [1/3]
+[23:22:26.549] rive  viewport 1200x600 @1x
+[23:22:26.572] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00248.png
+[23:22:26.962] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 324ms, 0 errors, 0 warnings)
+[23:22:26.964] rive  showing Desktop [1/3]
+[23:22:26.982] rive  viewport 1200x600 @1x
+[23:22:27.008] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00249.png
+[23:22:27.397] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 323ms, 0 errors, 0 warnings)
+[23:22:27.399] rive  showing Desktop [1/3]
+[23:22:27.417] rive  viewport 1200x600 @1x
+[23:22:27.440] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00250.png
+[23:22:27.828] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:22:27.831] rive  showing Desktop [1/3]
+[23:22:27.849] rive  viewport 1200x600 @1x
+[23:22:27.872] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00251.png
+[23:22:28.266] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 327ms, 0 errors, 0 warnings)
+[23:22:28.269] rive  showing Desktop [1/3]
+[23:22:28.288] rive  viewport 1200x600 @1x
+[23:22:28.315] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00252.png
+[23:22:28.726] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 341ms, 0 errors, 0 warnings)
+[23:22:28.729] rive  showing Desktop [1/3]
+[23:22:28.747] rive  viewport 1200x600 @1x
+[23:22:28.771] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00253.png
+[23:22:29.167] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 326ms, 0 errors, 0 warnings)
+[23:22:29.169] rive  showing Desktop [1/3]
+[23:22:29.187] rive  viewport 1200x600 @1x
+[23:22:29.210] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00254.png
+[23:22:29.595] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:22:29.598] rive  showing Desktop [1/3]
+[23:22:29.616] rive  viewport 1200x600 @1x
+[23:22:29.638] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00255.png
+[23:22:30.022] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:22:30.025] rive  showing Desktop [1/3]
+[23:22:30.043] rive  viewport 1200x600 @1x
+[23:22:30.066] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00256.png
+[23:22:30.450] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:22:30.452] rive  showing Desktop [1/3]
+[23:22:30.470] rive  viewport 1200x600 @1x
+[23:22:30.494] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00257.png
+[23:22:30.884] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 327ms, 0 errors, 0 warnings)
+[23:22:30.887] rive  showing Desktop [1/3]
+[23:22:30.905] rive  viewport 1200x600 @1x
+[23:22:30.931] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00258.png
+[23:22:31.324] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 323ms, 0 errors, 0 warnings)
+[23:22:31.326] rive  showing Desktop [1/3]
+[23:22:31.345] rive  viewport 1200x600 @1x
+[23:22:31.368] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00259.png
+[23:22:31.760] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:22:31.763] rive  showing Desktop [1/3]
+[23:22:31.781] rive  viewport 1200x600 @1x
+[23:22:31.804] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00260.png
+[23:22:32.191] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:22:32.194] rive  showing Desktop [1/3]
+[23:22:32.212] rive  viewport 1200x600 @1x
+[23:22:32.235] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00261.png
+[23:22:32.618] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:22:32.621] rive  showing Desktop [1/3]
+[23:22:32.640] rive  viewport 1200x600 @1x
+[23:22:32.663] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00262.png
+[23:22:33.048] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:22:33.050] rive  showing Desktop [1/3]
+[23:22:33.069] rive  viewport 1200x600 @1x
+[23:22:33.094] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00263.png
+[23:22:33.483] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 323ms, 0 errors, 0 warnings)
+[23:22:33.486] rive  showing Desktop [1/3]
+[23:22:33.504] rive  viewport 1200x600 @1x
+[23:22:33.528] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00264.png
+[23:22:33.914] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 320ms, 0 errors, 0 warnings)
+[23:22:33.917] rive  showing Desktop [1/3]
+[23:22:33.935] rive  viewport 1200x600 @1x
+[23:22:33.959] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00265.png
+[23:22:34.347] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 324ms, 0 errors, 0 warnings)
+[23:22:34.350] rive  showing Desktop [1/3]
+[23:22:34.369] rive  viewport 1200x600 @1x
+[23:22:34.392] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00266.png
+[23:22:34.779] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:22:34.781] rive  showing Desktop [1/3]
+[23:22:34.800] rive  viewport 1200x600 @1x
+[23:22:34.823] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00267.png
+[23:22:35.215] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 327ms, 0 errors, 0 warnings)
+[23:22:35.218] rive  showing Desktop [1/3]
+[23:22:35.237] rive  viewport 1200x600 @1x
+[23:22:35.263] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00268.png
+[23:22:35.664] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:22:35.667] rive  showing Desktop [1/3]
+[23:22:35.685] rive  viewport 1200x600 @1x
+[23:22:35.710] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00269.png
+[23:22:36.121] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:22:36.124] rive  showing Desktop [1/3]
+[23:22:36.143] rive  viewport 1200x600 @1x
+[23:22:36.170] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00270.png
+[23:22:36.563] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 327ms, 0 errors, 0 warnings)
+[23:22:36.566] rive  showing Desktop [1/3]
+[23:22:36.585] rive  viewport 1200x600 @1x
+[23:22:36.612] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00271.png
+[23:22:37.005] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 326ms, 0 errors, 0 warnings)
+[23:22:37.007] rive  showing Desktop [1/3]
+[23:22:37.027] rive  viewport 1200x600 @1x
+[23:22:37.051] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00272.png
+[23:22:37.436] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 320ms, 0 errors, 0 warnings)
+[23:22:37.438] rive  showing Desktop [1/3]
+[23:22:37.457] rive  viewport 1200x600 @1x
+[23:22:37.481] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00273.png
+[23:22:37.864] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 320ms, 0 errors, 0 warnings)
+[23:22:37.867] rive  showing Desktop [1/3]
+[23:22:37.886] rive  viewport 1200x600 @1x
+[23:22:37.909] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00274.png
+[23:22:38.293] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:22:38.295] rive  showing Desktop [1/3]
+[23:22:38.315] rive  viewport 1200x600 @1x
+[23:22:38.338] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00275.png
+[23:22:38.728] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 327ms, 0 errors, 0 warnings)
+[23:22:38.731] rive  showing Desktop [1/3]
+[23:22:38.750] rive  viewport 1200x600 @1x
+[23:22:38.774] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00276.png
+[23:22:39.157] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:22:39.160] rive  showing Desktop [1/3]
+[23:22:39.180] rive  viewport 1200x600 @1x
+[23:22:39.202] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00277.png
+[23:22:39.591] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 324ms, 0 errors, 0 warnings)
+[23:22:39.594] rive  showing Desktop [1/3]
+[23:22:39.613] rive  viewport 1200x600 @1x
+[23:22:39.637] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00278.png
+[23:22:40.021] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:22:40.023] rive  showing Desktop [1/3]
+[23:22:40.043] rive  viewport 1200x600 @1x
+[23:22:40.066] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00279.png
+[23:22:40.451] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:22:40.453] rive  showing Desktop [1/3]
+[23:22:40.473] rive  viewport 1200x600 @1x
+[23:22:40.496] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00280.png
+[23:22:40.884] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:22:40.887] rive  showing Desktop [1/3]
+[23:22:40.907] rive  viewport 1200x600 @1x
+[23:22:40.930] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00281.png
+[23:22:41.319] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 323ms, 0 errors, 0 warnings)
+[23:22:41.321] rive  showing Desktop [1/3]
+[23:22:41.341] rive  viewport 1200x600 @1x
+[23:22:41.365] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00282.png
+[23:22:41.753] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:22:41.755] rive  showing Desktop [1/3]
+[23:22:41.775] rive  viewport 1200x600 @1x
+[23:22:41.798] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00283.png
+[23:22:42.183] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:22:42.185] rive  showing Desktop [1/3]
+[23:22:42.205] rive  viewport 1200x600 @1x
+[23:22:42.228] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00284.png
+[23:22:42.615] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 323ms, 0 errors, 0 warnings)
+[23:22:42.617] rive  showing Desktop [1/3]
+[23:22:42.637] rive  viewport 1200x600 @1x
+[23:22:42.660] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00285.png
+[23:22:43.045] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:22:43.048] rive  showing Desktop [1/3]
+[23:22:43.068] rive  viewport 1200x600 @1x
+[23:22:43.092] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00286.png
+[23:22:43.483] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 320ms, 0 errors, 0 warnings)
+[23:22:43.485] rive  showing Desktop [1/3]
+[23:22:43.505] rive  viewport 1200x600 @1x
+[23:22:43.529] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00287.png
+[23:22:43.914] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:22:43.917] rive  showing Desktop [1/3]
+[23:22:43.937] rive  viewport 1200x600 @1x
+[23:22:43.960] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00288.png
+[23:22:44.339] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 320ms, 0 errors, 0 warnings)
+[23:22:44.342] rive  showing Desktop [1/3]
+[23:22:44.362] rive  viewport 1200x600 @1x
+[23:22:44.385] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00289.png
+[23:22:44.771] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 323ms, 0 errors, 0 warnings)
+[23:22:44.773] rive  showing Desktop [1/3]
+[23:22:44.794] rive  viewport 1200x600 @1x
+[23:22:44.817] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00290.png
+[23:22:45.205] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:22:45.208] rive  showing Desktop [1/3]
+[23:22:45.230] rive  viewport 1200x600 @1x
+[23:22:45.255] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00291.png
+[23:22:45.639] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:22:45.641] rive  showing Desktop [1/3]
+[23:22:45.662] rive  viewport 1200x600 @1x
+[23:22:45.687] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00292.png
+[23:22:46.071] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 320ms, 0 errors, 0 warnings)
+[23:22:46.073] rive  showing Desktop [1/3]
+[23:22:46.094] rive  viewport 1200x600 @1x
+[23:22:46.118] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00293.png
+[23:22:46.504] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:22:46.506] rive  showing Desktop [1/3]
+[23:22:46.527] rive  viewport 1200x600 @1x
+[23:22:46.553] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00294.png
+[23:22:46.939] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 324ms, 0 errors, 0 warnings)
+[23:22:46.942] rive  showing Desktop [1/3]
+[23:22:46.963] rive  viewport 1200x600 @1x
+[23:22:46.988] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00295.png
+[23:22:47.372] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:22:47.375] rive  showing Desktop [1/3]
+[23:22:47.395] rive  viewport 1200x600 @1x
+[23:22:47.421] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00296.png
+[23:22:47.809] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:22:47.812] rive  showing Desktop [1/3]
+[23:22:47.833] rive  viewport 1200x600 @1x
+[23:22:47.857] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00297.png
+[23:22:48.243] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:22:48.245] rive  showing Desktop [1/3]
+[23:22:48.266] rive  viewport 1200x600 @1x
+[23:22:48.292] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00298.png
+[23:22:48.682] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:22:48.685] rive  showing Desktop [1/3]
+[23:22:48.706] rive  viewport 1200x600 @1x
+[23:22:48.730] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00299.png
+[23:22:49.114] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 320ms, 0 errors, 0 warnings)
+[23:22:49.117] rive  showing Desktop [1/3]
+[23:22:49.138] rive  viewport 1200x600 @1x
+[23:22:49.163] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00300.png
+[23:22:49.549] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:22:49.552] rive  showing Desktop [1/3]
+[23:22:49.573] rive  viewport 1200x600 @1x
+[23:22:49.598] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00301.png
+[23:22:49.987] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 320ms, 0 errors, 0 warnings)
+[23:22:49.989] rive  showing Desktop [1/3]
+[23:22:50.010] rive  viewport 1200x600 @1x
+[23:22:50.035] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00302.png
+[23:22:50.422] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:22:50.425] rive  showing Desktop [1/3]
+[23:22:50.446] rive  viewport 1200x600 @1x
+[23:22:50.472] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00303.png
+[23:22:50.862] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:22:50.865] rive  showing Desktop [1/3]
+[23:22:50.886] rive  viewport 1200x600 @1x
+[23:22:50.911] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00304.png
+[23:22:51.298] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:22:51.301] rive  showing Desktop [1/3]
+[23:22:51.322] rive  viewport 1200x600 @1x
+[23:22:51.346] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00305.png
+[23:22:51.739] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:22:51.741] rive  showing Desktop [1/3]
+[23:22:51.763] rive  viewport 1200x600 @1x
+[23:22:51.786] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00306.png
+[23:22:52.172] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:22:52.175] rive  showing Desktop [1/3]
+[23:22:52.197] rive  viewport 1200x600 @1x
+[23:22:52.225] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00307.png
+[23:22:52.613] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:22:52.615] rive  showing Desktop [1/3]
+[23:22:52.637] rive  viewport 1200x600 @1x
+[23:22:52.660] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00308.png
+[23:22:53.046] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:22:53.049] rive  showing Desktop [1/3]
+[23:22:53.071] rive  viewport 1200x600 @1x
+[23:22:53.094] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00309.png
+[23:22:53.484] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 324ms, 0 errors, 0 warnings)
+[23:22:53.487] rive  showing Desktop [1/3]
+[23:22:53.508] rive  viewport 1200x600 @1x
+[23:22:53.532] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00310.png
+[23:22:53.917] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 323ms, 0 errors, 0 warnings)
+[23:22:53.920] rive  showing Desktop [1/3]
+[23:22:53.942] rive  viewport 1200x600 @1x
+[23:22:53.965] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00311.png
+[23:22:54.348] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:22:54.351] rive  showing Desktop [1/3]
+[23:22:54.373] rive  viewport 1200x600 @1x
+[23:22:54.396] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00312.png
+[23:22:54.783] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 323ms, 0 errors, 0 warnings)
+[23:22:54.785] rive  showing Desktop [1/3]
+[23:22:54.807] rive  viewport 1200x600 @1x
+[23:22:54.830] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00313.png
+[23:22:55.217] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 323ms, 0 errors, 0 warnings)
+[23:22:55.220] rive  showing Desktop [1/3]
+[23:22:55.242] rive  viewport 1200x600 @1x
+[23:22:55.265] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00314.png
+[23:22:55.652] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 323ms, 0 errors, 0 warnings)
+[23:22:55.655] rive  showing Desktop [1/3]
+[23:22:55.677] rive  viewport 1200x600 @1x
+[23:22:55.700] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00315.png
+[23:22:56.086] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:22:56.088] rive  showing Desktop [1/3]
+[23:22:56.111] rive  viewport 1200x600 @1x
+[23:22:56.133] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00316.png
+[23:22:56.520] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:22:56.522] rive  showing Desktop [1/3]
+[23:22:56.545] rive  viewport 1200x600 @1x
+[23:22:56.568] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00317.png
+[23:22:56.952] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:22:56.954] rive  showing Desktop [1/3]
+[23:22:56.976] rive  viewport 1200x600 @1x
+[23:22:56.999] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00318.png
+[23:22:57.394] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:22:57.396] rive  showing Desktop [1/3]
+[23:22:57.419] rive  viewport 1200x600 @1x
+[23:22:57.444] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00319.png
+[23:22:57.839] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 324ms, 0 errors, 0 warnings)
+[23:22:57.841] rive  showing Desktop [1/3]
+[23:22:57.863] rive  viewport 1200x600 @1x
+[23:22:57.887] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00320.png
+[23:22:58.274] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 320ms, 0 errors, 0 warnings)
+[23:22:58.276] rive  showing Desktop [1/3]
+[23:22:58.299] rive  viewport 1200x600 @1x
+[23:22:58.321] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00321.png
+[23:22:58.706] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:22:58.709] rive  showing Desktop [1/3]
+[23:22:58.732] rive  viewport 1200x600 @1x
+[23:22:58.755] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00322.png
+[23:22:59.143] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:22:59.145] rive  showing Desktop [1/3]
+[23:22:59.168] rive  viewport 1200x600 @1x
+[23:22:59.191] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00323.png
+[23:22:59.580] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:22:59.582] rive  showing Desktop [1/3]
+[23:22:59.605] rive  viewport 1200x600 @1x
+[23:22:59.628] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00324.png
+[23:23:00.006] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:23:00.009] rive  showing Desktop [1/3]
+[23:23:00.032] rive  viewport 1200x600 @1x
+[23:23:00.055] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00325.png
+[23:23:00.442] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:23:00.444] rive  showing Desktop [1/3]
+[23:23:00.467] rive  viewport 1200x600 @1x
+[23:23:00.491] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00326.png
+[23:23:00.882] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 327ms, 0 errors, 0 warnings)
+[23:23:00.885] rive  showing Desktop [1/3]
+[23:23:00.908] rive  viewport 1200x600 @1x
+[23:23:00.931] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00327.png
+[23:23:01.326] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 329ms, 0 errors, 0 warnings)
+[23:23:01.328] rive  showing Desktop [1/3]
+[23:23:01.351] rive  viewport 1200x600 @1x
+[23:23:01.376] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00328.png
+[23:23:01.762] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 323ms, 0 errors, 0 warnings)
+[23:23:01.765] rive  showing Desktop [1/3]
+[23:23:01.788] rive  viewport 1200x600 @1x
+[23:23:01.811] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00329.png
+[23:23:02.199] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:23:02.202] rive  showing Desktop [1/3]
+[23:23:02.225] rive  viewport 1200x600 @1x
+[23:23:02.248] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00330.png
+[23:23:02.632] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 320ms, 0 errors, 0 warnings)
+[23:23:02.634] rive  showing Desktop [1/3]
+[23:23:02.658] rive  viewport 1200x600 @1x
+[23:23:02.681] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00331.png
+[23:23:03.067] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:23:03.069] rive  showing Desktop [1/3]
+[23:23:03.093] rive  viewport 1200x600 @1x
+[23:23:03.116] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00332.png
+[23:23:03.505] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 323ms, 0 errors, 0 warnings)
+[23:23:03.508] rive  showing Desktop [1/3]
+[23:23:03.534] rive  viewport 1200x600 @1x
+[23:23:03.557] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00333.png
+[23:23:03.941] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 320ms, 0 errors, 0 warnings)
+[23:23:03.944] rive  showing Desktop [1/3]
+[23:23:03.967] rive  viewport 1200x600 @1x
+[23:23:03.990] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00334.png
+[23:23:04.376] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:23:04.378] rive  showing Desktop [1/3]
+[23:23:04.402] rive  viewport 1200x600 @1x
+[23:23:04.425] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00335.png
+[23:23:04.812] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 323ms, 0 errors, 0 warnings)
+[23:23:04.815] rive  showing Desktop [1/3]
+[23:23:04.838] rive  viewport 1200x600 @1x
+[23:23:04.861] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00336.png
+[23:23:05.247] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:23:05.250] rive  showing Desktop [1/3]
+[23:23:05.273] rive  viewport 1200x600 @1x
+[23:23:05.296] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00337.png
+[23:23:05.687] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:23:05.689] rive  showing Desktop [1/3]
+[23:23:05.713] rive  viewport 1200x600 @1x
+[23:23:05.735] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00338.png
+[23:23:06.124] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:23:06.126] rive  showing Desktop [1/3]
+[23:23:06.150] rive  viewport 1200x600 @1x
+[23:23:06.173] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00339.png
+[23:23:06.560] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:23:06.563] rive  showing Desktop [1/3]
+[23:23:06.587] rive  viewport 1200x600 @1x
+[23:23:06.610] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00340.png
+[23:23:06.999] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:23:07.002] rive  showing Desktop [1/3]
+[23:23:07.026] rive  viewport 1200x600 @1x
+[23:23:07.049] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00341.png
+[23:23:07.436] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:23:07.438] rive  showing Desktop [1/3]
+[23:23:07.462] rive  viewport 1200x600 @1x
+[23:23:07.485] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00342.png
+[23:23:07.878] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 325ms, 0 errors, 0 warnings)
+[23:23:07.880] rive  showing Desktop [1/3]
+[23:23:07.905] rive  viewport 1200x600 @1x
+[23:23:07.928] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00343.png
+[23:23:08.312] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:23:08.315] rive  showing Desktop [1/3]
+[23:23:08.339] rive  viewport 1200x600 @1x
+[23:23:08.362] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00344.png
+[23:23:08.751] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 323ms, 0 errors, 0 warnings)
+[23:23:08.753] rive  showing Desktop [1/3]
+[23:23:08.777] rive  viewport 1200x600 @1x
+[23:23:08.801] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00345.png
+[23:23:09.191] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 324ms, 0 errors, 0 warnings)
+[23:23:09.194] rive  showing Desktop [1/3]
+[23:23:09.219] rive  viewport 1200x600 @1x
+[23:23:09.242] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00346.png
+[23:23:09.632] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:23:09.634] rive  showing Desktop [1/3]
+[23:23:09.658] rive  viewport 1200x600 @1x
+[23:23:09.680] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00347.png
+[23:23:10.066] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:23:10.069] rive  showing Desktop [1/3]
+[23:23:10.094] rive  viewport 1200x600 @1x
+[23:23:10.116] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00348.png
+[23:23:10.503] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:23:10.505] rive  showing Desktop [1/3]
+[23:23:10.530] rive  viewport 1200x600 @1x
+[23:23:10.552] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00349.png
+[23:23:10.940] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:23:10.943] rive  showing Desktop [1/3]
+[23:23:10.968] rive  viewport 1200x600 @1x
+[23:23:10.992] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00350.png
+[23:23:11.377] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:23:11.379] rive  showing Desktop [1/3]
+[23:23:11.404] rive  viewport 1200x600 @1x
+[23:23:11.427] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00351.png
+[23:23:11.818] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:23:11.820] rive  showing Desktop [1/3]
+[23:23:11.845] rive  viewport 1200x600 @1x
+[23:23:11.868] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00352.png
+[23:23:12.381] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 446ms, 0 errors, 0 warnings)
+[23:23:12.384] rive  showing Desktop [1/3]
+[23:23:12.409] rive  viewport 1200x600 @1x
+[23:23:12.434] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00353.png
+[23:23:12.868] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 362ms, 0 errors, 0 warnings)
+[23:23:12.871] rive  showing Desktop [1/3]
+[23:23:12.896] rive  viewport 1200x600 @1x
+[23:23:12.921] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00354.png
+[23:23:13.339] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 348ms, 0 errors, 0 warnings)
+[23:23:13.342] rive  showing Desktop [1/3]
+[23:23:13.367] rive  viewport 1200x600 @1x
+[23:23:13.394] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00355.png
+[23:23:13.781] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:23:13.784] rive  showing Desktop [1/3]
+[23:23:13.809] rive  viewport 1200x600 @1x
+[23:23:13.832] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00356.png
+[23:23:14.218] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:23:14.221] rive  showing Desktop [1/3]
+[23:23:14.246] rive  viewport 1200x600 @1x
+[23:23:14.269] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00357.png
+[23:23:14.676] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 342ms, 0 errors, 0 warnings)
+[23:23:14.678] rive  showing Desktop [1/3]
+[23:23:14.703] rive  viewport 1200x600 @1x
+[23:23:14.726] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00358.png
+[23:23:15.124] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 336ms, 0 errors, 0 warnings)
+[23:23:15.127] rive  showing Desktop [1/3]
+[23:23:15.154] rive  viewport 1200x600 @1x
+[23:23:15.177] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00359.png
+[23:23:15.571] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 324ms, 0 errors, 0 warnings)
+[23:23:15.574] rive  showing Desktop [1/3]
+[23:23:15.599] rive  viewport 1200x600 @1x
+[23:23:15.622] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00360.png
+[23:23:16.042] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 337ms, 0 errors, 0 warnings)
+[23:23:16.044] rive  showing Desktop [1/3]
+[23:23:16.070] rive  viewport 1200x600 @1x
+[23:23:16.094] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00361.png
+[23:23:16.486] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 325ms, 0 errors, 0 warnings)
+[23:23:16.488] rive  showing Desktop [1/3]
+[23:23:16.514] rive  viewport 1200x600 @1x
+[23:23:16.538] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00362.png
+[23:23:16.925] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:23:16.928] rive  showing Desktop [1/3]
+[23:23:16.954] rive  viewport 1200x600 @1x
+[23:23:16.980] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00363.png
+[23:23:17.366] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 319ms, 0 errors, 0 warnings)
+[23:23:17.369] rive  showing Desktop [1/3]
+[23:23:17.394] rive  viewport 1200x600 @1x
+[23:23:17.422] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00364.png
+[23:23:17.812] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:23:17.814] rive  showing Desktop [1/3]
+[23:23:17.840] rive  viewport 1200x600 @1x
+[23:23:17.862] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00365.png
+[23:23:18.245] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:23:18.247] rive  showing Desktop [1/3]
+[23:23:18.273] rive  viewport 1200x600 @1x
+[23:23:18.296] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00366.png
+[23:23:18.682] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 323ms, 0 errors, 0 warnings)
+[23:23:18.684] rive  showing Desktop [1/3]
+[23:23:18.711] rive  viewport 1200x600 @1x
+[23:23:18.733] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00367.png
+[23:23:19.126] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 328ms, 0 errors, 0 warnings)
+[23:23:19.129] rive  showing Desktop [1/3]
+[23:23:19.155] rive  viewport 1200x600 @1x
+[23:23:19.179] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00368.png
+[23:23:19.570] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 323ms, 0 errors, 0 warnings)
+[23:23:19.575] rive  showing Desktop [1/3]
+[23:23:19.601] rive  viewport 1200x600 @1x
+[23:23:19.631] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00369.png
+[23:23:20.014] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 320ms, 0 errors, 0 warnings)
+[23:23:20.017] rive  showing Desktop [1/3]
+[23:23:20.043] rive  viewport 1200x600 @1x
+[23:23:20.066] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00370.png
+[23:23:20.453] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:23:20.456] rive  showing Desktop [1/3]
+[23:23:20.482] rive  viewport 1200x600 @1x
+[23:23:20.507] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00371.png
+[23:23:20.892] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:23:20.894] rive  showing Desktop [1/3]
+[23:23:20.920] rive  viewport 1200x600 @1x
+[23:23:20.943] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00372.png
+[23:23:21.328] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:23:21.330] rive  showing Desktop [1/3]
+[23:23:21.357] rive  viewport 1200x600 @1x
+[23:23:21.380] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00373.png
+[23:23:21.761] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:23:21.764] rive  showing Desktop [1/3]
+[23:23:21.790] rive  viewport 1200x600 @1x
+[23:23:21.815] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00374.png
+[23:23:22.201] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 323ms, 0 errors, 0 warnings)
+[23:23:22.204] rive  showing Desktop [1/3]
+[23:23:22.230] rive  viewport 1200x600 @1x
+[23:23:22.253] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00375.png
+[23:23:22.646] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 324ms, 0 errors, 0 warnings)
+[23:23:22.648] rive  showing Desktop [1/3]
+[23:23:22.674] rive  viewport 1200x600 @1x
+[23:23:22.697] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00376.png
+[23:23:23.088] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 328ms, 0 errors, 0 warnings)
+[23:23:23.091] rive  showing Desktop [1/3]
+[23:23:23.117] rive  viewport 1200x600 @1x
+[23:23:23.140] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00377.png
+[23:23:23.525] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 320ms, 0 errors, 0 warnings)
+[23:23:23.527] rive  showing Desktop [1/3]
+[23:23:23.554] rive  viewport 1200x600 @1x
+[23:23:23.578] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00378.png
+[23:23:23.971] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:23:23.975] rive  showing Desktop [1/3]
+[23:23:24.001] rive  viewport 1200x600 @1x
+[23:23:24.029] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00379.png
+[23:23:24.414] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:23:24.416] rive  showing Desktop [1/3]
+[23:23:24.442] rive  viewport 1200x600 @1x
+[23:23:24.468] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00380.png
+[23:23:24.853] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 320ms, 0 errors, 0 warnings)
+[23:23:24.856] rive  showing Desktop [1/3]
+[23:23:24.882] rive  viewport 1200x600 @1x
+[23:23:24.908] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00381.png
+[23:23:25.294] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 323ms, 0 errors, 0 warnings)
+[23:23:25.297] rive  showing Desktop [1/3]
+[23:23:25.324] rive  viewport 1200x600 @1x
+[23:23:25.349] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00382.png
+[23:23:25.735] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:23:25.737] rive  showing Desktop [1/3]
+[23:23:25.764] rive  viewport 1200x600 @1x
+[23:23:25.789] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00383.png
+[23:23:26.180] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 324ms, 0 errors, 0 warnings)
+[23:23:26.182] rive  showing Desktop [1/3]
+[23:23:26.209] rive  viewport 1200x600 @1x
+[23:23:26.233] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00384.png
+[23:23:26.626] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 326ms, 0 errors, 0 warnings)
+[23:23:26.628] rive  showing Desktop [1/3]
+[23:23:26.655] rive  viewport 1200x600 @1x
+[23:23:26.681] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00385.png
+[23:23:27.067] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 323ms, 0 errors, 0 warnings)
+[23:23:27.070] rive  showing Desktop [1/3]
+[23:23:27.097] rive  viewport 1200x600 @1x
+[23:23:27.120] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00386.png
+[23:23:27.507] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:23:27.509] rive  showing Desktop [1/3]
+[23:23:27.536] rive  viewport 1200x600 @1x
+[23:23:27.560] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00387.png
+[23:23:27.946] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 323ms, 0 errors, 0 warnings)
+[23:23:27.948] rive  showing Desktop [1/3]
+[23:23:27.975] rive  viewport 1200x600 @1x
+[23:23:28.000] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00388.png
+[23:23:28.396] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 327ms, 0 errors, 0 warnings)
+[23:23:28.399] rive  showing Desktop [1/3]
+[23:23:28.426] rive  viewport 1200x600 @1x
+[23:23:28.452] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00389.png
+[23:23:28.839] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:23:28.842] rive  showing Desktop [1/3]
+[23:23:28.869] rive  viewport 1200x600 @1x
+[23:23:28.894] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00390.png
+[23:23:29.281] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:23:29.284] rive  showing Desktop [1/3]
+[23:23:29.311] rive  viewport 1200x600 @1x
+[23:23:29.334] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00391.png
+[23:23:29.722] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 326ms, 0 errors, 0 warnings)
+[23:23:29.725] rive  showing Desktop [1/3]
+[23:23:29.752] rive  viewport 1200x600 @1x
+[23:23:29.777] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00392.png
+[23:23:30.163] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:23:30.166] rive  showing Desktop [1/3]
+[23:23:30.194] rive  viewport 1200x600 @1x
+[23:23:30.219] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00393.png
+[23:23:30.608] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:23:30.611] rive  showing Desktop [1/3]
+[23:23:30.639] rive  viewport 1200x600 @1x
+[23:23:30.667] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00394.png
+[23:23:31.066] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 333ms, 0 errors, 0 warnings)
+[23:23:31.069] rive  showing Desktop [1/3]
+[23:23:31.097] rive  viewport 1200x600 @1x
+[23:23:31.124] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00395.png
+[23:23:31.513] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:23:31.516] rive  showing Desktop [1/3]
+[23:23:31.543] rive  viewport 1200x600 @1x
+[23:23:31.570] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00396.png
+[23:23:31.955] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 320ms, 0 errors, 0 warnings)
+[23:23:31.957] rive  showing Desktop [1/3]
+[23:23:31.985] rive  viewport 1200x600 @1x
+[23:23:32.010] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00397.png
+[23:23:32.393] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 320ms, 0 errors, 0 warnings)
+[23:23:32.395] rive  showing Desktop [1/3]
+[23:23:32.423] rive  viewport 1200x600 @1x
+[23:23:32.448] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00398.png
+[23:23:32.833] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 323ms, 0 errors, 0 warnings)
+[23:23:32.836] rive  showing Desktop [1/3]
+[23:23:32.863] rive  viewport 1200x600 @1x
+[23:23:32.893] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00399.png
+[23:23:33.279] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:23:33.281] rive  showing Desktop [1/3]
+[23:23:33.309] rive  viewport 1200x600 @1x
+[23:23:33.336] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00400.png
+[23:23:33.721] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:23:33.724] rive  showing Desktop [1/3]
+[23:23:33.751] rive  viewport 1200x600 @1x
+[23:23:33.780] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00401.png
+[23:23:34.165] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 320ms, 0 errors, 0 warnings)
+[23:23:34.168] rive  showing Desktop [1/3]
+[23:23:34.196] rive  viewport 1200x600 @1x
+[23:23:34.222] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00402.png
+[23:23:34.605] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:23:34.608] rive  showing Desktop [1/3]
+[23:23:34.636] rive  viewport 1200x600 @1x
+[23:23:34.663] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00403.png
+[23:23:35.051] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:23:35.054] rive  showing Desktop [1/3]
+[23:23:35.082] rive  viewport 1200x600 @1x
+[23:23:35.109] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00404.png
+[23:23:35.501] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 322ms, 0 errors, 0 warnings)
+[23:23:35.505] rive  showing Desktop [1/3]
+[23:23:35.533] rive  viewport 1200x600 @1x
+[23:23:35.560] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00405.png
+[23:23:35.944] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 321ms, 0 errors, 0 warnings)
+[23:23:35.947] rive  showing Desktop [1/3]
+[23:23:35.975] rive  viewport 1200x600 @1x
+[23:23:36.002] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00406.png
+[23:23:36.387] rive  built /Users/tk/Desktop/brain/projects/rive/bakeoff/rive/build/world-model-taxonomy.riv (124008 bytes, 323ms, 0 errors, 0 warnings)
+[23:23:36.390] rive  showing Desktop [1/3]
+[23:23:36.418] rive  viewport 1200x600 @1x
+[23:23:36.448] rive  wrote /Users/tk/Desktop/brain/projects/rive/bakeoff/capture/frames/00407.png
+[23:31:25.275] rive  built build/world-model-taxonomy.riv (123983 bytes, 367ms, 0 errors, 0 warnings)

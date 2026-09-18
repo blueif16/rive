@@ -1,0 +1,106 @@
+/* Demo host page. Deliberately plain: the figure must survive being dropped
+   into somebody else's essay, so nothing here is required by the figure. */
+
+:root {
+  --page: #f7f7fa;
+  --ink: #3b3730;
+  --warm-dk: #746e63;
+  --edge: #d9d3c6;
+  --muted: #a3a09d;
+  --serif: ui-serif, "Iowan Old Style", "Hoefler Text", "Palatino Linotype",
+    Palatino, Georgia, serif;
+  --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--page);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+.essay {
+  font-family: var(--sans);
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 72px 28px 120px;
+}
+
+.essay > p {
+  max-width: 680px;
+  margin: 0 auto 28px;
+  font-size: 17.5px;
+  line-height: 1.72;
+  color: #4a453e;
+}
+
+.essay > p > b {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.essay > p > i {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.06em;
+  color: var(--ink);
+}
+
+.essay-head {
+  max-width: 680px;
+  margin: 0 auto 40px;
+}
+
+.essay-kicker {
+  margin: 0 0 14px;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.essay-title {
+  margin: 0 0 12px;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 42px;
+  line-height: 1.12;
+  letter-spacing: -0.005em;
+}
+
+.essay-byline {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* The figure breaks out of the text column on wide screens — a host-page
+   decision, not something the component requires. */
+.essay-figure {
+  margin: 44px auto 46px;
+  max-width: 1064px;
+  width: 100%;
+}
+
+@media (max-width: 760px) {
+  .essay {
+    padding: 48px 18px 88px;
+  }
+  .essay-title {
+    font-size: 32px;
+  }
+  .essay > p {
+    font-size: 16.5px;
+  }
+  .essay-figure {
+    margin: 34px auto 36px;
+  }
+}
