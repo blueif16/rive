@@ -1,0 +1,806 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Build Night — opening bumper</title>
+<style>
+  html, body { margin: 0; background: #1F2125; }
+  body { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+         font: 13px/1.4 -apple-system, system-ui, sans-serif; color: #F4EEE4; }
+  canvas { display: block; }
+  #controls { display: flex; align-items: center; gap: 12px; width: min(1280px, calc(100vw - 24px)); }
+  #play { font: inherit; padding: 3px 12px; background: #F4EEE4; color: #1F2125; border: 0; border-radius: 3px; cursor: pointer; }
+  #scrub { position: relative; flex: 1; height: 28px; cursor: pointer; }
+  #scrub .bar { position: absolute; left: 0; right: 0; top: 12px; height: 4px; background: #9AA1A8; }
+  #scrub .tick { position: absolute; top: 7px; width: 2px; height: 14px; background: #F4EEE4; margin-left: -1px; }
+  #scrub .head { position: absolute; top: 4px; width: 4px; height: 20px; margin-left: -2px; background: #F2BE4B; }
+  #time, #perf { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  #help { opacity: .7; white-space: nowrap; }
+  body.still { display: block; width: 1280px; height: 720px; min-height: 0; overflow: hidden; }
+  body.thumb { display: block; width: 160px; height: 90px; min-height: 0; overflow: hidden; }
+  body.still #controls, body.thumb #controls { display: none; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1280" height="720"></canvas>
+<div id="controls">
+  <button id="play">Play</button>
+  <div id="scrub"><div class="bar"></div><div class="head"></div></div>
+  <span id="time">0.000 s</span>
+  <span id="perf"></span>
+  <span id="help">space play · ← → 1/24 s · shift 0.25 s · R record</span>
+</div>
+<script>
+'use strict';
+// ============================================================================
+// Build Night — opening bumper. Canvas 2D, pure function of time.
+// Everything below is a function of absolute time t (seconds); nothing carries
+// between frames. See SPEC.md for the source of every number.
+// ============================================================================
+const W = 1280, H = 720, DUR = 24.0;
+const C = { blue:'#4A7BF7', orange:'#F4603A', yellow:'#F2BE4B', green:'#6DBF9A',
+            cream:'#F4EEE4', ink:'#1F2125', blush:'#F5D8DA', grey:'#9AA1A8' };
+const FONT_STACK = "'Google Sans', 'Product Sans', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif";
+const fontOf = px => `600 ${px}px ${FONT_STACK}`;
+
+const Q = new URLSearchParams(location.search);
+const RM = Q.get('rm') === '1';
+const STILL_T = Q.has('t') ? parseFloat(Q.get('t')) : null;
+const THUMB = Q.get('w') === '160';
+const CENSUS = Q.get('census') === '1';
+
+// ---------------------------------------------------------------- curves ----
+// cubic-bezier(x1,y1,x2,y2) solved on x by Newton (bisection fallback), 1e-4.
+function bezier(x1, y1, x2, y2) {
+  const ax = 1 - 3*x2 + 3*x1, bx = 3*x2 - 6*x1, cx = 3*x1;
+  const ay = 1 - 3*y2 + 3*y1, by = 3*y2 - 6*y1, cy = 3*y1;
+  const X = s => ((ax*s + bx)*s + cx)*s;
+  const Y = s => ((ay*s + by)*s + cy)*s;
+  const dX = s => (3*ax*s + 2*bx)*s + cx;
+  return function (u) {
+    if (u <= 0) return 0;
+    if (u >= 1) return 1;
+    let s = u;
+    for (let i = 0; i < 8; i++) {
+      const e = X(s) - u;
+      if (Math.abs(e) < 1e-4) return Y(s);
+      const d = dX(s);
+      if (Math.abs(d) < 1e-6) break;
+      s -= e / d;
+      if (s < 0 || s > 1) break;
+    }
+    let lo = 0, hi = 1;
+    for (let i = 0; i < 40; i++) {
+      s = (lo + hi) / 2;
+      const e = X(s) - u;
+      if (Math.abs(e) < 1e-4) break;
+      if (e > 0) hi = s; else lo = s;
+    }
+    return Y(s);
+  };
+}
+const TOK = {
+  fastSpatial:    { f: bezier(0.42, 1.67, 0.21, 0.90), d: 0.350 },
+  defaultSpatial: { f: bezier(0.38, 1.21, 0.22, 1.00), d: 0.500 },
+  slowSpatial:    { f: bezier(0.39, 1.29, 0.35, 0.98), d: 0.650 },
+  fastEffects:    { f: bezier(0.31, 0.94, 0.34, 1.00), d: 0.150 },
+  defaultEffects: { f: bezier(0.34, 0.80, 0.34, 1.00), d: 0.200 },
+};
+// Move progress: 0 before t0, the token curve during, 1 after (may exceed 1
+// mid-move for spatial tokens). Reduced motion snaps to 1 at t0.
+function mv(local, t0, tok, dur) {
+  const T = TOK[tok]; const d = dur ?? T.d;
+  if (RM) return local >= t0 - 1e-9 ? 1 : 0;
+  const u = (local - t0) / d;
+  if (u <= 0) return 0;
+  if (u >= 1 - 1e-9) return 1;
+  return T.f(u);
+}
+// Linear reveal (accent draw-on prefix).
+function lin(local, t0, d) {
+  if (RM) return local >= t0 - 1e-9 ? 1 : 0;
+  const u = (local - t0) / d;
+  return u <= 0 ? 0 : u >= 1 - 1e-9 ? 1 : u;
+}
+function curvePeak(tok) {
+  const f = TOK[tok].f; let m = 0;
+  for (let i = 0; i <= 2000; i++) m = Math.max(m, f(i / 2000));
+  return m;
+}
+
+// ---------------------------------------------------------------- shapes ----
+// Star-like polygon: n tips at angle 0, 2π/n, …; inner vertices between.
+// cornerR > 0 replaces each tip vertex with a short fillet arc.
+function starPoly(n, inner, R, cornerR) {
+  const v = [];
+  for (let i = 0; i < n; i++) {
+    const a0 = i * 2 * Math.PI / n, a1 = a0 + Math.PI / n;
+    v.push([R * Math.cos(a0), R * Math.sin(a0), true]);
+    v.push([inner * R * Math.cos(a1), inner * R * Math.sin(a1), false]);
+  }
+  if (!cornerR) return v.map(p => [p[0], p[1]]);
+  const out = []; const m = v.length; const K = 6;
+  for (let i = 0; i < m; i++) {
+    const [x, y, tip] = v[i];
+    if (!tip) { out.push([x, y]); continue; }
+    const A = v[(i - 1 + m) % m], B = v[(i + 1) % m];
+    let ux = A[0] - x, uy = A[1] - y; const la = Math.hypot(ux, uy); ux /= la; uy /= la;
+    let wx = B[0] - x, wy = B[1] - y; const lb = Math.hypot(wx, wy); wx /= lb; wy /= lb;
+    const theta = Math.acos(Math.max(-1, Math.min(1, ux * wx + uy * wy)));
+    const d = cornerR / Math.tan(theta / 2);
+    const t1 = [x + ux * d, y + uy * d], t2 = [x + wx * d, y + wy * d];
+    let bx = ux + wx, by = uy + wy; const lbis = Math.hypot(bx, by); bx /= lbis; by /= lbis;
+    const cd = cornerR / Math.sin(theta / 2);
+    const c = [x + bx * cd, y + by * cd];
+    const a1 = Math.atan2(t1[1] - c[1], t1[0] - c[0]), a2 = Math.atan2(t2[1] - c[1], t2[0] - c[0]);
+    let da = a2 - a1; while (da > Math.PI) da -= 2 * Math.PI; while (da < -Math.PI) da += 2 * Math.PI;
+    for (let k = 0; k <= K; k++) { const a = a1 + da * k / K; out.push([c[0] + cornerR * Math.cos(a), c[1] + cornerR * Math.sin(a)]); }
+  }
+  // start the outline at the fillet midpoint of the tip at angle 0
+  const rot = K / 2;
+  return out.slice(rot).concat(out.slice(0, rot));
+}
+// Resample a closed polygon to N points, keeping every vertex (sharp tips stay
+// sharp) and spreading the remaining points along edges by length.
+function resample(poly, N) {
+  const m = poly.length; const lens = []; let total = 0;
+  for (let i = 0; i < m; i++) { const a = poly[i], b = poly[(i + 1) % m]; const l = Math.hypot(b[0] - a[0], b[1] - a[1]); lens.push(l); total += l; }
+  const extra = N - m;
+  const quota = lens.map(l => l / total * extra);
+  const base = quota.map(Math.floor);
+  let used = base.reduce((a, b) => a + b, 0);
+  const rem = quota.map((q, i) => [q - base[i], i]).sort((a, b) => b[0] - a[0]);
+  for (let k = 0; used < extra; k++, used++) base[rem[k % m][1]]++;
+  const out = [];
+  for (let i = 0; i < m; i++) {
+    const a = poly[i], b = poly[(i + 1) % m]; const n = base[i] + 1;
+    for (let k = 0; k < n; k++) { const f = k / n; out.push([a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f]); }
+  }
+  return out;
+}
+const SHAPE_CACHE = new Map();
+function shape(name, R) {
+  const key = name + '|' + R; let p = SHAPE_CACHE.get(key); if (p) return p;
+  const N = 128;
+  if (name === 'circle') { p = []; for (let i = 0; i < N; i++) { const a = 2 * Math.PI * i / N; p.push([R * Math.cos(a), R * Math.sin(a)]); } }
+  else if (name === 'semicircle') { // 64-point arc (flat edge down) + flat edge
+    p = [];
+    for (let i = 0; i < 64; i++) { const a = Math.PI * i / 63; p.push([R * Math.cos(a), -R * Math.sin(a)]); }
+    for (let k = 1; k <= 64; k++) p.push([-R + 2 * R * k / 65, 0]);
+  }
+  else if (name === 'star4') p = resample(starPoly(4, 0.42, R, 0), N);
+  else if (name === 'sunny') p = resample(starPoly(8, 0.72, R, 0.06 * R), N);
+  else if (name === 'burst') p = resample(starPoly(12, 0.62, R, 0), N);
+  else if (name === 'verysunny') p = resample(starPoly(16, 0.78, R, 0), N);
+  else throw new Error('unknown shape ' + name);
+  SHAPE_CACHE.set(key, p); return p;
+}
+function morph(a, b, k) {
+  const o = new Array(a.length);
+  for (let i = 0; i < a.length; i++) o[i] = [a[i][0] + (b[i][0] - a[i][0]) * k, a[i][1] + (b[i][1] - a[i][1]) * k];
+  return o;
+}
+
+// -------------------------------------------------------------- seeded rng --
+function mulberry32(a) {
+  return function () {
+    a |= 0; a = a + 0x6D2B79F5 | 0;
+    let t = Math.imul(a ^ a >>> 15, 1 | a);
+    t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  };
+}
+// C8 drift vectors: eight calls, angles only; magnitude 8…11 px by node index.
+const DRIFT = (() => { const r = mulberry32(20260918); const v = [];
+  for (let i = 0; i < 8; i++) { const a = r() * 2 * Math.PI; const mag = 8 + 3 * i / 7; v.push([mag * Math.cos(a), mag * Math.sin(a)]); }
+  return v; })();
+
+// ---------------------------------------------------------------- canvas -----
+const canvas = document.getElementById('c');
+let dpr = Math.max(1, window.devicePixelRatio || 1);
+let ctx = canvas.getContext('2d', { willReadFrequently: true }); // software raster: identical pixels across pages, screenshots and readbacks
+let BASE = dpr;              // scale of the base transform (frame px → device px)
+let offc = null, offctx = null;
+if (THUMB) { offc = document.createElement('canvas'); offc.width = W; offc.height = H; offctx = offc.getContext('2d', { willReadFrequently: true }); }
+
+// Debug record of the last frame (layout boxes, shape AABBs) for verification.
+const DBG = { on: true, t: 0, card: null, lines: [], shapes: [], accents: [], swaps: [], ground: null };
+
+function pathPoly(pts) {
+  ctx.beginPath(); ctx.moveTo(pts[0][0], pts[0][1]);
+  for (let i = 1; i < pts.length; i++) ctx.lineTo(pts[i][0], pts[i][1]);
+  ctx.closePath();
+}
+function xformPts(pts) {
+  const m = ctx.getTransform(); const o = new Array(pts.length);
+  for (let i = 0; i < pts.length; i++) { const [x, y] = pts[i]; o[i] = [(m.a * x + m.c * y + m.e) / BASE, (m.b * x + m.d * y + m.f) / BASE]; }
+  return o;
+}
+function bboxOf(pts) {
+  let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+  for (const [x, y] of pts) { if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y; }
+  return [x0, y0, x1, y1];
+}
+// Fill a cast shape at (cx,cy) with scale s and rotation (deg, clockwise on screen).
+function fillPoly(pts, cx, cy, s, rotDeg, color, tag) {
+  if (s <= 0) return;
+  ctx.save(); ctx.translate(cx, cy); if (rotDeg) ctx.rotate(rotDeg * Math.PI / 180); ctx.scale(s, s);
+  pathPoly(pts); ctx.fillStyle = color; ctx.fill();
+  if (tag && DBG.on) { const fp = xformPts(pts); DBG.shapes.push({ tag, color, aabb: bboxOf(fp), pts: fp, scale: s }); }
+  ctx.restore();
+}
+function scaleAbout(cx, cy, s) { ctx.translate(cx, cy); ctx.scale(s, s); ctx.translate(-cx, -cy); }
+
+// ------------------------------------------------------------------ type -----
+const MET = new Map();
+function met(px, ch) {
+  const k = px + '|' + ch; let m = MET.get(k);
+  if (!m) { ctx.font = fontOf(px); const r = ctx.measureText(ch);
+    m = { w: r.width, l: r.actualBoundingBoxLeft, r: r.actualBoundingBoxRight, a: r.actualBoundingBoxAscent, d: r.actualBoundingBoxDescent };
+    MET.set(k, m); }
+  return m;
+}
+// Where the dot of "i" sits and where to cut it off, measured once from the
+// resolved face (em above baseline). Falls back to the spec's estimates.
+const IDOT = (() => {
+  try {
+    const S = 200, oc = document.createElement('canvas'); oc.width = 160; oc.height = 2 * S;
+    const c = oc.getContext('2d'); c.font = fontOf(S); c.fillStyle = '#000'; c.textBaseline = 'alphabetic';
+    const m = c.measureText('i'); const base = 1.5 * S;
+    c.fillText('i', 40, base);
+    const col = Math.round(40 + (m.actualBoundingBoxRight - m.actualBoundingBoxLeft) / 2);
+    const img = c.getImageData(col, 0, 1, 2 * S).data;
+    const runs = []; let inRun = false, start = 0;
+    for (let y = 0; y < 2 * S; y++) { const on = img[y * 4 + 3] > 100; if (on && !inRun) { inRun = true; start = y; } if (!on && inRun) { inRun = false; runs.push([start, y - 1]); } }
+    if (inRun) runs.push([start, 2 * S - 1]);
+    if (runs.length >= 2) {
+      const dot = runs[0], stem = runs[1];
+      return { dotEm: (base - (dot[0] + dot[1]) / 2) / S, clipEm: (base - (dot[1] + stem[0]) / 2) / S, stemTopEm: (base - stem[0]) / S, measured: true };
+    }
+  } catch (e) {}
+  return { dotEm: 0.70, clipEm: 0.55, stemTopEm: 0.52, measured: false };
+})();
+function pivotEm(ch) { return 'acegmnopqrsuvwxyz'.includes(ch) ? 0.26 : 0.36; }
+
+// Lay a line out glyph by glyph. stateFn(i, ch) → per-glyph state:
+//   tr (em letter-spacing after the glyph), widen (em slot widening, split
+//   both sides), scale, alpha, dy (px), mode 'normal'|'hide'|'stem', dotScale.
+function layoutLine(text, px, baseline, align, anchorX, stateFn) {
+  const glyphs = []; let x = 0;
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i]; const st = (stateFn && stateFn(i, ch)) || {};
+    const m = met(px, ch); const widen = (st.widen || 0) * px; const tr = (st.tr || 0) * px;
+    glyphs.push({ ch, i, x, w: m.w + widen, gw: m.w, widen, tr, st, m, baseline, px });
+    x += m.w + widen + tr;
+  }
+  const width = x - (glyphs.length ? glyphs[glyphs.length - 1].tr : 0);
+  const x0 = align === 'center' ? anchorX - width / 2 : anchorX;
+  for (const g of glyphs) g.x += x0;
+  return { text, glyphs, x0, width, baseline, px, align };
+}
+function glyphX(g) { return g.x + g.widen / 2; }                       // glyph origin inside its (widened) box
+function stemX(g) { return glyphX(g) + (g.m.r - g.m.l) / 2; }          // ink centre of the glyph
+function drawGlyph(g, color) {
+  const st = g.st; if (g.ch === ' ' || st.mode === 'hide') return;
+  const alpha = st.alpha ?? 1, scale = st.scale ?? 1, dy = st.dy || 0;
+  if (alpha <= 0 || scale <= 0) return;
+  const px = g.px, cx = g.x + g.w / 2, cy = g.baseline - pivotEm(g.ch) * px, gx = glyphX(g);
+  ctx.save();
+  ctx.globalAlpha = ctx.globalAlpha * Math.min(1, alpha);
+  ctx.translate(cx, cy + dy); ctx.scale(scale, scale); ctx.translate(-cx, -cy);
+  ctx.font = fontOf(px); ctx.fillStyle = color; ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
+  if (st.mode === 'stem') { ctx.beginPath(); ctx.rect(gx - px, g.baseline - IDOT.clipEm * px, g.gw + 2 * px, 2 * px); ctx.clip(); }
+  ctx.fillText(g.ch, gx, g.baseline);
+  ctx.restore();
+  if (st.mode === 'stem' && st.dotScale > 0) {           // the dot alone, scaled about its centre
+    const dcx = stemX(g), dcy = g.baseline - IDOT.dotEm * px;
+    ctx.save();
+    ctx.globalAlpha = ctx.globalAlpha * Math.min(1, alpha);
+    ctx.translate(cx, cy + dy); ctx.scale(scale, scale); ctx.translate(-cx, -cy);
+    ctx.translate(dcx, dcy); ctx.scale(st.dotScale, st.dotScale); ctx.translate(-dcx, -dcy);
+    ctx.beginPath(); ctx.rect(gx - px, g.baseline - 3 * px, g.gw + 2 * px, 3 * px - IDOT.clipEm * px); ctx.clip();
+    ctx.font = fontOf(px); ctx.fillStyle = color; ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
+    ctx.fillText(g.ch, gx, g.baseline);
+    ctx.restore();
+  }
+}
+function lineBox(L) {
+  const g0 = L.glyphs[0], g1 = L.glyphs[L.glyphs.length - 1];
+  let il = 1e9, ir = -1e9, ia = 0, id = 0;
+  for (const g of L.glyphs) { if (g.ch === ' ') continue; const gx = glyphX(g); il = Math.min(il, gx - g.m.l); ir = Math.max(ir, gx + g.m.r); ia = Math.max(ia, g.m.a); id = Math.max(id, g.m.d); }
+  return { text: L.text, box: [g0.x, L.baseline - 0.72 * L.px, g1.x + g1.w, L.baseline + 0.20 * L.px],
+           ink: [il, L.baseline - ia, ir, L.baseline + id], baseline: L.baseline, px: L.px,
+           glyphs: L.glyphs.map(g => ({ ch: g.ch, x: g.x, w: g.w, widen: g.widen })) };
+}
+function drawLine(L, color) {
+  for (const g of L.glyphs) drawGlyph(g, color);
+  if (DBG.on) DBG.lines.push(lineBox(L));
+}
+function blockCentre(lines) {
+  let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+  for (const L of lines) { const b = lineBox(L).box; x0 = Math.min(x0, b[0]); y0 = Math.min(y0, b[1]); x1 = Math.max(x1, b[2]); y1 = Math.max(y1, b[3]); }
+  return [(x0 + x1) / 2, (y0 + y1) / 2];
+}
+
+// ------------------------------------------------------------- move states ---
+// Glyph stagger-in for the j-th non-space glyph of a line.
+function staggerState(local, t0, step, j) {
+  const s = mv(local, t0 + j * step, 'fastSpatial');
+  const a = mv(local, t0 + j * step, 'fastEffects');
+  return { scale: 0.8 + 0.2 * s, tr: 0.2 * (1 - s), alpha: a };
+}
+// Word land: the word drops 0.4 em from above.
+function landState(local, t0, px) {
+  const s = mv(local, t0, 'defaultSpatial'); const a = mv(local, t0, 'fastEffects');
+  return { dy: -0.4 * px * (1 - s), alpha: a };
+}
+// Tracking breathe at tb then glyph swap pop at tp (both fast spatial).
+function swapState(local, tb, tp) {
+  const b = mv(local, tb, 'fastSpatial'), p = mv(local, tp, 'fastSpatial');
+  return { widen: 0.16 * b, letterScale: Math.max(0, 1 - p), shapeScale: p, active: local >= tp - 1e-9 };
+}
+function nonSpaceIndex(text, i) { let j = 0; for (let k = 0; k < i; k++) if (text[k] !== ' ') j++; return j; }
+function wordIndex(text, i) { let w = 0; for (let k = 0; k < i; k++) if (text[k] === ' ') w++; return w; }
+
+// --------------------------------------------------------------- accents -----
+function sampleFn(fn, n) { const p = []; for (let i = 0; i <= n; i++) p.push(fn(i / n)); return p; }
+const quad = (p0, p1, p2) => t => [(1 - t) * (1 - t) * p0[0] + 2 * (1 - t) * t * p1[0] + t * t * p2[0],
+                                    (1 - t) * (1 - t) * p0[1] + 2 * (1 - t) * t * p1[1] + t * t * p2[1]];
+const cubic = (p0, p1, p2, p3) => t => { const u = 1 - t; return [
+  u*u*u*p0[0] + 3*u*u*t*p1[0] + 3*u*t*t*p2[0] + t*t*t*p3[0],
+  u*u*u*p0[1] + 3*u*u*t*p1[1] + 3*u*t*t*p2[1] + t*t*t*p3[1]]; };
+// Open chevron head: two arms at ±25° back from the tip, appended as tip→a1→tip→a2.
+function withHead(poly, len) {
+  const n = poly.length, tip = poly[n - 1], prev = poly[n - 2];
+  let dx = tip[0] - prev[0], dy = tip[1] - prev[1]; const l = Math.hypot(dx, dy); dx /= l; dy /= l;
+  const arm = ang => { const ca = Math.cos(ang), sa = Math.sin(ang); const bx = -dx, by = -dy; return [tip[0] + len * (bx * ca - by * sa), tip[1] + len * (bx * sa + by * ca)]; };
+  const a = 25 * Math.PI / 180;
+  return poly.concat([arm(a), tip, arm(-a)]);
+}
+const ACC = {
+  c1loop: (() => {
+    const left = sampleFn(quad([500, 418], [570, 372], [640, 372]), 48);
+    const loop = sampleFn(t => { const a = -Math.PI / 2 + t * 2 * Math.PI; return [640 + 18 * Math.cos(a), 390 + 18 * Math.sin(a)]; }, 48);
+    const right = sampleFn(quad([640, 372], [710, 372], [780, 418]), 48);
+    return left.concat(loop.slice(1), right.slice(1));
+  })(),
+  c2arrow: withHead(sampleFn(cubic([1010, 250], [1050, 320], [970, 330], [925, 398]), 80), 22),
+  c9arrow: withHead(sampleFn(quad([520, 480], [760, 560], [1010, 470]), 80), 24),
+};
+function linePoly(x0, y0, x1, y1) { return sampleFn(t => [x0 + (x1 - x0) * t, y0 + (y1 - y0) * t], 64); }
+function ellipsePoly(cx, cy, rx, ry, a0, a1) { return sampleFn(t => { const a = a0 + (a1 - a0) * t; return [cx + rx * Math.cos(a), cy + ry * Math.sin(a)]; }, 160); }
+function squigglePoly(x0, x1, yc, amp, humps) { return sampleFn(t => [x0 + (x1 - x0) * t, yc - amp * Math.sin(2 * Math.PI * humps * t)], 160); }
+function drawAccent(poly, alpha, reveal, color, tag) {
+  if (alpha <= 0 || reveal <= 0) return;
+  const cum = [0]; let total = 0;
+  for (let i = 1; i < poly.length; i++) { total += Math.hypot(poly[i][0] - poly[i - 1][0], poly[i][1] - poly[i - 1][1]); cum.push(total); }
+  const target = Math.min(1, reveal) * total;
+  ctx.save();
+  ctx.globalAlpha = ctx.globalAlpha * Math.min(1, alpha);
+  ctx.strokeStyle = color; ctx.lineWidth = 2.2; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+  ctx.beginPath(); ctx.moveTo(poly[0][0], poly[0][1]);
+  for (let i = 1; i < poly.length; i++) {
+    if (cum[i] <= target) ctx.lineTo(poly[i][0], poly[i][1]);
+    else { const f = (target - cum[i - 1]) / (cum[i] - cum[i - 1]); ctx.lineTo(poly[i - 1][0] + (poly[i][0] - poly[i - 1][0]) * f, poly[i - 1][1] + (poly[i][1] - poly[i - 1][1]) * f); break; }
+  }
+  ctx.stroke();
+  if (DBG.on) DBG.accents.push({ tag: tag || 'accent', reveal, alpha, bbox: bboxOf(xformPts(poly)) });
+  ctx.restore();
+}
+function accentCentre(poly) { const b = bboxOf(poly); return [(b[0] + b[2]) / 2, (b[1] + b[3]) / 2]; }
+
+// ----------------------------------------------------------------- cards -----
+const CARDS = [];
+function card(def) { CARDS.push(def); }
+function noteSwap(tag, cx, cy, s) { if (DBG.on) DBG.swaps.push({ tag, cx, cy, scale: s }); }
+
+// C1 Greeting ---------------------------------------------------------------
+card({ id: 'C1', start: 0.0, end: 2.5, stage: C.blue, line: 'Hello, night owls!', holdStart: 1.00,
+  moves: [
+    { n: 'Semicircle scale pop', k: 'in', t0: 0.00, d: 0.50 }, { n: 'glyph stagger-in (both lines)', k: 'in', t0: 0.10, d: 0.71 },
+    { n: 'loop draw-on', k: 'in', t0: 0.60, d: 0.40 }, { n: 'tracking breathe', k: 'focal', t0: 1.10, d: 0.35 },
+    { n: 'o → Circle pop', k: 'focal', t0: 1.25, d: 0.35 }, { n: 'i-dot → Star4 pop', k: 'focal', t0: 1.35, d: 0.35 },
+    { n: 'exit shrink', k: 'exit', t0: 2.15, d: 0.35 } ],
+  draw(l) {
+    const px = 86;
+    const ex = Math.max(0, 1 - mv(l, 2.15, 'fastSpatial'));
+    fillPoly(shape('semicircle', 446), 640, 720, mv(l, 0, 'defaultSpatial') * ex, 0, C.cream, 'Semicircle stage');
+    const sw = swapState(l, 1.10, 1.25), si = swapState(l, 1.10, 1.35);
+    const T1 = 'Hello,', T2 = 'night owls!';
+    const L1 = layoutLine(T1, px, 500, 'center', 640, (i, ch) => {
+      const st = staggerState(l, 0.10, 0.04, i);
+      if (i === 4) { st.widen = sw.widen; st.scale *= sw.letterScale; }
+      return st; });
+    const L2 = layoutLine(T2, px, 600, 'center', 640, (i, ch) => {
+      if (ch === ' ') return {};
+      const st = staggerState(l, 0.10, 0.04, nonSpaceIndex(T2, i));
+      if (i === 1) { st.widen = si.widen; if (si.active) { st.mode = 'stem'; st.dotScale = si.letterScale; } }
+      return st; });
+    const [bcx, bcy] = blockCentre([L1, L2]);
+    ctx.save(); scaleAbout(bcx, bcy, ex);
+    drawLine(L1, C.ink); drawLine(L2, C.ink);
+    const og = L1.glyphs[4], ig = L2.glyphs[1];
+    const ocx = og.x + og.w / 2, ocy = 500 - 0.26 * px, icx = stemX(ig), icy = 600 - 0.70 * px;
+    fillPoly(shape('circle', 28), ocx, ocy, sw.shapeScale, 0, C.yellow, 'Circle o-swap'); noteSwap('o Hello', ocx, ocy, sw.shapeScale);
+    fillPoly(shape('star4', 14), icx, icy, si.shapeScale, 0, C.orange, 'Star4 i-swap'); noteSwap('i night', icx, icy, si.shapeScale);
+    ctx.restore();
+    const [acx, acy] = accentCentre(ACC.c1loop);
+    ctx.save(); scaleAbout(acx, acy, ex);
+    drawAccent(ACC.c1loop, mv(l, 0.60, 'fastEffects'), lin(l, 0.60, 0.40), C.ink, 'lasso loop');
+    ctx.restore();
+  } });
+
+// C2 Welcome ----------------------------------------------------------------
+card({ id: 'C2', start: 2.5, end: 5.0, stage: C.orange, line: 'Welcome to Build Night', holdStart: 0.97,
+  moves: [
+    { n: 'Sunny+Burst scale pop', k: 'in', t0: 0.00, d: 0.65 }, { n: '"Welcome to" glyph stagger-in', k: 'in', t0: 0.10, d: 0.71 },
+    { n: '"Build" word land', k: 'in', t0: 0.35, d: 0.50 }, { n: '"Night" word land', k: 'in', t0: 0.47, d: 0.50 },
+    { n: 'arrow draw-on', k: 'focal', t0: 1.00, d: 0.40 } ],
+  draw(l) {
+    const px = 86, pop = mv(l, 0, 'slowSpatial');
+    fillPoly(shape('sunny', 216), 180, -30, pop, 0, C.cream, 'Sunny TL');
+    fillPoly(shape('burst', 202), 1130, 750, pop, 0, C.cream, 'Burst BR');
+    const T1 = 'Welcome to', T2 = 'Build Night';
+    const L1 = layoutLine(T1, px, 330, 'center', 640, (i, ch) => ch === ' ' ? {} : staggerState(l, 0.10, 0.045, nonSpaceIndex(T1, i)));
+    const L2 = layoutLine(T2, px, 430, 'center', 640, (i, ch) => ch === ' ' ? {} : landState(l, wordIndex(T2, i) === 0 ? 0.35 : 0.47, px));
+    drawLine(L1, C.cream); drawLine(L2, C.cream);
+    drawAccent(ACC.c2arrow, mv(l, 1.00, 'fastEffects'), lin(l, 1.00, 0.40), C.cream, 'arrow');
+  } });
+
+// C3 Countdown --------------------------------------------------------------
+card({ id: 'C3', start: 5.0, end: 6.5, stage: C.green, line: '3 · 2 · 1', holdStart: 0.35,
+  moves: [
+    { n: 'ground scale pop (Sunny)', k: 'in', t0: 0.00, d: 0.50, note: 'settles at 0.50; the digit is legible from 0.35' },
+    { n: '"3" number slide in', k: 'in', t0: 0.00, d: 0.35, holdRef: true },
+    { n: 'Sunny → Burst morph', k: 'focal', t0: 0.50, d: 0.50 }, { n: '"3" out / "2" in', k: 'focal', t0: 0.50, d: 0.35 },
+    { n: 'Burst → VerySunny morph', k: 'focal', t0: 1.00, d: 0.50 }, { n: '"2" out / "1" in', k: 'focal', t0: 1.00, d: 0.35 } ],
+  draw(l) {
+    const px = 158, pop = mv(l, 0, 'defaultSpatial');
+    let pts;
+    if (l < 0.5) pts = shape('sunny', 180);
+    else if (l < 1.0) pts = morph(shape('sunny', 180), shape('burst', 202), mv(l, 0.5, 'defaultSpatial'));
+    else pts = morph(shape('burst', 202), shape('verysunny', 230), mv(l, 1.0, 'defaultSpatial'));
+    fillPoly(pts, 640, 360, pop, 0, C.cream, 'countdown ground');
+    if (DBG.on) { ctx.save(); ctx.translate(640, 360); ctx.scale(pop, pop); DBG.ground = xformPts(pts); ctx.restore(); }
+    ctx.save(); ctx.translate(640, 360); ctx.scale(pop, pop); pathPoly(pts); ctx.restore(); ctx.clip();
+    ctx.font = fontOf(px); ctx.fillStyle = C.ink; ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+    const digits = [{ ch: '3', tin: 0.0, tout: 0.5 }, { ch: '2', tin: 0.5, tout: 1.0 }, { ch: '1', tin: 1.0, tout: null }];
+    for (const d of digits) {
+      const sIn = mv(l, d.tin, 'fastSpatial'); if (sIn <= 0) continue;
+      let y = 417 + 180 * (1 - sIn);
+      if (d.tout !== null) { if (l >= d.tout + 0.35 - 1e-9) continue; y -= 300 * mv(l, d.tout, 'fastSpatial'); }
+      ctx.fillText(d.ch, 640, y);
+      if (DBG.on) { const m = met(px, d.ch); DBG.lines.push({ text: d.ch, box: [640 - m.w / 2, y - 0.72 * px, 640 + m.w / 2, y + 0.20 * px], ink: [640 - m.w / 2 + (m.w / 2 - m.l), y - m.a, 640 - m.w / 2 + (m.w / 2 + m.r), y + m.d], baseline: y, px, digit: true }); }
+    }
+    ctx.textAlign = 'left';
+  } });
+
+// C4 Announcement -----------------------------------------------------------
+card({ id: 'C4', start: 6.5, end: 8.5, stage: C.blush, line: 'Just one rule', holdStart: 0.90,
+  moves: [
+    { n: 'glyph stagger-in', k: 'in', t0: 0.10, d: 0.75 }, { n: 'underline draw-on', k: 'in', t0: 0.60, d: 0.30 },
+    { n: 'tracking breathe', k: 'focal', t0: 1.00, d: 0.35 }, { n: 'o → Sunny pop', k: 'focal', t0: 1.15, d: 0.35 } ],
+  draw(l) {
+    const px = 86, T = 'Just one rule';
+    const sw = swapState(l, 1.00, 1.15);
+    const L = layoutLine(T, px, 390, 'center', 640, (i, ch) => {
+      if (ch === ' ') return {};
+      const st = staggerState(l, 0.10, 0.04, nonSpaceIndex(T, i));
+      if (i === 5) { st.widen = sw.widen; st.scale *= sw.letterScale; }
+      return st; });
+    drawLine(L, C.ink);
+    const og = L.glyphs[5], ocx = og.x + og.w / 2, ocy = 390 - 0.26 * px;
+    fillPoly(shape('sunny', 28), ocx, ocy, sw.shapeScale, RM ? 0 : 8 * Math.max(0, l - 1.15), C.orange, 'Sunny o-swap'); noteSwap('o one', ocx, ocy, sw.shapeScale);
+    const r0 = L.glyphs[9], r1 = L.glyphs[12];
+    drawAccent(linePoly(r0.x, 404, r1.x + r1.w, 404), mv(l, 0.60, 'fastEffects'), lin(l, 0.60, 0.30), C.ink, 'underline');
+  } });
+
+// C5 Announcement -----------------------------------------------------------
+card({ id: 'C5', start: 8.5, end: 11.0, stage: C.yellow, line: 'Ship something small', holdStart: 1.20,
+  moves: [
+    { n: 'word land ×3', k: 'in', t0: 0.00, d: 0.80 }, { n: 'loop draw-on', k: 'in', t0: 0.80, d: 0.40 },
+    { n: 'tracking breathe', k: 'focal', t0: 1.30, d: 0.35 }, { n: 'o → Sunny pop', k: 'focal', t0: 1.45, d: 0.35 } ],
+  draw(l) {
+    const px = 86, T = 'Ship something small';
+    const sw = swapState(l, 1.30, 1.45);
+    const L = layoutLine(T, px, 390, 'center', 640, (i, ch) => {
+      if (ch === ' ') return {};
+      const st = landState(l, 0.15 * wordIndex(T, i), px);
+      if (i === 6) { st.widen = sw.widen; st.scale = sw.letterScale; }
+      return st; });
+    drawLine(L, C.ink);
+    const og = L.glyphs[6], ocx = og.x + og.w / 2, ocy = 390 - 0.26 * px;
+    fillPoly(shape('sunny', 28), ocx, ocy, sw.shapeScale, RM ? 0 : 8 * Math.max(0, l - 1.45), C.blue, 'Sunny o-swap'); noteSwap('o something', ocx, ocy, sw.shapeScale);
+    // loop around "small": centred on the word's advance centre, radii per spec,
+    // clockwise from the leftmost point, overshooting its start by 15°.
+    const a = L.glyphs[15], b = L.glyphs[19], g = L.glyphs[13];
+    const wcx = (a.x + b.x + b.w) / 2;
+    const rx = LOOP_RX(wcx, g.x + g.w);
+    drawAccent(ellipsePoly(wcx, 372, rx, 62, Math.PI, 3 * Math.PI + 15 * Math.PI / 180), mv(l, 0.80, 'fastEffects'), lin(l, 0.80, 0.40), C.ink, 'loop');
+  } });
+// Horizontal radius of the C5 loop: the spec's 138 px unless that would bring
+// the loop's left edge within 20 px of the g of "something" (the spec's own
+// clearance rule), in which case the radius shrinks to keep that clearance.
+function LOOP_RX(wcx, gRight) { return Math.min(138, wcx - (gRight + 20)); }
+
+// C6 Badge row --------------------------------------------------------------
+card({ id: 'C6', start: 11.0, end: 12.5, stage: C.blush, line: null, holdStart: 1.00,
+  moves: [ { n: 'badge roll-in ×6 (100 ms stagger)', k: 'in', t0: 0.00, d: 1.00 }, { n: 'roll-in settle', k: 'focal', t0: 1.00, d: 0 } ],
+  draw(l) {
+    const B = [ [160, C.cream, 'sunny', C.orange], [380, C.ink, 'star4', C.yellow], [600, C.blue, 'burst', C.cream],
+                [820, C.cream, 'semicircle', C.green], [1040, C.orange, 'verysunny', C.cream], [1260, C.ink, 'circle', C.grey] ];
+    B.forEach((b, i) => {
+      const t0 = 0.1 * i, s = mv(l, t0, 'defaultSpatial'), a = mv(l, t0, 'fastEffects');
+      if (a <= 0) return;
+      ctx.save(); ctx.globalAlpha = a;
+      ctx.translate(b[0] - 400 * (1 - s), 360); ctx.rotate(-15 * (1 - s) * Math.PI / 180);
+      fillPoly(shape('circle', 93.5), 0, 0, 1, 0, b[1], 'badge ' + (i + 1));
+      if (b[2] === 'semicircle') fillPoly(shape('semicircle', 51), 0, 25.5, 1, 0, b[3], 'inset ' + (i + 1));
+      else fillPoly(shape(b[2], 51), 0, 0, 1, 0, b[3], 'inset ' + (i + 1));
+      ctx.restore();
+    });
+  } });
+
+// C7 Question ---------------------------------------------------------------
+card({ id: 'C7', start: 12.5, end: 16.0, stage: C.cream, line: "What'll you make tonight?", holdStart: 1.35,
+  moves: [
+    { n: 'word land ×4', k: 'in', t0: 0.00, d: 0.95 }, { n: 'squiggle draw-on', k: 'in', t0: 0.95, d: 0.40 },
+    { n: 'tracking breathe (both slots)', k: 'focal', t0: 1.50, d: 0.35 }, { n: 'o → Sunny pop', k: 'focal', t0: 1.65, d: 0.35 },
+    { n: 'i-dot → Star4 pop', k: 'focal', t0: 1.75, d: 0.35 }, { n: 'exit shrink', k: 'exit', t0: 3.15, d: 0.35 } ],
+  draw(l) {
+    const px = 86;
+    const ex = Math.max(0, 1 - mv(l, 3.15, 'fastSpatial'));
+    const sw = swapState(l, 1.50, 1.65), si = swapState(l, 1.50, 1.75);
+    const L1 = layoutLine("What'll", px, 280, 'left', 250, () => landState(l, 0.00, px));
+    const L2 = layoutLine('you make', px, 380, 'left', 330, (i, ch) => {
+      if (ch === ' ') return {};
+      const st = landState(l, i < 3 ? 0.15 : 0.30, px);
+      if (i === 1) { st.widen = sw.widen; st.scale = sw.letterScale; }
+      return st; });
+    const L3 = layoutLine('tonight?', px, 480, 'left', 410, (i) => {
+      const st = landState(l, 0.45, px);
+      if (i === 3) { st.widen = si.widen; if (si.active) { st.mode = 'stem'; st.dotScale = si.letterScale; } }
+      return st; });
+    const [bcx, bcy] = blockCentre([L1, L2, L3]);
+    ctx.save(); scaleAbout(bcx, bcy, ex);
+    drawLine(L1, C.ink); drawLine(L2, C.ink); drawLine(L3, C.ink);
+    const og = L2.glyphs[1], ig = L3.glyphs[3];
+    const ocx = og.x + og.w / 2, ocy = 380 - 0.26 * px, icx = stemX(ig), icy = 480 - 0.70 * px;
+    fillPoly(shape('sunny', 28), ocx, ocy, sw.shapeScale, RM ? 0 : 8 * Math.max(0, l - 1.65), C.orange, 'Sunny o-swap'); noteSwap('o you', ocx, ocy, sw.shapeScale);
+    fillPoly(shape('star4', 14), icx, icy, si.shapeScale, 0, C.blue, 'Star4 i-swap'); noteSwap('i tonight', icx, icy, si.shapeScale);
+    ctx.restore();
+    const sq = squigglePoly(L3.x0, L3.x0 + L3.width, 496, 8, 4);
+    const [acx, acy] = accentCentre(sq);
+    ctx.save(); scaleAbout(acx, acy, ex);
+    drawAccent(sq, mv(l, 0.95, 'fastEffects'), lin(l, 0.95, 0.40), C.ink, 'squiggle');
+    ctx.restore();
+  } });
+
+// C8 Constellation ----------------------------------------------------------
+const NODES = [ ['circle', 230, 216, C.cream, 22], ['star4', 410, 418, C.yellow, 36], ['circle', 576, 187, C.cream, 29],
+                ['sunny', 704, 360, C.grey, 50], ['star4', 870, 518, C.yellow, 29], ['circle', 998, 245, C.cream, 36],
+                ['star4', 1100, 446, C.yellow, 22], ['circle', 512, 562, C.blue, 29] ];
+// Arc A: n1→n2→n8→n5→n7 · Arc B: n3→n4→n6 · link n4→n8; control-point side alternates along each arc.
+const SEGS = [ [0, 1, 1], [1, 7, -1], [7, 4, 1], [4, 6, -1], [2, 3, 1], [3, 5, -1], [3, 7, 1] ];
+card({ id: 'C8', start: 16.0, end: 18.0, stage: C.ink, line: null, holdStart: 1.34,
+  moves: [ { n: 'node scale pop ×8 (120 ms stagger)', k: 'in', t0: 0.00, d: 1.34 }, { n: 'lines draw-on', k: 'in', t0: 0.90, d: 0.40 },
+           { n: 'constellation drift', k: 'focal', t0: 1.35, d: 0.65 } ],
+  draw(l) {
+    const drift = mv(l, 1.35, 'slowSpatial');
+    const pos = NODES.map((n, i) => [n[1] + DRIFT[i][0] * drift, n[2] + DRIFT[i][1] * drift]);
+    NODES.forEach((n, i) => fillPoly(shape(n[0], n[4]), pos[i][0], pos[i][1], mv(l, 0.12 * i, 'defaultSpatial'), 0, n[3], 'n' + (i + 1)));
+    const la = mv(l, 0.90, 'fastEffects'), lr = lin(l, 0.90, 0.40);
+    for (const [a, b, side] of SEGS) {
+      const A = pos[a], B = pos[b];
+      const mx = (A[0] + B[0]) / 2, my = (A[1] + B[1]) / 2;
+      let px_ = -(B[1] - A[1]), py_ = B[0] - A[0]; const pl = Math.hypot(px_, py_); px_ /= pl; py_ /= pl;
+      const ctrl = [mx + 30 * side * px_, my + 30 * side * py_];
+      const full = sampleFn(quad(A, ctrl, B), 128);
+      const Ra = NODES[a][4], Rb = NODES[b][4];
+      let i0 = 0; while (i0 < full.length && Math.hypot(full[i0][0] - A[0], full[i0][1] - A[1]) < Ra) i0++;
+      let i1 = full.length - 1; while (i1 > 0 && Math.hypot(full[i1][0] - B[0], full[i1][1] - B[1]) < Rb) i1--;
+      if (i1 - i0 < 2) continue;
+      drawAccent(full.slice(i0, i1 + 1), la, lr, C.cream, 'line ' + (a + 1) + '-' + (b + 1));
+    }
+  } });
+
+// C9 Return -----------------------------------------------------------------
+card({ id: 'C9', start: 18.0, end: 20.5, stage: C.blue, line: 'Off you go!', holdStart: 0.90,
+  moves: [
+    { n: 'Burst+Sunny scale pop', k: 'in', t0: 0.00, d: 0.65 }, { n: 'word land ×3', k: 'in', t0: 0.10, d: 0.80 },
+    { n: 'arrow draw-on', k: 'focal', t0: 1.00, d: 0.40 }, { n: 'exit slide right', k: 'exit', t0: 2.00, d: 0.50 } ],
+  draw(l) {
+    const px = 86, T = 'Off you go!';
+    const dx = 1400 * mv(l, 2.0, 'defaultSpatial'), pop = mv(l, 0, 'slowSpatial');
+    ctx.save(); ctx.translate(dx, 0);
+    fillPoly(shape('burst', 202), 150, 760, pop, 0, C.cream, 'Burst BL');
+    fillPoly(shape('sunny', 173), 1140, -20, pop, 0, C.yellow, 'Sunny TR');
+    const L = layoutLine(T, px, 390, 'center', 640, (i, ch) => ch === ' ' ? {} : landState(l, 0.10 + 0.15 * wordIndex(T, i), px));
+    drawLine(L, C.cream);
+    drawAccent(ACC.c9arrow, mv(l, 1.00, 'fastEffects'), lin(l, 1.00, 0.40), C.cream, 'arrow');
+    ctx.restore();
+  } });
+
+// C10 Closer ----------------------------------------------------------------
+card({ id: 'C10', start: 20.5, end: 24.0, stage: C.cream, line: 'Build Night', holdStart: 0.65,
+  moves: [
+    { n: 'glyph stagger-in (both lines, swaps in place)', k: 'in', t0: 0.10, d: 0.55 },
+    { n: '"Build" swap resolve', k: 'focal', t0: 1.90, d: 0.35 }, { n: '"Night" swap resolve', k: 'focal', t0: 2.00, d: 0.35 } ],
+  draw(l) {
+    const px = 158;
+    const rB = mv(l, 1.90, 'fastSpatial'), rN = mv(l, 2.00, 'fastSpatial');
+    const L1 = layoutLine('Build', px, 330, 'center', 640, (i) => { const st = staggerState(l, 0.10, 0.05, i); if (i === 2) { st.mode = 'stem'; st.dotScale = rB; } return st; });
+    const L2 = layoutLine('Night', px, 510, 'center', 640, (i) => { const st = staggerState(l, 0.10, 0.05, i); if (i === 1) { st.mode = 'stem'; st.dotScale = rN; } return st; });
+    drawLine(L1, C.ink); drawLine(L2, C.ink);
+    const gB = L1.glyphs[2], gN = L2.glyphs[1];
+    const sB = mv(l, 0.10 + 2 * 0.05, 'fastSpatial') * Math.max(0, 1 - rB), aB = mv(l, 0.10 + 2 * 0.05, 'fastEffects');
+    const sN = mv(l, 0.10 + 1 * 0.05, 'fastSpatial') * Math.max(0, 1 - rN), aN = mv(l, 0.10 + 1 * 0.05, 'fastEffects');
+    const bx = stemX(gB), by = 330 - 0.70 * px, nx = stemX(gN), ny = 510 - 0.70 * px;
+    ctx.save(); ctx.globalAlpha = aB; fillPoly(shape('star4', 25), bx, by, sB, 0, C.orange, 'Star4 Build'); ctx.restore(); noteSwap('i Build', bx, by, sB);
+    ctx.save(); ctx.globalAlpha = aN; fillPoly(shape('star4', 25), nx, ny, sN, 0, C.blue, 'Star4 Night'); ctx.restore(); noteSwap('i Night', nx, ny, sN);
+  } });
+
+// --------------------------------------------------------------- render ------
+function cardAt(t) {
+  if (t >= DUR) return CARDS[CARDS.length - 1];
+  for (const c of CARDS) if (t >= c.start && t < c.end) return c;
+  return CARDS[0];
+}
+function render(t) {
+  t = Math.max(0, Math.min(DUR, t));
+  const c = cardAt(t);
+  const local = Math.min(t, DUR) - c.start;
+  DBG.t = t; DBG.card = c.id; DBG.lines = []; DBG.shapes = []; DBG.accents = []; DBG.swaps = []; DBG.ground = null;
+  ctx.setTransform(BASE, 0, 0, BASE, 0, 0);
+  ctx.globalAlpha = 1;
+  ctx.fillStyle = c.stage; ctx.fillRect(0, 0, W, H);
+  ctx.save(); c.draw(local); ctx.restore();
+  if (THUMB) { // browser downsampling of the full frame to 160 × 90
+    const v = canvas.getContext('2d'); v.setTransform(dpr, 0, 0, dpr, 0, 0); v.imageSmoothingEnabled = true; v.imageSmoothingQuality = 'high';
+    v.clearRect(0, 0, 160, 90); v.drawImage(offc, 0, 0, W, H, 0, 0, 160, 90);
+  }
+}
+
+// ---------------------------------------------------------------- census -----
+const PAL = Object.entries(C).map(([k, v]) => [k, parseInt(v.slice(1, 3), 16), parseInt(v.slice(3, 5), 16), parseInt(v.slice(5, 7), 16)]);
+function census() {
+  const src = THUMB ? offc : canvas;
+  const g = src.getContext('2d');
+  const d = g.getImageData(0, 0, src.width, src.height).data;
+  const counts = new Map(); let other = 0;
+  const key = PAL.map(p => (p[1] << 16) | (p[2] << 8) | p[3]); const names = PAL.map(p => p[0]);
+  for (let i = 0; i < d.length; i += 4) {
+    const k = (d[i] << 16) | (d[i + 1] << 8) | d[i + 2];
+    const j = key.indexOf(k);
+    if (j < 0) other++; else counts.set(names[j], (counts.get(names[j]) || 0) + 1);
+  }
+  const res = { t: DBG.t, card: DBG.card, palette: [...counts.entries()].sort((a, b) => b[1] - a[1]), paletteCount: counts.size, other, total: d.length / 4 };
+  if (CENSUS) console.log('census', JSON.stringify(res));
+  return res;
+}
+function pixelAt(x, y) { const g = canvas.getContext('2d'); const d = g.getImageData(Math.round(x * BASE), Math.round(y * BASE), 1, 1).data; return '#' + [d[0], d[1], d[2]].map(v => v.toString(16).padStart(2, '0')).join('').toUpperCase(); }
+
+// -------------------------------------------------------------- controls -----
+let playing = false, tCur = 0, lastTs = null, perfEma = null, playHandle = null;
+const $ = id => document.getElementById(id);
+function sizeCanvas() {
+  if (THUMB) { canvas.width = 160 * dpr; canvas.height = 90 * dpr; canvas.style.width = '160px'; canvas.style.height = '90px'; ctx = offctx; BASE = 1; return; }
+  canvas.width = W * dpr; canvas.height = H * dpr; BASE = dpr;
+  if (STILL_T !== null) { canvas.style.width = W + 'px'; canvas.style.height = H + 'px'; return; }
+  const cw = Math.max(320, Math.min(W, window.innerWidth - 24, (window.innerHeight - 70) * W / H));
+  canvas.style.width = cw + 'px'; canvas.style.height = (cw * H / W) + 'px';
+}
+function updateUI() {
+  $('time').textContent = tCur.toFixed(3) + ' s';
+  $('scrub').querySelector('.head').style.left = (tCur / DUR * 100) + '%';
+  $('play').textContent = playing ? 'Pause' : 'Play';
+  if (perfEma !== null) $('perf').textContent = perfEma.toFixed(2) + ' ms/frame';
+}
+function seek(t) { tCur = Math.max(0, Math.min(DUR, t)); render(tCur); updateUI(); }
+function frame(ts) {
+  if (playing) {
+    if (lastTs !== null) tCur = Math.min(DUR, tCur + (ts - lastTs) / 1000);
+    lastTs = ts;
+    const p0 = performance.now(); render(tCur); const dt = performance.now() - p0;
+    perfEma = perfEma === null ? dt : perfEma * 0.9 + dt * 0.1;
+    updateUI();
+    if (tCur >= DUR) { playing = false; lastTs = null; updateUI(); }
+  }
+  requestAnimationFrame(frame);
+}
+function togglePlay() { playing = !playing; lastTs = null; if (playing && tCur >= DUR) tCur = 0; updateUI(); }
+function record() {
+  if (!('MediaRecorder' in window)) return;
+  const stream = canvas.captureStream(60); const chunks = [];
+  const rec = new MediaRecorder(stream, { mimeType: 'video/webm;codecs=vp9' });
+  rec.ondataavailable = e => chunks.push(e.data);
+  rec.onstop = () => { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob(chunks, { type: 'video/webm' })); a.download = 'buildnight.webm'; a.click(); };
+  tCur = 0; playing = true; lastTs = null; rec.start();
+  const poll = () => { if (!playing) { rec.stop(); return; } setTimeout(poll, 100); }; setTimeout(poll, 100);
+}
+function setupControls() {
+  const sc = $('scrub');
+  for (const c of CARDS) { const tk = document.createElement('div'); tk.className = 'tick'; tk.style.left = (c.start / DUR * 100) + '%'; tk.title = c.id + ' ' + c.start + ' s'; sc.appendChild(tk); }
+  let dragging = false;
+  const at = e => { const r = sc.getBoundingClientRect(); return (e.clientX - r.left) / r.width * DUR; };
+  sc.addEventListener('mousedown', e => { dragging = true; playing = false; seek(at(e)); });
+  window.addEventListener('mousemove', e => { if (dragging) seek(at(e)); });
+  window.addEventListener('mouseup', () => { dragging = false; });
+  $('play').addEventListener('click', togglePlay);
+  window.addEventListener('keydown', e => {
+    if (e.code === 'Space') { e.preventDefault(); togglePlay(); }
+    else if (e.code === 'ArrowRight') { e.preventDefault(); playing = false; seek(tCur + (e.shiftKey ? 0.25 : 1 / 24)); }
+    else if (e.code === 'ArrowLeft') { e.preventDefault(); playing = false; seek(tCur - (e.shiftKey ? 0.25 : 1 / 24)); }
+    else if (e.key === 'r' || e.key === 'R') record();
+  });
+  window.addEventListener('resize', () => { sizeCanvas(); render(tCur); });
+}
+
+// --------------------------------------------------------------- exports -----
+window.renderAt = function (t) { tCur = Math.max(0, Math.min(DUR, t)); render(tCur); if (!THUMB && STILL_T === null) updateUI(); return JSON.parse(JSON.stringify(DBG)); };
+window.census = census;
+window.pixelAt = pixelAt;
+window.curvePeaks = () => Object.fromEntries(Object.keys(TOK).map(k => [k, curvePeak(k)]));
+window.moveTable = () => CARDS.map(c => ({ id: c.id, start: c.start, end: c.end, stage: c.stage, line: c.line, holdStart: c.holdStart, moves: c.moves }));
+window.fontInfo = () => {
+  const faces = ['Google Sans', 'Product Sans', 'Avenir Next', 'Helvetica Neue', 'Arial'];
+  const resolved = faces.find(f => document.fonts.check(`600 86px '${f}'`)) || 'sans-serif';
+  const m86 = met(86, 'H'), m158 = met(158, 'H');
+  return { resolved, capH86: m86.a, capH158: m158.a, idot: IDOT, rm: RM };
+};
+window.frameHash = function () {
+  const src = THUMB ? offc : canvas; const d = src.getContext('2d').getImageData(0, 0, src.width, src.height).data;
+  let h = 2166136261 >>> 0; for (let i = 0; i < d.length; i++) { h ^= d[i]; h = Math.imul(h, 16777619) >>> 0; } return h.toString(16);
+};
+window.timeRender = function (n) { const p0 = performance.now(); for (let i = 0; i < n; i++) render((i / n) * DUR); return (performance.now() - p0) / n; };
+// Pixel probes for the verification script (frame px, exact colour matches).
+function hexToKey(hex) { return parseInt(hex.slice(1), 16); }
+function frameData() { const src = THUMB ? offc : canvas; return { d: src.getContext('2d').getImageData(0, 0, src.width, src.height).data, w: src.width, h: src.height }; }
+window.scanRows = function (x0, x1, y0, y1, hex) {   // first/last row in [y0,y1] holding an exact-colour pixel within columns [x0,x1]
+  const { d, w } = frameData(); const k = hexToKey(hex); let minR = -1, maxR = -1;
+  for (let y = Math.max(0, Math.floor(y0 * BASE)); y <= Math.min(H * BASE - 1, Math.ceil(y1 * BASE)); y++) {
+    let hit = false;
+    for (let x = Math.max(0, Math.floor(x0 * BASE)); x <= Math.min(W * BASE - 1, Math.ceil(x1 * BASE)); x++) { const i = (y * w + x) * 4; if (((d[i] << 16) | (d[i + 1] << 8) | d[i + 2]) === k) { hit = true; break; } }
+    if (hit) { if (minR < 0) minR = y; maxR = y; }
+  }
+  return minR < 0 ? null : [minR / BASE, maxR / BASE, (maxR - minR + 1) / BASE];
+};
+window.countOutside = function (poly, hex) {         // pixels of colour hex whose centre lies outside polygon (frame px)
+  const { d, w, h } = frameData(); const k = hexToKey(hex); let out = 0, total = 0;
+  const inside = (x, y) => { let c = false; for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) { const xi = poly[i][0], yi = poly[i][1], xj = poly[j][0], yj = poly[j][1]; if ((yi > y) !== (yj > y) && x < (xj - xi) * (y - yi) / (yj - yi) + xi) c = !c; } return c; };
+  for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) { const i = (y * w + x) * 4; if (((d[i] << 16) | (d[i + 1] << 8) | d[i + 2]) !== k) continue; total++; if (!inside((x + 0.5) / BASE, (y + 0.5) / BASE)) out++; }
+  return { total, outside: out };
+};
+window.occupancy = function (stageHex) {             // share of pixels that are not the stage colour
+  const { d } = frameData(); const k = hexToKey(stageHex); let n = 0; const tot = d.length / 4;
+  for (let i = 0; i < d.length; i += 4) if (((d[i] << 16) | (d[i + 1] << 8) | d[i + 2]) !== k) n++;
+  return n / tot;
+};
+window.dataURL = () => (THUMB ? offc : canvas).toDataURL('image/png');
+window.diffAgainst = async function (url) {          // count of pixels differing between the current frame and a PNG data URL
+  const img = new Image(); await new Promise((res, rej) => { img.onload = res; img.onerror = rej; img.src = url; });
+  const oc = document.createElement('canvas'); oc.width = img.width; oc.height = img.height; const g = oc.getContext('2d'); g.drawImage(img, 0, 0);
+  const a = g.getImageData(0, 0, oc.width, oc.height).data; const { d: b } = frameData();
+  if (a.length !== b.length) return -1;
+  let n = 0, x0 = 1e9, y0 = 1e9, x1 = -1, y1 = -1; const w = oc.width;
+  for (let i = 0; i < a.length; i += 4) if (a[i] !== b[i] || a[i + 1] !== b[i + 1] || a[i + 2] !== b[i + 2]) { n++; const p = i / 4, x = p % w, y = (p - x) / w; if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y; }
+  window.__lastDiffBox = n ? [x0, y0, x1, y1] : null;
+  return n;
+};
+
+// ------------------------------------------------------------------ boot -----
+(function boot() {
+  if (THUMB) document.body.classList.add('thumb');
+  else if (STILL_T !== null) document.body.classList.add('still');
+  sizeCanvas();
+  if (STILL_T !== null || THUMB) {
+    tCur = Math.max(0, Math.min(DUR, STILL_T || 0)); render(tCur);
+    if (CENSUS) census();
+    window.__ready = true; return;
+  }
+  setupControls(); seek(0); requestAnimationFrame(frame); window.__ready = true;
+})();
+</script>
+</body>
+</html>

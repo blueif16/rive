@@ -1,0 +1,80 @@
+[
+  {
+    "no": 1,
+    "name": "Cut timing",
+    "pass": true,
+    "evidence": "  t=0: (8,8)=#4A7BF7 ✓\n  t=2.5: (8,8)=#F4603A ✓  t=2.4833: #4A7BF7 ✓\n  t=5: (8,8)=#6DBF9A ✓  t=4.9833: #F4603A ✓\n  t=6.5: (8,8)=#F5D8DA ✓  t=6.4833: #6DBF9A ✓\n  t=8.5: (8,8)=#F2BE4B ✓  t=8.4833: #F5D8DA ✓\n  t=11: (8,8)=#F5D8DA ✓  t=10.9833: #F2BE4B ✓\n  t=12.5: (8,8)=#F4EEE4 ✓  t=12.4833: #F5D8DA ✓\n  t=16: (8,8)=#1F2125 ✓  t=15.9833: #F4EEE4 ✓\n  t=18: (8,8)=#4A7BF7 ✓  t=17.9833: #1F2125 ✓\n  t=20.5: (8,8)=#F4EEE4 ✓  t=20.4833: #4A7BF7 ✓"
+  },
+  {
+    "no": 2,
+    "name": "Type scale",
+    "pass": true,
+    "evidence": "  C1 t=1.6 \"Hello,\" px=86 glyph \"H\" ink rows above baseline: 61 px (want 62±2) ✓\n  C1 t=1.6 \"night owls!\" px=86: no capital in the line; face cap height at 86 px = 60.9 px\n  C2 t=4 \"Welcome to\" px=86 glyph \"W\" ink rows above baseline: 61 px (want 62±2) ✓\n  C2 t=4 \"Build Night\" px=86 glyph \"B\" ink rows above baseline: 61 px (want 62±2) ✓\n  C3 t=5.4 \"3\" px=158 glyph \"3\" ink rows above baseline: 116 px (want 114±2) ✓\n  C4 t=7.5 \"Just one rule\" px=86 glyph \"J\" ink rows above baseline: 62 px (want 62±2) ✓\n  C5 t=9.8 \"Ship something small\" px=86 glyph \"S\" ink rows above baseline: 64 px (want 62±2) ✓\n  C7 t=14.5 \"What'll\" px=86 glyph \"W\" ink rows above baseline: 61 px (want 62±2) ✓\n  C7 t=14.5 \"you make\" px=86: no capital in the line; face cap height at 86 px = 60.9 px\n  C7 t=14.5 \"tonight?\" px=86: no capital in the line; face cap height at 86 px = 60.9 px\n  C9 t=19.2 \"Off you go!\" px=86 glyph \"O\" ink rows above baseline: 64 px (want 62±2) ✓\n  C10 t=23 \"Build\" px=158 glyph \"B\" ink rows above baseline: 112 px (want 114±2) ✓\n  C10 t=23 \"Night\" px=158 glyph \"N\" ink rows above baseline: 112 px (want 114±2) ✓\n  measureText cap height: 60.9 px @86, 111.9 px @158 (face: Google Sans)"
+  },
+  {
+    "no": 3,
+    "name": "No bleed, no overlap",
+    "pass": true,
+    "evidence": "  C1 \"Hello,\" box [516.2,438.1,763.8,517.2] inside margin ✓\n    ∩ Semicircle stage [194,274.1,1086,720] (allowed)\n    ∩ Circle o-swap [680.3,449.6,736.3,505.6] (allowed)\n  C1 \"night owls!\" box [412.9,538.1,867.1,617.2] inside margin ✓\n    ∩ Semicircle stage [194,274.1,1086,720] (allowed)\n    ∩ Star4 i-swap [467.3,525.8,495.3,553.8] (allowed)\n  C2 \"Welcome to\" box [398.9,268.1,881.1,347.2] inside margin ✓\n  C2 \"Build Night\" box [414.1,368.1,865.9,447.2] inside margin ✓\n  C3 \"3\" box [591.8,303.2,688.2,448.6] inside margin ✓\n    ∩ countdown ground [465.4,185.4,814.6,534.6] (allowed)\n  C4 \"Just one rule\" box [385.5,328.1,894.5,407.2] inside margin ✓\n  C5 \"Ship something small\" box [214.2,328.1,1065.8,407.2] inside margin ✓\n  C7 \"What'll\" box [250,218.1,533.5,297.2] inside margin ✓\n  C7 \"you make\" box [330,318.1,731.8,397.2] inside margin ✓\n    ∩ Sunny o-swap [380.2,330.6,434.2,384.6] (allowed)\n  C7 \"tonight?\" box [410,418.1,757,497.2] inside margin ✓\n    ∩ Star4 i-swap [546.1,405.8,574.2,433.8] (allowed)\n  C9 \"Off you go!\" box [412.8,328.1,867.2,407.2] inside margin ✓\n  C10 \"Build\" box [450.5,216.2,829.5,361.6] inside margin ✓\n  C10 \"Night\" box [434.3,396.2,845.7,541.6] inside margin ✓"
+  },
+  {
+    "no": 4,
+    "name": "Hold ≥ reading time",
+    "pass": true,
+    "evidence": "  card   entrance-end  exit/cut  hold   read   ok\n  C1        1.00       2.15   1.15   1.05   ✓   entr≤hold ✓ exit@cut ✓\n  C2        0.97       2.50   1.53   1.30   ✓   entr≤hold ✓ exit@cut ✓\n  C3        0.35       1.50   1.15   1.05   ✓   (ground pop settles 0.50; hold from pop end 1.00)   entr≤hold ✓ exit@cut ✓\n  C4        0.90       2.00   1.10   1.05   ✓   entr≤hold ✓ exit@cut ✓\n  C5        1.20       2.50   1.30   1.05   ✓   entr≤hold ✓ exit@cut ✓\n  C6        1.00       1.50   0.50     —    ✓   entr≤hold ✓ exit@cut ✓\n  C7        1.35       3.15   1.80   1.30   ✓   entr≤hold ✓ exit@cut ✓\n  C8        1.34       2.00   0.66     —    ✓   entr≤hold ✓ exit@cut ✓\n  C9        0.90       2.00   1.10   1.05   ✓   entr≤hold ✓ exit@cut ✓\n  C10       0.65       3.50   2.85   0.80   ✓   entr≤hold ✓ exit@cut ✓"
+  },
+  {
+    "no": 5,
+    "name": "Overshoot present",
+    "pass": true,
+    "evidence": "  glyph stagger-in (fast spatial) peak 1.0921 → glyph scale peak 1.0184\n  scale pop (default spatial) peak 1.0139; bleeding hero pop (slow spatial) 1.0190\n  word land (default spatial) peak 1.0139 → lands 0.48 px past rest then settles\n  morph k (default spatial) peak 1.0139\n  effects tokens: fast 1, default 1 (no overshoot)"
+  },
+  {
+    "no": 6,
+    "name": "Colour census",
+    "pass": true,
+    "evidence": "  97 frames (0…24 s every 0.25 s), palette colours per frame: 0.00:1 0.25:3 0.50:3 0.75:3 1.00:3 1.25:3 1.50:5 1.75:5 2.00:5 2.25:1 2.50:1 2.75:2 3.00:2 3.25:2 3.50:2 3.75:2 4.00:2 4.25:2 4.50:2 4.75:2 5.00:1 5.25:3 5.50:3 5.75:3 6.00:3 6.25:3 6.50:1 6.75:2 7.00:2 7.25:2 7.50:2 7.75:3 8.00:3 8.25:3 8.50:1 8.75:2 9.00:2 9.25:2 9.50:2 9.75:2 10.00:3 10.25:3 10.50:3 10.75:3 11.00:1 11.25:4 11.50:7 11.75:8 12.00:8 12.25:8 12.50:1 12.75:2 13.00:2 13.25:2 13.50:2 13.75:2 14.00:2 14.25:3 14.50:4 14.75:4 15.00:4 15.25:4 15.50:4 15.75:1 16.00:1 16.25:3 16.50:4 16.75:4 17.00:5 17.25:5 17.50:5 17.75:5 18.00:1 18.25:3 18.50:3 18.75:3 19.00:3 19.25:3 19.50:3 19.75:3 20.00:3 20.25:1 20.50:1 20.75:2 21.00:4 21.25:4 21.50:4 21.75:4 22.00:4 22.25:4 22.50:3 22.75:2 23.00:2 23.25:2 23.50:2 23.75:2 24.00:2\n  max palette colours in any frame: 8; C6 still t=12.1: 8 colours [blush, cream, ink, orange, blue, grey, green, yellow] ✓; non-palette (anti-aliased) pixels at 12.1: 5815 of 921600"
+  },
+  {
+    "no": 7,
+    "name": "Thumbnail legibility (visual)",
+    "pass": true,
+    "evidence": "  10 thumbnails at 160×90 (browser downsampling of the full frame): /Users/tk/Desktop/brain/projects/rive/geo-buildnight/out/thumbs/C1.png … C10.png; tiled sheet: out/thumbs_sheet.png (inspect)"
+  },
+  {
+    "no": 8,
+    "name": "Swapped words still read",
+    "pass": true,
+    "evidence": "  t=1.75 o Hello: centre (708.3, 477.6) stated y 478 → Δ 0.4 px, shape scale 1.000 ✓\n  t=1.75 i night: centre (481.3, 539.8) stated y 540 → Δ 0.2 px, shape scale 1.000 ✓\n  t=8.05 o one: centre (593.6, 367.6) stated y 368 → Δ 0.4 px, shape scale 1.000 ✓\n  t=10.35 o something: centre (477.2, 367.6) stated y 368 → Δ 0.4 px, shape scale 1.000 ✓\n  t=14.65 o you: centre (407.2, 357.6) stated y 358 → Δ 0.4 px, shape scale 1.000 ✓\n  t=14.65 i tonight: centre (560.2, 419.8) stated y 420 → Δ 0.2 px, shape scale 1.000 ✓\n  t=21.5 i Build: centre (665.8, 219.4) stated y 219 → Δ 0.4 px, shape scale 1.000 ✓\n  t=21.5 i Night: centre (578.7, 399.4) stated y 399 → Δ 0.4 px, shape scale 1.000 ✓\n  words read on stills: out/stills/t1_75.png, t8_05.png, t10_35.png, t14_65.png, t21_5.png (visual)"
+  },
+  {
+    "no": 9,
+    "name": "Countdown mask",
+    "pass": true,
+    "evidence": "  t=5.35: ink pixels 4111, outside ground polygon 0 ✓; digits \"3\" ink [596.7,302.3,676.3,419.8]\n  t=5.85: ink pixels 4266, outside ground polygon 0 ✓; digits \"2\" ink [601.9,302.3,677.1,417]\n  t=6.35: ink pixels 2731, outside ground polygon 0 ✓; digits \"1\" ink [602.7,305.1,654.9,417]\n  t=5.6: ink pixels 4266, outside ground polygon 0 ✓; digits \"3\" ink [596.7,-1.1,676.3,116.5], \"2\" ink [601.9,300.3,677.1,415]"
+  },
+  {
+    "no": 10,
+    "name": "Occupancy ≤ 60 %",
+    "pass": true,
+    "evidence": "  C1 t=1.6: non-stage 34.0 % ✓\n  C2 t=4: non-stage 10.4 % ✓\n  C3 t=5.4: non-stage 7.9 % ✓\n  C4 t=7.5: non-stage 1.3 % ✓\n  C5 t=9.8: non-stage 2.6 % ✓\n  C6 t=12.1: non-stage 17.0 % ✓\n  C7 t=14.5: non-stage 3.1 % ✓\n  C8 t=17.4: non-stage 2.7 % ✓\n  C9 t=19.2: non-stage 7.2 % ✓\n  C10 t=23: non-stage 4.6 % ✓"
+  },
+  {
+    "no": 11,
+    "name": "Entrances/exits end on time",
+    "pass": true,
+    "evidence": "  card   entrance-end  exit/cut  hold   read   ok\n  C1        1.00       2.15   1.15   1.05   ✓   entr≤hold ✓ exit@cut ✓\n  C2        0.97       2.50   1.53   1.30   ✓   entr≤hold ✓ exit@cut ✓\n  C3        0.35       1.50   1.15   1.05   ✓   (ground pop settles 0.50; hold from pop end 1.00)   entr≤hold ✓ exit@cut ✓\n  C4        0.90       2.00   1.10   1.05   ✓   entr≤hold ✓ exit@cut ✓\n  C5        1.20       2.50   1.30   1.05   ✓   entr≤hold ✓ exit@cut ✓\n  C6        1.00       1.50   0.50     —    ✓   entr≤hold ✓ exit@cut ✓\n  C7        1.35       3.15   1.80   1.30   ✓   entr≤hold ✓ exit@cut ✓\n  C8        1.34       2.00   0.66     —    ✓   entr≤hold ✓ exit@cut ✓\n  C9        0.90       2.00   1.10   1.05   ✓   entr≤hold ✓ exit@cut ✓\n  C10       0.65       3.50   2.85   0.80   ✓   entr≤hold ✓ exit@cut ✓"
+  },
+  {
+    "no": 12,
+    "name": "Reduced motion",
+    "pass": true,
+    "evidence": "  C1 hold start t=1.00: diff 0 px ✓\n  C2 hold start t=3.47: diff 0 px ✓\n  C3 hold start t=5.35: diff 2624 px (expected: the ground pop settles at t+0.50, after the 0.35 legibility point)\n  C4 hold start t=7.40: diff 0 px ✓\n  C5 hold start t=9.70: diff 0 px ✓\n  C6 hold start t=12.00: diff 0 px ✓\n  C7 hold start t=13.85: diff 0 px ✓\n  C8 hold start t=17.34: diff 0 px ✓\n  C9 hold start t=18.90: diff 0 px ✓\n  C10 hold start t=21.15: diff 0 px ✓\n  rm=1 digit at rest: 5.49:3 5.5:2 5.99:2 6:1 6.49:1 ✓"
+  },
+  {
+    "no": 13,
+    "name": "Determinism",
+    "pass": true,
+    "evidence": "  frame hash t=17.4: run A f7679ca0, run B (fresh page load) f7679ca0, run B re-render f7679ca0"
+  }
+]
