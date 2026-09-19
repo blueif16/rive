@@ -15,7 +15,7 @@
 **Format:** 1280×720, 24 s, time-based, 120 BPM grid (beat = 0.5 s; every cut lands on a beat), Canvas 2D — one self-contained `index.html`, no libraries, no assets, system fonts only
 **Defaults assumed:** none (duration, frame, grid and renderer were all given). House palette, house type stack, no brand substitutions.
 
-Coordinates below are pixels in the 1280×720 frame with the percentage of frame width or height in parentheses. Sizes of shapes are the outer radius R unless a diameter is stated. Type sizes are the font size (em) as a percentage of frame height; cap height is taken as 0.72 em, x-height as 0.52 em. Card-local time is written `t+s`.
+Coordinates below are pixels in the 1280×720 frame with the percentage of frame width or height in parentheses. Shape sizes are % of frame height with the outer radius R in px, unless a diameter is stated. Type sizes are the font size (em) as a percentage of frame height; cap height is taken as 0.72 em, x-height as 0.52 em. Card-local time is written `t+s`.
 
 ## The idea
 
@@ -108,148 +108,133 @@ Swap geometry (in em of the card's font size): an "o" swap has R = 0.32 em, cent
 
 ### C1. Greeting — "Hello, night owls!"   t = 0.0–2.5 s
 - Stage: blue `#4A7BF7`
-- Composition: single hero on a Semicircle stage; the half-disc rises from the bottom edge and holds both lines of type inside its chord.
-- Cast on card: Semicircle 62 % H (R 446 px) cream, flat edge down, centre (640, 720) = (50 %, 100 %), top of the arc at y = 274 (38 %) · Circle 3.9 % H (R 28 px) yellow as the "o" swap · Star4 1.9 % H (R 14 px) orange as the "i"-dot swap
-- Type: statement 12 % H (86 px), ink, centred at x = 640, wrap "Hello, / night owls!", baselines y = 500 (69 %) and 600 (83 %). Chord widths inside the Semicircle at those baselines are 776 px and 859 px; the lines measure about 285 px and 525 px.
-- Glyph swaps: o in "Hello" → Circle yellow, centre (o advance centre, 478) · dot of i in "night" → Star4 orange, centre (stem centre, 540); the i is drawn as ı
-- Accent: ink lasso loop above "Hello,": a shallow arch from (500, 418) up to (640, 372) and down to (780, 418) with one 18 px-radius loop drawn clockwise at the apex; stroke 2.2 px (0.3 % H), round caps. Its lowest point sits 20 px above the caps of "Hello," (cap top y = 438).
-- Entrance: Semicircle scale pop from its centre (expressive default spatial, 500 ms) at t+0.00 · glyph stagger-in of both lines concurrently, left to right, from t+0.10 (expressive fast spatial, 350 ms), stagger 40 ms; line 1 ends t+0.65, line 2 ends t+0.81 · accent draw-on t+0.60–1.00 (expressive fast effects 150 ms on opacity, reveal by length over 400 ms)
-- Focal event: glyph swap pop. Tracking breathe t+1.10–1.25 (fast spatial 350 ms, slot widens 0.16 em), then o → Circle pops t+1.25–1.60 and i-dot → Star4 pops t+1.35–1.70 (fast spatial, 350 ms each; letter scales to 0 as the shape scales to 1)
-- Exit: exit shrink (expressive fast spatial, 350 ms) t+2.15–2.50 — type, swap shapes, accent and the Semicircle all scale to zero at their own centres (the Semicircle sinks into the bottom edge)
-- Hold: 1.15 s, t+1.00–2.15 (reading time 1.05 s)
-- Don't: never let the Semicircle's arc top rise above y = 274 at rest (its overshoot peak may briefly reach y ≈ 230, before any type exists); never swap the H or the w.
+- Composition: single hero on a Semicircle stage; both lines inside its chord
+- Cast on card: Semicircle 62 % H (R 446) cream, flat edge down, centre (640, 720) · Circle 3.9 % H (R 28) yellow, o-swap · Star4 1.9 % H (R 14) orange, i-dot swap
+- Type: statement 12 % H (86 px), ink, centred x = 640, wrap "Hello, / night owls!", baselines y = 500, 600
+- Glyph swaps: o in "Hello" → Circle yellow at (o centre, 478) · i-dot in "night" → Star4 orange at (stem, 540), i drawn as ı
+- Accent: ink lasso loop over "Hello,": arch (500, 418) → (640, 372) → (780, 418), one 18 px loop at the apex; 2.2 px, round caps
+- Entrance: Semicircle scale pop (default spatial, 500 ms) t+0.00 · glyph stagger-in, both lines (fast spatial, 350 ms), 40 ms stagger, t+0.10–0.81 · loop draw-on t+0.60–1.00 (fast effects, reveal 400 ms)
+- Focal event: swap. Breathe t+1.10 (fast spatial), o pops t+1.25–1.60, i-dot t+1.35–1.70 (fast spatial, 350 ms)
+- Exit: exit shrink (fast spatial, 350 ms) t+2.15–2.50
+- Hold: 1.15 s, t+1.00–2.15 (reading 1.05 s)
+- Don't: swap the H or w; raise the arc top above y = 274 at rest
 
 ### C2. Welcome — "Welcome to Build Night"   t = 2.5–5.0 s
 - Stage: orange `#F4603A`
-- Composition: stacked shapes bleeding top-left and bottom-right around a centred two-line statement.
-- Cast on card: Sunny 30 % H (R 216 px) cream, centre (180, −30) = (14 %, −4 %), bleeding off the top-left; its AABB is x −36…396, y −246…186 · Burst 28 % H (R 202 px) cream, centre (1130, 750) = (88 %, 104 %), bleeding off the bottom-right; its AABB is x 928…1332, y 548…952
-- Type: statement 12 % H (86 px), cream, centred at x = 640, wrap "Welcome to / Build Night", baselines y = 330 (46 %) and 430 (60 %). Line boxes: about x 402…878 (line 1) and x 380…900 (line 2); cap top of line 1 at y = 268, descender bottom of line 2 at y = 447. Both shapes clear the type by ≥ 80 px.
+- Composition: stacked shapes bleeding top-left and bottom-right, statement centred
+- Cast on card: Sunny 30 % H (R 216) cream, centre (180, −30) · Burst 28 % H (R 202) cream, centre (1130, 750); both ≥ 80 px clear of the type
+- Type: statement 12 % H (86 px), cream, centred x = 640, wrap "Welcome to / Build Night", baselines y = 330, 430
 - Glyph swaps: none
-- Accent: cream arrow, an S-curve from (1010, 250) to its tip at (925, 398) with an open chevron head 22 px long, pointing at the end of "Night"; stroke 2.2 px, round caps
-- Entrance: Sunny and Burst scale pop (expressive slow spatial, 650 ms) at t+0.00 · "Welcome to" glyph stagger-in from t+0.10, left to right, 45 ms stagger (fast spatial 350 ms; 9 glyphs, ends t+0.81) · "Build Night" word land: each word drops 0.4 em from above into its position (expressive default spatial, 500 ms), "Build" t+0.35–0.85, "Night" t+0.47–0.97
-- Focal event: accent draw-on, t+1.00–1.40 (fast effects 150 ms on opacity, reveal by length 400 ms); the arrow then holds
-- Exit: hard cut at t+2.50 (the count-in slams in)
-- Hold: 1.53 s, t+0.97–2.50 (reading time 1.30 s)
-- Don't: never move the Burst's centre above y = 750 — its tips must stay below y = 548, under the descenders of "Build Night"; no swap on this card.
+- Accent: cream S-curve arrow (1010, 250) → tip (925, 398), chevron head 22 px, pointing at "Night"; 2.2 px, round caps
+- Entrance: shapes scale pop (slow spatial, 650 ms) t+0.00 · "Welcome to" glyph stagger-in (fast spatial, 350 ms), 45 ms stagger, t+0.10–0.81 · word land (default spatial, 500 ms): "Build" t+0.35, "Night" t+0.47, done t+0.97
+- Focal event: accent draw-on t+1.00–1.40 (fast effects, reveal 400 ms)
+- Exit: hard cut t+2.50
+- Hold: 1.53 s, t+0.97–2.50 (reading 1.30 s)
+- Don't: let Burst tips rise above y = 548; swap anything
 
 ### C3. Countdown — "3" · "2" · "1"   t = 5.0–6.5 s
 - Stage: green `#6DBF9A`
-- Composition: number in shape; one cream hero ground centred at (640, 360) = (50 %, 50 %), the digit masked to the ground's outline.
-- Cast on card: Sunny 25 % H (R 180 px) cream for "3" → morphs to Burst 28 % H (R 202 px) cream for "2" → morphs to VerySunny 32 % H (R 230 px) cream for "1"; all centred (640, 360)
-- Type: hero 22 % H (158 px), ink, centred at x = 640, baseline y = 417 so the digit's cap box (114 px tall) is centred on y = 360. Digits are clipped to the ground shape (the mask is the current morphed outline).
+- Composition: number in shape, ground centred (640, 360), digit clipped to its outline
+- Cast on card: ground Sunny 25 % H (R 180) → Burst 28 % H (R 202) → VerySunny 32 % H (R 230), cream, centre (640, 360)
+- Type: hero 22 % H (158 px), ink, centred x = 640, baseline y = 417 (cap box centred on y = 360)
 - Glyph swaps: none
 - Accent: none
-- Entrance: ground scale pop as Sunny (expressive default spatial, 500 ms) t+0.00–0.50 · "3" number slide from y+180 (below centre) to rest (expressive fast spatial, 350 ms) t+0.00–0.35
-- Focal event: shape morph + number slide on each beat. t+0.50: Sunny → Burst morph by resampling (expressive default spatial, 500 ms, R 180 → 202) while "3" slides up and out and "2" slides in from below (fast spatial, 350 ms, t+0.50–0.85). t+1.00: Burst → VerySunny (default spatial, 500 ms, R 202 → 230) while "2" exits upward and "1" enters (fast spatial, 350 ms, t+1.00–1.35).
-- Exit: hard cut at t+1.50 into C4 (the fourth beat is "go")
-- Hold: one number per beat, 0.5 s each; a digit is at hero size and inside the mask for the whole slot (at rest for the last 0.15 s of it). Card-level: a digit is legible from t+0.35 to t+1.50 = 1.15 s (the card's three numbers read in 1.05 s).
-- Don't: never rotate the ground; never crossfade digits (they slide inside the mask); never use the slow spatial token here — 650 ms overruns the beat.
+- Entrance: ground scale pop as Sunny (default spatial, 500 ms) t+0.00 · "3" slides up from +180 px (fast spatial, 350 ms) t+0.00–0.35
+- Focal event: morph + number slide per beat. t+0.50: Sunny → Burst (default spatial, 500 ms), "3" exits up, "2" enters from below (fast spatial, 350 ms). t+1.00: Burst → VerySunny (default spatial, 500 ms), "2" out, "1" in (fast spatial, 350 ms)
+- Exit: hard cut t+1.50, the fourth beat is "go"
+- Hold: 0.5 s per number, digit at rest the last 0.15 s of each; card-level t+0.35–1.50 = 1.15 s (reading 1.05 s for three numbers)
+- Don't: rotate the ground; crossfade digits; use the slow token (overruns the beat)
 
 ### C4. Announcement — "Just one rule"   t = 6.5–8.5 s
 - Stage: blush `#F5D8DA`
-- Composition: single centred statement, one swap, one underline; nothing else on the stage.
-- Cast on card: Sunny 3.9 % H (R 28 px) orange as the "o" swap, rotating 8°/s clockwise while the card holds
-- Type: statement 12 % H (86 px), ink, centred at x = 640, one line, baseline y = 390 (54 %); line box about x 332…948, cap top y = 328, descender bottom y = 407
-- Glyph swaps: o in "one" → Sunny orange, centre (o advance centre, 368)
-- Accent: ink underline beneath "rule", from (x of "rule" start, 404) to (x of "rule" end, 404); stroke 2.2 px, round caps; drawn left to right
-- Entrance: glyph stagger-in from t+0.10, left to right, 40 ms stagger (fast spatial 350 ms; 11 glyphs, ends t+0.85) · underline draw-on t+0.60–0.90 (fast effects 150 ms on opacity, reveal by length 300 ms)
-- Focal event: tracking breathe t+1.00–1.15 (fast spatial, slot widens 0.16 em) then glyph swap pop t+1.15–1.50 (fast spatial, 350 ms)
-- Exit: hard cut at t+2.00 (the punchline slams in)
-- Hold: 1.10 s, t+0.90–2.00 (reading time 1.05 s)
-- Don't: never swap the J or the r; never add a second shape — the Sunny is the only one.
+- Composition: single centred statement, one swap, one underline
+- Cast on card: Sunny 3.9 % H (R 28) orange, o-swap, rotating 8°/s while held
+- Type: statement 12 % H (86 px), ink, centred x = 640, baseline y = 390
+- Glyph swaps: o in "one" → Sunny orange at (o centre, 368)
+- Accent: ink underline under "rule", y = 404, word start to word end; 2.2 px, round caps
+- Entrance: glyph stagger-in (fast spatial, 350 ms), 40 ms stagger, t+0.10–0.85 · underline draw-on t+0.60–0.90 (fast effects, reveal 300 ms)
+- Focal event: breathe t+1.00 (fast spatial), swap pop t+1.15–1.50 (fast spatial, 350 ms)
+- Exit: hard cut t+2.00
+- Hold: 1.10 s, t+0.90–2.00 (reading 1.05 s)
+- Don't: swap the J or r; add a second shape
 
 ### C5. Announcement — "Ship something small"   t = 8.5–11.0 s
 - Stage: yellow `#F2BE4B`
-- Composition: single centred statement, one swap, a hand loop ringing the last word.
-- Cast on card: Sunny 3.9 % H (R 28 px) blue as the "o" swap, rotating 8°/s clockwise while the card holds
-- Type: statement 12 % H (86 px), ink, centred at x = 640, one line, baseline y = 390 (54 %); line box about x 150…1130 (measure it: the widest line in the piece, it must stay inside a 4 % margin, x ≥ 51 and x ≤ 1229), cap top y = 328, descender bottom y = 407
-- Glyph swaps: o in "something" → Sunny blue, centre (o advance centre, 368)
-- Accent: ink loop drawn around "small": an ellipse centred on the word's advance centre at (cx, 372), radii 138 × 62 px, drawn clockwise from its leftmost point over 400 ms and overshooting its start by 15°; stroke 2.2 px, round caps. The ellipse's top (y = 310) and bottom (y = 434) clear the caps and descenders; its left edge stays ≥ 20 px from the g of "something".
-- Entrance: word land of three words 150 ms apart from t+0.00, each dropping 0.4 em from above (expressive default spatial, 500 ms): "Ship" t+0.00–0.50, "something" t+0.15–0.65, "small" t+0.30–0.80 · loop draw-on t+0.80–1.20 (fast effects 150 ms on opacity, reveal by length 400 ms)
-- Focal event: tracking breathe t+1.30–1.45 then glyph swap pop t+1.45–1.80 (fast spatial, 350 ms)
-- Exit: hard cut at t+2.50
-- Hold: 1.30 s, t+1.20–2.50 (reading time 1.05 s)
-- Don't: never shrink the word "small" — one size per card, the loop carries the joke; never let the loop cross a letter of "something".
+- Composition: single centred statement, one swap, a hand loop around the last word
+- Cast on card: Sunny 3.9 % H (R 28) blue, o-swap, rotating 8°/s while held
+- Type: statement 12 % H (86 px), ink, centred x = 640, baseline y = 390; the widest line in the piece, must stay inside x 51…1229
+- Glyph swaps: o in "something" → Sunny blue at (o centre, 368)
+- Accent: ink ellipse around "small", centre (word centre, 372), radii 138 × 62 px, drawn clockwise from its left point, overshooting 15°; 2.2 px, round caps; ≥ 20 px clear of the g
+- Entrance: word land (default spatial, 500 ms), 150 ms stagger: "Ship" t+0.00, "something" t+0.15, "small" t+0.30, done t+0.80 · loop draw-on t+0.80–1.20 (fast effects, reveal 400 ms)
+- Focal event: breathe t+1.30, swap pop t+1.45–1.80 (fast spatial, 350 ms)
+- Exit: hard cut t+2.50
+- Hold: 1.30 s, t+1.20–2.50 (reading 1.05 s)
+- Don't: shrink "small" (the loop carries the joke); let the loop cross a letter
 
 ### C6. Badge row — (no line)   t = 11.0–12.5 s
 - Stage: blush `#F5D8DA`
-- Composition: badge row; six Circle badges on the horizontal centre line, the sixth bleeding off the right edge.
-- Cast on card (badges are Circles 26 % H = 187 px diameter, centres at y = 360 (50 %); inset shapes are 55 % of the badge diameter = 103 px across, R 51 px, centred in the badge):
-  1. cream Circle at x = 160 (12.5 %) holding an orange Sunny
-  2. ink Circle at x = 380 (30 %) holding a yellow Star4
-  3. blue Circle at x = 600 (47 %) holding a cream Burst
-  4. cream Circle at x = 820 (64 %) holding a green Semicircle, flat edge down, its bounding box centred in the badge
-  5. orange Circle at x = 1040 (81 %) holding a cream VerySunny
-  6. ink Circle at x = 1260 (98 %) holding a grey Circle; this badge spans x 1166…1353 and bleeds off the right edge
+- Composition: badge row on y = 360, centres 220 px apart, the sixth bleeding off the right
+- Cast on card: six Circle badges 26 % H (187 px diameter), inset shape at 55 % of diameter (R 51): 1 cream x = 160, orange Sunny · 2 ink x = 380, yellow Star4 · 3 blue x = 600, cream Burst · 4 cream x = 820, green Semicircle flat edge down, box centred · 5 orange x = 1040, cream VerySunny · 6 ink x = 1260, grey Circle
 - Type: none
 - Glyph swaps: none
 - Accent: none
-- Entrance: badge roll-in from the left: each badge starts 400 px left of its rest position rotated −15° and settles to rest at 0° (expressive default spatial, 500 ms), 100 ms stagger in order 1→6 (starts t+0.00 … t+0.50; last settles t+1.00); the inset rides with its badge
-- Focal event: the roll-in settle (t+1.00); nothing moves after it
-- Exit: hard cut at t+1.50
-- Hold: 0.5 s settled, t+1.00–1.50 (wordless, no reading time)
-- Don't: never rotate a badge after it settles; never bring badge 1 closer than 66 px to the left edge; this frame uses all eight colours — add nothing.
+- Entrance: badge roll-in from the left, each from 400 px left at −15° to rest at 0° (default spatial, 500 ms), 100 ms stagger 1→6, last settles t+1.00; insets ride along
+- Focal event: the settle at t+1.00
+- Exit: hard cut t+1.50
+- Hold: 0.5 s settled, t+1.00–1.50 (wordless)
+- Don't: move a badge after it settles; add anything (all eight colours are already in use)
 
 ### C7. Question — "What'll you make tonight?"   t = 12.5–16.0 s
 - Stage: cream `#F4EEE4`
-- Composition: left-stepped three-line statement, each line indented 80 px further than the last; a squiggle under the last line. The block sits slightly left of centre; the generous right side is empty on purpose.
-- Cast on card: Sunny 3.9 % H (R 28 px) orange as the "o" swap · Star4 1.9 % H (R 14 px) blue as the "i"-dot swap
-- Type: statement 12 % H (86 px), ink, left-aligned per line, wrap "What'll / you make / tonight?": "What'll" starts x = 250 (19.5 %), baseline y = 280 (39 %); "you make" starts x = 330 (26 %), baseline y = 380 (53 %); "tonight?" starts x = 410 (32 %), baseline y = 480 (67 %). Line boxes about x 250…550, x 330…708, x 410…754.
-- Glyph swaps: o in "you" → Sunny orange, centre (o advance centre, 358) · dot of i in "tonight" → Star4 blue, centre (stem centre, 420); the i is drawn as ı
-- Accent: ink squiggle under "tonight?": a four-hump wave from (410, 496) to (754, 496), amplitude 8 px, stroke 2.2 px, round caps, drawn left to right
-- Entrance: word land, four words 150 ms apart from t+0.00, each dropping 0.4 em from above (expressive default spatial, 500 ms): "What'll" t+0.00–0.50, "you" t+0.15–0.65, "make" t+0.30–0.80, "tonight?" t+0.45–0.95 · squiggle draw-on t+0.95–1.35 (fast effects 150 ms on opacity, reveal by length 400 ms)
-- Focal event: tracking breathe t+1.50–1.65 (both swap slots), then o → Sunny pops t+1.65–2.00 and i-dot → Star4 pops t+1.75–2.10 (fast spatial, 350 ms each)
+- Composition: left-stepped three lines, each indented 80 px more; right side left empty
+- Cast on card: Sunny 3.9 % H (R 28) orange, o-swap · Star4 1.9 % H (R 14) blue, i-dot swap
+- Type: statement 12 % H (86 px), ink, left-aligned, wrap "What'll / you make / tonight?", line starts and baselines (250, 280), (330, 380), (410, 480)
+- Glyph swaps: o in "you" → Sunny orange at (o centre, 358) · i-dot in "tonight" → Star4 blue at (stem, 420), i drawn as ı
+- Accent: ink squiggle under "tonight?", four humps (410, 496) → (754, 496), amplitude 8 px; 2.2 px, round caps
+- Entrance: word land (default spatial, 500 ms), 150 ms stagger: "What'll" t+0.00, "you" t+0.15, "make" t+0.30, "tonight?" t+0.45, done t+0.95 · squiggle draw-on t+0.95–1.35 (fast effects, reveal 400 ms)
+- Focal event: breathe t+1.50 on both slots, o pops t+1.65–2.00, i-dot t+1.75–2.10 (fast spatial, 350 ms)
 - Exit: exit shrink (fast spatial, 350 ms) t+3.15–3.50
-- Hold: 1.80 s, t+1.35–3.15 (reading time 1.30 s)
-- Don't: never centre the lines — the step is the layout; never swap the W; never add a shape that is not a swap.
+- Hold: 1.80 s, t+1.35–3.15 (reading 1.30 s)
+- Don't: centre the lines; swap the W; add a shape that is not a swap
 
 ### C8. Constellation — (no line)   t = 16.0–18.0 s
-- Stage: ink `#1F2125` (the night sky)
-- Composition: constellation; eight small shapes joined by thin cream curves in two arcs plus one link, spread across the middle 70 % of the frame.
-- Cast on card (nodes):
-  - n1 Circle 3 % H (R 22 px) cream at (230, 216) = (18 %, 30 %)
-  - n2 Star4 5 % H (R 36 px) yellow at (410, 418) = (32 %, 58 %)
-  - n3 Circle 4 % H (R 29 px) cream at (576, 187) = (45 %, 26 %)
-  - n4 Sunny 7 % H (R 50 px) grey at (704, 360) = (55 %, 50 %), the hub
-  - n5 Star4 4 % H (R 29 px) yellow at (870, 518) = (68 %, 72 %)
-  - n6 Circle 5 % H (R 36 px) cream at (998, 245) = (78 %, 34 %)
-  - n7 Star4 3 % H (R 22 px) yellow at (1100, 446) = (86 %, 62 %)
-  - n8 Circle 4 % H (R 29 px) blue at (512, 562) = (40 %, 78 %)
-- Lines: cream, 2.2 px (0.3 % H), round caps; each segment a quadratic curve whose control point is offset 30 px perpendicular to the chord, sides alternating along the arc. Arc A: n1 → n2 → n8 → n5 → n7. Arc B: n3 → n4 → n6. Link: n4 → n8. Seven segments; lines end at node edges, not centres.
+- Stage: ink `#1F2125`
+- Composition: constellation, eight nodes joined by cream curves across the middle 70 % of the frame
+- Cast on card: n1 Circle 3 % H (R 22) cream (230, 216) · n2 Star4 5 % H (R 36) yellow (410, 418) · n3 Circle 4 % H (R 29) cream (576, 187) · n4 Sunny 7 % H (R 50) grey (704, 360) · n5 Star4 4 % H (R 29) yellow (870, 518) · n6 Circle 5 % H (R 36) cream (998, 245) · n7 Star4 3 % H (R 22) yellow (1100, 446) · n8 Circle 4 % H (R 29) blue (512, 562). Lines cream 2.2 px, round caps, quadratics with control 30 px off the chord on alternating sides, ending at node edges: n1–n2–n8–n5–n7, n3–n4–n6, n4–n8
 - Type: none
 - Glyph swaps: none
-- Accent: none (the curves are layout, not an accent)
-- Entrance: node scale pop (expressive default spatial, 500 ms), 120 ms stagger in order n1 → n8 (starts t+0.00 … t+0.84, last settles t+1.34) · lines draw-on along their length t+0.90–1.30 (fast effects 150 ms on opacity, reveal by length 400 ms, all seven together)
-- Focal event: constellation drift: from t+1.35 every node moves along its own seeded vector of magnitude 8–11 px (1.1–1.5 % H) on expressive slow spatial (650 ms), lines following their nodes; the card cuts before the return leg. Seed 20260918.
-- Exit: hard cut at t+2.00
+- Accent: none (the curves are layout)
+- Entrance: node scale pop (default spatial, 500 ms), 120 ms stagger n1→n8, last settles t+1.34 · lines draw-on t+0.90–1.30 (fast effects, reveal 400 ms)
+- Focal event: constellation drift from t+1.35, each node 8–11 px along its seeded vector (slow spatial, 650 ms), lines follow; one leg, seed 20260918
+- Exit: hard cut t+2.00
 - Hold: 0.66 s settled, t+1.34–2.00 (wordless)
-- Don't: never draw ink strokes on the ink stage (lines are cream); no node larger than 7 % H; no continuous drift beyond the one 650 ms leg.
+- Don't: draw ink strokes on the ink stage; drift more than one leg
 
 ### C9. Return — "Off you go!"   t = 18.0–20.5 s
 - Stage: blue `#4A7BF7`
-- Composition: statement centred, shapes bleeding bottom-left and top-right, an arrow sweeping right toward the exit.
-- Cast on card: Burst 28 % H (R 202 px) cream, centre (150, 760) = (12 %, 106 %), bleeding off the bottom-left; AABB x −52…352, y 558…962 · Sunny 24 % H (R 173 px) yellow, centre (1140, −20) = (89 %, −3 %), bleeding off the top-right; AABB x 967…1313, y −193…153
-- Type: statement 12 % H (86 px), cream, centred at x = 640, one line, baseline y = 390 (54 %); line box about x 380…900, cap top y = 328, descender bottom y = 407. Both shapes clear the type by ≥ 150 px.
+- Composition: statement centred, shapes bleeding bottom-left and top-right, arrow sweeping right
+- Cast on card: Burst 28 % H (R 202) cream, centre (150, 760) · Sunny 24 % H (R 173) yellow, centre (1140, −20); both ≥ 150 px clear of the type
+- Type: statement 12 % H (86 px), cream, centred x = 640, baseline y = 390
 - Glyph swaps: none
-- Accent: cream arrow beneath the line sweeping to the right: a quadratic curve from (520, 480) with control point (760, 560) to its tip at (1010, 470), open chevron head 24 px long; stroke 2.2 px, round caps
-- Entrance: Burst and Sunny scale pop (expressive slow spatial, 650 ms) at t+0.00 · word land, three words 150 ms apart, each dropping 0.4 em from above (expressive default spatial, 500 ms): "Off" t+0.10–0.60, "you" t+0.25–0.75, "go!" t+0.40–0.90
-- Focal event: accent draw-on t+1.00–1.40 (fast effects 150 ms on opacity, reveal by length 400 ms); the arrow then holds
-- Exit: exit slide right (expressive default spatial, 500 ms) t+2.00–2.50: type, arrow, Burst and Sunny move together by +1400 px in x, off the right edge
-- Hold: 1.10 s, t+0.90–2.00 (reading time 1.05 s)
-- Don't: never swap the o in "go" — the arrow is this card's one event; never let the Sunny's rays reach below y = 153.
+- Accent: cream arrow, quadratic (520, 480) via control (760, 560) to tip (1010, 470), chevron head 24 px; 2.2 px, round caps
+- Entrance: shapes scale pop (slow spatial, 650 ms) t+0.00 · word land (default spatial, 500 ms), 150 ms stagger: "Off" t+0.10, "you" t+0.25, "go!" t+0.40, done t+0.90
+- Focal event: accent draw-on t+1.00–1.40 (fast effects, reveal 400 ms)
+- Exit: exit slide right (default spatial, 500 ms) t+2.00–2.50, everything +1400 px in x together
+- Hold: 1.10 s, t+0.90–2.00 (reading 1.05 s)
+- Don't: swap the o in "go"; let Sunny rays fall below y = 153
 
 ### C10. Closer — "Build Night"   t = 20.5–24.0 s
 - Stage: cream `#F4EEE4`
-- Composition: single hero, two stacked words centred; two swaps that arrive in place and resolve back to letters; nothing else.
-- Cast on card: Star4 3.5 % H (R 25 px) orange as the "i"-dot swap in "Build" · Star4 3.5 % H (R 25 px) blue as the "i"-dot swap in "Night"
-- Type: hero 22 % H (158 px), ink, centred at x = 640, wrap "Build / Night", baselines y = 330 (46 %) and 510 (71 %); line boxes about x 423…857 and x 411…869; cap top of line 1 y = 216, descender bottom of line 2 y = 542
-- Glyph swaps: dot of i in "Build" → Star4 orange, centre (stem centre, 219) · dot of i in "Night" → Star4 blue, centre (stem centre, 399); both i's are drawn as ı while swapped
+- Composition: single hero, two stacked words centred, nothing else
+- Cast on card: Star4 3.5 % H (R 25) orange, i-dot swap in "Build" · Star4 3.5 % H (R 25) blue, i-dot swap in "Night"
+- Type: hero 22 % H (158 px), ink, centred x = 640, wrap "Build / Night", baselines y = 330, 510
+- Glyph swaps: i-dot in "Build" → Star4 orange at (stem, 219) · i-dot in "Night" → Star4 blue at (stem, 399); i's drawn as ı while swapped
 - Accent: none
-- Entrance: glyph stagger-in, both lines concurrently, left to right, 50 ms stagger (fast spatial, 350 ms; 5 glyphs per line, done t+0.65); the two Star4s arrive already in place of the dots, popping in with their stem's glyph (the slot is not widened — an i-dot swap needs no breathe)
-- Focal event: swaps resolve: at t+1.90 the orange Star4 scales to zero as the plain dot of "Build" appears (fast spatial, 350 ms, t+1.90–2.25); at t+2.00 the blue Star4 resolves the same way for "Night" (t+2.00–2.35). The plain title then holds.
-- Exit: none — the plain title holds to t+3.50 (24.0 s) and the piece ends on it
-- Hold: 2.85 s, t+0.65–3.50 (reading time 0.80 s); plain-title hold t+2.35–3.50 = 1.15 s
-- Don't: never add a logo, a third shape or an accent; never crossfade a star into its dot — it is a scale swap.
+- Entrance: glyph stagger-in, both lines (fast spatial, 350 ms), 50 ms stagger, done t+0.65; the Star4s pop in with their stems, already in place (no breathe)
+- Focal event: swaps resolve: orange Star4 scales to 0 as the dot appears t+1.90–2.25, blue the same t+2.00–2.35 (fast spatial, 350 ms); the plain title holds
+- Exit: none, holds to t+3.50 (24.0 s)
+- Hold: 2.85 s, t+0.65–3.50 (reading 0.80 s); plain title t+2.35–3.50 = 1.15 s
+- Don't: add a logo, third shape or accent; crossfade star to dot
 
 ## Composition rules for every card
 
@@ -261,7 +246,7 @@ Swap geometry (in em of the card's font size): an "o" swap has R = 0.32 em, cent
 - Swap shapes are stage colours that contrast with the type colour and differ from the card's stage colour. Accent strokes are the card's type colour (ink on light stages, cream on blue/orange; the constellation lines on ink are cream).
 - z-order per card, back to front: stage → bleeding shapes → Semicircle stage → badges/nodes → lines → type → swap shapes → accent.
 - One focal event per hold. Accents draw on as the tail of the entrance on swap cards (C1, C4, C5, C7); the accent is the focal event on C2 and C9; the morph is on C3; the roll-in settle on C6; the drift on C8; the resolve on C10.
-- Two shapes may overlap; overlap is opaque. No shape touches a line of type: the AABBs in each entry give the clearance to verify.
+- Two shapes may overlap; overlap is opaque. No shape touches a line of type: each entry's shape centre and R give the clearance to verify.
 - Exits finish before the cut; entrances finish before the hold begins. Hard cuts carry the contents out with the stage.
 
 ## Visual system
@@ -429,6 +414,6 @@ Each check is answered by a measurement or a named still. All must pass.
 | Must not: decorative shapes animating continuously without a state change | PASS | only the swapped Sunny rotates while it is the card's hero; C8 drifts one 650 ms leg; nothing idles |
 | Must not: springs on colour or opacity | PASS | opacity uses fast effects (150 ms) only; colour changes are hard switches |
 
-Builder read-through of three entries picked at random (C9, C3, C6): C9 could be drawn but the arrow's head length was missing — added "open chevron head 24 px long". C3 needed the digit's baseline to centre the cap box — added "baseline y = 417". C6 needed the inset Semicircle's placement — added "flat edge down, bounding box centred in the badge". Re-audited after the additions: all items PASS.
+Builder read-through of three entries picked at random (C9, C3, C6): C9 could be drawn but the arrow's head length was missing — added "open chevron head 24 px long". C3 needed the digit's baseline to centre the cap box — added "baseline y = 417". C6 needed the inset Semicircle's placement — added "flat edge down, box centred". Re-audited after the additions: all items PASS.
 
 Note on card-grammar guidance (not a bar item): "every third card wordless" gives two wordless cards in ten here (C6, C8); with six messages plus a count-in in 24 s, a third wordless card would push a word card's hold under its reading time. The Question card uses the statement size (four words) rather than the sentence size because the line was written to four words on purpose.
