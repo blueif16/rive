@@ -86,12 +86,14 @@ subjects with `references/subjects-and-composition.md`; pick moves with
 
 Two entry sizes, chosen by how long the scene is on screen, so the spec's length
 tracks what the builder can use:
-- **Full entry** (the fixed shape, 150–300 words) for any scene held ≥ 0.5 s, for
-  every scene the camera moves through, and for the first and last scene of the piece.
+- **Full entry** (the fixed shape, 150–300 words) for any scene held longer than
+  0.5 s, for every scene the camera moves through, and for the first and last scene.
 - **Compact entry** (five lines, ≤ 80 words: silhouette · anchor landing · inks with
   roles and misregistration · knockouts · live element) for montage scenes on screen
-  < 0.5 s. A montage scene never needs pixel coordinates; it needs a readable
-  silhouette and a plate plan.
+  for 0.5 s or less. A montage scene never needs pixel coordinates; it needs a
+  readable silhouette and a plate plan. Put the defaults compact entries rely on
+  (what a bare ink role means, the always-present knockouts, the live-element
+  shorthand) in one conventions paragraph at the top of the scene library.
 Coordinates in any entry are given only where the anchor rule or a knockout depends on
 them.
 
