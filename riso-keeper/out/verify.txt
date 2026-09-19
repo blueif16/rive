@@ -1,0 +1,139 @@
+PASS  1 anchor at every act boundary
+      t=0.000 s1 indigo centroid=(359.91, 360.04) d=0.10 px; on-screen (358.9, 361.0) d=1.50 ok
+      t=4.000 s3 indigo centroid=(360.05, 359.99) d=0.05 px; on-screen (358.0, 360.0) d=1.95 ok
+      t=7.000 s5 indigo centroid=(360.30, 360.75) d=0.81 px; on-screen (362.3, 361.8) d=2.89 ok
+      t=13.000 b3 yellow centroid=(360.00, 359.98) d=0.02 px; on-screen (360.0, 360.0) d=0.02 ok
+      t=15.000 s21 indigo centroid=(360.00, 360.00) d=0.00 px; on-screen (360.0, 360.0) d=0.00 ok
+      t=17.000 s22 yellow centroid=(360.00, 359.98) d=0.02 px; on-screen (360.0, 360.0) d=0.02 ok
+      t=19.958 s22 yellow centroid=(360.00, 359.98) d=0.02 px; on-screen (360.0, 360.0) d=0.02 ok
+PASS  2 every montage sheet lands the answer
+      s5 t=7.458 yellow@anchor=100% ring r: drawn=89.7 pixel-scan=89.0 target=90 ok
+      s6 t=7.958 yellow@anchor=100% ring r: drawn=89.7 pixel-scan=90.0 target=90 ok
+      s8 t=8.958 yellow@anchor=100% ring r: drawn=89.7 pixel-scan=90.0 target=90 ok
+      s9 t=9.458 yellow@anchor=100% ring r: drawn=89.7 pixel-scan=89.0 target=90 ok
+      s10 t=9.958 yellow@anchor=100% ring r: drawn=89.7 pixel-scan=90.0 target=90 ok
+      s11 t=10.958 yellow@anchor=100% ring r: drawn=89.7 pixel-scan=89.0 target=90 ok
+      s12 t=11.208 yellow@anchor=100% ring r: drawn=58.4 pixel-scan=n/a target=60 ok
+      s13 t=11.458 yellow@anchor=100% ring r: drawn=58.4 pixel-scan=58.0 target=60 ok
+      s14 t=11.708 yellow@anchor=100% ring r: drawn=58.4 pixel-scan=57.5 target=60 ok
+      s15 t=11.958 yellow@anchor=100% ring r: drawn=58.4 pixel-scan=n/a target=60 ok
+      s16 t=12.208 yellow@anchor=100% ring r: drawn=58.4 pixel-scan=58.0 target=60 ok
+      s17 t=12.458 yellow@anchor=100% ring r: drawn=58.4 pixel-scan=n/a target=60 ok
+      s18 t=12.708 yellow@anchor=100% ring r: drawn=n/a (burst form) pixel-scan=n/a target=60 ok
+      s19 t=12.958 yellow@anchor=100% ring r: drawn=58.4 pixel-scan=58.0 target=60 ok
+PASS  3 no dark-on-dark
+      s1 t=1.000 blue∧pink≥85%: 0   indigo∧blue≥85% outside strokes: 0 ok
+      s2 t=3.000 blue∧pink≥85%: 0   indigo∧blue≥85% outside strokes: 0 ok
+      s3 t=4.750 blue∧pink≥85%: 0   indigo∧blue≥85% outside strokes: 0 ok
+      s4 t=6.250 blue∧pink≥85%: 0   indigo∧blue≥85% outside strokes: 0 ok
+      s5 t=7.250 blue∧pink≥85%: 0   indigo∧blue≥85% outside strokes: 0 ok
+      s6 t=7.750 blue∧pink≥85%: 0   indigo∧blue≥85% outside strokes: 0 ok
+      b1 t=8.250 blue∧pink≥85%: 0   indigo∧blue≥85% outside strokes: 0 ok
+      s8 t=8.750 blue∧pink≥85%: 0   indigo∧blue≥85% outside strokes: 0 ok
+      s9 t=9.250 blue∧pink≥85%: 0   indigo∧blue≥85% outside strokes: 0 ok
+      s10 t=9.750 blue∧pink≥85%: 0   indigo∧blue≥85% outside strokes: 0 ok
+      b2 t=10.250 blue∧pink≥85%: 0   indigo∧blue≥85% outside strokes: 0 ok
+      s11 t=10.750 blue∧pink≥85%: 0   indigo∧blue≥85% outside strokes: 0 ok
+      s12 t=11.125 blue∧pink≥85%: 0   indigo∧blue≥85% outside strokes: 0 ok
+      s13 t=11.375 blue∧pink≥85%: 0   indigo∧blue≥85% outside strokes: 0 ok
+      s14 t=11.625 blue∧pink≥85%: 0   indigo∧blue≥85% outside strokes: 0 ok
+      s15 t=11.875 blue∧pink≥85%: 0   indigo∧blue≥85% outside strokes: 0 ok
+      s16 t=12.125 blue∧pink≥85%: 0   indigo∧blue≥85% outside strokes: 0 ok
+      s17 t=12.375 blue∧pink≥85%: 0   indigo∧blue≥85% outside strokes: 0 ok
+      s18 t=12.625 blue∧pink≥85%: 0   indigo∧blue≥85% outside strokes: 0 ok
+      s19 t=12.875 blue∧pink≥85%: 0   indigo∧blue≥85% outside strokes: 0 ok
+      b3 t=13.250 blue∧pink≥85%: 0   indigo∧blue≥85% outside strokes: 0 ok
+      s20 t=14.250 blue∧pink≥85%: 0   indigo∧blue≥85% outside strokes: 0 ok
+      s21 t=16.000 blue∧pink≥85%: 0   indigo∧blue≥85% outside strokes: 0 ok
+      s22 t=18.500 blue∧pink≥85%: 0   indigo∧blue≥85% outside strokes: 0 ok
+PASS  4 grid and vectors
+      24 cues, all starts and ends on the 0.25 s grid
+      s1: 1 vector set over its frames {"indigo":[-1,1],"blue":[0,0],"yellow":[1,1],"pink":[3,1]} ok
+      s2: 1 vector set over its frames {"indigo":[1,-1],"blue":[0,0],"yellow":[2,0],"pink":[4,1]} ok
+      s3: 1 vector set over its frames {"indigo":[-2,0],"blue":[0,0],"yellow":[0,1],"pink":[2,1]} fringe dx=2 ok
+      s4: 1 vector set over its frames {"indigo":[1,1],"blue":[0,0],"yellow":[-1,1],"pink":[1,1]} fringe dx=2 ok
+      s5: 1 vector set over its frames {"indigo":[2,1],"blue":[0,0],"yellow":[0,0],"pink":[2,1]} fringe dx=2 ok
+      s6: 1 vector set over its frames {"indigo":[-1,2],"blue":[0,0],"yellow":[1,0],"pink":[3,0]} fringe dx=2 ok
+      b1: 1 vector set over its frames {"yellow":[0,0],"pink":[2,1],"blue":[-1,1],"indigo":[0,0]} fringe dx=2 ok
+      s8: 1 vector set over its frames {"indigo":[1,-2],"blue":[0,0],"yellow":[1,1],"pink":[3,1]} fringe dx=2 ok
+      s9: 1 vector set over its frames {"indigo":[-2,1],"blue":[0,0],"yellow":[0,-1],"pink":[2,-1]} fringe dx=2 ok
+      s10: 1 vector set over its frames {"indigo":[2,0],"blue":[0,0],"yellow":[1,2],"pink":[3,2]} fringe dx=2 ok
+      b2: 1 vector set over its frames {"yellow":[0,0],"pink":[2,1],"blue":[1,-1],"indigo":[0,0]} fringe dx=2 ok
+      s11: 1 vector set over its frames {"indigo":[1,2],"blue":[0,0],"yellow":[-1,0],"pink":[1,0]} fringe dx=2 ok
+      s12: 1 vector set over its frames {"indigo":[-1,-2],"blue":[0,0],"yellow":[1,0],"pink":[3,0]} fringe dx=2 ok
+      s13: 1 vector set over its frames {"indigo":[2,-1],"blue":[0,0],"yellow":[0,1],"pink":[2,1]} fringe dx=2 ok
+      s14: 1 vector set over its frames {"indigo":[0,2],"blue":[0,0],"yellow":[1,-1],"pink":[3,-1]} fringe dx=2 ok
+      s15: 1 vector set over its frames {"indigo":[-2,-1],"blue":[0,0],"yellow":[0,0],"pink":[2,0]} fringe dx=2 ok
+      s16: 1 vector set over its frames {"indigo":[1,1],"blue":[0,0],"yellow":[0,1],"pink":[2,1]} fringe dx=2 ok
+      s17: 1 vector set over its frames {"indigo":[-1,0],"blue":[0,0],"yellow":[1,1],"pink":[3,1]} fringe dx=2 ok
+      s18: 1 vector set over its frames {"indigo":[2,1],"blue":[0,0],"yellow":[0,0],"pink":[2,-1]} fringe dx=2 ok
+      s19: 1 vector set over its frames {"indigo":[1,2],"blue":[0,0],"yellow":[0,-1],"pink":[2,-1]} fringe dx=2 ok
+      b3: 1 vector set over its frames {"yellow":[0,0],"pink":[2,1],"blue":[-2,0],"indigo":[0,0]} fringe dx=2 ok
+      s20: 1 vector set over its frames {"indigo":[-1,1],"blue":[0,0],"yellow":[1,1],"pink":[3,1]} fringe dx=2 ok
+      s21: 1 vector set over its frames {"indigo":[0,0],"blue":[0,0],"yellow":[0,0],"pink":[0,0]} all (0,0) ok
+      s22: 1 vector set over its frames {"indigo":[0,0],"pink":[2,1],"yellow":[0,0],"blue":[-1,1]} fringe dx=2 ok
+PASS  5 screening
+      t=6: flat 8 px blocks with a monotonic tone drift across ≥ 32 px (unscreened gradient signature): 0
+      t=9.25: flat 8 px blocks with a monotonic tone drift across ≥ 32 px (unscreened gradient signature): 0
+      t=4.9: flat 8 px blocks with a monotonic tone drift across ≥ 32 px (unscreened gradient signature): 0
+      t=14.25: flat 8 px blocks with a monotonic tone drift across ≥ 32 px (unscreened gradient signature): 0
+      screen angles by construction: yellow 0°, blue 15°, pink 75°, indigo 45°, pitch 5 px (9 px campfire halo); distinct: true
+      4× crops: out/stills/crop_6_0_anchor.png, crop_6_0_200.png, crop_9_25_anchor.png, crop_9_25_200.png
+PASS  6 coverage caps
+      s1 sky (blue): mean 71.1% over 393857 px; voids on plate 52; tint 1–14%: 1568 px, 86–99%: 0 px ok
+      s1 sea (blue): mean 82.6% over 31426 px; voids on plate 52; tint 1–14%: 0 px, 86–99%: 0 px ok
+      s2 interior (blue): mean 70.6% over 63492 px; voids on plate 56; tint 1–14%: 3 px, 86–99%: 0 px ok
+      s2 outside (blue): mean 80.8% over 169920 px; voids on plate 56; tint 1–14%: 0 px, 86–99%: 0 px ok
+      s3 sea (blue): mean 82.4% over 86400 px; voids on plate 22; tint 1–14%: 0 px, 86–99%: 0 px ok
+      s4 sky (blue): mean 71.1% over 393988 px; voids on plate 52; tint 1–14%: 1578 px, 86–99%: 0 px ok
+      s4 sea (blue): mean 83.8% over 31640 px; voids on plate 52; tint 1–14%: 0 px, 86–99%: 0 px ok
+      s5 sky (blue): mean 72.1% over 364954 px; voids on plate 50; tint 1–14%: 76 px, 86–99%: 0 px ok
+      s5 sea (blue): mean 82.1% over 122628 px; voids on plate 50; tint 1–14%: 0 px, 86–99%: 0 px ok
+      s6 sky (blue): mean 70.1% over 328349 px; voids on plate 50; tint 1–14%: 57 px, 86–99%: 0 px ok
+      s6 sea (blue): mean 83.0% over 179924 px; voids on plate 50; tint 1–14%: 0 px, 86–99%: 0 px ok
+      s8 sky (blue): mean 70.1% over 325596 px; voids on plate 44; tint 1–14%: 58 px, 86–99%: 0 px ok
+      s8 sea (blue): mean 83.9% over 19026 px; voids on plate 44; tint 1–14%: 0 px, 86–99%: 0 px ok
+      s9 water (blue): mean 85.7% over 297265 px; voids on plate 30; tint 1–14%: 0 px, 86–99%: 125453 px ok
+      s10 sky (blue): mean 70.0% over 357023 px; voids on plate 52; tint 1–14%: 138 px, 86–99%: 0 px ok
+      s10 sea (blue): mean 84.2% over 114876 px; voids on plate 52; tint 1–14%: 0 px, 86–99%: 0 px ok
+      s11 sky (blue): mean 70.0% over 322568 px; voids on plate 48; tint 1–14%: 59 px, 86–99%: 0 px ok
+      s11 sea (blue): mean 83.3% over 115046 px; voids on plate 48; tint 1–14%: 0 px, 86–99%: 0 px ok
+      s12 water (blue): mean 82.3% over 506960 px; voids on plate 40; tint 1–14%: 0 px, 86–99%: 67884 px ok
+      s13 sky (blue): mean 70.1% over 390134 px; voids on plate 46; tint 1–14%: 14 px, 86–99%: 0 px ok
+      s13 sea (blue): mean 82.3% over 74880 px; voids on plate 46; tint 1–14%: 0 px, 86–99%: 0 px ok
+      s14 sky (blue): mean 71.8% over 324043 px; voids on plate 22; tint 1–14%: 443 px, 86–99%: 0 px ok
+      s15 sky (blue): mean 70.2% over 262675 px; voids on plate 40; tint 1–14%: 0 px, 86–99%: 0 px ok
+      s15 sea (blue): mean 82.4% over 19070 px; voids on plate 40; tint 1–14%: 0 px, 86–99%: 0 px ok
+      s16 sky (blue): mean 70.1% over 321703 px; voids on plate 40; tint 1–14%: 40 px, 86–99%: 0 px ok
+      s16 sea (blue): mean 84.0% over 57515 px; voids on plate 40; tint 1–14%: 0 px, 86–99%: 0 px ok
+      s17 water (blue): mean 85.2% over 468437 px; voids on plate 50; tint 1–14%: 49 px, 86–99%: 169813 px ok
+      s18 sky (blue): mean 72.1% over 427247 px; voids on plate 48; tint 1–14%: 0 px, 86–99%: 0 px ok
+      s18 sea (blue): mean 82.9% over 72000 px; voids on plate 48; tint 1–14%: 0 px, 86–99%: 0 px ok
+      s19 sky (blue): mean 73.9% over 293460 px; voids on plate 48; tint 1–14%: 84 px, 86–99%: 0 px ok
+      s19 sea (blue): mean 83.9% over 85932 px; voids on plate 48; tint 1–14%: 0 px, 86–99%: 0 px ok
+      s20 sky (blue): mean 70.6% over 393738 px; voids on plate 52; tint 1–14%: 1574 px, 86–99%: 0 px ok
+      s20 sea (blue): mean 82.3% over 31443 px; voids on plate 52; tint 1–14%: 0 px, 86–99%: 0 px ok
+      s21 sea (blue): mean 81.6% over 31516 px; voids on plate 28; tint 1–14%: 0 px, 86–99%: 0 px ok
+PASS  7 determinism
+      frame hash at t=9.2: cold a5867fa9, after t=3.0 a5867fa9, after a full play-through a5867fa9; Math.random( in source: 0
+PASS  9 frame cost 7.0–13.0 s
+      render(t) + GPU completion, caches warm: mean 2.69 ms, max 6.00 ms over 144 frames; canvas backend: ANGLE (Apple, ANGLE Metal Renderer: Apple M1 Pro, Unspecified Version)
+PASS  10 text
+      6 glyph paths (9 strokes), one pink copy; canvas text calls in source: 0; still out/stills/t19_0.png
+PASS  11 the machine
+      15.0 ≤ t < 17.0: ring radius variance over 36 angles max 3.53e-3 px² (geometry: wobble amplitude 0, variance exactly 0); yellow inside the ring max 0; beam edges: straight by construction (hard-edged 8° mask, no soft ramp) ok
+      unlit ring variance elsewhere (must be > 0): t=0.2: 5.12e-2, t=4: 5.28e-2, t=7: 1.27e-1
+PASS  12 the beam never crosses the tower
+      s4: 36 frames, max yellow coverage sum inside the tower below y=392: 0 ok
+      s20: 36 frames, max yellow coverage sum inside the tower below y=392: 0 ok
+      s21: 48 frames, max yellow coverage sum inside the tower below y=392: 0 ok
+PASS  B colours are inks × paper only
+      t=1: pixels not explained by paper × an ink subset: 0
+      t=3: pixels not explained by paper × an ink subset: 0
+      t=6: pixels not explained by paper × an ink subset: 0
+      t=9.25: pixels not explained by paper × an ink subset: 0
+      t=11.4: pixels not explained by paper × an ink subset: 0
+      t=14.25: pixels not explained by paper × an ink subset: 0
+      t=16: pixels not explained by paper × an ink subset: 0
+      t=19: pixels not explained by paper × an ink subset: 0
+(verification took 8.3 s)

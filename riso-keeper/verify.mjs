@@ -1,0 +1,13 @@
+import puppeteer from '/Users/tk/Desktop/brain/projects/rive/.claude/skills/rive-animation/scripts/render/node_modules/puppeteer-core/lib/puppeteer/puppeteer-core.js';
+import { findChrome } from '/Users/tk/Desktop/brain/projects/rive/.claude/skills/rive-animation/scripts/render/browser.mjs';
+import { writeFileSync } from 'node:fs';
+const browser = await puppeteer.launch({ executablePath: findChrome(), headless: true, args: (process.env.GPU?['--no-sandbox','--hide-scrollbars','--ignore-gpu-blocklist','--enable-gpu-rasterization','--use-angle=metal']:['--no-sandbox','--disable-gpu','--hide-scrollbars']) });
+const page = await browser.newPage();
+await page.setViewport({ width: 720, height: 720, deviceScaleFactor: 1 });
+page.on('pageerror', e => console.log('PAGEERROR', e.message, e.stack));
+await page.goto('file:///Users/tk/Desktop/brain/projects/rive/riso-keeper/index.html?verify=1', { waitUntil: 'load' });
+await page.waitForFunction('typeof window.__verifyText === "string"', { timeout: 900000 });
+const txt = await page.evaluate('window.__verifyText');
+writeFileSync('/Users/tk/Desktop/brain/projects/rive/riso-keeper/out/verify.txt', txt);
+console.log(txt);
+await browser.close();
