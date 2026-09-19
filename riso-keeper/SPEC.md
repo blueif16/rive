@@ -72,7 +72,16 @@ Beam period everywhere the tower is on screen: one sweep 200°→340° in 1.5 s 
 
 ## Scene library (in timeline order)
 
-Conventions used by every entry below. "Base" plates carry the coverage caps of §Visual system (large solids 80 %, voids). "Beam" always means a knockout from every base plate it crosses with a yellow dot-size ramp printed inside (100 % at the source edge → 35 % at the far edge, 0° screen); its 12 px soft edges are dot ramps, so blue and yellow dots interleave into a planned green fringe. Indigo fills never sit on a blue or pink solid: they are knockouts with a 1 px trap of the lighter ink running under them. Indigo lines overprint anything. "Answer" means the montage live element defined in §Motion vocabulary (beam pass, then the lamp disc blooms at the anchor and sends one ring). Misregistration is written as (dx, dy) in px per ink and holds for the whole scene.
+Two entry sizes, as the skill directs. **Full entries** (the fixed eight-field shape) for scenes 1–4, held 0.5 s or longer or dived through, and for scenes 20–22, the dawn, the machine and the last scene. **Compact entries** (five lines, at most 80 words, no pixel coordinates) for every montage sheet, scenes 5–19 and the surplus 23–25. Compact entries rely on these defaults, which the builder applies unless the entry says otherwise:
+
+- **"blue base"** alone = night sky in grain touch (66–74 %) above a sea printed solid at 85 % with voids and paper wave hatching; where the entry says water, the whole field is solid 88–90 % with voids and a slight height ramp. **"yellow accent"** alone = the beam band, the lamp disc and the answer ring. **"indigo line"** carries every named silhouette as a fill on a paper knockout with a 1 px trap of the base running under it, plus the strokes named; indigo lines overprint anything, indigo fills never sit on a blue or pink solid.
+- **"→ violet"** = pink over blue with one ink at or below 60 %; "→ orange-red" = pink over yellow; "→ dark violet" = pink 50 % over blue 60 %.
+- **Knockouts always present**, not repeated per entry: the lamp disc from whatever base it sits in; the beam band from every base it crosses while it passes; stars are paper dots 3–5 px, seeded.
+- **Tone defaults**: sky grain, sea and water solid, silhouettes solid indigo, glows and halos as yellow dot ramps at 0° falling to 0 with distance, overprint fields as dots at each ink's angle (§Visual system). The motif rhyme in every montage sheet is the answer ring plus the radial element named in the silhouette (sound arcs, light shafts, the flash bar, the smokebox, the halo, the rays).
+- **"Answer 90"** = the beam band crosses left to right for the sheet's first half, the disc blooms at the anchor as the band's centre passes it, and a yellow answer ring grows to 90 px by the sheet's end (0.5 s sheets). **"Answer 60"** = the same in a 0.25 s sheet, ring to 60 px. **"Answer burst"** = the bloom, then rays extend from the disc over 0.15 s in place of the ring, yellow first, pink 40 ms behind. Anything written after the Answer on a live line is part of the same bloom key, not a second element.
+- **Misreg** = the misregistration vector per ink in px, ink(dx,dy), fixed for the sheet; blue is always the (0,0) reference.
+
+Full entries use these terms too. "Beam" in a full entry means a knockout from every base plate it crosses with a yellow dot-size ramp printed inside (100 % at the source edge → 35 % at the far edge, 0° screen); its 12 px soft edges are dot ramps, so blue and yellow dots interleave into a planned green fringe.
 
 ### 1. The tower on the hill   t = 0.0–2.0 s, blank paper then plate-by-plate reveal at 0.5
 - Silhouette: a tapered tower rising from a hill crest at y = 600 to the gallery at y = 392, 70 px wide at the base and 50 px at the gallery; lamp room 50 px square centred on the anchor; a shallow conical cap to y = 318. Hill: one convex curve from the left edge at y = 700 up to the crest under the tower and down to the sea at x = 470, y = 570. Sea: flat horizon at y = 560 from x = 470 to the right edge. Cottage: a 60 × 44 px box with a pitched roof at (110, 640) on the hill. Sky above the horizon. Nothing else: no rocks, no clouds, no gulls.
@@ -114,155 +123,110 @@ Conventions used by every entry below. "Base" plates carry the coverage caps of 
 - Live element: (a) the beam sweeps from 200° at 5.5 to 340° at 7.0, linear, 93°/s (this scene shows exactly one sweep of the 2 s period, the dark half is cut away); (b) a Ripple leaves the anchor at 6.0 and at 6.5: blue 35 % 2 px stroke thinning 6→1 px, easeOutCubic 0.6 s, radius to 520 px, 3 % wobble, two tick arcs at the rim for 0.15 s.
 - Don't: no beam reflection on the sea; the wedge never crosses the tower; the ripples are blue, not yellow, so the answer discs' yellow rings in Act III read as different.
 
-### 5. Fishing boat at anchor   t = 7.0–7.5 s, hard cut at 7.0
-- Silhouette: a broad hull in profile low in the frame, sheer line from (170, 500) rising to a bow at (560, 470), keel flat at y = 556; one mast from the deck at x = 360 straight up to the masthead at y = 372; a furled sail as a lozenge 26 px wide hugging the mast from y = 400 to y = 480; one stay from the bow to the masthead. Sea horizon at y = 540. Sky above.
-- Anchor: the masthead lantern — the lamp disc at (360, 360) sits on top of the mast; the mast's top 12 px enters the disc.
-- Inks: indigo = line (hull fill, mast, sail, stay, horizon) · blue = base (sky 72 % grain, sea 85 % solid) · yellow = accent (beam band, lantern, ring) · pink = accent (fringe only). Misregistration: indigo (+2, +1) · blue (0, 0) · yellow (0, 0) · pink (+2, +1).
-- Knockouts: the hull from the sea with a 1 px blue trap (indigo fill on paper); the sail from the sky; the lantern disc from the sky; 16 stars; a waterline gleam under the hull: 6 paper hatch strokes; the beam band from sky and sea as it passes.
-- Tone: sky grain, sea solid with voids; hull solid indigo (medium shape, 100 % allowed); beam band ramp 0°.
-- Motif rhyme: the lantern's answer ring; the anchor chain hangs from the bow as a dotted indigo line (a string of small dots).
-- Live element: the Answer — beam band crosses left→right 7.0–7.25, lantern blooms at 7.25 (0.1 s), ring to radius 90 px by 7.5.
-- Don't: no rigging beyond one stay; no water reflection of the lantern; the hull does not rock.
+### 5. Fishing boat at anchor   t = 7.0–7.5 s, hard cut
+- Silhouette: broad hull low in the frame; one mast from amidships to the masthead, a furled sail hugging it; horizon behind, sky above.
+- Anchor: the masthead lantern is the lamp disc.
+- Inks: indigo line (hull, mast, sail), blue base, yellow accent, pink accent (fringe). Misreg indigo(+2,+1) blue(0,0) yellow(0,0) pink(+2,+1).
+- Knockouts: hull from sea; sail, lamp, 16 stars from sky; waterline hatching.
+- Live element: Answer 90.
 
-### 6. Bell buoy   t = 7.5–8.0 s, hard cut at 7.5
-- Silhouette: a conical buoy body from a waterline of 160 px at y = 520 up to a 40 px shoulder at y = 440; on it an open cage of four indigo uprights to y = 384; the lamp on top at the anchor; the bell hanging inside the cage at (360, 428), a 44 px bell profile (shoulder at 1/5, flared lip). Sea to the horizon at y = 600; sky above; nothing else.
-- Anchor: the buoy's lamp — the lamp disc at (360, 360) capping the cage.
-- Inks: indigo = line (cage, bell, buoy outline, arcs) · blue = base (sky 70 % grain, sea 85 % solid) · pink = overprint (the buoy body pink 100 %, a medium shape; the shadow side pink 100 % over blue 40 % dots → violet) · yellow = accent (band, lamp, ring). Misregistration: indigo (−1, +2) · blue (0, 0) · yellow (+1, 0) · pink (+3, 0).
-- Knockouts: buoy body from the sea and sky (pink prints on paper); the lamp disc from the sky; the bell from the buoy's pink (bell = paper with an indigo outline and blue 30 % dots down its right side, 15°); a ring of paper foam around the waterline, 8 hatch strokes.
-- Tone: sky grain; sea solid; buoy pink solid with 4 voids; bell shading dots 15°.
-- Motif rhyme: two sound arcs left and right of the bell at radii 70 and 100 px (indigo 2 px), and the lamp's answer ring above them — three rings stacked on the vertical through the anchor.
-- Live element: the Answer — band crosses 7.5–7.75, lamp blooms at 7.75, ring to 90 px by 8.0; the sound arcs are printed (static) — the bell does not swing in a 0.5 s scene.
-- Don't: no waves rocking the buoy; no clapper detail; no second outline ink on the bell.
+### 6. Bell buoy   t = 7.5–8.0 s, hard cut
+- Silhouette: a conical buoy at the waterline, a four-post cage on it holding a bell, the lamp on top; horizon, sky.
+- Anchor: the cage-top lamp is the lamp disc.
+- Inks: indigo line (cage, bell, sound arcs), blue base, pink overprint (body solid; shadow over blue dots → violet), yellow accent. Misreg indigo(−1,+2) blue(0,0) yellow(+1,0) pink(+3,0).
+- Knockouts: body from sea and sky; lamp; bell from body; foam hatching.
+- Live element: Answer 90; sound arcs static.
 
-### 7. Breathe (B1 8.0–8.5, B2 10.0–10.5, B3 13.0–13.5)   hard cut in; the next scene irises open on the anchor
-- Silhouette: none. Cream paper with its static grain and speckle; the lamp disc lit at the anchor. That is the whole sheet.
-- Anchor: the lamp disc, yellow with the pink fringe, at (360, 360). In B3 the fringe is the last time the pink offset is seen before the machine.
-- Inks: yellow = accent (disc) · pink = accent (fringe) · blue = line (the ripple). No indigo, no base. Misregistration: yellow (0, 0) · pink (+2, +1) · blue (−1, +1) for B1; blue (+1, −1) for B2; blue (−2, 0) for B3.
-- Knockouts: none (the disc prints on paper).
-- Tone: solid disc; ripple stroke; nothing screened.
-- Motif rhyme: the ripple is the motif's ring alone on paper.
-- Live element: one Ripple: blue 35 %, 6→1 px, easeOutCubic 0.5 s, radius 0→520 px, 3 % wobble, three tick arcs at the rim at 0.15 s. Nothing else moves.
-- Don't: no grain change, no dot texture on the paper; the disc does not pulse.
+### 7. Breathe   B1 8.0–8.5, B2 10.0–10.5, B3 13.0–13.5 s, hard cut in; next scene irises open
+- Silhouette: none; cream paper, the lamp disc lit.
+- Anchor: the lamp disc itself, pink fringe right; B3 is the fringe's last showing before the machine.
+- Inks: yellow accent (disc), pink accent (fringe), blue line (ripple). Misreg yellow(0,0) pink(+2,+1); blue B1(−1,+1) B2(+1,−1) B3(−2,0).
+- Knockouts: none.
+- Live element: one blue Ripple, 0.5 s; nothing else.
 
-### 8. Cottage on the headland   t = 8.5–9.0 s, iris open on the anchor (8.5–8.9)
-- Silhouette: a headland rising from the left edge at y = 620 to a flat top at y = 430 from x = 180 to x = 520, then a cliff face dropping to the sea at x = 540; on the top, one gabled cottage 150 px wide, eaves at y = 400, ridge at y = 340, a chimney at the right gable; a single square window 48 px on the wall centred at the anchor. Sea horizon at y = 580 right of the cliff; sky above.
-- Anchor: the window lamp — the lamp disc at (360, 360) inside the window's paper square.
-- Inks: indigo = line (roof edge, chimney, cliff line, cottage outline) · blue = base (sky 70 % grain, sea 85 % solid) · pink = overprint (headland pink 55 % over blue 55 % → violet; the cottage wall pink 100 % on paper; roof = blue 60 % dots over pink 100 % → deep violet, a medium shape) · yellow = accent (band, lamp, ring). Misregistration: indigo (+1, −2) · blue (0, 0) · yellow (+1, +1) · pink (+3, +1).
-- Knockouts: the cottage from the headland's violet (wall prints pink on paper); the window square from the wall (paper, the disc inside); the chimney's smoke from the sky — a 3-lobe paper cloud with blue 20 % grain inside; 12 stars.
-- Tone: sky grain; headland dots (pink 75°, blue 15°) 55 %; sea solid; wall solid with 3 voids.
-- Motif rhyme: the window's square around the round lamp (a frame inside a frame); the answer ring; the smoke lobes are three soft rings.
-- Live element: the Answer — band crosses 8.5–8.75 (starting as the iris finishes), lamp blooms at 8.75, ring to 90 px by 9.0.
-- Don't: no door, no path, no fence; no second window; no lit reflection on the cliff.
+### 8. Cottage on the headland   t = 8.5–9.0 s, iris open on the anchor
+- Silhouette: a headland rising from the left to a flat top and a cliff; one gabled cottage, chimney, one square window; sea right.
+- Anchor: the window lamp is the lamp disc.
+- Inks: indigo line (roof, chimney, cliff), blue base, pink overprint (headland → violet; wall solid; roof: blue dots over pink), yellow accent. Misreg indigo(+1,−2) blue(0,0) yellow(+1,+1) pink(+3,+1).
+- Knockouts: cottage from headland; window from wall; smoke lobes, 12 stars from sky.
+- Live element: Answer 90.
 
-### 9. Whale   t = 9.0–9.5 s, hard cut at 9.0
-- Silhouette: a whale in profile facing right, wholly underwater: snout at (560, 380), the back arching to y = 250 at x = 260, the belly to y = 470, the body running off the left edge at the tail; the mouth line from the snout back to x = 300; one pectoral fin at (330, 460). The eye at the anchor. Water surface as a wavy indigo line at y = 120; above it a strip of night sky.
-- Anchor: the whale's eye — the lamp disc at (360, 360), 12 px above the mouth line.
-- Inks: blue = base (water 88 % solid below y = 120 with 30 voids, the darkest field before the deep; sky strip 70 % grain) · indigo = line (whale outline 4 px, mouth line, surface line) · pink = overprint (the whale's body pink 55 % over blue 60 % → violet, so the whale is a mid violet shape in dark water) · yellow = accent (band, eye, ring; four light shafts). Misregistration: indigo (−2, +1) · blue (0, 0) · yellow (0, −1) · pink (+2, −1).
-- Knockouts: the eye disc from blue and pink; four light shafts from the surface down to the right: paper wedges 8–14 px wide from (620, 120) to (500, 720), with blue 25 % dots inside so they read as water not paper; the beam band; a belly gleam of 5 paper hatch strokes.
-- Tone: water solid; whale = two dot screens at 60 % (pink 75°, blue 15°); shafts = dots 15° 25 %; eye 100 % solid.
-- Motif rhyme: the light shafts converge toward the anchor's horizontal; the eye's answer ring; the mouth line curves like an arc around the eye.
-- Live element: the Answer — band crosses 9.0–9.25 (through the water, band at 60 % max here), eye blooms at 9.25, ring to 90 px by 9.5. The whale holds.
-- Don't: no baleen, no barnacles, no spout; the whale does not move; no bubbles.
+### 9. Whale   t = 9.0–9.5 s, hard cut
+- Silhouette: a whale facing right, wholly underwater, back arching, one fin, a mouth line; wavy surface line high, sky strip above.
+- Anchor: the whale's eye is the lamp disc.
+- Inks: blue base (water solid, sky strip grain), indigo line (outline, mouth, surface), pink overprint (body → violet), yellow accent (band 60 %, light shafts). Misreg indigo(−2,+1) blue(0,0) yellow(0,−1) pink(+2,−1).
+- Knockouts: eye; four shafts from water, blue dots inside; belly hatching.
+- Live element: Answer 90.
 
-### 10. The far lighthouse   t = 9.5–10.0 s, hard cut at 9.5
-- Silhouette: open sea to a horizon at y = 560; on the horizon at x = 360 a second, distant tower: 14 px wide at the base tapering to 10 px, from y = 560 up to a 24 px lamp room whose centre is the anchor; a cap to y = 330. A low island strip 120 px wide, 8 px tall under it. Sky above, the biggest sky of the montage.
-- Anchor: the far tower's lamp — the lamp disc at (360, 360), which at this scale is the tower's whole head.
-- Inks: blue = base (sky 68 % grain, sea 85 % solid) · indigo = line (tower, island, horizon) · pink = overprint (a violet band of low cloud along the horizon: pink 40 % over blue 40 %, 60 px tall) · yellow = accent (band, lamp, ring, the flash bar). Misregistration: indigo (+2, 0) · blue (0, 0) · yellow (+1, +2) · pink (+3, +2).
-- Knockouts: the tower (paper with an indigo edge) from sky and cloud; the lamp disc; 30 stars, the densest star field of the film; the flash bar from the sky: a horizontal paper band 6 px tall across the full width at y = 360, yellow 100 % inside, present only for 0.1 s.
-- Tone: sky grain; cloud band dots; sea solid; flash bar solid.
-- Motif rhyme: the flash bar is the beam seen end-on from far away; the answer ring; the tower is the film's own motif answering itself.
-- Live element: the Answer — band crosses 9.5–9.75, lamp blooms at 9.75 together with the flash bar (on 9.75–9.85, a hold key), ring to 90 px by 10.0.
-- Don't: no beam wedge from the far tower (its answer is a flash, not a sweep); no ship on the horizon; the island has no trees.
+### 10. The far lighthouse   t = 9.5–10.0 s, hard cut
+- Silhouette: open sea; on the horizon a tiny tower on a low island, its lamp room the disc's size.
+- Anchor: the far tower's lamp is the lamp disc.
+- Inks: blue base, indigo line (tower, island, horizon), pink overprint (cloud band → violet), yellow accent (flash bar). Misreg indigo(+2,0) blue(0,0) yellow(+1,+2) pink(+3,+2).
+- Knockouts: tower from sky and cloud; 30 stars; flash bar through the anchor.
+- Live element: Answer 90; flash bar 0.1 s at the bloom.
 
-### 11. Steamer   t = 10.5–11.0 s, iris open on the anchor (10.5–10.9)
-- Silhouette: a passenger steamer in profile facing left, hull from (80, 470) to (660, 470) with a raked bow at the left, keel at y = 540; a superstructure block from x = 220 to 500, top at y = 400; one wide funnel 60 px at x = 430 rising to y = 320; the bridge at the superstructure's front-left with its lamp at the anchor; seven portholes, 8 px, along the hull at y = 500 from x = 200 to 560 every 60 px. Sea horizon at y = 560; a smoke plume from the funnel trailing right and up.
-- Anchor: the bridge lamp — the lamp disc at (360, 360), on a short mast above the bridge roof.
-- Inks: indigo = line (hull fill, funnel band, rails, plume outline) · blue = base (sky 70 % grain, sea 85 % solid) · pink = overprint (superstructure pink 100 % on paper; funnel pink 100 %; plume pink 30 % over blue 40 % grain → violet) · yellow = accent (band, lamp, ring, portholes). Misregistration: indigo (+1, +2) · blue (0, 0) · yellow (−1, 0) · pink (+1, 0).
-- Knockouts: hull from the sea with a 1 px trap (indigo fill on paper); superstructure and funnel from the sky (pink on paper); portholes from the hull (paper, yellow inside once lit); lamp disc; 10 stars; bow wave: 4 paper hatch strokes.
-- Tone: sky grain; sea solid; hull solid indigo with 6 voids (a large-medium shape, 100 % allowed at 190 × 70 px but with voids); plume grain.
-- Motif rhyme: the row of portholes is the motif repeated small; the funnel's cap is a ring; the answer ring.
-- Live element: the Answer — band crosses 10.5–10.75, lamp blooms at 10.75, and the seven portholes fill yellow in a 40 ms stagger left to right as part of the same bloom; ring to 90 px by 11.0.
-- Don't: no wake lines, no flags, no lettering on the hull, no second funnel.
+### 11. Steamer   t = 10.5–11.0 s, iris open on the anchor
+- Silhouette: a steamer facing left: long hull, superstructure block, wide funnel with a plume, seven portholes; horizon, sky.
+- Anchor: the bridge lamp is the lamp disc.
+- Inks: indigo line (hull, funnel band), blue base, pink overprint (superstructure, funnel; plume → violet), yellow accent (portholes). Misreg indigo(+1,+2) blue(0,0) yellow(−1,0) pink(+1,0).
+- Knockouts: hull from sea; superstructure, funnel, plume, 10 stars from sky; portholes from hull.
+- Live element: Answer 90; portholes fill, 40 ms stagger, with the bloom.
 
-### 12. Jellyfish   t = 11.0–11.25 s, hard cut at 11.0
-- Silhouette: one jellyfish, a dome 150 px wide with its crown at y = 300 and its rim at y = 380, centred on x = 360, eight tentacles as wavy indigo lines from the rim to the bottom edge, two of them thicker. Deep water all round, no surface, no horizon.
-- Anchor: the bell's core — the lamp disc at (360, 360) inside the dome, just under the crown.
-- Inks: blue = base (water 88 % solid, 40 voids, a slow height ramp 88 % → 80 % at the top) · indigo = line (dome outline 3 px, tentacles 2–4 px) · pink = overprint (the dome's rim band pink 50 % over blue 30 % → violet) · yellow = accent (band, core, glow, ring). Misregistration: indigo (−1, −2) · blue (0, 0) · yellow (+1, 0) · pink (+3, 0).
-- Knockouts: the dome from the water (paper); the core disc; a yellow dot-ramp glow inside the dome, 0°, 100 % at the core → 20 % at the rim, printed inside the knockout; the band.
-- Tone: water solid; dome glow = dot ramp pitch 5 px; rim = dots.
-- Motif rhyme: the dome is a half-ring over the disc; the glow is a dot-ramp halo; the answer ring.
-- Live element: the Answer, short form — band crosses 11.0–11.125 (band at 50 % max, deep water), core blooms at 11.125 (0.1 s), ring to 60 px by 11.25. The tentacles hold.
-- Don't: no drifting; no second jellyfish; no bubbles; no gradient on the dome.
+### 12. Jellyfish   t = 11.0–11.25 s, hard cut
+- Silhouette: one jellyfish dome centred high, eight wavy tentacles to the bottom edge, two thicker; deep water, no surface.
+- Anchor: the bell's core is the lamp disc, under the crown.
+- Inks: blue base (water solid, height ramp), indigo line (dome, tentacles), pink overprint (rim band → violet), yellow accent (band 50 %, dot-ramp glow inside the dome). Misreg indigo(−1,−2) blue(0,0) yellow(+1,0) pink(+3,0).
+- Knockouts: dome from water, glow printed inside; core.
+- Live element: Answer 60.
 
-### 13. Heron in the reeds, a firefly   t = 11.25–11.5 s, hard cut at 11.25
-- Silhouette: a heron standing in profile facing right, legs from the water at y = 600 up to a body at y = 420–500, a long S-neck up to a head at (430, 330), a dagger bill pointing right; 14 reeds as vertical indigo lines with bulrush heads from the bottom edge to y = 380–460, thinner toward the right; a marsh water line at y = 600; a low sky.
-- Anchor: the firefly — the lamp disc at (360, 360), hanging in the air in front of the heron's neck, the bill 40 px to its right.
-- Inks: blue = base (sky 66 % grain above y = 600; water 85 % solid below) · indigo = line (heron fill, reeds, water line) · pink = overprint (the mist over the water: pink 25 % over blue 25 % grain → pale violet band 60 px tall at the water line) · yellow = accent (band, firefly, ring, ten smaller fireflies). Misregistration: indigo (+2, −1) · blue (0, 0) · yellow (0, +1) · pink (+2, +1).
-- Knockouts: the heron from the sky with a 1 px trap; reeds are lines, overprinted; the firefly disc; ten 6 px paper dots scattered in the reeds (the other fireflies), seeded; the band.
-- Tone: sky grain; water solid; mist grain.
-- Motif rhyme: the firefly's answer ring; the bulrush heads are small dark lozenges echoing the disc; the heron's neck curls round the anchor like an arc.
-- Live element: the Answer, short form — band crosses 11.25–11.375, the firefly rises 20 px into the anchor and blooms at 11.375, ring to 60 px by 11.5; the ten small dots take yellow at the same key.
-- Don't: no water reflection of the heron; no moon; no beak movement; the reeds do not sway.
+### 13. Heron in the reeds, a firefly   t = 11.25–11.5 s, hard cut
+- Silhouette: a heron facing right, S-neck, dagger bill; fourteen reeds with bulrush heads; marsh water low, mist band on it.
+- Anchor: the firefly is the lamp disc, before the bill.
+- Inks: blue base, indigo line (heron, reeds), pink overprint (mist → pale violet), yellow accent (ten small fireflies). Misreg indigo(+2,−1) blue(0,0) yellow(0,+1) pink(+2,+1).
+- Knockouts: heron from sky; ten paper dots in the reeds.
+- Live element: Answer 60; the firefly rises into the anchor, then blooms.
 
-### 14. Night train head-on   t = 11.5–11.75 s, hard cut at 11.5
-- Silhouette: a locomotive coming straight at us: the smokebox front is a circle of radius 120 px centred at (360, 410); the headlamp at the anchor within it; a cab block behind and above it from x = 250 to 470 up to y = 250; a chimney stub at the top; a cowcatcher wedge below the circle to y = 560. Two rails converge from the bottom corners (0, 720) and (720, 720) to (330, 560) and (390, 560). A steam plume above and to the right.
-- Anchor: the headlamp — the lamp disc at (360, 360) on the smokebox door's upper half.
-- Inks: indigo = line (locomotive fill, rails, cab) · blue = base (sky 70 % grain; the ground either side of the rails blue 50 % dots 15°) · pink = overprint (the plume pink 35 % over blue 35 % grain → violet; a pink 100 % buffer beam across the bottom of the smokebox) · yellow = accent (band, headlamp, ring). Misregistration: indigo (0, +2) · blue (0, 0) · yellow (+1, −1) · pink (+3, −1).
-- Knockouts: the locomotive from sky and ground with a 1 px trap (indigo fill on paper); the smokebox circle's rim as a 4 px paper ring inside the fill (so the circle reads); the headlamp disc; the rails' tops as paper lines 2 px; the plume from the sky; the band.
-- Tone: sky grain; ground dots; locomotive solid indigo with 8 voids (a large shape, so capped at 82 % — voids do it); plume grain.
-- Motif rhyme: the smokebox is a great ring around the anchor; the converging rails are two beam edges; the answer ring.
-- Live element: the Answer, short form — band crosses 11.5–11.625, headlamp blooms at 11.625, ring to 60 px by 11.75. The train does not advance.
-- Don't: no motion of the train, no wheels, no number plate, no lettering; the plume is one lobe.
+### 14. Night train head-on   t = 11.5–11.75 s, hard cut
+- Silhouette: a locomotive head-on: round smokebox, cab block, chimney stub, cowcatcher; two rails converging from the bottom corners; plume up-right.
+- Anchor: the headlamp is the lamp disc.
+- Inks: indigo line (locomotive, rails), blue base (sky grain, ground dots), pink overprint (plume → violet; buffer beam solid), yellow accent. Misreg indigo(0,+2) blue(0,0) yellow(+1,−1) pink(+3,−1).
+- Knockouts: locomotive from sky and ground; a paper ring inside the smokebox fill; rail tops; plume.
+- Live element: Answer 60.
 
-### 15. Campfire on the beach   t = 11.75–12.0 s, hard cut at 11.75
-- Silhouette: a beach line at y = 520 sloping down to the right; the sea beyond to a horizon at y = 470; three driftwood logs crossed at (360, 440) with their ends spread from x = 250 to 470; a flame silhouette rising from the logs: a leaf shape from a 90 px base at y = 430 to a tip at (360, 290), with one side lobe; six sparks above it. Sky above.
-- Anchor: the flame's heart — the lamp disc at (360, 360), a third of the way up the flame.
-- Inks: blue = base (sky 70 % grain, sea 85 % solid, sand blue 20 % grain) · indigo = line (logs fill, flame outline 2 px, beach line) · pink = overprint (the flame body pink 70 % over yellow 100 % → orange-red; the flame tip pink 100 % alone) · yellow = accent (band, heart, ring, a glow halo of dots pitch 9 px 0° from the heart out to 160 px, 40 % → 0). Misregistration: indigo (−2, −1) · blue (0, 0) · yellow (0, 0) · pink (+2, 0).
-- Knockouts: the flame and its halo from the sky and sea (paper; yellow and pink print inside); the logs from the sand (indigo fill on paper); six sparks, 4 px paper dots; the heart disc is 100 % yellow with the pink fringe, the flame body around it is the planned orange overprint; the band.
-- Tone: sky grain; sea solid; halo = coarse dots pitch 9 px, the deliberate retro glow; flame solid.
-- Motif rhyme: the halo is the motif's ring as a dot ramp; the answer ring; the crossed logs radiate from under the anchor.
-- Live element: the Answer, short form — band crosses 11.75–11.875, the heart blooms at 11.875 and the flame scales 1.0→1.12→1.0 with it (same easeOutBack, 0.1 s), ring to 60 px by 12.0.
-- Don't: no flicker loop on the flame; no smoke; no people; no reflection on the wet sand.
+### 15. Campfire on the beach   t = 11.75–12.0 s, hard cut
+- Silhouette: a beach sloping right, sea beyond; three crossed logs, a leaf-shaped flame, one side lobe, six sparks.
+- Anchor: the flame's heart is the lamp disc.
+- Inks: blue base, indigo line (logs, flame outline), pink overprint (flame over yellow → orange-red; tip solid), yellow accent (coarse halo). Misreg indigo(−2,−1) blue(0,0) yellow(0,0) pink(+2,0).
+- Knockouts: flame and halo from sky and sea; logs from sand; six sparks.
+- Live element: Answer 60; flame scales 1.0→1.12→1.0 with the bloom.
 
-### 16. Owl on the dune post   t = 12.0–12.25 s, hard cut at 12.0
-- Silhouette: an owl in profile facing left, perched on a fence post: the post from the bottom edge at x = 400 up to y = 470; the owl a rounded upright egg 180 px tall from y = 290 to y = 470, a flat crown with one ear tuft, the beak a small hook at (330, 380); the facial disc a half-ring 60 px around the eye; a dune line at y = 560 from the left edge to the post, sky above; sea horizon far right at y = 520.
-- Anchor: the owl's eye — the lamp disc at (360, 360), inside the facial disc.
-- Inks: indigo = line (owl fill, post, facial disc ring, dune line) · blue = base (sky 70 % grain, sea 85 % solid, dune blue 20 % grain) · pink = overprint (the breast: a paper knockout inside the owl with pink 50 % dots at 75° printed on it; the sky's low cloud pink 30 % over blue 30 % → violet) · yellow = accent (band, eye, ring). Misregistration: indigo (+1, +1) · blue (0, 0) · yellow (0, +1) · pink (+2, +1).
-- Knockouts: the owl and post from the sky and dune with a 1 px trap (indigo fill on paper); the breast oval from the owl (paper, pink dots); the facial disc ring as a 3 px paper ring inside the fill; the eye disc; 8 stars; the band.
-- Tone: sky grain; sea solid; owl solid indigo with 5 voids; breast dots 75 % 50 %.
-- Motif rhyme: the facial disc's half-ring around the eye; the answer ring; the ear tuft points along the beam's direction.
-- Live element: the Answer, short form — band crosses 12.0–12.125, eye blooms at 12.125, ring to 60 px by 12.25. The owl does not turn its head.
-- Don't: no feather texture ("count the wings, not the feathers"); no second eye visible; no talons detailed.
+### 16. Owl on the dune post   t = 12.0–12.25 s, hard cut
+- Silhouette: an owl facing left on a fence post: upright egg, flat crown, one ear tuft, hooked beak, half-ring facial disc; dune low.
+- Anchor: the owl's eye is the lamp disc.
+- Inks: indigo line (owl, post, dune), blue base, pink overprint (breast dots on a paper knockout; cloud → violet), yellow accent. Misreg indigo(+1,+1) blue(0,0) yellow(0,+1) pink(+2,+1).
+- Knockouts: owl and post from sky; breast from owl; paper facial ring; 8 stars.
+- Live element: Answer 60.
 
-### 17. Anglerfish in the deep   t = 12.25–12.5 s, hard cut at 12.25
-- Silhouette: an anglerfish in profile facing left, body a fat teardrop 300 px long from the tail at (620, 470) to the jaw at (300, 450), belly at y = 540, back at y = 380; the mouth gaping open, the upper jaw hinged at (330, 420), lower jaw dropped to y = 520, both jaws lined with paper teeth; the illicium (the stalk) rising from the forehead at (380, 385) forward and up in an S to end at the anchor; the lure is the lamp disc. Water everywhere, no surface, the darkest sheet of the film.
-- Anchor: the lure — the lamp disc at (360, 360), the fish's own light.
-- Inks: blue = base (water 90 % solid, 50 voids — the coverage ceiling, allowed because the voids and the height ramp 90 % → 84 % at the top break it) · indigo = line (fish outline 4 px, stalk 2 px, fins) · pink = overprint (the fish's body pink 50 % over blue 60 % → dark violet; the inside of the mouth pink 100 % alone on a paper knockout) · yellow = accent (band, lure, ring, a 40 px glow pool around the lure at 0°). Misregistration: indigo (−1, 0) · blue (0, 0) · yellow (+1, +1) · pink (+3, +1).
-- Knockouts: the lure and its pool from the water; the mouth interior from the water and the body (paper, then pink); 14 teeth as paper triangles 6–12 px on both jaws; the eye as a 10 px paper disc; the band, faint here (30 % max).
-- Tone: water solid; body = two screens at 50/60 %; glow pool dot ramp pitch 5 px; mouth solid pink.
-- Motif rhyme: the stalk curls into the anchor like a ring drawn halfway; the glow pool; the answer ring.
-- Live element: the Answer, short form — band crosses 12.25–12.375 at its faintest, lure blooms at 12.375, ring to 60 px by 12.5. The jaw holds open.
-- Don't: no bubbles, no seafloor; the fish does not lunge; no gradient in the water.
+### 17. Anglerfish in the deep   t = 12.25–12.5 s, hard cut
+- Silhouette: an anglerfish facing left, a fat teardrop, jaw gaping, teeth; the stalk curling up to the lure; water everywhere.
+- Anchor: the lure is the lamp disc.
+- Inks: blue base (water at the ceiling), indigo line (outline, stalk), pink overprint (body → dark violet; mouth solid), yellow accent (band 30 %, glow pool). Misreg indigo(−1,0) blue(0,0) yellow(+1,+1) pink(+3,+1).
+- Knockouts: pool from water; mouth from body; 14 paper teeth; a paper eye.
+- Live element: Answer 60.
 
-### 18. Fireworks from the far town   t = 12.5–12.75 s, hard cut at 12.5
-- Silhouette: a town on the far shore as a low skyline strip from x = 60 to 660 at y = 560–620: eight boxes of varying height with two church spires; the sea between us and it to y = 660; sky above. At the anchor, a firework burst: 24 rays from the disc outward to radius 180 px, alternating long and short, each a wobbling line ending in a small dot; a second ring of 12 dots at radius 220 px.
-- Anchor: the burst's heart — the lamp disc at (360, 360), the point every ray leaves from.
-- Inks: blue = base (sky 72 % grain, sea 85 % solid) · indigo = line (skyline fill, spires) · pink = accent (12 of the 24 rays and the outer 12 dots, pink 100 %) · yellow = accent (band, heart, the other 12 rays, ring). Misregistration: indigo (+2, +1) · blue (0, 0) · yellow (0, 0) · pink (+2, −1).
-- Knockouts: the skyline from the sea with a 1 px trap; 20 town windows as 4 px paper dots in the boxes; the burst — heart, all 24 rays, all dots — from the sky (paper, then yellow or pink printed in); the band.
-- Tone: sky grain; sea solid; rays solid 3 px lines tapering to 1 px; heart solid.
-- Motif rhyme: the burst is the motif's rings drawn as spokes; the outer dot ring; the answer ring passes through the ray tips.
-- Live element: the Answer, burst form — band crosses 12.5–12.6, heart blooms at 12.6, then the rays extend from 0 to full length over 0.15 s (easeOutCubic, yellow rays first, pink rays 40 ms later) instead of a plain ring; the outer dots appear at 12.7 as a hold key.
-- Don't: no smoke trails, no second burst, no falling sparks; the town does not light its windows beyond the printed paper dots.
+### 18. Fireworks from the far town   t = 12.5–12.75 s, hard cut
+- Silhouette: a low far skyline, two spires, sea before it; a burst of 24 dot-tipped rays, long and short alternating; 12 outer dots.
+- Anchor: the burst's heart is the lamp disc.
+- Inks: blue base, indigo line (skyline), pink accent (12 rays, outer dots), yellow accent (12 rays). Misreg indigo(+2,+1) blue(0,0) yellow(0,0) pink(+2,−1).
+- Knockouts: skyline from sea; 20 paper windows; heart, rays, dots from sky.
+- Live element: Answer burst; outer dots on a hold key.
 
-### 19. The moon breaks cloud   t = 12.75–13.0 s, hard cut at 12.75
-- Silhouette: night sky over open sea, horizon at y = 600; two bands of cloud crossing the sky, one from the left edge at y = 250 to the right at y = 320, one from the left at y = 430 to the right at y = 400, with a gap between them opening at the centre; in the gap, the moon at the anchor; around it the 22° halo, a ring of radius 120 px.
-- Anchor: the moon — the lamp disc at (360, 360). The sky itself answers: the moon is the motif at the motif's size, small in a big sky, and the halo makes it read.
-- Inks: blue = base (sky 74 % grain, sea 85 % solid) · pink = overprint (cloud bands pink 45 % over blue 45 % grain → violet; their lit lower edges pink 20 % alone on a paper strip 6 px tall) · yellow = accent (band, moon, halo ring as yellow 25 % dots 0°, 10 px wide, and the answer ring) · indigo = line (horizon only, 2 px). Misregistration: indigo (+1, +2) · blue (0, 0) · yellow (0, −1) · pink (+2, −1).
-- Knockouts: the moon disc from sky and cloud; the halo ring from the sky (paper, yellow dots inside); the clouds' lit lower edges as paper strips; no moon path on the sea: the sea keeps only its usual 14 paper hatch strokes, clustered under the moon this once; 24 stars outside the halo.
-- Tone: sky grain, the softest of the film; cloud grain at 45/45; halo dots; moon solid.
-- Motif rhyme: the halo is the largest ring the motif sends in the whole piece; the two cloud bands are a lens's bezel opening; the answer ring expands inside the halo.
-- Live element: the Answer, short form — band crosses 12.75–12.875 through the cloud gap, the moon blooms at 12.875, ring to 60 px by 13.0, reaching halfway to the halo. The clouds hold.
-- Don't: no craters, no face; the moon is not larger than the motif; no moonlight gradient on the sea.
+### 19. The moon breaks cloud   t = 12.75–13.0 s, hard cut
+- Silhouette: night sky over sea; two cloud bands crossing, a central gap opening; in it the moon, its 22° halo.
+- Anchor: the moon is the lamp disc.
+- Inks: blue base, pink overprint (clouds → violet; lit lower edges on paper), yellow accent (halo dots), indigo line (horizon). Misreg indigo(+1,+2) blue(0,0) yellow(0,−1) pink(+2,−1).
+- Knockouts: halo from sky; cloud lit edges; 24 stars outside the halo.
+- Live element: Answer 60; ring reaches halfway to the halo.
 
 ### 20. Dawn drains the night   t = 13.5–15.0 s, iris open on the anchor (13.5–13.9)
 - Silhouette: scene 1's plates exactly (same paths, same seeds): tower on its hill, cottage dark, sea to the right, the lamp lit at the anchor with the beam turning. Added: the sun, a 90 px disc rising at (600, y) on the right horizon, clipped to above y = 560.
@@ -297,34 +261,25 @@ Conventions used by every entry below. "Base" plates carry the coverage caps of 
 ### Surplus scenes (for the builder to swap in; each names the slot it can replace)
 
 ### 23. Lightning over a squall   alternate for 18 or 19 (0.25 s)
-- Silhouette: a squall cloud as a flat-bottomed mass from x = 200 to the right edge, base at y = 330, top lobes to y = 120; rain as 30 diagonal indigo hatch lines under it; sea to a horizon at y = 600; a bolt from the cloud base zigzagging in five segments down to the sea at (520, 600).
-- Anchor: the sheet-lightning's source — the lamp disc at (360, 360), embedded in the cloud base, its glow behind the cloud grain.
-- Inks: blue = base (sky 72 % grain, sea 85 % solid) · pink = overprint (cloud pink 55 % over blue 55 % grain → violet) · yellow = accent (band, disc, a 120 px yellow 30 % grain glow around it printed under the cloud grain — yellow first, violet cloud over it, planned overprint reading as lit cloud) · indigo = line (rain, bolt's shadow copy, horizon). Misregistration: indigo (+2, 0) · blue (0, 0) · yellow (0, +1) · pink (+2, +1).
-- Knockouts: the disc from the cloud; the bolt as a paper zigzag 4 px from cloud and sea, yellow 100 % inside; the band.
-- Tone: cloud grain; glow grain; sea solid; rain lines.
-- Motif rhyme: the glow behind the cloud is a halo; the answer ring passes out through the cloud base.
-- Live element: the Answer, short form — band crosses 0–0.125 s, disc blooms at 0.125 with the bolt appearing on the same hold key for 0.1 s, ring to 60 px by 0.25.
-- Don't: no thunder arcs; no second bolt; the rain does not fall (printed hatching).
+- Silhouette: a flat-bottomed squall cloud upper right, rain hatching under it, a five-segment bolt to the sea.
+- Anchor: the lightning's source is the lamp disc.
+- Inks: blue base, pink overprint (cloud → violet, over the glow), yellow accent (glow grain under cloud), indigo line (rain, horizon). Misreg indigo(+2,0) blue(0,0) yellow(0,+1) pink(+2,+1).
+- Knockouts: bolt as a paper zigzag from cloud and sea, yellow inside.
+- Live element: Answer 60; bolt on for 0.1 s at the bloom.
 
 ### 24. Rowboat with a raised lantern   alternate for 5 or 11 (0.5 s)
-- Silhouette: a rowboat in profile low in the frame, from (200, 520) to (520, 520), keel at y = 560, two oars shipped; a standing figure amidships, 150 px tall, one arm raised straight up holding the lantern at the anchor; sea horizon at y = 600, sky above.
-- Anchor: the raised lantern — the lamp disc at (360, 360), held at arm's length.
-- Inks: indigo = line (boat fill, figure fill, oars, horizon) · blue = base (sky 70 % grain, sea 85 % solid) · pink = overprint (a violet low cloud band at the horizon 40/40) · yellow = accent (band, lantern, ring). Misregistration: indigo (+1, +2) · blue (0, 0) · yellow (−1, 0) · pink (+1, 0).
-- Knockouts: boat and figure from the sea and sky with a 1 px trap; the lantern disc; 12 stars; a waterline gleam of 5 hatch strokes; the band.
-- Tone: sky grain; sea solid; figure and boat solid indigo.
-- Motif rhyme: the answer ring; the figure's raised arm is the tower in miniature.
-- Live element: the Answer — band crosses 0–0.25 s, lantern blooms at 0.25, ring to 90 px by 0.5. The arm is already raised at the cut.
-- Don't: no face (a hat brim and a coat); no rocking; no reflection. Justification for a human figure: it is a silhouette with no expression, staged exactly like the keeper.
+- Silhouette: a rowboat low in the frame; a standing figure, one arm straight up holding the lantern; horizon. Low-fit: a human figure, faceless, staged like the keeper.
+- Anchor: the raised lantern is the lamp disc.
+- Inks: indigo line (boat, figure, oars), blue base, pink overprint (low cloud → violet), yellow accent. Misreg indigo(+1,+2) blue(0,0) yellow(−1,0) pink(+1,0).
+- Knockouts: boat and figure from sea and sky; 12 stars; hatching.
+- Live element: Answer 90; arm already up.
 
 ### 25. Harbour with masts   alternate for 8 (0.5 s)
-- Silhouette: a stone mole from the left edge at y = 560 out to a round-headed pier end at x = 400, with a small light tower on it whose lamp is at the anchor (tower 24 px wide, y = 380–560); behind the mole, six masts of varying height (y = 300–450) rising from hulls hidden by the mole; a town strip on the far left with four boxes; sea in front to the bottom edge; sky above.
-- Anchor: the harbour light — the lamp disc at (360, 360) on the pier-end tower.
-- Inks: indigo = line (mole fill, masts, tower outline, town) · blue = base (sky 70 % grain, sea 85 % solid) · pink = overprint (the mole's face pink 50 % over blue 40 % dots → violet; the tower pink 100 % on paper) · yellow = accent (band, lamp, ring, ten town windows). Misregistration: indigo (−2, +1) · blue (0, 0) · yellow (0, 0) · pink (+2, +1).
-- Knockouts: the tower from the sky; the lamp disc; the town from the sky with a 1 px trap; ten 5 px paper windows in the town; the masts are lines, overprinted; 14 stars; the band.
-- Tone: sky grain; sea solid; mole dots; tower solid pink with 2 voids.
-- Motif rhyme: the answer ring; the pier end is a half-ring; the six masts are the beam's spokes stood on end.
-- Live element: the Answer — band crosses 0–0.25 s, lamp blooms at 0.25, the ten town windows take yellow in a 40 ms stagger as part of the bloom, ring to 90 px by 0.5.
-- Don't: no boats' hulls visible; no rigging; no lettering on the town.
+- Silhouette: a stone mole from the left ending in a round pier with a small light tower; six masts behind; a town far left.
+- Anchor: the harbour light is the lamp disc.
+- Inks: indigo line (mole, masts), blue base, pink overprint (mole → violet; tower solid), yellow accent (windows). Misreg indigo(−2,+1) blue(0,0) yellow(0,0) pink(+2,+1).
+- Knockouts: tower and town from sky; ten paper windows.
+- Live element: Answer 90; windows fill, 40 ms stagger, with the bloom.
 
 ## Composition rules for every scene
 
@@ -441,23 +396,23 @@ Audited against every Required line of the skill's bar after the spec was comple
 
 | bar item | PASS/FAIL | evidence |
 |---|---|---|
-| Motif and anchor defined before the first scene and named in every scene entry | PASS | §The spine defines both; all 25 entries carry an "Anchor:" line naming (360, 360) and the lamp disc, unlit ring, flame, lure, moon, or machine ring |
-| Every scene entry has ≤ 4 inks, each with a role | PASS | 25 "Inks:" lines; roles counted per line: max 4 (entries 1–6, 8–25), 3 (entry 7, the breathe) |
-| Every scene entry has a knockout list | PASS | 25 "Knockouts:" lines; entries 7 and 22 state "none" explicitly because everything prints on paper |
-| Every scene entry has a misregistration direction | PASS | 25 "Inks:" lines each end in "Misregistration: … (dx, dy) per ink"; entry 21 is (0, 0) on all four by design; the breathe entry gives one blue vector per occurrence |
-| Every scene entry has one live element | PASS (interpreted) | 25 "Live element:" lines. Montage entries 5–19, 23–25 have exactly one (the Answer). Held entries 1, 3, 20, 21, 22 list two or three sequenced elements, as motion-vocabulary §5 allows for held scenes, never more than two concurrent |
-| No overlap of two dark inks at full coverage; every light-on-dark shape is a knockout | PASS | Rule stated in §Scene library conventions and §Composition rule 5; every indigo fill on blue is written as a knockout with a 1 px trap (entries 5, 9, 11, 13, 14, 16, 18, 24, 25); all pink × blue overprints keep one ink ≤ 60 % (55/60, 50/60, 45/45, 40/40, 60 dots/100 pink); verification check 3 measures it |
-| Every timeline transition is a move in §Motion vocabulary, and every move carries easing and duration | PASS | Timeline uses hard cut, plate-by-plate reveal, dive, bloom, ripple, beam sweep, beam pass, iris, halftone dissolve, registration drift, stroke reveal, limited animation: 12 rows in the §Motion vocabulary table, each with easing and duration columns filled |
-| Every cut on the beat grid; act boundaries listed with exact times | PASS | §Timeline: 34 rows, every start and end a multiple of 0.25 s; act boundaries 0.0 / 4.0 / 7.0 / 13.0 / 17.0 / 20.0 printed above the table; verification check 4 asserts it |
+| Motif and anchor defined before the first scene and named in every scene entry | PASS | §The spine defines both; all 25 entries carry an "Anchor:" line naming the lamp disc (or the unlit ring, flame, machine ring) as the thing at the anchor; full entries give (360, 360), compact entries name the landing without coordinates as the skill directs |
+| Every scene entry has ≤ 4 inks, each with a role | PASS | 25 "Inks:" lines; roles counted per line: 4 in entries 1–6 and 8–25, 3 in entry 7 (the breathe) |
+| Every scene entry has a knockout list | PASS | 25 "Knockouts:" lines; entries 7 and 22 state "none" because everything prints on paper; compact entries list the scene-specific knockouts and the conventions paragraph carries the three always-present ones |
+| Every scene entry has a misregistration direction | PASS | 25 "Inks:" lines each end in a per-ink vector; entry 21 is (0,0) on all four by design; the breathe entry gives one blue vector per occurrence |
+| Every scene entry has one live element | PASS (interpreted) | 25 "Live element:" lines. Montage entries 5–19, 23–25 have exactly one (the Answer; anything after it is part of the same bloom key). Held entries 1, 3, 20, 21, 22 list two or three sequenced elements, as motion-vocabulary §5 allows for held scenes, never more than two concurrent |
+| No overlap of two dark inks at full coverage; every light-on-dark shape is a knockout | PASS | Rule stated in the conventions paragraph and §Composition rule 5; every indigo fill on a base is a knockout with a 1 px trap (entries 5, 9, 11, 13, 14, 16, 18, 24, 25); every pink × blue overprint keeps one ink ≤ 60 %; verification check 3 measures it |
+| Every timeline transition is a move in §Motion vocabulary, and every move carries easing and duration | PASS | Timeline uses hard cut, plate-by-plate reveal, dive, bloom, ripple, beam sweep, beam pass, iris, halftone dissolve, registration drift, stroke reveal, limited animation: 12 rows in the §Motion vocabulary table, each with easing and duration filled |
+| Every cut on the beat grid; act boundaries listed with exact times | PASS | §Timeline: every start and end a multiple of 0.25 s; act boundaries 0.0 / 4.0 / 7.0 / 13.0 / 17.0 / 20.0 printed above the table; verification check 4 asserts it |
 | §Visual system lists a distinct screen angle per ink, a dot pitch, where grain replaces dots, and the coverage cap | PASS | Screening bullet: pitch 5 px (9 px campfire halo), indigo 45° / blue 15° / pink 75° / yellow 0°, grain zones enumerated; Coverage bullet: large solids 78–85 %, voids 20–50, tints 15–85 % |
 | §Verification has ≥ 6 checks, each a measurement or a still, one measuring the anchor at every act boundary | PASS | 12 checks; check 1 computes the motif centroid at 0.0, 4.0, 7.0, 13.0, 17.0, 20.0 (and 15.0) with a 1.0 px tolerance |
-| Scene count meets the Step 2 enumeration plus surplus; no scene is a name only | PASS | Enumeration: 14 montage slots (2 + 3 + 5 + 4) × 1.2 = 16.8 → 17 montage entries written (14 in timeline + 3 surplus); 25 entries total; each has all eight fields with geometry, coordinates and timings |
-| Must not: gradients without a screen | PASS | §Don'ts line 1; every ramp in the entries is written as a dot ramp or grain touch; check 5 scans for unscreened gradients |
+| Scene count meets the Step 2 enumeration plus surplus; no scene is a name only; every scene uses the entry size its hold time calls for | PASS (interpreted) | Enumeration: 14 montage slots × 1.2 = 16.8 → 17 montage entries written (14 in timeline + 3 surplus); 25 entries total. Entry sizes: full for 1–4 and 20–22 (held ≥ 0.5 s, dived through, first and last); compact for 5–19 and 23–25, each five lines and ≤ 80 words by count. Per team-lead's direction the 0.5 s montage sheets (5, 6, 8–11, 24, 25) are compact; the skill's "≥ 0.5 s → full" line read literally would make them full |
+| Must not: gradients without a screen | PASS | §Don'ts line 1; every ramp is a dot ramp or grain touch; check 5 scans for unscreened gradients |
 | Must not: black ink | PASS | four inks only (§Visual system); darkest dark is blue 90 % under violet (§Don'ts) |
 | Must not: crossfades other than a single-ink drain | PASS | no crossfade in the timeline; the three halftone dissolves are per-plate dot starving; ink drain not used (§Don'ts) |
 | Must not: text beyond a title or signature | PASS | one word, "keeper", entry 22; check 10 counts six glyph paths and greps for other text calls |
 | Must not: facial acting | PASS | the keeper is a coat, cap brim, chin line and legs in entries 1, 2, 3, 21; the owl and whale have one eye each, which is the motif disc; §Don'ts line 5 |
 | Must not: per-frame random values | PASS | §Architecture: seeded PRNG per scene and element, no `Math.random`; check 7 greps for it and hashes three renders of t = 9.2 |
-| Must not: low-fit subjects without justification | PASS | the only low-fit subjects are human figures: the keeper (justified in the fit table, silhouette only) and the rowboat figure (entry 24 carries a written justification); no faces, crowds, glass, reflections or fine text |
+| Must not: low-fit subjects without justification | PASS | the only low-fit subjects are human figures: the keeper (fit table, silhouette only) and the rowboat figure (entry 24 carries a written justification); no faces, crowds, glass, reflections or fine text |
 
-Good-vs-minimal contrast on three entries chosen by a die (6, 13, 17): each gives the silhouette as proportions and coordinates, the anchor landing, the ink stack with roles and the overprint result, a knockout list, the tone per region, the rhyme, the live element with its timing on the grid, and a don't. None reads as a name plus adjectives. No FAIL rows; no revision needed after the audit beyond the three edits made before it (entry 3's anchor coordinates added; entry 19's knockout wording cleaned; two 60/60 overprints lowered to 55/60 and the cottage roof to 60-dot blue over pink).
+Good-vs-minimal contrast on three entries chosen by a die (6, 13, 17), all compact: each gives the silhouette as a described outline, the anchor landing, the ink stack with roles and the overprint result, a scene-specific knockout list, the live element on the grid, and the vectors. None reads as a name plus adjectives. No FAIL rows. Edits made during the audit: entry 3's anchor coordinates added; entry 19's knockout wording cleaned; two 60/60 overprints lowered to 55/60 and the cottage roof to blue dots over pink; entries 5–19 and 23–25 rewritten from full to compact on team-lead's instruction, with the shared defaults moved into the conventions paragraph.
