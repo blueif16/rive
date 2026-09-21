@@ -4,58 +4,1605 @@
     <Fill name="Background">
       <SolidColor colorValue="FFF7F7FA" name="C"/>
     </Fill>
-    <Node x="140" y="250" name="Stage">
-      <Node x="0" y="0" name="Box" id="1:21">
-        <Text x="0" y="24" width="70.4648" height="48" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
-          <TextStylePaint fontSize="20" fontAssetId="1:4" name="st0" id="1:22">
+    <Node x="0" y="0" name="Header">
+      <Shape x="0" y="0" name="L">
+        <PointsPath name="P">
+          <StraightVertex x="96" y="146"/>
+          <StraightVertex x="1104" y="146"/>
+        </PointsPath>
+        <Stroke thickness="1" cap="butt" join="miter" name="S">
+          <SolidColor colorValue="FFD9D3C6" name="C"/>
+        </Stroke>
+      </Shape>
+      <Text x="963.0801" y="32.65" width="140.9199" height="18.7" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="right" verticalAlignValue="middle" name="T">
+        <TextStylePaint fontSize="11" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:23">
+          <Fill name="F">
+            <SolidColor colorValue="FFA3A09D" name="C"/>
+          </Fill>
+        </TextStylePaint>
+        <TextValueRun styleId="1:23" text="TOKENS IN WINDOW" name="run"/>
+      </Text>
+      <Text x="96" y="50.7" width="438.872" height="64.6" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="left" verticalAlignValue="middle" name="T">
+        <TextStylePaint fontSize="38" fontAssetId="1:2" name="st0" id="1:22">
+          <Fill name="F">
+            <SolidColor colorValue="FF3B3730" name="C"/>
+          </Fill>
+        </TextStylePaint>
+        <TextValueRun styleId="1:22" text="What a context window holds" name="run"/>
+      </Text>
+      <Text x="96" y="30.65" width="217.0111" height="18.7" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="left" verticalAlignValue="middle" name="T">
+        <TextStylePaint fontSize="11" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:21">
+          <Fill name="F">
+            <SolidColor colorValue="FFA3A09D" name="C"/>
+          </Fill>
+        </TextStylePaint>
+        <TextValueRun styleId="1:21" text="FIGURE A — CONTEXT WINDOW" name="run"/>
+      </Text>
+    </Node>
+    <Shape x="96" y="264" name="R">
+      <Rectangle originX="0" originY="0" width="1008" height="116" cornerRadiusTL="10" name="P"/>
+      <Fill name="F">
+        <SolidColor colorValue="FFEDECE1" name="C"/>
+      </Fill>
+    </Shape>
+    <Node x="0" y="0" name="Beat1" id="1:24">
+      <Node x="102" y="270" name="C1">
+        <Node x="0" y="0" name="b_tool_result_24800" id="1:29">
+          <Text x="77.0747" y="54" width="35.8257" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:31">
+              <Fill name="F">
+                <SolidColor colorValue="B3EDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:31" text="24.8k" name="run"/>
+          </Text>
+          <Text x="50.1198" y="30" width="89.7354" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:30">
+              <Fill name="F">
+                <SolidColor colorValue="FFEDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:30" text="TOOL RESULT" name="run"/>
+          </Text>
+          <Shape x="0" y="0" name="R">
+            <Rectangle originX="0" originY="0" width="189.975" height="104" cornerRadiusTL="7" name="P"/>
+            <Fill name="F">
+              <SolidColor colorValue="FF746E63" name="C"/>
+            </Fill>
+            <Stroke thickness="2.5" cap="butt" join="miter" name="S">
+              <SolidColor colorValue="FF4B4FDD" name="C"/>
+            </Stroke>
+          </Shape>
+        </Node>
+        <Node x="96.4875" y="0" name="b_user_8600">
+          <Text x="17.5431" y="54" width="28.8325" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:28">
+              <Fill name="F">
+                <SolidColor colorValue="B3EDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:28" text="8.6k" name="run"/>
+          </Text>
+          <Text x="13.5233" y="30" width="36.8721" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:27">
+              <Fill name="F">
+                <SolidColor colorValue="FFEDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:27" text="USER" name="run"/>
+          </Text>
+          <Shape x="0" y="0" name="R">
+            <Rectangle originX="0" originY="0" width="63.9188" height="104" cornerRadiusTL="7" name="P"/>
+            <Fill name="F">
+              <SolidColor colorValue="FF948778" name="C"/>
+            </Fill>
+          </Shape>
+        </Node>
+        <Node x="0" y="0" name="b_system_12400">
+          <Text x="29.9964" y="54" width="33.4946" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:26">
+              <Fill name="F">
+                <SolidColor colorValue="B3EDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:26" text="12.4k" name="run"/>
+          </Text>
+          <Text x="19.2101" y="30" width="55.0674" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:25">
+              <Fill name="F">
+                <SolidColor colorValue="FFEDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:25" text="SYSTEM" name="run"/>
+          </Text>
+          <Shape x="0" y="0" name="R">
+            <Rectangle originX="0" originY="0" width="93.4875" height="104" cornerRadiusTL="7" name="P"/>
             <Fill name="F">
               <SolidColor colorValue="FF3B3730" name="C"/>
             </Fill>
-          </TextStylePaint>
-          <TextValueRun styleId="1:22" text="hello" name="run"/>
-        </Text>
-        <Shape x="0" y="0" name="R">
-          <Rectangle originX="0" originY="0" width="160" height="96" cornerRadiusTL="14" name="P"/>
+          </Shape>
+        </Node>
+      </Node>
+    </Node>
+    <Node x="0" y="0" name="Beat2" id="1:32">
+      <Node x="102" y="270" name="C2">
+        <Node x="0" y="0" name="b_assistant_18700" id="1:48">
+          <Text x="54.8995" y="54" width="32.7104" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:50">
+              <Fill name="F">
+                <SolidColor colorValue="B3EDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:50" text="18.7k" name="run"/>
+          </Text>
+          <Text x="33.8025" y="30" width="74.9043" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:49">
+              <Fill name="F">
+                <SolidColor colorValue="FFEDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:49" text="ASSISTANT" name="run"/>
+          </Text>
+          <Shape x="0" y="0" name="R">
+            <Rectangle originX="0" originY="0" width="142.5094" height="104" cornerRadiusTL="7" name="P"/>
+            <Fill name="F">
+              <SolidColor colorValue="FF7C71B5" name="C"/>
+            </Fill>
+            <Stroke thickness="2.5" cap="butt" join="miter" name="S">
+              <SolidColor colorValue="FF4B4FDD" name="C"/>
+            </Stroke>
+          </Shape>
+        </Node>
+        <Node x="0" y="0" name="b_tool_result_31600" id="1:45">
+          <Text x="104.7958" y="54" width="33.2959" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:47">
+              <Fill name="F">
+                <SolidColor colorValue="B3EDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:47" text="31.6k" name="run"/>
+          </Text>
+          <Text x="76.5761" y="30" width="89.7354" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:46">
+              <Fill name="F">
+                <SolidColor colorValue="FFEDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:46" text="TOOL RESULT" name="run"/>
+          </Text>
+          <Shape x="0" y="0" name="R">
+            <Rectangle originX="0" originY="0" width="242.8875" height="104" cornerRadiusTL="7" name="P"/>
+            <Fill name="F">
+              <SolidColor colorValue="FF746E63" name="C"/>
+            </Fill>
+          </Shape>
+        </Node>
+        <Node x="0" y="0" name="b_user_6400" id="1:42">
+          <Text x="8.8333" y="54" width="29.1333" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:44">
+              <Fill name="F">
+                <SolidColor colorValue="B3EDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:44" text="6.4k" name="run"/>
+          </Text>
+          <Text x="4.964" y="30" width="36.8721" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:43">
+              <Fill name="F">
+                <SolidColor colorValue="FFEDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:43" text="USER" name="run"/>
+          </Text>
+          <Shape x="0" y="0" name="R">
+            <Rectangle originX="0" originY="0" width="46.8" height="104" cornerRadiusTL="7" name="P"/>
+            <Fill name="F">
+              <SolidColor colorValue="FF948778" name="C"/>
+            </Fill>
+          </Shape>
+        </Node>
+        <Node x="0" y="0" name="b_assistant_15200" id="1:39">
+          <Text x="41.1802" y="54" width="32.9146" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:41">
+              <Fill name="F">
+                <SolidColor colorValue="B3EDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:41" text="15.2k" name="run"/>
+          </Text>
+          <Text x="20.1854" y="30" width="74.9043" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:40">
+              <Fill name="F">
+                <SolidColor colorValue="FFEDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:40" text="ASSISTANT" name="run"/>
+          </Text>
+          <Shape x="0" y="0" name="R">
+            <Rectangle originX="0" originY="0" width="115.275" height="104" cornerRadiusTL="7" name="P"/>
+            <Fill name="F">
+              <SolidColor colorValue="FF7C71B5" name="C"/>
+            </Fill>
+          </Shape>
+        </Node>
+        <Node x="163.4062" y="0" name="b_tool_result_24800">
+          <Text x="77.0747" y="54" width="35.8257" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:38">
+              <Fill name="F">
+                <SolidColor colorValue="B3EDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:38" text="24.8k" name="run"/>
+          </Text>
+          <Text x="50.1198" y="30" width="89.7354" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:37">
+              <Fill name="F">
+                <SolidColor colorValue="FFEDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:37" text="TOOL RESULT" name="run"/>
+          </Text>
+          <Shape x="0" y="0" name="R">
+            <Rectangle originX="0" originY="0" width="189.975" height="104" cornerRadiusTL="7" name="P"/>
+            <Fill name="F">
+              <SolidColor colorValue="FF746E63" name="C"/>
+            </Fill>
+          </Shape>
+        </Node>
+        <Node x="96.4875" y="0" name="b_user_8600">
+          <Text x="17.5431" y="54" width="28.8325" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:36">
+              <Fill name="F">
+                <SolidColor colorValue="B3EDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:36" text="8.6k" name="run"/>
+          </Text>
+          <Text x="13.5233" y="30" width="36.8721" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:35">
+              <Fill name="F">
+                <SolidColor colorValue="FFEDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:35" text="USER" name="run"/>
+          </Text>
+          <Shape x="0" y="0" name="R">
+            <Rectangle originX="0" originY="0" width="63.9188" height="104" cornerRadiusTL="7" name="P"/>
+            <Fill name="F">
+              <SolidColor colorValue="FF948778" name="C"/>
+            </Fill>
+          </Shape>
+        </Node>
+        <Node x="0" y="0" name="b_system_12400">
+          <Text x="29.9964" y="54" width="33.4946" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:34">
+              <Fill name="F">
+                <SolidColor colorValue="B3EDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:34" text="12.4k" name="run"/>
+          </Text>
+          <Text x="19.2101" y="30" width="55.0674" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:33">
+              <Fill name="F">
+                <SolidColor colorValue="FFEDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:33" text="SYSTEM" name="run"/>
+          </Text>
+          <Shape x="0" y="0" name="R">
+            <Rectangle originX="0" originY="0" width="93.4875" height="104" cornerRadiusTL="7" name="P"/>
+            <Fill name="F">
+              <SolidColor colorValue="FF3B3730" name="C"/>
+            </Fill>
+          </Shape>
+        </Node>
+      </Node>
+    </Node>
+    <Node x="0" y="0" name="Beat3" id="1:51">
+      <Node x="102" y="270" name="C3">
+        <Node x="991" y="0" name="CapFlash" id="1:80">
+          <Shape x="0" y="0" name="R">
+            <Rectangle originX="0" originY="0" width="5" height="104" cornerRadiusTL="2" name="P"/>
+            <Fill name="F">
+              <SolidColor colorValue="FFC5683C" name="C"/>
+            </Fill>
+          </Shape>
+        </Node>
+        <Node x="0" y="0" name="b_tool_result_22800" id="1:77">
+          <Text x="69.4921" y="54" width="35.4282" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:79">
+              <Fill name="F">
+                <SolidColor colorValue="B3EDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:79" text="22.8k" name="run"/>
+          </Text>
+          <Text x="42.3386" y="30" width="89.7354" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:78">
+              <Fill name="F">
+                <SolidColor colorValue="FFEDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:78" text="TOOL RESULT" name="run"/>
+          </Text>
+          <Shape x="0" y="0" name="R">
+            <Rectangle originX="0" originY="0" width="174.4125" height="104" cornerRadiusTL="7" name="P"/>
+            <Fill name="F">
+              <SolidColor colorValue="FF746E63" name="C"/>
+            </Fill>
+            <Stroke thickness="2.5" cap="butt" join="miter" name="S">
+              <SolidColor colorValue="FF4B4FDD" name="C"/>
+            </Stroke>
+          </Shape>
+        </Node>
+        <Node x="0" y="0" name="b_user_5400" id="1:74">
+          <Text x="5.0904" y="54" width="28.8379" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:76">
+              <Fill name="F">
+                <SolidColor colorValue="B3EDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:76" text="5.4k" name="run"/>
+          </Text>
+          <Text x="4.8385" y="30" width="29.3418" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:75">
+              <Fill name="F">
+                <SolidColor colorValue="FFEDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:75" text="USR" name="run"/>
+          </Text>
+          <Shape x="0" y="0" name="R">
+            <Rectangle originX="0" originY="0" width="39.0187" height="104" cornerRadiusTL="7" name="P"/>
+            <Fill name="F">
+              <SolidColor colorValue="FF948778" name="C"/>
+            </Fill>
+          </Shape>
+        </Node>
+        <Node x="0" y="0" name="Survivors" id="1:64">
+          <Node x="0" y="0" name="b_tool_result_9200" id="1:71">
+            <Text x="19.9258" y="54" width="28.7358" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+              <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:73">
+                <Fill name="F">
+                  <SolidColor colorValue="B3EDECE1" name="C"/>
+                </Fill>
+              </TextStylePaint>
+              <TextValueRun styleId="1:73" text="9.2k" name="run"/>
+            </Text>
+            <Text x="15.2864" y="30" width="38.0146" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+              <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:72">
+                <Fill name="F">
+                  <SolidColor colorValue="FFEDECE1" name="C"/>
+                </Fill>
+              </TextStylePaint>
+              <TextValueRun styleId="1:72" text="TOOL" name="run"/>
+            </Text>
+            <Shape x="0" y="0" name="R">
+              <Rectangle originX="0" originY="0" width="68.5875" height="104" cornerRadiusTL="7" name="P"/>
+              <Fill name="F">
+                <SolidColor colorValue="FF746E63" name="C"/>
+              </Fill>
+              <Stroke thickness="2.5" cap="butt" join="miter" name="S">
+                <SolidColor colorValue="FF4B4FDD" name="C"/>
+              </Stroke>
+            </Shape>
+          </Node>
+          <Node x="770.3438" y="0" name="b_assistant_18700">
+            <Text x="54.8995" y="54" width="32.7104" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+              <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:70">
+                <Fill name="F">
+                  <SolidColor colorValue="B3EDECE1" name="C"/>
+                </Fill>
+              </TextStylePaint>
+              <TextValueRun styleId="1:70" text="18.7k" name="run"/>
+            </Text>
+            <Text x="33.8025" y="30" width="74.9043" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+              <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:69">
+                <Fill name="F">
+                  <SolidColor colorValue="FFEDECE1" name="C"/>
+                </Fill>
+              </TextStylePaint>
+              <TextValueRun styleId="1:69" text="ASSISTANT" name="run"/>
+            </Text>
+            <Shape x="0" y="0" name="R">
+              <Rectangle originX="0" originY="0" width="142.5094" height="104" cornerRadiusTL="7" name="P"/>
+              <Fill name="F">
+                <SolidColor colorValue="FF7C71B5" name="C"/>
+              </Fill>
+            </Shape>
+          </Node>
+          <Node x="524.4562" y="0" name="b_tool_result_31600">
+            <Text x="104.7958" y="54" width="33.2959" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+              <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:68">
+                <Fill name="F">
+                  <SolidColor colorValue="B3EDECE1" name="C"/>
+                </Fill>
+              </TextStylePaint>
+              <TextValueRun styleId="1:68" text="31.6k" name="run"/>
+            </Text>
+            <Text x="76.5761" y="30" width="89.7354" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+              <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:67">
+                <Fill name="F">
+                  <SolidColor colorValue="FFEDECE1" name="C"/>
+                </Fill>
+              </TextStylePaint>
+              <TextValueRun styleId="1:67" text="TOOL RESULT" name="run"/>
+            </Text>
+            <Shape x="0" y="0" name="R">
+              <Rectangle originX="0" originY="0" width="242.8875" height="104" cornerRadiusTL="7" name="P"/>
+              <Fill name="F">
+                <SolidColor colorValue="FF746E63" name="C"/>
+              </Fill>
+            </Shape>
+          </Node>
+          <Node x="474.6562" y="0" name="b_user_6400">
+            <Text x="8.8333" y="54" width="29.1333" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+              <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:66">
+                <Fill name="F">
+                  <SolidColor colorValue="B3EDECE1" name="C"/>
+                </Fill>
+              </TextStylePaint>
+              <TextValueRun styleId="1:66" text="6.4k" name="run"/>
+            </Text>
+            <Text x="4.964" y="30" width="36.8721" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+              <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:65">
+                <Fill name="F">
+                  <SolidColor colorValue="FFEDECE1" name="C"/>
+                </Fill>
+              </TextStylePaint>
+              <TextValueRun styleId="1:65" text="USER" name="run"/>
+            </Text>
+            <Shape x="0" y="0" name="R">
+              <Rectangle originX="0" originY="0" width="46.8" height="104" cornerRadiusTL="7" name="P"/>
+              <Fill name="F">
+                <SolidColor colorValue="FF948778" name="C"/>
+              </Fill>
+            </Shape>
+          </Node>
+        </Node>
+        <Node x="0" y="0" name="Summary" id="1:61">
+          <Node x="0" y="0" name="b_summary_9800">
+            <Text x="22.2119" y="54" width="28.8325" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+              <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:63">
+                <Fill name="F">
+                  <SolidColor colorValue="B3EDECE1" name="C"/>
+                </Fill>
+              </TextStylePaint>
+              <TextValueRun styleId="1:63" text="9.8k" name="run"/>
+            </Text>
+            <Text x="20.634" y="30" width="31.9883" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+              <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:62">
+                <Fill name="F">
+                  <SolidColor colorValue="FFEDECE1" name="C"/>
+                </Fill>
+              </TextStylePaint>
+              <TextValueRun styleId="1:62" text="SUM" name="run"/>
+            </Text>
+            <Shape x="0" y="0" name="R">
+              <Rectangle originX="0" originY="0" width="73.2562" height="104" cornerRadiusTL="7" name="P"/>
+              <Fill name="F">
+                <SolidColor colorValue="FFC5683C" name="C"/>
+              </Fill>
+            </Shape>
+          </Node>
+        </Node>
+        <Node x="0" y="0" name="Oldest" id="1:52">
+          <Node x="356.3813" y="0" name="b_assistant_15200">
+            <Text x="41.1802" y="54" width="32.9146" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+              <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:60">
+                <Fill name="F">
+                  <SolidColor colorValue="B3EDECE1" name="C"/>
+                </Fill>
+              </TextStylePaint>
+              <TextValueRun styleId="1:60" text="15.2k" name="run"/>
+            </Text>
+            <Text x="20.1854" y="30" width="74.9043" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+              <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:59">
+                <Fill name="F">
+                  <SolidColor colorValue="FFEDECE1" name="C"/>
+                </Fill>
+              </TextStylePaint>
+              <TextValueRun styleId="1:59" text="ASSISTANT" name="run"/>
+            </Text>
+            <Shape x="0" y="0" name="R">
+              <Rectangle originX="0" originY="0" width="115.275" height="104" cornerRadiusTL="7" name="P"/>
+              <Fill name="F">
+                <SolidColor colorValue="FF7C71B5" name="C"/>
+              </Fill>
+            </Shape>
+          </Node>
+          <Node x="163.4062" y="0" name="b_tool_result_24800">
+            <Text x="77.0747" y="54" width="35.8257" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+              <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:58">
+                <Fill name="F">
+                  <SolidColor colorValue="B3EDECE1" name="C"/>
+                </Fill>
+              </TextStylePaint>
+              <TextValueRun styleId="1:58" text="24.8k" name="run"/>
+            </Text>
+            <Text x="50.1198" y="30" width="89.7354" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+              <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:57">
+                <Fill name="F">
+                  <SolidColor colorValue="FFEDECE1" name="C"/>
+                </Fill>
+              </TextStylePaint>
+              <TextValueRun styleId="1:57" text="TOOL RESULT" name="run"/>
+            </Text>
+            <Shape x="0" y="0" name="R">
+              <Rectangle originX="0" originY="0" width="189.975" height="104" cornerRadiusTL="7" name="P"/>
+              <Fill name="F">
+                <SolidColor colorValue="FF746E63" name="C"/>
+              </Fill>
+            </Shape>
+          </Node>
+          <Node x="96.4875" y="0" name="b_user_8600">
+            <Text x="17.5431" y="54" width="28.8325" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+              <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:56">
+                <Fill name="F">
+                  <SolidColor colorValue="B3EDECE1" name="C"/>
+                </Fill>
+              </TextStylePaint>
+              <TextValueRun styleId="1:56" text="8.6k" name="run"/>
+            </Text>
+            <Text x="13.5233" y="30" width="36.8721" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+              <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:55">
+                <Fill name="F">
+                  <SolidColor colorValue="FFEDECE1" name="C"/>
+                </Fill>
+              </TextStylePaint>
+              <TextValueRun styleId="1:55" text="USER" name="run"/>
+            </Text>
+            <Shape x="0" y="0" name="R">
+              <Rectangle originX="0" originY="0" width="63.9188" height="104" cornerRadiusTL="7" name="P"/>
+              <Fill name="F">
+                <SolidColor colorValue="FF948778" name="C"/>
+              </Fill>
+            </Shape>
+          </Node>
+          <Node x="0" y="0" name="b_system_12400">
+            <Text x="29.9964" y="54" width="33.4946" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+              <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:54">
+                <Fill name="F">
+                  <SolidColor colorValue="B3EDECE1" name="C"/>
+                </Fill>
+              </TextStylePaint>
+              <TextValueRun styleId="1:54" text="12.4k" name="run"/>
+            </Text>
+            <Text x="19.2101" y="30" width="55.0674" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+              <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:53">
+                <Fill name="F">
+                  <SolidColor colorValue="FFEDECE1" name="C"/>
+                </Fill>
+              </TextStylePaint>
+              <TextValueRun styleId="1:53" text="SYSTEM" name="run"/>
+            </Text>
+            <Shape x="0" y="0" name="R">
+              <Rectangle originX="0" originY="0" width="93.4875" height="104" cornerRadiusTL="7" name="P"/>
+              <Fill name="F">
+                <SolidColor colorValue="FF3B3730" name="C"/>
+              </Fill>
+            </Shape>
+          </Node>
+        </Node>
+      </Node>
+    </Node>
+    <Node x="0" y="0" name="Beat4" id="1:81">
+      <Text x="102" y="432.65" width="298.2017" height="18.7" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="left" verticalAlignValue="middle" name="T">
+        <TextStylePaint fontSize="11" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:102">
           <Fill name="F">
-            <SolidColor colorValue="FFEDECE1" name="C"/>
+            <SolidColor colorValue="FFA3A09D" name="C"/>
           </Fill>
-          <Stroke thickness="1.5" cap="butt" join="miter" name="S">
-            <SolidColor colorValue="FFD9D3C6" name="C"/>
+        </TextStylePaint>
+        <TextValueRun styleId="1:102" text="412,000 TOKENS COMPACTED INTO 23,600" name="run"/>
+      </Text>
+      <Node x="102" y="0" name="Bracket">
+        <Shape x="0" y="0" name="L">
+          <PointsPath name="P">
+            <StraightVertex x="180.6375" y="417"/>
+            <StraightVertex x="180.6375" y="427"/>
+          </PointsPath>
+          <Stroke thickness="1" cap="butt" join="miter" name="S">
+            <SolidColor colorValue="FFA3A09D" name="C"/>
+          </Stroke>
+        </Shape>
+        <Shape x="0" y="0" name="L">
+          <PointsPath name="P">
+            <StraightVertex x="0" y="417"/>
+            <StraightVertex x="0" y="427"/>
+          </PointsPath>
+          <Stroke thickness="1" cap="butt" join="miter" name="S">
+            <SolidColor colorValue="FFA3A09D" name="C"/>
+          </Stroke>
+        </Shape>
+        <Shape x="0" y="0" name="L">
+          <PointsPath name="P">
+            <StraightVertex x="0" y="422"/>
+            <StraightVertex x="180.6375" y="422"/>
+          </PointsPath>
+          <Stroke thickness="1" cap="butt" join="miter" name="S">
+            <SolidColor colorValue="FFA3A09D" name="C"/>
           </Stroke>
         </Shape>
       </Node>
+      <Node x="102" y="396" name="History">
+        <Shape x="-221.3625" y="0" name="R">
+          <Rectangle originX="0" originY="0" width="36" height="14" cornerRadiusTL="3" name="P"/>
+          <Fill name="F">
+            <SolidColor colorValue="FFD9D3C6" name="C"/>
+          </Fill>
+        </Shape>
+        <Shape x="-181.3625" y="0" name="R">
+          <Rectangle originX="0" originY="0" width="14" height="14" cornerRadiusTL="3" name="P"/>
+          <Fill name="F">
+            <SolidColor colorValue="FFD9D3C6" name="C"/>
+          </Fill>
+        </Shape>
+        <Shape x="-163.3625" y="0" name="R">
+          <Rectangle originX="0" originY="0" width="22" height="14" cornerRadiusTL="3" name="P"/>
+          <Fill name="F">
+            <SolidColor colorValue="FFD9D3C6" name="C"/>
+          </Fill>
+        </Shape>
+        <Shape x="-137.3625" y="0" name="R">
+          <Rectangle originX="0" originY="0" width="28" height="14" cornerRadiusTL="3" name="P"/>
+          <Fill name="F">
+            <SolidColor colorValue="FFD9D3C6" name="C"/>
+          </Fill>
+        </Shape>
+        <Shape x="-105.3625" y="0" name="R">
+          <Rectangle originX="0" originY="0" width="12" height="14" cornerRadiusTL="3" name="P"/>
+          <Fill name="F">
+            <SolidColor colorValue="FFD9D3C6" name="C"/>
+          </Fill>
+        </Shape>
+        <Shape x="-89.3625" y="0" name="R">
+          <Rectangle originX="0" originY="0" width="20" height="14" cornerRadiusTL="3" name="P"/>
+          <Fill name="F">
+            <SolidColor colorValue="FFD9D3C6" name="C"/>
+          </Fill>
+        </Shape>
+        <Shape x="-65.3625" y="0" name="R">
+          <Rectangle originX="0" originY="0" width="34" height="14" cornerRadiusTL="3" name="P"/>
+          <Fill name="F">
+            <SolidColor colorValue="FFD9D3C6" name="C"/>
+          </Fill>
+        </Shape>
+        <Shape x="-27.3625" y="0" name="R">
+          <Rectangle originX="0" originY="0" width="16" height="14" cornerRadiusTL="3" name="P"/>
+          <Fill name="F">
+            <SolidColor colorValue="FFD9D3C6" name="C"/>
+          </Fill>
+        </Shape>
+        <Shape x="-7.3625" y="0" name="R">
+          <Rectangle originX="0" originY="0" width="26" height="14" cornerRadiusTL="3" name="P"/>
+          <Fill name="F">
+            <SolidColor colorValue="FFD9D3C6" name="C"/>
+          </Fill>
+        </Shape>
+        <Shape x="22.6375" y="0" name="R">
+          <Rectangle originX="0" originY="0" width="10" height="14" cornerRadiusTL="3" name="P"/>
+          <Fill name="F">
+            <SolidColor colorValue="FFD9D3C6" name="C"/>
+          </Fill>
+        </Shape>
+        <Shape x="36.6375" y="0" name="R">
+          <Rectangle originX="0" originY="0" width="40" height="14" cornerRadiusTL="3" name="P"/>
+          <Fill name="F">
+            <SolidColor colorValue="FFD9D3C6" name="C"/>
+          </Fill>
+        </Shape>
+        <Shape x="80.6375" y="0" name="R">
+          <Rectangle originX="0" originY="0" width="18" height="14" cornerRadiusTL="3" name="P"/>
+          <Fill name="F">
+            <SolidColor colorValue="FFD9D3C6" name="C"/>
+          </Fill>
+        </Shape>
+        <Shape x="102.6375" y="0" name="R">
+          <Rectangle originX="0" originY="0" width="30" height="14" cornerRadiusTL="3" name="P"/>
+          <Fill name="F">
+            <SolidColor colorValue="FFD9D3C6" name="C"/>
+          </Fill>
+        </Shape>
+        <Shape x="136.6375" y="0" name="R">
+          <Rectangle originX="0" originY="0" width="12" height="14" cornerRadiusTL="3" name="P"/>
+          <Fill name="F">
+            <SolidColor colorValue="FFD9D3C6" name="C"/>
+          </Fill>
+        </Shape>
+        <Shape x="152.6375" y="0" name="R">
+          <Rectangle originX="0" originY="0" width="24" height="14" cornerRadiusTL="3" name="P"/>
+          <Fill name="F">
+            <SolidColor colorValue="FFD9D3C6" name="C"/>
+          </Fill>
+        </Shape>
+      </Node>
+      <Node x="102" y="270" name="C4">
+        <Node x="0" y="0" name="b_tool_result_14200" id="1:99">
+          <Text x="36.9996" y="54" width="33.4946" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:101">
+              <Fill name="F">
+                <SolidColor colorValue="B3EDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:101" text="14.2k" name="run"/>
+          </Text>
+          <Text x="8.8792" y="30" width="89.7354" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:100">
+              <Fill name="F">
+                <SolidColor colorValue="FFEDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:100" text="TOOL RESULT" name="run"/>
+          </Text>
+          <Shape x="0" y="0" name="R">
+            <Rectangle originX="0" originY="0" width="107.4938" height="104" cornerRadiusTL="7" name="P"/>
+            <Fill name="F">
+              <SolidColor colorValue="FF746E63" name="C"/>
+            </Fill>
+            <Stroke thickness="2.5" cap="butt" join="miter" name="S">
+              <SolidColor colorValue="FF4B4FDD" name="C"/>
+            </Stroke>
+          </Shape>
+        </Node>
+        <Node x="0" y="0" name="b_user_7800" id="1:96">
+          <Text x="14.7287" y="54" width="28.2363" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:98">
+              <Fill name="F">
+                <SolidColor colorValue="B3EDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:98" text="7.8k" name="run"/>
+          </Text>
+          <Text x="10.4108" y="30" width="36.8721" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:97">
+              <Fill name="F">
+                <SolidColor colorValue="FFEDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:97" text="USER" name="run"/>
+          </Text>
+          <Shape x="0" y="0" name="R">
+            <Rectangle originX="0" originY="0" width="57.6938" height="104" cornerRadiusTL="7" name="P"/>
+            <Fill name="F">
+              <SolidColor colorValue="FF948778" name="C"/>
+            </Fill>
+          </Shape>
+        </Node>
+        <Node x="751.6688" y="0" name="b_user_7300">
+          <Text x="12.7888" y="54" width="28.2256" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:95">
+              <Fill name="F">
+                <SolidColor colorValue="B3EDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:95" text="7.3k" name="run"/>
+          </Text>
+          <Text x="8.4655" y="30" width="36.8721" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:94">
+              <Fill name="F">
+                <SolidColor colorValue="FFEDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:94" text="USER" name="run"/>
+          </Text>
+          <Shape x="0" y="0" name="R">
+            <Rectangle originX="0" originY="0" width="53.8031" height="104" cornerRadiusTL="7" name="P"/>
+            <Fill name="F">
+              <SolidColor colorValue="FF948778" name="C"/>
+            </Fill>
+          </Shape>
+        </Node>
+        <Node x="620.1656" y="0" name="b_assistant_16900">
+          <Text x="47.5902" y="54" width="33.3228" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:93">
+              <Fill name="F">
+                <SolidColor colorValue="B3EDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:93" text="16.9k" name="run"/>
+          </Text>
+          <Text x="26.7994" y="30" width="74.9043" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:92">
+              <Fill name="F">
+                <SolidColor colorValue="FFEDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:92" text="ASSISTANT" name="run"/>
+          </Text>
+          <Shape x="0" y="0" name="R">
+            <Rectangle originX="0" originY="0" width="128.5031" height="104" cornerRadiusTL="7" name="P"/>
+            <Fill name="F">
+              <SolidColor colorValue="FF7C71B5" name="C"/>
+            </Fill>
+          </Shape>
+        </Node>
+        <Node x="442.7531" y="0" name="b_tool_result_22800">
+          <Text x="69.4921" y="54" width="35.4282" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:91">
+              <Fill name="F">
+                <SolidColor colorValue="B3EDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:91" text="22.8k" name="run"/>
+          </Text>
+          <Text x="42.3386" y="30" width="89.7354" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:90">
+              <Fill name="F">
+                <SolidColor colorValue="FFEDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:90" text="TOOL RESULT" name="run"/>
+          </Text>
+          <Shape x="0" y="0" name="R">
+            <Rectangle originX="0" originY="0" width="174.4125" height="104" cornerRadiusTL="7" name="P"/>
+            <Fill name="F">
+              <SolidColor colorValue="FF746E63" name="C"/>
+            </Fill>
+          </Shape>
+        </Node>
+        <Node x="400.7344" y="0" name="b_user_5400">
+          <Text x="5.0904" y="54" width="28.8379" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:89">
+              <Fill name="F">
+                <SolidColor colorValue="B3EDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:89" text="5.4k" name="run"/>
+          </Text>
+          <Text x="4.8385" y="30" width="29.3418" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:88">
+              <Fill name="F">
+                <SolidColor colorValue="FFEDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:88" text="USR" name="run"/>
+          </Text>
+          <Shape x="0" y="0" name="R">
+            <Rectangle originX="0" originY="0" width="39.0187" height="104" cornerRadiusTL="7" name="P"/>
+            <Fill name="F">
+              <SolidColor colorValue="FF948778" name="C"/>
+            </Fill>
+          </Shape>
+        </Node>
+        <Node x="329.1469" y="0" name="b_tool_result_9200">
+          <Text x="19.9258" y="54" width="28.7358" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:87">
+              <Fill name="F">
+                <SolidColor colorValue="B3EDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:87" text="9.2k" name="run"/>
+          </Text>
+          <Text x="15.2864" y="30" width="38.0146" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:86">
+              <Fill name="F">
+                <SolidColor colorValue="FFEDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:86" text="TOOL" name="run"/>
+          </Text>
+          <Shape x="0" y="0" name="R">
+            <Rectangle originX="0" originY="0" width="68.5875" height="104" cornerRadiusTL="7" name="P"/>
+            <Fill name="F">
+              <SolidColor colorValue="FF746E63" name="C"/>
+            </Fill>
+          </Shape>
+        </Node>
+        <Node x="183.6375" y="0" name="b_assistant_18700">
+          <Text x="54.8995" y="54" width="32.7104" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:85">
+              <Fill name="F">
+                <SolidColor colorValue="B3EDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:85" text="18.7k" name="run"/>
+          </Text>
+          <Text x="33.8025" y="30" width="74.9043" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:84">
+              <Fill name="F">
+                <SolidColor colorValue="FFEDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:84" text="ASSISTANT" name="run"/>
+          </Text>
+          <Shape x="0" y="0" name="R">
+            <Rectangle originX="0" originY="0" width="142.5094" height="104" cornerRadiusTL="7" name="P"/>
+            <Fill name="F">
+              <SolidColor colorValue="FF7C71B5" name="C"/>
+            </Fill>
+          </Shape>
+        </Node>
+        <Node x="0" y="0" name="b_summary_23600">
+          <Text x="72.5536" y="54" width="35.5303" height="22" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="11" fontAssetId="1:4" name="st0" id="1:83">
+              <Fill name="F">
+                <SolidColor colorValue="B3EDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:83" text="23.6k" name="run"/>
+          </Text>
+          <Text x="56.4955" y="30" width="67.6465" height="20" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="center" verticalAlignValue="middle" name="T">
+            <TextStylePaint fontSize="10" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:82">
+              <Fill name="F">
+                <SolidColor colorValue="FFEDECE1" name="C"/>
+              </Fill>
+            </TextStylePaint>
+            <TextValueRun styleId="1:82" text="SUMMARY" name="run"/>
+          </Text>
+          <Shape x="0" y="0" name="R">
+            <Rectangle originX="0" originY="0" width="180.6375" height="104" cornerRadiusTL="7" name="P"/>
+            <Fill name="F">
+              <SolidColor colorValue="FFC5683C" name="C"/>
+            </Fill>
+          </Shape>
+        </Node>
+      </Node>
     </Node>
+    <Node x="0" y="0" name="Masks">
+      <Shape x="-20" y="390" name="Fade">
+        <Rectangle originX="0" originY="0" width="172" height="28" name="P"/>
+        <Fill name="F">
+          <LinearGradient startX="0" startY="0" endX="172" endY="0" name="G">
+            <GradientStop colorValue="FFF7F7FA" position="0"/>
+            <GradientStop colorValue="D8F7F7FA" position="0.3"/>
+            <GradientStop colorValue="70F7F7FA" position="0.62"/>
+            <GradientStop colorValue="00F7F7FA" position="1"/>
+          </LinearGradient>
+        </Fill>
+      </Shape>
+      <Shape x="1105" y="254" name="R">
+        <Rectangle originX="0" originY="0" width="96" height="136" name="P"/>
+        <Fill name="F">
+          <SolidColor colorValue="FFF7F7FA" name="C"/>
+        </Fill>
+      </Shape>
+    </Node>
+    <Node x="0" y="0" name="Frame">
+      <Text x="972.7856" y="394.65" width="131.2144" height="18.7" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="right" verticalAlignValue="middle" name="T">
+        <TextStylePaint fontSize="11" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:103">
+          <Fill name="F">
+            <SolidColor colorValue="FFA3A09D" name="C"/>
+          </Fill>
+        </TextStylePaint>
+        <TextValueRun styleId="1:103" text="CAPACITY 128,000" name="run"/>
+      </Text>
+      <Shape x="0" y="0" name="L">
+        <PointsPath name="P">
+          <StraightVertex x="1104" y="380"/>
+          <StraightVertex x="1104" y="392"/>
+        </PointsPath>
+        <Stroke thickness="2" cap="butt" join="miter" name="S">
+          <SolidColor colorValue="FF3B3730" name="C"/>
+        </Stroke>
+      </Shape>
+      <Shape x="96" y="264" name="R">
+        <Rectangle originX="0" originY="0" width="1008" height="116" cornerRadiusTL="10" name="P"/>
+        <Stroke thickness="2" cap="butt" join="miter" name="S">
+          <SolidColor colorValue="FF3B3730" name="C"/>
+        </Stroke>
+      </Shape>
+    </Node>
+    <Node x="0" y="0" name="Cap0" id="1:104">
+      <Text x="96" y="197.55" width="396.5024" height="28.9" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="left" verticalAlignValue="middle" name="T">
+        <TextStylePaint fontSize="17" fontAssetId="1:4" name="st0" id="1:106">
+          <Fill name="F">
+            <SolidColor colorValue="FF3B3730" name="C"/>
+          </Fill>
+        </TextStylePaint>
+        <TextValueRun styleId="1:106" text="A fixed budget. New turns push in from the right." name="run"/>
+      </Text>
+      <Text x="96" y="169.8" width="93.4012" height="20.4" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="left" verticalAlignValue="middle" name="T">
+        <TextStylePaint fontSize="12" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:105">
+          <Fill name="F">
+            <SolidColor colorValue="FF7C71B5" name="C"/>
+          </Fill>
+        </TextStylePaint>
+        <TextValueRun styleId="1:105" text="01 — EMPTY" name="run"/>
+      </Text>
+    </Node>
+    <Node x="0" y="0" name="Cap1" id="1:107">
+      <Text x="96" y="197.55" width="331.167" height="28.9" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="left" verticalAlignValue="middle" name="T">
+        <TextStylePaint fontSize="17" fontAssetId="1:4" name="st0" id="1:109">
+          <Fill name="F">
+            <SolidColor colorValue="FF3B3730" name="C"/>
+          </Fill>
+        </TextStylePaint>
+        <TextValueRun styleId="1:109" text="The history grows. The budget does not." name="run"/>
+      </Text>
+      <Text x="96" y="169.8" width="102.5676" height="20.4" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="left" verticalAlignValue="middle" name="T">
+        <TextStylePaint fontSize="12" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:108">
+          <Fill name="F">
+            <SolidColor colorValue="FF7C71B5" name="C"/>
+          </Fill>
+        </TextStylePaint>
+        <TextValueRun styleId="1:108" text="02 — FILLING" name="run"/>
+      </Text>
+    </Node>
+    <Node x="0" y="0" name="Cap2" id="1:110">
+      <Text x="96" y="197.55" width="398.0713" height="28.9" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="left" verticalAlignValue="middle" name="T">
+        <TextStylePaint fontSize="17" fontAssetId="1:4" name="st0" id="1:112">
+          <Fill name="F">
+            <SolidColor colorValue="FF3B3730" name="C"/>
+          </Fill>
+        </TextStylePaint>
+        <TextValueRun styleId="1:112" text="Full. The oldest turns collapse into one summary." name="run"/>
+      </Text>
+      <Text x="96" y="169.8" width="121.3773" height="20.4" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="left" verticalAlignValue="middle" name="T">
+        <TextStylePaint fontSize="12" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:111">
+          <Fill name="F">
+            <SolidColor colorValue="FF7C71B5" name="C"/>
+          </Fill>
+        </TextStylePaint>
+        <TextValueRun styleId="1:111" text="03 — PRESSURE" name="run"/>
+      </Text>
+    </Node>
+    <Node x="0" y="0" name="Cap3" id="1:113">
+      <Text x="96" y="197.55" width="408.9702" height="28.9" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="left" verticalAlignValue="middle" name="T">
+        <TextStylePaint fontSize="17" fontAssetId="1:4" name="st0" id="1:115">
+          <Fill name="F">
+            <SolidColor colorValue="FF3B3730" name="C"/>
+          </Fill>
+        </TextStylePaint>
+        <TextValueRun styleId="1:115" text="A long compacted history, only recent turns in full." name="run"/>
+      </Text>
+      <Text x="96" y="169.8" width="157.5285" height="20.4" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="left" verticalAlignValue="middle" name="T">
+        <TextStylePaint fontSize="12" fontAssetId="1:5" letterSpacing="0.15" name="st0" id="1:114">
+          <Fill name="F">
+            <SolidColor colorValue="FF7C71B5" name="C"/>
+          </Fill>
+        </TextStylePaint>
+        <TextValueRun styleId="1:114" text="04 — STEADY STATE" name="run"/>
+      </Text>
+    </Node>
+    <Node x="0" y="0" name="N0" id="1:116">
+      <Text x="825.4697" y="64" width="162.4648" height="52" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="right" verticalAlignValue="middle" name="T">
+        <TextStylePaint fontSize="40" fontAssetId="1:5" name="st0" id="1:117">
+          <Fill name="F">
+            <SolidColor colorValue="FF4B4FDD" name="C"/>
+          </Fill>
+        </TextStylePaint>
+        <TextValueRun styleId="1:117" text="21,000" name="run"/>
+      </Text>
+    </Node>
+    <Node x="0" y="0" name="N1" id="1:118">
+      <Text x="825.4697" y="64" width="162.4648" height="52" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="right" verticalAlignValue="middle" name="T">
+        <TextStylePaint fontSize="40" fontAssetId="1:5" name="st0" id="1:119">
+          <Fill name="F">
+            <SolidColor colorValue="FF4B4FDD" name="C"/>
+          </Fill>
+        </TextStylePaint>
+        <TextValueRun styleId="1:119" text="45,800" name="run"/>
+      </Text>
+    </Node>
+    <Node x="0" y="0" name="N2" id="1:120">
+      <Text x="825.4697" y="64" width="162.4648" height="52" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="right" verticalAlignValue="middle" name="T">
+        <TextStylePaint fontSize="40" fontAssetId="1:5" name="st0" id="1:121">
+          <Fill name="F">
+            <SolidColor colorValue="FF4B4FDD" name="C"/>
+          </Fill>
+        </TextStylePaint>
+        <TextValueRun styleId="1:121" text="61,000" name="run"/>
+      </Text>
+    </Node>
+    <Node x="0" y="0" name="N3" id="1:122">
+      <Text x="825.4697" y="64" width="162.4648" height="52" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="right" verticalAlignValue="middle" name="T">
+        <TextStylePaint fontSize="40" fontAssetId="1:5" name="st0" id="1:123">
+          <Fill name="F">
+            <SolidColor colorValue="FF4B4FDD" name="C"/>
+          </Fill>
+        </TextStylePaint>
+        <TextValueRun styleId="1:123" text="67,400" name="run"/>
+      </Text>
+    </Node>
+    <Node x="0" y="0" name="N4" id="1:124">
+      <Text x="825.4697" y="64" width="162.4648" height="52" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="right" verticalAlignValue="middle" name="T">
+        <TextStylePaint fontSize="40" fontAssetId="1:5" name="st0" id="1:125">
+          <Fill name="F">
+            <SolidColor colorValue="FF4B4FDD" name="C"/>
+          </Fill>
+        </TextStylePaint>
+        <TextValueRun styleId="1:125" text="99,000" name="run"/>
+      </Text>
+    </Node>
+    <Node x="0" y="0" name="N5" id="1:126">
+      <Text x="825.4697" y="64" width="162.4648" height="52" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="right" verticalAlignValue="middle" name="T">
+        <TextStylePaint fontSize="40" fontAssetId="1:5" name="st0" id="1:127">
+          <Fill name="F">
+            <SolidColor colorValue="FFC5683C" name="C"/>
+          </Fill>
+        </TextStylePaint>
+        <TextValueRun styleId="1:127" text="117,700" name="run"/>
+      </Text>
+    </Node>
+    <Node x="0" y="0" name="N6" id="1:128">
+      <Text x="825.4697" y="64" width="162.4648" height="52" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="right" verticalAlignValue="middle" name="T">
+        <TextStylePaint fontSize="40" fontAssetId="1:5" name="st0" id="1:129">
+          <Fill name="F">
+            <SolidColor colorValue="FFC5683C" name="C"/>
+          </Fill>
+        </TextStylePaint>
+        <TextValueRun styleId="1:129" text="126,900" name="run"/>
+      </Text>
+    </Node>
+    <Node x="0" y="0" name="N7" id="1:130">
+      <Text x="825.4697" y="64" width="162.4648" height="52" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="right" verticalAlignValue="middle" name="T">
+        <TextStylePaint fontSize="40" fontAssetId="1:5" name="st0" id="1:131">
+          <Fill name="F">
+            <SolidColor colorValue="FF4B4FDD" name="C"/>
+          </Fill>
+        </TextStylePaint>
+        <TextValueRun styleId="1:131" text="75,700" name="run"/>
+      </Text>
+    </Node>
+    <Node x="0" y="0" name="N8" id="1:132">
+      <Text x="825.4697" y="64" width="162.4648" height="52" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="right" verticalAlignValue="middle" name="T">
+        <TextStylePaint fontSize="40" fontAssetId="1:5" name="st0" id="1:133">
+          <Fill name="F">
+            <SolidColor colorValue="FF4B4FDD" name="C"/>
+          </Fill>
+        </TextStylePaint>
+        <TextValueRun styleId="1:133" text="81,100" name="run"/>
+      </Text>
+    </Node>
+    <Node x="0" y="0" name="N9" id="1:134">
+      <Text x="825.4697" y="64" width="162.4648" height="52" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="right" verticalAlignValue="middle" name="T">
+        <TextStylePaint fontSize="40" fontAssetId="1:5" name="st0" id="1:135">
+          <Fill name="F">
+            <SolidColor colorValue="FF4B4FDD" name="C"/>
+          </Fill>
+        </TextStylePaint>
+        <TextValueRun styleId="1:135" text="103,900" name="run"/>
+      </Text>
+    </Node>
+    <Node x="0" y="0" name="N10" id="1:136">
+      <Text x="825.4697" y="64" width="162.4648" height="52" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="right" verticalAlignValue="middle" name="T">
+        <TextStylePaint fontSize="40" fontAssetId="1:5" name="st0" id="1:137">
+          <Fill name="F">
+            <SolidColor colorValue="FF4B4FDD" name="C"/>
+          </Fill>
+        </TextStylePaint>
+        <TextValueRun styleId="1:137" text="111,700" name="run"/>
+      </Text>
+    </Node>
+    <Node x="0" y="0" name="N11" id="1:138">
+      <Text x="825.4697" y="64" width="162.4648" height="52" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="right" verticalAlignValue="middle" name="T">
+        <TextStylePaint fontSize="40" fontAssetId="1:5" name="st0" id="1:139">
+          <Fill name="F">
+            <SolidColor colorValue="FFC5683C" name="C"/>
+          </Fill>
+        </TextStylePaint>
+        <TextValueRun styleId="1:139" text="125,900" name="run"/>
+      </Text>
+    </Node>
+    <Text x="1001.9346" y="82" width="102.0654" height="32" sizingValue="fixed" overflowValue="visible" wrapValue="noWrap" alignValue="right" verticalAlignValue="middle" name="T">
+      <TextStylePaint fontSize="22" fontAssetId="1:4" name="st0" id="1:140">
+        <Fill name="F">
+          <SolidColor colorValue="FFA3A09D" name="C"/>
+        </Fill>
+      </TextStylePaint>
+      <TextValueRun styleId="1:140" text="/ 128,000" name="run"/>
+    </Text>
     <StateMachine name="Main" id="1:10">
-      <StateMachineLayer name="Layer 1" id="1:23">
+      <StateMachineLayer name="Layer 1" id="1:141">
         <AnyState x="400" y="0"/>
         <ExitState x="560" y="0"/>
         <EntryState x="0" y="16">
-          <StateTransition stateToId="1:24"/>
+          <StateTransition stateToId="1:142"/>
         </EntryState>
-        <AnimationState x="200" y="0" animationId="1:9" id="1:24"/>
+        <AnimationState x="200" y="0" animationId="1:9" id="1:142"/>
       </StateMachineLayer>
     </StateMachine>
     <LinearAnimation loopValue="loop" duration="720" fps="60" name="Loop" id="1:9">
-      <KeyedObject objectId="1:21">
+      <KeyedObject objectId="1:29">
         <KeyedProperty propertyKey="13">
-          <KeyFrameDouble value="0" frame="0" interpolationType="linear"/>
-          <KeyFrameDouble value="760" frame="360" interpolationType="cubic">
-            <CubicEaseInterpolator x1="0.65" y1="0" x2="0.35" y2="1"/>
+          <KeyFrameDouble value="1036" frame="0" interpolationType="hold"/>
+          <KeyFrameDouble value="1036" frame="34" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.16" y1="0.86" x2="0.26" y2="1"/>
           </KeyFrameDouble>
-          <KeyFrameDouble value="0" frame="720" interpolationType="cubic">
-            <CubicEaseInterpolator x1="0.65" y1="0" x2="0.35" y2="1"/>
-          </KeyFrameDouble>
+          <KeyFrameDouble value="163.4062" frame="86" interpolationType="hold"/>
+          <KeyFrameDouble value="1036" frame="400" interpolationType="hold"/>
         </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:39">
+        <KeyedProperty propertyKey="13">
+          <KeyFrameDouble value="1036" frame="0" interpolationType="hold"/>
+          <KeyFrameDouble value="1036" frame="186" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.16" y1="0.86" x2="0.26" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="356.3813" frame="220" interpolationType="hold"/>
+          <KeyFrameDouble value="1036" frame="500" interpolationType="hold"/>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:42">
+        <KeyedProperty propertyKey="13">
+          <KeyFrameDouble value="1036" frame="0" interpolationType="hold"/>
+          <KeyFrameDouble value="1036" frame="224" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.16" y1="0.86" x2="0.26" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="474.6562" frame="252" interpolationType="hold"/>
+          <KeyFrameDouble value="1036" frame="500" interpolationType="hold"/>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:45">
+        <KeyedProperty propertyKey="13">
+          <KeyFrameDouble value="1036" frame="0" interpolationType="hold"/>
+          <KeyFrameDouble value="1036" frame="256" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.16" y1="0.86" x2="0.26" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="524.4562" frame="296" interpolationType="hold"/>
+          <KeyFrameDouble value="1036" frame="500" interpolationType="hold"/>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:48">
+        <KeyedProperty propertyKey="13">
+          <KeyFrameDouble value="1036" frame="0" interpolationType="hold"/>
+          <KeyFrameDouble value="1036" frame="298" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.16" y1="0.86" x2="0.26" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="770.3438" frame="330" interpolationType="hold"/>
+          <KeyFrameDouble value="1036" frame="500" interpolationType="hold"/>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:52">
+        <KeyedProperty propertyKey="18">
+          <KeyFrameDouble value="1" frame="0" interpolationType="hold"/>
+          <KeyFrameDouble value="1" frame="404" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0" frame="444" interpolationType="hold"/>
+          <KeyFrameDouble value="1" frame="620" interpolationType="hold"/>
+        </KeyedProperty>
+        <KeyedProperty propertyKey="16">
+          <KeyFrameDouble value="1" frame="0" interpolationType="hold"/>
+          <KeyFrameDouble value="1" frame="408" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.65" y1="0" x2="0.35" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0.04" frame="448" interpolationType="hold"/>
+          <KeyFrameDouble value="1" frame="620" interpolationType="hold"/>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:61">
+        <KeyedProperty propertyKey="18">
+          <KeyFrameDouble value="0" frame="0" interpolationType="hold"/>
+          <KeyFrameDouble value="0" frame="428" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="1" frame="462" interpolationType="hold"/>
+          <KeyFrameDouble value="0" frame="620" interpolationType="hold"/>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:71">
+        <KeyedProperty propertyKey="13">
+          <KeyFrameDouble value="1036" frame="0" interpolationType="hold"/>
+          <KeyFrameDouble value="1036" frame="368" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.16" y1="0.86" x2="0.26" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="915.8531" frame="400" interpolationType="hold"/>
+          <KeyFrameDouble value="1036" frame="620" interpolationType="hold"/>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:64">
+        <KeyedProperty propertyKey="13">
+          <KeyFrameDouble value="0" frame="0" interpolationType="hold"/>
+          <KeyFrameDouble value="0" frame="414" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.65" y1="0" x2="0.35" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="-398.4" frame="456" interpolationType="hold"/>
+          <KeyFrameDouble value="0" frame="620" interpolationType="hold"/>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:74">
+        <KeyedProperty propertyKey="13">
+          <KeyFrameDouble value="1036" frame="0" interpolationType="hold"/>
+          <KeyFrameDouble value="1036" frame="452" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.16" y1="0.86" x2="0.26" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="589.0406" frame="482" interpolationType="hold"/>
+          <KeyFrameDouble value="1036" frame="620" interpolationType="hold"/>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:77">
+        <KeyedProperty propertyKey="13">
+          <KeyFrameDouble value="1036" frame="0" interpolationType="hold"/>
+          <KeyFrameDouble value="1036" frame="474" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.16" y1="0.86" x2="0.26" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="631.0594" frame="508" interpolationType="hold"/>
+          <KeyFrameDouble value="1036" frame="620" interpolationType="hold"/>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:80">
+        <KeyedProperty propertyKey="18">
+          <KeyFrameDouble value="0" frame="0" interpolationType="hold"/>
+          <KeyFrameDouble value="0" frame="372" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0.9" frame="386" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0.15" frame="398" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0.9" frame="408" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0" frame="424" interpolationType="hold"/>
+          <KeyFrameDouble value="0" frame="720" interpolationType="hold"/>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:96">
+        <KeyedProperty propertyKey="13">
+          <KeyFrameDouble value="1036" frame="0" interpolationType="hold"/>
+          <KeyFrameDouble value="1036" frame="560" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.16" y1="0.86" x2="0.26" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="808.4719" frame="592" interpolationType="hold"/>
+          <KeyFrameDouble value="1036" frame="720" interpolationType="hold"/>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:99">
+        <KeyedProperty propertyKey="13">
+          <KeyFrameDouble value="1036" frame="0" interpolationType="hold"/>
+          <KeyFrameDouble value="1036" frame="600" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.16" y1="0.86" x2="0.26" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="869.1656" frame="640" interpolationType="hold"/>
+          <KeyFrameDouble value="1036" frame="720" interpolationType="hold"/>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:24">
         <KeyedProperty propertyKey="18">
           <KeyFrameDouble value="1" frame="0" interpolationType="cubic">
             <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
           </KeyFrameDouble>
-          <KeyFrameDouble value="0.35" frame="360" interpolationType="cubic">
+          <KeyFrameDouble value="1" frame="154" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0" frame="180" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0" frame="694" interpolationType="cubic">
             <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
           </KeyFrameDouble>
           <KeyFrameDouble value="1" frame="720" interpolationType="cubic">
             <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
           </KeyFrameDouble>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:32">
+        <KeyedProperty propertyKey="18">
+          <KeyFrameDouble value="0" frame="0" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0" frame="154" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="1" frame="180" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="1" frame="334" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0" frame="360" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0" frame="720" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:51">
+        <KeyedProperty propertyKey="18">
+          <KeyFrameDouble value="0" frame="0" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0" frame="334" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="1" frame="360" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="1" frame="514" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0" frame="540" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0" frame="720" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:81">
+        <KeyedProperty propertyKey="18">
+          <KeyFrameDouble value="0" frame="0" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0" frame="514" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="1" frame="540" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="1" frame="694" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0" frame="720" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0" frame="720" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:104">
+        <KeyedProperty propertyKey="18">
+          <KeyFrameDouble value="1" frame="0" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="1" frame="154" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0" frame="180" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0" frame="694" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="1" frame="720" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:107">
+        <KeyedProperty propertyKey="18">
+          <KeyFrameDouble value="0" frame="0" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0" frame="154" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="1" frame="180" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="1" frame="334" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0" frame="360" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0" frame="720" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:110">
+        <KeyedProperty propertyKey="18">
+          <KeyFrameDouble value="0" frame="0" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0" frame="334" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="1" frame="360" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="1" frame="514" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0" frame="540" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0" frame="720" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:113">
+        <KeyedProperty propertyKey="18">
+          <KeyFrameDouble value="0" frame="0" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0" frame="514" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="1" frame="540" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="1" frame="694" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0" frame="720" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+          <KeyFrameDouble value="0" frame="720" interpolationType="cubic">
+            <CubicEaseInterpolator x1="0.42" y1="0" x2="0.58" y2="1"/>
+          </KeyFrameDouble>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:116">
+        <KeyedProperty propertyKey="18">
+          <KeyFrameDouble value="1" frame="0" interpolationType="hold"/>
+          <KeyFrameDouble value="0" frame="86" interpolationType="hold"/>
+          <KeyFrameDouble value="1" frame="720" interpolationType="hold"/>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:118">
+        <KeyedProperty propertyKey="18">
+          <KeyFrameDouble value="0" frame="0" interpolationType="hold"/>
+          <KeyFrameDouble value="1" frame="86" interpolationType="hold"/>
+          <KeyFrameDouble value="0" frame="220" interpolationType="hold"/>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:120">
+        <KeyedProperty propertyKey="18">
+          <KeyFrameDouble value="0" frame="0" interpolationType="hold"/>
+          <KeyFrameDouble value="1" frame="220" interpolationType="hold"/>
+          <KeyFrameDouble value="0" frame="252" interpolationType="hold"/>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:122">
+        <KeyedProperty propertyKey="18">
+          <KeyFrameDouble value="0" frame="0" interpolationType="hold"/>
+          <KeyFrameDouble value="1" frame="252" interpolationType="hold"/>
+          <KeyFrameDouble value="0" frame="296" interpolationType="hold"/>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:124">
+        <KeyedProperty propertyKey="18">
+          <KeyFrameDouble value="0" frame="0" interpolationType="hold"/>
+          <KeyFrameDouble value="1" frame="296" interpolationType="hold"/>
+          <KeyFrameDouble value="0" frame="330" interpolationType="hold"/>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:126">
+        <KeyedProperty propertyKey="18">
+          <KeyFrameDouble value="0" frame="0" interpolationType="hold"/>
+          <KeyFrameDouble value="1" frame="330" interpolationType="hold"/>
+          <KeyFrameDouble value="0" frame="400" interpolationType="hold"/>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:128">
+        <KeyedProperty propertyKey="18">
+          <KeyFrameDouble value="0" frame="0" interpolationType="hold"/>
+          <KeyFrameDouble value="1" frame="400" interpolationType="hold"/>
+          <KeyFrameDouble value="0" frame="458" interpolationType="hold"/>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:130">
+        <KeyedProperty propertyKey="18">
+          <KeyFrameDouble value="0" frame="0" interpolationType="hold"/>
+          <KeyFrameDouble value="1" frame="458" interpolationType="hold"/>
+          <KeyFrameDouble value="0" frame="482" interpolationType="hold"/>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:132">
+        <KeyedProperty propertyKey="18">
+          <KeyFrameDouble value="0" frame="0" interpolationType="hold"/>
+          <KeyFrameDouble value="1" frame="482" interpolationType="hold"/>
+          <KeyFrameDouble value="0" frame="508" interpolationType="hold"/>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:134">
+        <KeyedProperty propertyKey="18">
+          <KeyFrameDouble value="0" frame="0" interpolationType="hold"/>
+          <KeyFrameDouble value="1" frame="508" interpolationType="hold"/>
+          <KeyFrameDouble value="0" frame="592" interpolationType="hold"/>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:136">
+        <KeyedProperty propertyKey="18">
+          <KeyFrameDouble value="0" frame="0" interpolationType="hold"/>
+          <KeyFrameDouble value="1" frame="592" interpolationType="hold"/>
+          <KeyFrameDouble value="0" frame="640" interpolationType="hold"/>
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="1:138">
+        <KeyedProperty propertyKey="18">
+          <KeyFrameDouble value="0" frame="0" interpolationType="hold"/>
+          <KeyFrameDouble value="1" frame="640" interpolationType="hold"/>
+          <KeyFrameDouble value="0" frame="720" interpolationType="hold"/>
         </KeyedProperty>
       </KeyedObject>
     </LinearAnimation>

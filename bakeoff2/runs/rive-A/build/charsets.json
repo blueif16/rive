@@ -1,3 +1,5 @@
 {
-  "sans": "ehlo"
+  "sansmed": " ,0123456789ACDEFGIKLMNOPRSTUWXY\u2014",
+  "serif": " Wacdehilnostwx",
+  "sans": " ,./0123456789AFNTabcdefghiklmnoprstuwxy"
 }

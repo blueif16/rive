@@ -96,7 +96,9 @@ def document():
 
 
 if __name__ == "__main__":
-    (HERE / "scene.rml").write_text(document().xml())
+    doc = document()
+    R.verify_glyphs(TTF)          # fails loudly on a missing glyph
+    (HERE / "scene.rml").write_text(doc.xml())
     (HERE / "build").mkdir(exist_ok=True)
     (HERE / "build/charsets.json").write_text(json.dumps(R.charsets(), indent=2))
     print(f"wrote scene.rml ({(HERE / 'scene.rml').stat().st_size:,} bytes)")

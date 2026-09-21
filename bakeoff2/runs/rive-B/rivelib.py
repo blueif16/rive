@@ -254,3 +254,32 @@ def measure(s, size, ttf_path, *, letter_spacing=0.0):
 def fit_box(s, size, ttf_path, *, letter_spacing=0.0, pad=0.0):
     """Width for a text box that will not clip `s`. Adds `pad` on each side."""
     return measure(s, size, ttf_path, letter_spacing=letter_spacing) + 2 * pad
+
+
+def verify_glyphs(ttf_map):
+    """Assert every character used by text() exists in the font it was set in.
+
+    A missing glyph does NOT fail the Rive compile — `problems.log` says OK and
+    the character renders as nothing, so a counter or a label silently vanishes.
+    Call this at the end of generation. ttf_map is the {font_key: ttf_path} dict.
+
+    Raises ValueError listing exactly what is missing.
+    """
+    from fontTools.ttLib import TTFont
+    missing = {}
+    for key, used in _charsets.items():
+        path = ttf_map.get(key)
+        if not path:
+            missing[key] = f"no TTF path registered for font key {key!r}"
+            continue
+        cmap = TTFont(path, lazy=True).getBestCmap()
+        gone = sorted(c for c in used if ord(c) not in cmap)
+        if gone:
+            missing[key] = "".join(gone)
+    if missing:
+        lines = [f"  {k}: {v!r}" for k, v in missing.items()]
+        raise ValueError(
+            "font is missing glyphs that the scene uses — these would render as "
+            "nothing and the Rive compile would still report 0 errors:\n"
+            + "\n".join(lines)
+        )
